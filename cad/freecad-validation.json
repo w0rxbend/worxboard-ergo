@@ -1,0 +1,28 @@
+[
+  {
+    "variant": "mx",
+    "native_file": "cad/exports/mx/worxboard-ergo-mx.FCStd",
+    "freecad_version": "1.1.4",
+    "save_reopen_passed": true,
+    "solid_count": 4,
+    "volumes_mm3": {
+      "tray": 238411.30443025206,
+      "plate": 98288.31603357969,
+      "display_bezel": 2746.2119999999995,
+      "palm_rest": 198463.92685575638
+    }
+  },
+  {
+    "variant": "choc",
+    "native_file": "cad/exports/choc/worxboard-ergo-choc.FCStd",
+    "freecad_version": "1.1.4",
+    "save_reopen_passed": true,
+    "solid_count": 4,
+    "volumes_mm3": {
+      "tray": 229119.70555902773,
+      "plate": 79211.11682687578,
+      "display_bezel": 2643.7439999999997,
+      "palm_rest": 198463.92685575638
+    }
+  }
+]

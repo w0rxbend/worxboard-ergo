@@ -1,0 +1,7 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+config BOARD_WORXBOARD_ERGO
+    select SOC_RP2040
+    select ZMK_BOARD_COMPAT
+    imply RETAINED_MEM
+    imply RETENTION
+    imply RETENTION_BOOT_MODE

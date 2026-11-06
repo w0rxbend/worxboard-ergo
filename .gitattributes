@@ -1,0 +1,14 @@
+* text=auto eol=lf
+*.stl binary linguist-generated=true
+*.3mf binary linguist-generated=true
+*.FCStd binary linguist-generated=true
+*.uf2 binary linguist-generated=true
+*.png binary
+*.step binary linguist-generated=true
+pcb/*/schematic-preview/*.svg binary linguist-generated=true
+pcb/*/*.kicad_pcb linguist-generated=true
+pcb/*/*.kicad_sch linguist-generated=true
+pcb/*/*.net linguist-generated=true
+pcb/reports/*.json linguist-generated=true
+assets/layout.json linguist-generated=true
+assets/artifact-manifest.json linguist-generated=true

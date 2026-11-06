@@ -1,0 +1,8 @@
+file_format: "1"
+id: worxboard_ergo
+name: worxboard ergo
+url: https://github.com/w0rxbend/worxboard-ergo
+type: board
+arch: arm
+features: [keys, display, studio]
+outputs: [usb]

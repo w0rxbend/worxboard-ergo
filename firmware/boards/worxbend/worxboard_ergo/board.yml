@@ -1,0 +1,6 @@
+board:
+  name: worxboard_ergo
+  full_name: worxboard ergo RP2040
+  vendor: worxbend
+  socs:
+    - name: rp2040

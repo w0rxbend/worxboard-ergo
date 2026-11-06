@@ -1,0 +1,19 @@
+name: Engineering task
+description: Track a PCB, mechanical or firmware development task
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options: [layout, MX PCB, Choc PCB, USB/power, CAD, firmware, verification]
+  - type: textarea
+    id: change
+    attributes:
+      label: Proposed change and acceptance criteria
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Validation evidence
+      description: Distinguish source checks, CAD checks, compilation, and physical measurements.

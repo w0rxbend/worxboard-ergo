@@ -1,0 +1,15 @@
+/.venv/
+/build/
+/__pycache__/
+**/__pycache__/
+/.pytest_cache/
+*.py[cod]
+*.kicad_prl
+*-backups/
+*.FCStd1
+*.FCBak
+*.lck
+pcb/.tools/
+
+/core
+/core.*

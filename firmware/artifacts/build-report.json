@@ -1,0 +1,12 @@
+{
+  "zmk_sha": "4dd95d7840eb3d5a3f59bb29fbf1ab054715ef85",
+  "board": "worxboard_ergo/rp2040",
+  "snippet": "studio-rpc-usb-uart",
+  "compiled": true,
+  "usb_only": true,
+  "lcd_driver": "sharp,ls0xx",
+  "studio_transport": "USB CDC ACM",
+  "hardware_tested": false,
+  "uf2_bytes": 423424,
+  "uf2_sha256": "6e82e221d5f887a5a0f35f21e5ec126375ac08624bc85296fa6ed13100392770"
+}

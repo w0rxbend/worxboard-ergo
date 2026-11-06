@@ -1,0 +1,9 @@
+# Attribution and source provenance
+
+- **System76 Launch**: complete pinned reference submodule, https://github.com/system76/launch, commit `04dc963adad49b6c8c81e77382fb644e48d4f98b`. GPL-3.0 source plus nested firmware and per-file notices. No Launch PCB or firmware is claimed to be an RP2040 implementation. Use `make references` for Launch and its pinned QMK source; additional legacy QMK build dependencies remain upstream gitlinks.
+- **worxboard**: https://github.com/w0rxbend/worxboard. The GPL-3.0-or-later schematic generator, MX socket/stabilizer library, LCD header footprint, KiCad environment helper and RP2040 support-circuit data were adapted for this repository. ZMK board startup/configuration patterns were also consulted (upstream MIT headers retained on copied files). Exact source commit is in `references/upstream-lock.json`.
+- **foostan/kbd**: Choc footprint adapted from `keyswitch_choc12_hotswap_1u.kicad_mod`, commit `1f12004a1c9714d0eabec4028c9ae4b259b41562`, https://github.com/foostan/kbd. MIT notice is included in `pcb/lib/LICENSE-foostan.txt`. The footprint was renamed locally; hot-swap geometry remains upstream.
+- **KiCad libraries**: stock symbols and footprints are referenced by library identifiers; generated boards/schematics embed necessary geometry. KiCad library licensing and exceptions apply to those upstream library elements: https://www.kicad.org/libraries/license/.
+- **ZMK / Zephyr / Raspberry Pi SDK**: firmware dependencies are fetched by the pinned west manifest, retain their upstream licenses, and are not relicensed by this project.
+
+The supplied inspiration photos are not redistributed. Microsoft Sculpt and System76 names identify references and do not imply affiliation. Original new project sources use GPL-3.0-or-later unless a file states otherwise. Generated CAD uses the project source license. See `LICENSE`.

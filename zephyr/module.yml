@@ -1,0 +1,6 @@
+name: zmk-keyboard-worxboard-ergo
+build:
+  cmake: firmware
+  kconfig: firmware/Kconfig
+  settings:
+    board_root: firmware

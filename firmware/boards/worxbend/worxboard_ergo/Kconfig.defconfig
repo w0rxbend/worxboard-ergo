@@ -1,0 +1,25 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+if BOARD_WORXBOARD_ERGO
+config ZMK_KEYBOARD_NAME
+    default "worxboard ergo"
+config RP2_FLASH_W25Q080
+    default y
+if ZMK_DISPLAY
+config LV_Z_VDB_SIZE
+    default 100
+config LV_DPI_DEF
+    default 161
+config LV_Z_BITS_PER_PIXEL
+    default 1
+choice LV_COLOR_DEPTH
+    default LV_COLOR_DEPTH_1
+endchoice
+config LS0XX_VCOM_THREAD_PRIO
+    default 11
+choice ZMK_DISPLAY_WORK_QUEUE
+    default ZMK_DISPLAY_WORK_QUEUE_DEDICATED
+endchoice
+config ZMK_DISPLAY_BLANK_ON_IDLE
+    default n
+endif
+endif

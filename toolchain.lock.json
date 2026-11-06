@@ -1,0 +1,12 @@
+{
+  "python": "3.12",
+  "build123d": "0.13.0",
+  "freecad_validated": "1.1.4",
+  "zephyr_sdk": "0.16.9",
+  "images": {
+    "kicad": "kicad/kicad@sha256:3224d1bf143185ecc1bd3a1082a36f37f0f4e59d707983a16515a845e3737fc6",
+    "zmk": "zmkfirmware/zmk-build-arm@sha256:edb1c953438c6f720ddb79c3762f3972013b7fbbaf4fff3592fc869983e7afc5"
+  },
+  "kicad_version": "10.0.7",
+  "zmk_revision": "4dd95d7840eb3d5a3f59bb29fbf1ab054715ef85"
+}

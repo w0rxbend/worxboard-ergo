@@ -1,0 +1,273 @@
+{
+  "status": "prototype_geometry_checked",
+  "parts": [
+    {
+      "variant": "mx",
+      "part": "tray",
+      "valid_solid": true,
+      "solids": 1,
+      "volume_mm3": 238411.30443,
+      "bounds_mm": [
+        457.0,
+        185.0,
+        11.5
+      ],
+      "step_roundtrip": true
+    },
+    {
+      "variant": "mx",
+      "part": "plate",
+      "valid_solid": true,
+      "solids": 1,
+      "volume_mm3": 98288.31603,
+      "bounds_mm": [
+        457.0,
+        185.0,
+        1.5
+      ],
+      "step_roundtrip": true
+    },
+    {
+      "variant": "mx",
+      "part": "display_bezel",
+      "valid_solid": true,
+      "solids": 1,
+      "volume_mm3": 2746.212,
+      "bounds_mm": [
+        44.0,
+        26.0,
+        5.1
+      ],
+      "step_roundtrip": true
+    },
+    {
+      "variant": "mx",
+      "part": "palm_rest",
+      "valid_solid": true,
+      "solids": 1,
+      "volume_mm3": 198463.92686,
+      "bounds_mm": [
+        443.0,
+        56.0,
+        8.0
+      ],
+      "step_roundtrip": true
+    },
+    {
+      "variant": "mx",
+      "part": "tray_left",
+      "valid_solid": true,
+      "solids": 1,
+      "volume_mm3": 97450.66673,
+      "bounds_mm": [
+        185.0,
+        185.0,
+        11.5
+      ],
+      "step_roundtrip": true
+    },
+    {
+      "variant": "mx",
+      "part": "tray_right",
+      "valid_solid": true,
+      "solids": 1,
+      "volume_mm3": 140960.6377,
+      "bounds_mm": [
+        272.0,
+        185.0,
+        11.5
+      ],
+      "step_roundtrip": true
+    },
+    {
+      "variant": "mx",
+      "part": "plate_left",
+      "valid_solid": true,
+      "solids": 1,
+      "volume_mm3": 39569.75218,
+      "bounds_mm": [
+        185.0,
+        185.0,
+        1.5
+      ],
+      "step_roundtrip": true
+    },
+    {
+      "variant": "mx",
+      "part": "plate_right",
+      "valid_solid": true,
+      "solids": 1,
+      "volume_mm3": 58718.56385,
+      "bounds_mm": [
+        272.0,
+        185.0,
+        1.5
+      ],
+      "step_roundtrip": true
+    },
+    {
+      "variant": "mx",
+      "part": "palm_rest_left",
+      "valid_solid": true,
+      "solids": 1,
+      "volume_mm3": 79743.96343,
+      "bounds_mm": [
+        178.0,
+        56.0,
+        8.0
+      ],
+      "step_roundtrip": true
+    },
+    {
+      "variant": "mx",
+      "part": "palm_rest_right",
+      "valid_solid": true,
+      "solids": 1,
+      "volume_mm3": 118719.96343,
+      "bounds_mm": [
+        265.0,
+        56.0,
+        8.0
+      ],
+      "step_roundtrip": true
+    },
+    {
+      "variant": "choc",
+      "part": "tray",
+      "valid_solid": true,
+      "solids": 1,
+      "volume_mm3": 229119.70556,
+      "bounds_mm": [
+        457.0,
+        185.0,
+        9.0
+      ],
+      "step_roundtrip": true
+    },
+    {
+      "variant": "choc",
+      "part": "plate",
+      "valid_solid": true,
+      "solids": 1,
+      "volume_mm3": 79211.11683,
+      "bounds_mm": [
+        457.0,
+        185.0,
+        1.2
+      ],
+      "step_roundtrip": true
+    },
+    {
+      "variant": "choc",
+      "part": "display_bezel",
+      "valid_solid": true,
+      "solids": 1,
+      "volume_mm3": 2643.744,
+      "bounds_mm": [
+        44.0,
+        26.0,
+        4.8
+      ],
+      "step_roundtrip": true
+    },
+    {
+      "variant": "choc",
+      "part": "palm_rest",
+      "valid_solid": true,
+      "solids": 1,
+      "volume_mm3": 198463.92686,
+      "bounds_mm": [
+        443.0,
+        56.0,
+        8.0
+      ],
+      "step_roundtrip": true
+    },
+    {
+      "variant": "choc",
+      "part": "tray_left",
+      "valid_solid": true,
+      "solids": 1,
+      "volume_mm3": 93457.3673,
+      "bounds_mm": [
+        185.0,
+        185.0,
+        9.0
+      ],
+      "step_roundtrip": true
+    },
+    {
+      "variant": "choc",
+      "part": "tray_right",
+      "valid_solid": true,
+      "solids": 1,
+      "volume_mm3": 135662.33826,
+      "bounds_mm": [
+        272.0,
+        185.0,
+        9.0
+      ],
+      "step_roundtrip": true
+    },
+    {
+      "variant": "choc",
+      "part": "plate_left",
+      "valid_solid": true,
+      "solids": 1,
+      "volume_mm3": 31895.99374,
+      "bounds_mm": [
+        185.0,
+        185.0,
+        1.2
+      ],
+      "step_roundtrip": true
+    },
+    {
+      "variant": "choc",
+      "part": "plate_right",
+      "valid_solid": true,
+      "solids": 1,
+      "volume_mm3": 47315.12308,
+      "bounds_mm": [
+        272.0,
+        185.0,
+        1.2
+      ],
+      "step_roundtrip": true
+    },
+    {
+      "variant": "choc",
+      "part": "palm_rest_left",
+      "valid_solid": true,
+      "solids": 1,
+      "volume_mm3": 79743.96343,
+      "bounds_mm": [
+        178.0,
+        56.0,
+        8.0
+      ],
+      "step_roundtrip": true
+    },
+    {
+      "variant": "choc",
+      "part": "palm_rest_right",
+      "valid_solid": true,
+      "solids": 1,
+      "volume_mm3": 118719.96343,
+      "bounds_mm": [
+        265.0,
+        56.0,
+        8.0
+      ],
+      "step_roundtrip": true
+    }
+  ],
+  "not_validated": [
+    "switch retention",
+    "stabilizer fit",
+    "display supplier measurements",
+    "USB plug fit",
+    "print tile joinery",
+    "physical build"
+  ]
+}

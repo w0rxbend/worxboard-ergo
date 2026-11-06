@@ -1,0 +1,3 @@
+[submodule "references/system76-launch"]
+	path = references/system76-launch
+	url = https://github.com/system76/launch.git

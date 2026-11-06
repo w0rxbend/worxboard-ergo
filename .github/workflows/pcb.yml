@@ -1,0 +1,34 @@
+name: KiCad engineering seed
+on:
+  push:
+    paths: ["pcb/**", "layout/**", "tools/pcb.sh", ".github/workflows/pcb.yml"]
+  pull_request:
+    paths: ["pcb/**", "layout/**", "tools/pcb.sh", ".github/workflows/pcb.yml"]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  seed:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: make pcb
+      - name: Verify source to board net assignments
+        run: python3 tools/check_pcb_reports.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: unrouted-kicad-seed-and-reports
+          path: |
+            pcb/mx/
+            pcb/choc/
+            pcb/reports/
+          if-no-files-found: error
+  fabrication:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: A0 is intentionally not manufacturing approved
+        run: make check-fabrication

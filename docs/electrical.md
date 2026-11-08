@@ -1,6 +1,6 @@
 # Electronics and USB architecture
 
-A bare RP2040 scans a 6×15 matrix with one 1N4148W diode per key. Column -> switch -> diode anode -> diode cathode -> row gives `col2row`. Rows GP0–5 are inputs with pull-down; columns GP6–20 are outputs. A W25Q128JVSIQ provides 16 MiB of QSPI flash; the final 512 KiB is reserved for settings. A 12 MHz crystal, RP2040 supply decoupling, AP2112K 3.3 V regulator, reset, BOOT and SWD test points are included in the schematic.
+A bare RP2040 scans a 6×15 matrix with one 1N4148W diode per installed key. This revision stuffs 48 of those positions. Column -> switch -> diode anode -> diode cathode -> row gives `col2row`. Rows GP0–5 are inputs with pull-down; columns GP6–20 are outputs. A W25Q128JVSIQ provides 16 MiB of QSPI flash; the final 512 KiB is reserved for settings. A 12 MHz crystal, RP2040 supply decoupling, AP2112K 3.3 V regulator, reset, BOOT and SWD test points are included in the schematic.
 
 | GPIO | Function |
 |---|---|
@@ -21,7 +21,7 @@ USB inputs operate at USB 2.0 full speed through the RP2040 PHY. No PD, charging
 
 The present `.kicad_pcb` files contain footprints and complete pad net assignments with **zero routed tracks**. They are editable placement seeds. Service-strip placement is provisional; the MCU power parts, crystal and USB components must be moved into correct local groups. The current DRC findings are committed, including unconnected nets and placement problems. No Gerbers or fabrication-ready claims are supplied.
 
-The RGB header exposes VSYS, GP29 data and ground. It does not implement Launch's per-key RGB. A1 must choose a low-current LED architecture, add a suitable data level shifter and power switch, calculate pre-enumeration/suspend current, and include LED cutouts and decoupling. Do not attach an unrestricted LED chain directly to this header.
+The plate has a 2.6 × 1.1 mm window south of every switch for a later SK6812MINI-E. The schematic does not stuff that chain. GP0–GP29 are already assigned, so there is no pin left for a load-switch enable. Eighty-seven addressable LEDs at about 1 mA each would exceed the 2.5 mA USB suspend budget even when dark, and full-white current is far beyond USB 2.0. The RGB header still exposes VSYS, GP29 and ground for a bench experiment. A populated chain needs a level shifter, per-LED decoupling, a default-off power switch, and a measured current limit before it can be routed. Do not attach an unrestricted LED chain directly to this header.
 
 J6 and J7 each take a single 2-pin shunt on a 3-pin header. Put both shunts on pins 1–2 for normal firmware selection. For ROM flashing, disconnect USB, move both to pins 2–3, and use only the center USB input. This fixes SEL0=1 and SEL1=0 while disconnecting the firmware control signals, so ROM USB can work without executing the selector code. Hold BOOT while pressing RESET, then copy UF2 to RPI-RP2. Disconnect USB before restoring both shunts to 1–2. Both settings and physical pin numbering must be checked during A1; SWD remains the first bring-up/recovery method. The 1 kΩ firmware-side resistors also limit accidental drive contention during jumper mistakes.
 

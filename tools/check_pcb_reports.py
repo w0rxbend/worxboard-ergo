@@ -6,5 +6,5 @@ root=Path(__file__).resolve().parents[1]
 for v in ['mx','choc']:
  data=json.loads((root/f'pcb/reports/{v}-connectivity.json').read_text())
  assert not data['mismatches'],(v,data['mismatches'])
- assert data['switches']==87
+ assert data['switches']==48
  print(v,'schematic/PCB pad assignments match;',data['tracks'],'tracks; unrouted design seed')

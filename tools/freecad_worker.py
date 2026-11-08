@@ -10,7 +10,7 @@ for variant in ['mx','choc']:
  folder=root/'cad/exports'/variant
  doc=App.newDocument('Ergo_'+variant)
  expected={}
- for name in ['tray','plate','display_bezel','palm_rest']:
+ for name in ['chassis','plate','display_bezel','palm_rest']:
   shape=Part.read(str(folder/(name+'.step')))
   if not shape.isValid() or len(shape.Solids)!=1:raise RuntimeError('invalid '+name)
   obj=doc.addObject('PartDesign::Feature',name);obj.Label=name;obj.Shape=shape

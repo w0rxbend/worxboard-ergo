@@ -1,17 +1,25 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
+"""Split Planck, pulled apart like a Microsoft ergonomic board.
+
+Each half is a straight 4×6 ortholinear block, the same grid as one side of
+a Planck. The halves are splayed so the front opens toward the typist, with
+a clear valley between them. A low rear bay joins the halves for one PCB,
+the center USB-C mouth, and the memory LCD. A short palm rest sits in front
+of both wells and dips at the center. There is no number pad and no function
+row; those keys live on the Lower layer. Coordinates are millimeters: x
+right, y toward the typist.
+"""
 from dataclasses import dataclass, asdict
 from functools import lru_cache
 from math import cos, sin, radians
-from shapely.geometry import Polygon, box
+from shapely.geometry import Polygon, Point, box, LineString
 from shapely.affinity import rotate, translate
 from shapely.ops import unary_union
+
 U = 19.05
 ANGLE = 10.0
-GAP = 48.0
-DISPLAY = {"x": 0.0, "y": 43.0, "width": 36.0, "depth": 14.0,
-           "module_width": 36.0, "module_depth": 18.0, "window_width": 32.0, "window_depth": 12.0}
-# Three USB-C mouths on the rear edge, pointing away from the typist.
-PORTS = {"left": (-135.0, -47.0), "center": (0.0, -47.0), "right": (135.0, -47.0)}
+GAP = 24.0
+RIM = 9.0
 variants = {
  "mx": {"name": "Cherry MX / Kailh MX hot-swap", "cut": 14.0, "plate": 1.5,
         "plate_to_pcb": 5.0, "pcb_top": 8.0, "cap_height": 11.5},
@@ -31,60 +39,235 @@ class Key:
  col: int
  side: str
  def polygon(self, inset=0.7):
-  p=box(-self.w*U/2+inset,-U/2+inset,self.w*U/2-inset,U/2-inset)
-  return translate(rotate(p,self.angle,origin=(0,0)),self.x,self.y)
-# left groups are specified outer -> inner; right groups inner -> outer.
-ROWS = [
- ([('Esc','ESC',1),('F1','F1',1),('F2','F2',1),('F3','F3',1),('F4','F4',1),('F5','F5',1),('F6','F6',1)],
-  [('F7','F7',1),('F8','F8',1),('F9','F9',1),('F10','F10',1),('F11','F11',1),('F12','F12',1)]),
- ([('`','GRAVE',1),('1','N1',1),('2','N2',1),('3','N3',1),('4','N4',1),('5','N5',1),('6','N6',1)],
-  [('7','N7',1),('8','N8',1),('9','N9',1),('0','N0',1),('-','MINUS',1),('=','EQUAL',1),('Bksp','BSPC',2)]),
- ([('Tab','TAB',1.5),('Q','Q',1),('W','W',1),('E','E',1),('R','R',1),('T','T',1)],
-  [('Y','Y',1),('U','U',1),('I','I',1),('O','O',1),('P','P',1),('[','LBKT',1),(']','RBKT',1),('\\','BSLH',1.5)]),
- ([('Caps','CAPS',1.75),('A','A',1),('S','S',1),('D','D',1),('F','F',1),('G','G',1)],
-  [('H','H',1),('J','J',1),('K','K',1),('L','L',1),(';','SEMI',1),("'",'SQT',1),('Enter','RET',2.25)]),
- ([('Shift','LSHFT',2.25),('Z','Z',1),('X','X',1),('C','C',1),('V','V',1),('B','B',1)],
-  [('N','N',1),('M','M',1),(',','COMMA',1),('.','DOT',1),('/','FSLH',1),('Shift','RSHFT',2.75)]),
- ([('Ctrl','LCTRL',1.25),('Win','LGUI',1.25),('Alt','LALT',1.25),('Space','SPACE',2)],
-  [('Space','SPACE',2),('Alt','RALT',1.25),('Fn','FN',1.25),('Ctrl','RCTRL',1.25)]),
+  p = box(-self.w * U / 2 + inset, -U / 2 + inset, self.w * U / 2 - inset, U / 2 - inset)
+  return translate(rotate(p, self.angle, origin=(0, 0)), self.x, self.y)
+
+# Column 0 is the inner column. Every key is 1u, Planck-style.
+# Left, rear to front: Tab Q W E R T / Esc A S D F G / Shift Z X C V B / Ctrl Win Alt Lower Space Space
+# Right, rear to front: Y U I O P Bksp / H J K L ; ' / N M , . / Shift / Raise Left Down Up Right Enter
+_LEFT = [
+ [("T", "T", 0), ("R", "R", 1), ("E", "E", 2), ("W", "W", 3), ("Q", "Q", 4), ("Tab", "TAB", 5)],
+ [("G", "G", 0), ("F", "F", 1), ("D", "D", 2), ("S", "S", 3), ("A", "A", 4), ("Esc", "ESC", 5)],
+ [("B", "B", 0), ("V", "V", 1), ("C", "C", 2), ("X", "X", 3), ("Z", "Z", 4), ("Shift", "LSHFT", 5)],
+ [("Space", "SPACE", 0), ("Space", "SPACE", 1), ("Lower", "FN", 2), ("Alt", "LALT", 3), ("Win", "LGUI", 4), ("Ctrl", "LCTRL", 5)],
 ]
+_RIGHT = [
+ [("Y", "Y", 0), ("U", "U", 1), ("I", "I", 2), ("O", "O", 3), ("P", "P", 4), ("Bksp", "BSPC", 5)],
+ [("H", "H", 0), ("J", "J", 1), ("K", "K", 2), ("L", "L", 3), (";", "SEMI", 4), ("'", "SQT", 5)],
+ [("N", "N", 0), ("M", "M", 1), (",", "COMMA", 2), (".", "DOT", 3), ("/", "FSLH", 4), ("Shift", "RSHFT", 5)],
+ [("Raise", "RAISE", 0), ("Left", "LEFT", 1), ("Down", "DOWN", 2), ("Up", "UP", 3), ("Right", "RIGHT", 4), ("Enter", "RET", 5)],
+]
+
+def _world(side, col, row):
+ """Column 0 sits on the inner edge of the well. Rotation opens the front."""
+ lx = (col + 0.5) * U
+ ly = row * U
+ pivot = -GAP / 2.0 if side == "left" else GAP / 2.0
+ x = pivot - lx if side == "left" else pivot + lx
+ a = radians(ANGLE if side == "left" else -ANGLE)
+ dx, dy = x - pivot, ly
+ return pivot + dx * cos(a) - dy * sin(a), dx * sin(a) + dy * cos(a)
+
 @lru_cache
 def keys():
- result=[]
- for row,(left,right) in enumerate(ROWS):
-  for side,items in [('left',left),('right',right)]:
-   total=sum(v[2] for v in items)*U
-   cursor=-GAP/2-total if side=='left' else GAP/2
-   angle=ANGLE if side=='left' else -ANGLE
-   # rotate about each inner top edge; the halves open toward the rear.
-   pivot=-GAP/2 if side=='left' else GAP/2
-   for col,(label,code,w) in enumerate(items):
-    x=cursor+w*U/2; y=row*U
-    a=radians(angle); dx=x-pivot
-    xx=pivot+dx*cos(a)-y*sin(a); yy=dx*sin(a)+y*cos(a)
-    result.append(Key(f'K{len(result)+1:03}',label,code,round(xx,4),round(yy,4),w,angle,row,col+(0 if side=='left' else 8),side))
-    cursor+=w*U
- # The compact TKL navigation block is separate from the angled alpha section.
- for row,labels in [(0,[('PrtSc','PSCRN'),('ScrLk','SLCK'),('Pause','PAUSE_BREAK')]),
-                    (1,[('Ins','INS'),('Home','HOME'),('PgUp','PG_UP')]),
-                    (2,[('Del','DEL'),('End','END'),('PgDn','PG_DN')]),
-                    (4,[('Up','UP')]),
-                    (5,[('Left','LEFT'),('Down','DOWN'),('Right','RIGHT')])]:
-  for j,(label,code) in enumerate(labels):
-   col=(1 if row==4 else j)
-   result.append(Key(f'K{len(result)+1:03}',label,code,214+col*U,row*U,1,0,row,16+col,'nav'))
+ result = []
+ plan = [("left", row, items) for row, items in enumerate(_LEFT)]
+ plan += [("right", row, items) for row, items in enumerate(_RIGHT)]
+ for side, row, items in plan:
+  for label, code, col in items:
+   x, y = _world(side, col, row)
+   angle = ANGLE if side == "left" else -ANGLE
+   result.append(Key(
+    f"K{len(result) + 1:03}", label, code, round(x, 4), round(y, 4), 1.0, angle,
+    row, col if side == "left" else col + 6, side))
  return tuple(result)
+
+def _largest(shape):
+ if shape.geom_type == "Polygon":
+  return shape
+ if shape.geom_type == "MultiPolygon":
+  shape = max(shape.geoms, key=lambda g: g.area)
+ if shape.geom_type != "Polygon":
+  raise RuntimeError(f"outline is {shape.geom_type}")
+ return shape
+
+def _smooth(shape, tol=0.2):
+ """Drop the tiny buffer facets that leave an open seam in the case mesh."""
+ shape = _largest(shape.buffer(0))
+ shape = shape.simplify(tol, preserve_topology=True)
+ def ring(coords):
+  pts = []
+  for x, y in coords:
+   if not pts or (x - pts[-1][0]) ** 2 + (y - pts[-1][1]) ** 2 > 0.08 ** 2:
+    pts.append((round(float(x), 3), round(float(y), 3)))
+  if len(pts) > 2 and (pts[0][0] - pts[-1][0]) ** 2 + (pts[0][1] - pts[-1][1]) ** 2 < 0.08 ** 2:
+   pts.pop()
+  if len(pts) < 3:
+   raise RuntimeError("degenerate ring")
+  return pts
+ holes = [ring(r.coords) for r in shape.interiors]
+ return Polygon(ring(shape.exterior.coords), [h for h in holes if len(h) >= 3])
+
 @lru_cache
 def outline():
- # Rounded single-piece enclosure; union bridges the central display and electronics bay.
- groups=[k.polygon(0).buffer(7,join_style=1) for k in keys()]
- groups += [box(-185,-45,272,140)]
- return unary_union(groups).buffer(2).buffer(-2)
+ """Two rounded Planck slabs and a low rear bay. The palm rest is not part of the PCB.
+
+ Each slab is the 4×6 block plus a rim. The bay is only deep enough for the
+ center USB-C mouth, the memory LCD, and the controller. It blends into both
+ slabs so the valley between the wells stays open toward the typist.
+ """
+ planks = []
+ for side in ("left", "right"):
+  block = unary_union([k.polygon(0) for k in keys() if k.side == side])
+  planks.append(block.buffer(RIM, join_style=1, quad_segs=3))
+ bay = box(-78, -56, 78, -6).buffer(7, join_style=1, quad_segs=3)
+ body = unary_union(planks + [bay])
+ deck = body.buffer(1.6, join_style=1, quad_segs=2).buffer(-1.6, join_style=1, quad_segs=2)
+ return _smooth(deck)
+
+def _display_dict():
+ """Seat the LCD on the rear spine, clear of every key."""
+ deck = outline()
+ best = None
+ y = deck.bounds[1] + 11
+ while y < 5:
+  rect = box(-18, y - 9, 18, y + 9)
+  if deck.contains(rect):
+   gap = min(rect.distance(k.polygon()) for k in keys())
+   if gap > 2.4 and (best is None or y > best[1]):
+    best = (gap, y)
+  y += 1.0
+ if best is None:
+  raise RuntimeError("no display seat on the rear spine")
+ return {"x": 0.0, "y": round(best[1], 2), "width": 36.0, "depth": 14.0,
+         "module_width": 36.0, "module_depth": 18.0, "window_width": 32.0, "window_depth": 12.0}
+
+DISPLAY = _display_dict()
+
+def _rear_y(poly, x):
+ line = LineString([(x, poly.bounds[1] - 20), (x, poly.bounds[3] + 20)])
+ hit = poly.intersection(line)
+ if hit.is_empty:
+  raise RuntimeError(f"no rear edge at x={x}")
+ return hit.bounds[1]
+
+@lru_cache
+def ports():
+ """Three USB-C mouths on the rear edge, opening away from the typist."""
+ deck = outline()
+ minx, maxx = deck.bounds[0], deck.bounds[2]
+ found = {}
+ for name, x in (("left", minx + 22), ("center", 0.0), ("right", maxx - 22)):
+  y = _rear_y(deck, x) + 2.2
+  found[name] = (round(x, 2), round(y, 2))
+ return found
+
+def _safe_region():
+ deck = outline()
+ d = DISPLAY
+ blocked = [k.polygon().buffer(4.3) for k in keys()]
+ blocked.append(box(d["x"] - d["module_width"] / 2 - 1.5, d["y"] - d["module_depth"] / 2 - 1.5,
+                     d["x"] + d["module_width"] / 2 + 1.5, d["y"] + d["module_depth"] / 2 + 1.5))
+ for x, y in ports().values():
+  blocked.append(box(x - 6.5, y - 2.5, x + 6.5, y + 14))
+ return deck.buffer(-4.6).difference(unary_union(blocked))
+
 @lru_cache
 def holes():
- # M2.5 case screws outside keycap sweep; values measured by layout validator.
- return ((-176,-34),(-70,-34),(70,-34),(260,-34),(-176,130),(-70,130),(70,130),(260,130),(0,130),(35,-34))
+ """M2.5 bosses in the plank corners and on the spine. Clear of keys, LCD, and USB."""
+ region = _safe_region()
+ minx, miny, maxx, maxy = outline().bounds
+ cands = []
+ x = minx
+ while x <= maxx:
+  y = miny
+  while y <= maxy:
+   if region.contains(Point(x, y)):
+    cands.append((x, y))
+   y += 2.5
+  x += 2.5
+ if len(cands) < 8:
+  raise RuntimeError(f"only {len(cands)} screw sites")
+
+ def take(pred):
+  pool = [c for c in cands if pred(c) and all((c[0] - p[0]) ** 2 + (c[1] - p[1]) ** 2 > 16 ** 2 for p in picked)]
+  if not pool:
+   return None
+  return pool[0]
+
+ picked = []
+ seeds = [
+  lambda c: c[0] < minx + 28 and c[1] < miny + 28,
+  lambda c: c[0] > maxx - 28 and c[1] < miny + 28,
+  lambda c: c[0] < minx + 28 and c[1] > maxy - 28,
+  lambda c: c[0] > maxx - 28 and c[1] > maxy - 28,
+  lambda c: c[0] < -20 and c[1] < 0,
+  lambda c: c[0] > 20 and c[1] < 0,
+  lambda c: abs(c[0]) < 30 and c[1] < DISPLAY["y"],
+  lambda c: abs(c[0]) < 40 and c[1] > 20,
+ ]
+ for pred in seeds:
+  hit = take(pred)
+  if hit:
+   picked.append(hit)
+ # Fill to eight with the points farthest from those already chosen.
+ while len(picked) < 8:
+  nxt = max(cands, key=lambda c: min((c[0] - p[0]) ** 2 + (c[1] - p[1]) ** 2 for p in picked))
+  if min((nxt[0] - p[0]) ** 2 + (nxt[1] - p[1]) ** 2 for p in picked) < 15 ** 2:
+   break
+  picked.append(nxt)
+ if len(picked) < 6:
+  raise RuntimeError(f"only {len(picked)} screws")
+ return tuple(sorted((round(x, 2), round(y, 2)) for x, y in picked))
+
+@lru_cache
+def palm_outline():
+ """One short rest across both planks, with a center dip so the valley still reads."""
+ deck = outline()
+ keys_block = unary_union([k.polygon().buffer(1.0) for k in keys()])
+ lobes = []
+ for side in ("left", "right"):
+  band = unary_union([k.polygon(0) for k in keys() if k.side == side and k.row == 3])
+  minx, _, maxx, maxy = band.bounds
+  lobes.append(box(minx - 8, maxy - 8, maxx + 10, maxy + 13))
+ link = box(-32, deck.bounds[3] - 10, 32, deck.bounds[3] + 4)
+ shape = unary_union(lobes + [link]).difference(keys_block)
+ shape = shape.buffer(3.2, join_style=1, quad_segs=2).buffer(-2.8, join_style=1, quad_segs=2)
+ shape = shape.difference(keys_block)
+ return _smooth(shape, 0.22)
+
+@lru_cache
+def palm_screws():
+ """Two screws in the palm overhang, one on each side. They do not go through the PCB."""
+ deck = outline()
+ shelf = palm_outline().difference(deck.buffer(0.3))
+ found = []
+ minx, miny, maxx, maxy = shelf.bounds
+ for sign in (-1, 1):
+  best = None
+  target = sign * max(40.0, (maxx - minx) * 0.28)
+  x = minx
+  while x <= maxx:
+   y = miny
+   while y <= maxy:
+    if sign * x > 12 and shelf.contains(Point(x, y)) and shelf.boundary.distance(Point(x, y)) > 2.4:
+     score = abs(x - target) + abs(y - (miny + maxy) / 2) * 0.4
+     if best is None or score < best[0]:
+      best = (score, (round(x, 2), round(y, 2)))
+    y += 1.5
+   x += 1.5
+  if best is None:
+   raise RuntimeError(f"no palm screw on {'left' if sign < 0 else 'right'}")
+  found.append(best[1])
+ return tuple(found)
+
+# Imported name used by the PCB placer and the case. Computed once from the deck.
+PORTS = ports()
+
 def serializable():
- return {'units':'mm','angle_deg':ANGLE,'gap_mm':GAP,'matrix':{'rows':6,'cols':15},
-  'keys':[asdict(k) for k in keys()], 'outline':[list(p) for p in outline().exterior.coords],
-  'holes':holes(),'display':DISPLAY,'ports':PORTS,'variants':variants}
+ return {"units": "mm", "angle_deg": ANGLE, "gap_mm": GAP, "matrix": {"rows": 6, "cols": 15},
+  "keys": [asdict(k) for k in keys()],
+  "outline": [list(p) for p in outline().exterior.coords],
+  "palm": [list(p) for p in palm_outline().exterior.coords],
+  "holes": holes(), "display": DISPLAY, "ports": PORTS, "variants": variants,
+  "palm_screws": palm_screws()}

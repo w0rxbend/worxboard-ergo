@@ -6,10 +6,10 @@
     "save_reopen_passed": true,
     "solid_count": 4,
     "volumes_mm3": {
-      "tray": 238411.30443025206,
-      "plate": 98288.31603357969,
-      "display_bezel": 2746.2119999999995,
-      "palm_rest": 198463.92685575638
+      "chassis": 127252.53711930435,
+      "plate": 30665.21794209342,
+      "display_bezel": 2484.16,
+      "palm_rest": 32465.999629451646
     }
   },
   {
@@ -19,10 +19,10 @@
     "save_reopen_passed": true,
     "solid_count": 4,
     "volumes_mm3": {
-      "tray": 229119.70555902773,
-      "plate": 79211.11682687578,
-      "display_bezel": 2643.7439999999997,
-      "palm_rest": 198463.92685575638
+      "chassis": 120451.93921049999,
+      "plate": 24852.43035368116,
+      "display_bezel": 2385.088000000001,
+      "palm_rest": 32465.999629451646
     }
   }
 ]

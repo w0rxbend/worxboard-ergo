@@ -1,9 +1,9 @@
 {
   "variant": "choc",
-  "assigned_schematic_pins": 614,
-  "pcb_numbered_pads": 614,
+  "assigned_schematic_pins": 458,
+  "pcb_numbered_pads": 458,
   "mismatches": [],
-  "switches": 87,
+  "switches": 48,
   "tracks": 0,
   "fabrication_ready": false
 }

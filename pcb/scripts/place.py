@@ -6,8 +6,9 @@ import json,sys,uuid,xml.etree.ElementTree as ET
 from pathlib import Path
 import pcbnew as p
 ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT))
-from layout import keys,outline,holes,PORTS,DISPLAY
+from layout import keys,outline,holes
 from pcb.scripts.design import design
+from pcb.scripts.support_places import placements
 OFFSET=(200,60)
 NS=uuid.UUID('a40b4a5d-7dfe-4659-baea-2f023ee1c88a')
 def vec(x,y):return p.VECTOR2I(p.FromMM(x+OFFSET[0]),p.FromMM(y+OFFSET[1]))
@@ -23,22 +24,16 @@ def main(v):
   for node in n.findall('node'):padnets[node.attrib['ref'],node.attrib['pin']]=net
  comp={c.attrib['ref']:c for c in root.findall('components/comp')}
  key_map={k.id:k for k in keys()}
- group_counts={};placements={}
- fixed={'U1':(0,0),'U2':(0,18),'U3':(18,-24),'U7':(0,-18),'Y1':(11,0),
-        'SW1':(-12,75),'SW2':(12,75),'J4':(-5.08,53),'J5':(0,83),'J6':(-6,94),'J7':(6,94),
-         'U4':(-135,-35),'U5':(0,-35),'U6':(135,-35),
-        'C1':(14,-24),'C2':(14,-20),'C3':(18,-18),'C4':(22,-24),
-        'C5':(5,18),'C6':(10,-4),'C7':(14,-4),
-        'R7':(14,4),'R8':(-5,18),'R9':(-12,69),'R10':(12,69),
-        'R3':(-5,-8),'R4':(5,-8),'C20':(0,-22),
-        'R40':(-4,-18),'R41':(4,-18),'R42':(-4,-14),'R43':(4,-14),
-        'TP8':(-4,27),'TP9':(0,27),'TP10':(4,27)}
- for n,xy in zip(range(8,20),[(-6,-6),(0,-6),(6,-6),(6,0),(6,6),(0,6),(-6,6),(-6,0),(-6,10),(6,10),(-9,-3),(9,-3)]):
-  fixed[f'C{n}']=xy
- for i,x in enumerate([-135,0,135],1):
-  for delta,dx in [(0,-8),(1,-5),(2,5),(3,8)]:fixed[f'R{20+i*5+delta}']=(x+dx,-35)
-  fixed[f'D{i}']=(x+12,-35)
- for i,(port,(x,y)) in enumerate(PORTS.items(),1):fixed[f'J{i}']=(x,y+7)
+ placed={}
+ fixed, sites = placements()
+ used=[xy for xy in fixed.values()]
+ def take_site():
+  while sites:
+   xy=sites.pop(0)
+   if all((xy[0]-x)**2+(xy[1]-y)**2>3.4**2 for x,y in used):
+    used.append(xy)
+    return xy
+  raise RuntimeError('no support-part seat left on the deck')
  for part in design(v):
   lib,fpname=part.footprint.split(':',1)
   libpath=ROOT/'pcb/lib/worxboard.pretty' if lib=='worxboard' else Path('/usr/share/kicad/footprints')/(lib+'.pretty')
@@ -61,9 +56,8 @@ def main(v):
   elif part.ref in fixed:
    x,y=fixed[part.ref];angle=0
   else:
-   # Initial component placement in the rear service strip. Refine before routing.
-   idx=group_counts.get('service',0);group_counts['service']=idx+1
-   x=-166+(idx%26)*12.5;y=-17+(idx//26)*7;angle=0
+   # 0402 and test points pack into the rear spine. Refine before routing.
+   x,y=take_site();angle=0
   fp.SetPosition(vec(x,y));fp.SetOrientationDegrees(angle)
   fp.Reference().SetVisible(False);fp.Value().SetVisible(False)
   c=comp[part.ref];stamp=c.findtext('tstamps','').strip()
@@ -71,14 +65,14 @@ def main(v):
   for pad in fp.Pads():
    net=padnets.get((part.ref,pad.GetNumber()))
    if net is not None:pad.SetNet(net)
-  placements[part.ref]={'x':x,'y':y,'angle':angle,'footprint':part.footprint}
+  placed[part.ref]={'x':x,'y':y,'angle':angle,'footprint':part.footprint}
  pts=list(outline().buffer(-3.4).exterior.coords)
  for a,b in zip(pts,pts[1:]):
   edge=p.PCB_SHAPE();edge.SetShape(p.SHAPE_T_SEGMENT);edge.SetLayer(p.Edge_Cuts)
   edge.SetStart(vec(*a));edge.SetEnd(vec(*b));edge.SetWidth(p.FromMM(.05));board.Add(edge)
  label=p.PCB_TEXT(board);label.SetText('worxboard ergo '+v+' A0 — UNROUTED / DO NOT FABRICATE')
- label.SetPosition(vec(30,120));label.SetLayer(p.F_SilkS);label.SetTextSize(p.VECTOR2I(p.FromMM(1.2),p.FromMM(1.2)));board.Add(label)
+ label.SetPosition(vec(36,-48));label.SetLayer(p.F_SilkS);label.SetTextSize(p.VECTOR2I(p.FromMM(1.2),p.FromMM(1.2)));board.Add(label)
  p.SaveBoard(str(folder/(name+'.kicad_pcb')),board)
- (folder/'placement.json').write_text(json.dumps(placements,indent=2)+'\n')
+ (folder/'placement.json').write_text(json.dumps(placed,indent=2)+'\n')
  print(v,len(list(board.GetFootprints())),'footprints, UNROUTED')
 if __name__=='__main__':main(sys.argv[1])

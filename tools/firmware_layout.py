@@ -23,7 +23,7 @@ def main():
  };
  ergo_layout: ergo_layout {
   compatible = "zmk,physical-layout";
-  display-name = "Ergonomic TKL 87";
+  display-name = "Split Planck 48";
   transform = <&ergo_transform>;
   kscan = <&kscan0>;
   keys ='''+','.join(physical)+''';
@@ -31,22 +31,22 @@ def main():
 };
 '''
  (b/'worxboard-ergo-layout.dtsi').write_text(text)
- base=['&mo 1' if k.code=='FN' else '&kp '+k.code for k in ks]
- fn=[]
+ base=[]
  for k in ks:
-  code={'F1':'C_MUTE','F2':'C_VOL_DN','F3':'C_VOL_UP','F4':'C_PREV','F5':'C_PP','F6':'C_NEXT',
-        'UP':'PG_UP','DOWN':'PG_DN','LEFT':'HOME','RIGHT':'END'}.get(k.code)
-  fn.append('&kp '+code if code else '&trans')
+  if k.code=='FN': base.append('&mo 1')
+  elif k.code=='RAISE': base.append('&mo 2')
+  else: base.append('&kp '+k.code)
+ # Lower layer carries the number row and function keys this 4-row grid does not show.
+ fn_map={'Q':'N1','W':'N2','E':'N3','R':'N4','T':'N5','Y':'N6','U':'N7','I':'N8','O':'N9','P':'N0',
+         'A':'F1','S':'F2','D':'F3','F':'F4','G':'F5','H':'F6','J':'F7','K':'F8','L':'F9','SEMI':'F10',
+         'SQT':'F11','BSPC':'DEL','UP':'PG_UP','DOWN':'PG_DN','LEFT':'HOME','RIGHT':'END'}
+ fn=['&kp '+fn_map[k.code] if k.code in fn_map else '&trans' for k in ks]
  maintenance=['&trans']*len(ks)
- maintenance[0]='&bootloader'
- maintenance[1]='&sys_reset'
+ maintenance[next(i for i,k in enumerate(ks) if k.code=='ESC')]='&bootloader'
+ maintenance[next(i for i,k in enumerate(ks) if k.code=='TAB')]='&sys_reset'
  text='#include <behaviors.dtsi>\n#include <dt-bindings/zmk/keys.h>\n/ { keymap { compatible = "zmk,keymap";\n'
- for name,label,bindings in [('base','BASE',base),('function','FN',fn),('maintenance','MAINT',maintenance)]:
+ for name,label,bindings in [('base','BASE',base),('lower','LOWER',fn),('raise','RAISE',maintenance)]:
   text+=f'{name} {{ label = "{label}"; bindings = <'+ ' '.join(bindings)+'>; };\n'
  text+='}; };\n'
- # Fn+Esc uses hold-tap layer? MAINT is reached via Fn+F12 momentary.
- idx=next(i for i,k in enumerate(ks) if k.code=='F12')
- text=text.replace('function { label = "FN"; bindings = <'+' '.join(fn),
-   'function { label = "FN"; bindings = <'+' '.join(fn[:idx]+['&mo 2']+fn[idx+1:]))
  (b/'worxboard_ergo.keymap').write_text(text)
 if __name__=='__main__':main()

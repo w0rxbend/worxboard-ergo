@@ -1,7 +1,7 @@
 {
     "$schema": "https://schemas.kicad.org/erc.v1.json",
     "coordinate_units": "mm",
-    "date": "2026-11-06T17:08:43",
+    "date": "2026-11-08T11:12:02",
     "ignored_checks": [
         {
             "description": "Global label only appears once in the schematic",
@@ -29,7 +29,38 @@
         {
             "path": "/",
             "uuid_path": "/3fa7a98a-b236-5a2c-b4c9-432872119175",
-            "violations": []
+            "violations": [
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'ROW4'",
+                            "pos": {
+                                "x": 91.44,
+                                "y": 58.42
+                            },
+                            "uuid": "962980f3-2212-5def-906a-668132c65930"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'ROW5'",
+                            "pos": {
+                                "x": 91.44,
+                                "y": 60.96
+                            },
+                            "uuid": "531650d4-937c-5cef-8c4a-d92897262866"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                }
+            ]
         }
     ],
     "source": "worxboard-ergo-choc.kicad_sch"

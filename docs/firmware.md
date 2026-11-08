@@ -8,11 +8,13 @@ The west manifest pins ZMK to `4dd95d7840eb3d5a3f59bb29fbf1ab054715ef85`, the sa
 ERGO_ZMK_WORKSPACE=/absolute/path/to/workspace make firmware
 ```
 
-Both variants share one electrical matrix, LCD and controller, so they use the same [UF2](../firmware/artifacts/worxboard-ergo.uf2). Generated keymaps and physical layouts come from `tools/firmware_layout.py`, not from duplicating key-order tables by hand. Bluetooth and deep sleep are disabled. The SPI memory LCD uses the built-in layer widget with labels BASE, FN and MAINT. No battery widget is enabled. USB Studio transport is included; its host connection and settings persistence need physical testing.
+Both variants share one electrical matrix, LCD and controller, so they use the same [UF2](../firmware/artifacts/worxboard-ergo.uf2). Generated keymaps and physical layouts come from `tools/firmware_layout.py`, not from duplicating key-order tables by hand. Bluetooth and deep sleep are disabled. The SPI memory LCD uses the built-in layer widget with labels BASE, LOWER and RAISE. No battery widget is enabled. USB Studio transport is included; its host connection and settings persistence need physical testing.
 
-- BASE is the standard US ANSI-style keymap shown in the layout image.
-- Hold Fn for media controls on F1–F6 and navigation on arrows.
-- Hold Fn + F12 to reach MAINT. Esc requests bootloader; F1 requests reset.
+- BASE is the 48-key Planck grid shown in the layout image.
+- Hold Lower for the number row and F1–F11.
+- Hold Raise for maintenance. Esc requests bootloader; Tab requests reset.
+
+The UF2 in `firmware/artifacts/worxboard-ergo.uf2` is 418304 bytes, SHA-256 `f27a2651ec8c12ce41b70d435c10f4e96a83a0bef5ccd3e60ec847379fea0b81`, compiled for this 48-key grid at ZMK `4dd95d7840eb3d5a3f59bb29fbf1ab054715ef85`. The linker reported 208664 bytes of flash and 40594 bytes of RAM. `build-report.json` records `hardware_tested: false`. Rebuild with `make firmware` after a keymap change. Compilation and the host verifier do not show that a keyboard was plugged in.
 
 Studio locking is disabled for the A0 development build. Before a user release, choose and test a physical unlock binding and re-enable locking. Bootloader entry requires the J6/J7 ROM setting described in [electrical.md](electrical.md); ROM USB will not choose a port by itself.
 

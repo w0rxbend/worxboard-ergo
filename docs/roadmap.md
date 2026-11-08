@@ -4,7 +4,7 @@ The workflow is started at **A0 / reviewable source and geometry**. Tasks are re
 
 | Gate | Deliverable | Acceptance |
 |---|---|---|
-| A0 | Canonical 87-key layout, MX/Choc models, KiCad seeds, ZMK board/module, CI | Editable files exist; topology, mesh and compile evidence recorded |
+| A0 | Canonical 48-key split Planck, MX/Choc models, KiCad seeds, ZMK board/module, CI | Editable files exist; topology, mesh and compile evidence recorded |
 | A1 | Electrical and mechanical review | Correct local component placement; switch/stabilizer/keycap samples selected; ROM flashing override reviewed; connector/LCD envelopes measured |
 | A2 | Routed PCBs | Both switch variants have zero ERC/DRC errors and zero unconnected nets, schematic parity, verified planes/USB pairs, reviewed stackup and BOM |
 | A3 | Fit and electronics prototype | Switch/LCD/USB coupons pass, power rails and backfeed tested, every key works, all three ports enumerate/reconnect, LCD shows correct layer, Studio remaps persist |
@@ -18,9 +18,9 @@ Immediate engineering tasks:
 - [ ] Move support components next to the MCU/regulator/crystal/connectors, check courtyards and mechanical stack; then route both boards.
 - [ ] Verify Choc footprint pin mapping, socket side, plate opening, PCB thickness and source stable wide keycaps/stabilizers. Add matching PCB stabilizer clearance holes, and adjust the familiar layout if necessary.
 - [ ] Measure actual LCD breakout/header height and mounting, then make the bezel retention functional.
-- [ ] Add fit coupons and registration/fastening for split print sections; choose palm-rest attachment and screw hardware.
+- [ ] Print the center-tab coupon and the palm-rest screws. The tab and the two shelf screws are modeled; fit is not measured.
 - [ ] Choose RGB LEDs/driver/level shifting and enforce USB current limits, suspend behavior and LED-off default.
-- [ ] Evaluate a domed/tented design against the initial flat board; document new rigid-board or interconnect geometry.
+- [ ] Decide whether roll-tenting is required. The current feet tip the whole flat deck back about 7 degrees. Separate keywell angles still need two PCBs or a flex.
 - [ ] Prototype and record measurements/photos before calling any hardware orderable.
 
 CI builds sources and firmware. Manufacturing gating remains red until A2; do not make it green by filtering unrouted errors or by adding blanket DRC exclusions.

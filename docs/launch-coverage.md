@@ -5,18 +5,18 @@ The full public [System76 Launch repository](https://github.com/system76/launch)
 | Launch capability | worxboard ergo A0 / target |
 |---|---|
 | Open source chassis/CAD/PCB/firmware | Original source and editable CAD/KiCad/ZMK starter included |
-| Compact layout without numpad | 87-key ergonomic TKL, function/navigation keys retained |
-| Split spacebar | Two 2u spaces in angled typing fields |
+| Compact layout without numpad | 48-key split Planck; numbers and function keys on the Lower layer |
+| Split spacebar | Two 1u spaces on the inner edge of the left Planck block |
 | MX hot swap | Included in MX placement seed; physical fit pending |
-| Per-switch matrix diodes / rollover | 87 diodes and ZMK matrix; host rollover not hardware tested |
+| Per-switch matrix diodes / rollover | 48 diodes in the 6×15 scan matrix; host rollover not hardware tested |
 | Per-key independent RGB | Target retained in roadmap; only expansion header exists in A0 |
 | USB 3.2 Gen 2 integrated dock | Not included: user selected three alternative host-input sockets |
 | QMK firmware | Replaced by user-requested ZMK on RP2040 |
 | System76 Keyboard Configurator | Not compatible; ZMK Studio USB transport is the selected replacement |
 | Runtime remapping/settings | Studio build configuration included; device/host testing pending |
 | fwupd/LVFS updates | Not integrated; SWD then RP2040 UF2 after mux-override design |
-| Milled aluminum chassis | STEP is supplied; CNC engineering and manufacturing review are pending |
-| Adjustable incline | Planned after flat prototype; no tilt hardware in A0 |
+| Milled aluminum chassis | Split Planck chassis and plate STEP, plus a prototype machining sheet; no first article |
+| Adjustable incline | Fixed about 7° negative tilt from unequal feet; not adjustable, and the keywells are not roll-tented |
 | Regulatory results | Upstream reference only; no product compliance claim |
 | Low-profile version | Added Choc v1 option, not a Launch PCB transplant |
 | Center layer LCD | Added SPI Sharp memory LCD with ZMK layer widget |

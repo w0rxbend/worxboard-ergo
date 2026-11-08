@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/w/pcb/choc/worxboard-ergo-choc.kicad_sch</source>
-    <date>2026-11-06T17:08:34</date>
+    <date>2026-11-08T11:11:43</date>
     <tool>Eeschema 10.0.7</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -1966,1098 +1966,6 @@
         </unit>
       </units>
     </comp>
-    <comp ref="D149">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K049</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K049"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>8c6ca948-eef7-56d0-994f-6c3beaac2460</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D150">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K050</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K050"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>f62daab7-21cd-5737-85c3-c18735536d4e</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D151">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K051</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K051"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>d75ed63b-313a-5322-a472-c306d8f6fb49</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D152">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K052</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K052"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>cf660399-980c-5343-a4b8-7b54ee141146</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D153">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K053</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K053"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>dc4a306f-c95d-53bb-98a1-54baaa762142</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D154">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K054</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K054"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>5643536d-f610-5ad3-8ca8-f8b9e10ec895</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D155">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K055</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K055"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>7513e89f-3958-529f-9841-738b4d0d6d14</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D156">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K056</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K056"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>ef9ee00f-a980-5691-abef-6d7c86588411</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D157">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K057</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K057"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>0500beed-ad8d-52af-b1f4-f0dd82258183</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D158">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K058</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K058"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>ab8cc0cb-9623-5588-a1fb-80a2d40d18df</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D159">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K059</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K059"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>b95808df-5a92-5ad1-947e-0632d7e8a7b8</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D160">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K060</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K060"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>8ebb202d-33e5-55de-b8ec-237dbd5eb3e1</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D161">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K061</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K061"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>b48f8f15-3e46-5d87-8972-bfeb427a48a0</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D162">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K062</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K062"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>e6fe6bc6-6b38-5ece-9c9f-6be776a44e18</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D163">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K063</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K063"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>3cf1c307-c038-527c-8a27-fad367f27355</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D164">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K064</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K064"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>19943cc9-7bc1-5709-b9d4-fb2e1066a88b</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D165">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K065</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K065"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>1196e67c-52a2-53ed-9fb0-3fb7b79d0b81</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D166">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K066</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K066"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>69ee1e32-775f-57a5-b7c9-a8e5387c9950</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D167">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K067</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K067"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>6a674c3f-1621-50e3-9f1a-b145b4ac5255</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D168">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K068</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K068"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>285f9188-5ae7-52cd-a630-b72e8c80302e</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D169">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K069</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K069"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>bfd62254-7cb5-543b-bedb-b8e95dda1b98</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D170">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K070</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K070"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>da61fe86-f8a2-53ab-964c-8073fe92b948</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D171">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K071</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K071"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>00cbde70-56c2-5cc6-a4dd-eb8c1db71366</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D172">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K072</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K072"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>63e89f98-abbf-51c8-bf5d-2b5d6bff6ffe</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D173">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K073</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K073"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>c7e0c134-a327-5c88-8dce-833a29c4c226</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D174">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K074</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K074"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>d5285e03-1b8e-5fdf-b4c0-0d7c464d0820</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D175">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K075</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K075"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>0b76783b-2c99-588d-b595-2ce07eb52e8f</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D176">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K076</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K076"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>e54df237-0082-5105-b4ba-8d27a47e1578</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D177">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K077</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K077"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>de295d87-68a8-52bc-949c-6dbcce18376f</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D178">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K078</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K078"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>44f07d83-85b2-5fc4-bee5-a3a6a642ace4</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D179">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K079</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K079"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>f4ba2e35-fcb4-5a45-88d4-8958f59e562f</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D180">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K080</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K080"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>fc9b6689-e9ff-5473-876d-be056a984910</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D181">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K081</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K081"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>3dce075f-5665-56e6-9a0d-9baad9781598</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D182">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K082</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K082"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>e7c133bc-c434-515d-81e0-e1000882b58b</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D183">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K083</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K083"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>210b6caf-79db-55b2-b76f-a87fea9d4322</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D184">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K084</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K084"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>261dd40b-ff0d-55f2-b655-133d9d12e23b</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D185">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K085</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K085"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>326eba2e-14d0-5a00-929f-41d99a207279</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D186">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K086</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K086"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>88b5f4b6-14b4-5441-a0ae-a40a88f13d33</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D187">
-      <value>1N4148W</value>
-      <footprint>Diode_SMD:D_SOD-123</footprint>
-      <fields>
-        <field name="LCSC">C81598</field>
-        <field name="Key">K087</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="LCSC" value="C81598"/>
-      <property name="Key" value="K087"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="ki_keywords" value="diode"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>aba15050-167c-5c24-a2f9-d82b4078e66f</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
     <comp ref="H1">
       <value>M2.5</value>
       <footprint>MountingHole:MountingHole_2.7mm_M2.5</footprint>
@@ -3075,7 +1983,7 @@
       <property name="ki_keywords" value="mounting hole"/>
       <property name="ki_fp_filters" value="MountingHole*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>0b2a5568-f106-50a1-9314-73b7f5934a25</tstamps>
+      <tstamps>bd597e89-41c2-5aa0-9ac1-a4bbd9fbd737</tstamps>
       <units>
         <unit name="A">
           <pins/>
@@ -3099,7 +2007,7 @@
       <property name="ki_keywords" value="mounting hole"/>
       <property name="ki_fp_filters" value="MountingHole*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>cfa00ace-762c-5071-9840-835cc74fbbc5</tstamps>
+      <tstamps>a5a4b621-f503-5e61-9f9f-b9141b8c7aae</tstamps>
       <units>
         <unit name="A">
           <pins/>
@@ -3123,7 +2031,7 @@
       <property name="ki_keywords" value="mounting hole"/>
       <property name="ki_fp_filters" value="MountingHole*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>697e9bcb-0f01-5ee0-8724-7790ba18c4f1</tstamps>
+      <tstamps>7c2ade06-8f00-57da-8d73-e30b448fe11a</tstamps>
       <units>
         <unit name="A">
           <pins/>
@@ -3147,7 +2055,7 @@
       <property name="ki_keywords" value="mounting hole"/>
       <property name="ki_fp_filters" value="MountingHole*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>97a967c7-9601-5d4f-86e6-88f1b75236c1</tstamps>
+      <tstamps>8c6ca948-eef7-56d0-994f-6c3beaac2460</tstamps>
       <units>
         <unit name="A">
           <pins/>
@@ -3171,7 +2079,7 @@
       <property name="ki_keywords" value="mounting hole"/>
       <property name="ki_fp_filters" value="MountingHole*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>36e41c7f-5c23-50b5-aca7-d86257c32042</tstamps>
+      <tstamps>9324c1b9-384d-5583-9b8b-04f2a095c0bf</tstamps>
       <units>
         <unit name="A">
           <pins/>
@@ -3195,7 +2103,7 @@
       <property name="ki_keywords" value="mounting hole"/>
       <property name="ki_fp_filters" value="MountingHole*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>151f54d1-e6ab-50cb-9ad6-d2c7248ddb96</tstamps>
+      <tstamps>871784c1-d4a5-5ef7-97ed-da8507fb22b0</tstamps>
       <units>
         <unit name="A">
           <pins/>
@@ -3219,7 +2127,7 @@
       <property name="ki_keywords" value="mounting hole"/>
       <property name="ki_fp_filters" value="MountingHole*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>9897a7be-6cbb-59ad-9f6b-5f823f544e03</tstamps>
+      <tstamps>408dee57-effb-509e-93d4-3c55f2c9f70f</tstamps>
       <units>
         <unit name="A">
           <pins/>
@@ -3243,55 +2151,7 @@
       <property name="ki_keywords" value="mounting hole"/>
       <property name="ki_fp_filters" value="MountingHole*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>0436b7f4-019a-5660-8010-b9c188a7b316</tstamps>
-      <units>
-        <unit name="A">
-          <pins/>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="H9">
-      <value>M2.5</value>
-      <footprint>MountingHole:MountingHole_2.7mm_M2.5</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Footprint">MountingHole:MountingHole_2.7mm_M2.5</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
-      <property name="LCSC" value=""/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="exclude_from_bom"/>
-      <property name="ki_keywords" value="mounting hole"/>
-      <property name="ki_fp_filters" value="MountingHole*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>15203d21-267d-506d-bf35-4ae972705528</tstamps>
-      <units>
-        <unit name="A">
-          <pins/>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="H10">
-      <value>M2.5</value>
-      <footprint>MountingHole:MountingHole_2.7mm_M2.5</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Footprint">MountingHole:MountingHole_2.7mm_M2.5</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
-      <property name="LCSC" value=""/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <property name="exclude_from_bom"/>
-      <property name="ki_keywords" value="mounting hole"/>
-      <property name="ki_fp_filters" value="MountingHole*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>8782e310-1e1f-5eee-a985-0e69c451a04c</tstamps>
+      <tstamps>ff43aec6-bf59-537f-882b-9fb824dbddef</tstamps>
       <units>
         <unit name="A">
           <pins/>
@@ -5351,1020 +4211,6 @@
         </unit>
       </units>
     </comp>
-    <comp ref="SK149">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K049</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K049"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>bd597e89-41c2-5aa0-9ac1-a4bbd9fbd737</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK150">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K050</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K050"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>408dee57-effb-509e-93d4-3c55f2c9f70f</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK151">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K051</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K051"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>2fc37c98-c5dc-57b8-a3ef-1b9e19c7084b</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK152">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K052</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K052"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>f45dd05c-4e95-5fa4-b948-8a119a6767c4</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK153">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K053</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K053"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>97a58871-9386-5104-938e-2db8cb2fe663</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK154">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K054</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K054"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>87e811fd-e0d3-52d3-be73-166b94f0bdba</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK155">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K055</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K055"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>efc221b2-6daa-5c8a-829f-ccea6f4d7387</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK156">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K056</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K056"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>d7865e9a-7e6f-5022-9c9b-9d03e01f304d</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK157">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K057</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K057"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>23af3967-2125-5a55-b278-ab117aca2e2b</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK158">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K058</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K058"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>21603802-6034-5c40-8fc9-292a191193d1</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK159">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K059</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K059"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>4f180cc4-b323-5583-a562-1aa6fdb4632e</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK160">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K060</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K060"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>ae4a9e35-7fe1-5fbf-950e-a8985eb7078e</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK161">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K061</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K061"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>9f4396fc-bd75-521c-aa52-2fcd8af568c8</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK162">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K062</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K062"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>01c9ad4e-9c55-52b6-b701-ce3cb44d16e5</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK163">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K063</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K063"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>4213cad4-8c79-51ef-8df0-72a8750a1008</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK164">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K064</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K064"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>81b21621-fe9e-5fb6-acf0-9b4ea0bc5ce0</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK165">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K065</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K065"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>6badbf45-91f2-59d2-a0e8-bd97ad047d89</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK166">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K066</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K066"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>63694060-e974-58cd-9e79-88dcd1c5938e</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK167">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K067</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K067"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>8ba002b8-df43-5838-897c-370019b0b087</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK168">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K068</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K068"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>95eea0b2-7ece-5c79-926a-b6a91eb41aa6</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK169">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K069</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K069"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>c6e898ee-63ee-5aac-917e-651da6b745d5</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK170">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K070</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K070"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>3e80c6e0-02bf-542f-9d35-b3584b83577d</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK171">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K071</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K071"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>77ee02da-2631-520d-a62f-e1ccd5bdde85</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK172">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K072</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K072"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>29c82010-ce08-5452-9dad-23ee9d4e6dd2</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK173">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K073</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K073"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>010be918-c7e3-51e9-b032-8bdc48625894</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK174">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K074</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K074"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>fe15d4a4-0fd1-5858-8985-cc11adfec8cc</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK175">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K075</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K075"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>2aaa3e52-0750-5906-b998-1128a0ade17e</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK176">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K076</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K076"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>7ce1f999-6748-5369-8f6a-3a274e92dea1</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK177">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K077</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K077"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>e571eaf2-09c5-54a7-b1e7-06783281c0bf</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK178">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K078</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K078"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>d0f7a56a-012b-5622-b5c5-58fca07291fc</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK179">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K079</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K079"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>352e4bf7-0b19-5ff1-b656-5c32c4e5ba3c</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK180">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K080</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K080"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>c887b62c-03b6-56e8-aa4e-9906accd4b62</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK181">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K081</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K081"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>ea6787c1-524c-54c6-a283-21ca3d20bfe5</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK182">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K082</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K082"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>0378b5e0-8280-58c1-b017-17c4139801fd</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK183">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K083</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K083"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>c9a58ace-c457-5d00-a267-d950ba41904c</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK184">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K084</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K084"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>2308a2fd-b98e-59b3-8913-36e31cedd8a5</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK185">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K085</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K085"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>85cefc2b-3256-5721-a97a-b36eaa904eb0</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK186">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K086</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K086"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>15a06bcf-1965-585c-9d49-39993d5803f4</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="SK187">
-      <value>CHOC</value>
-      <footprint>worxboard:SW_Choc_V1_Hotswap</footprint>
-      <fields>
-        <field name="LCSC"/>
-        <field name="Key">K087</field>
-        <field name="Footprint">worxboard:SW_Choc_V1_Hotswap</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
-      <property name="Key" value="K087"/>
-      <property name="Sheetname" value="worxboard-ergo-choc"/>
-      <property name="Sheetfile" value="worxboard-ergo-choc.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>3acad29d-2834-5aad-af80-1801dc5acf2e</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
     <comp ref="SW1">
       <value>BOOT</value>
       <footprint>Button_Switch_SMD:SW_SPST_TS-1088-xR020</footprint>
@@ -7289,8 +5135,6 @@
       <node ref="SK116" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK131" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK146" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK161" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK176" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="U1" pin="8" pinfunction="GPIO6_8" pintype="bidirectional"/>
     </net>
     <net code="11" name="COL1" class="Default">
@@ -7298,8 +5142,6 @@
       <node ref="SK117" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK132" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK147" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK162" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK177" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="U1" pin="9" pinfunction="GPIO7_9" pintype="bidirectional"/>
     </net>
     <net code="12" name="COL2" class="Default">
@@ -7307,113 +5149,78 @@
       <node ref="SK118" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK133" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK148" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK163" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK178" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="U1" pin="11" pinfunction="GPIO8_11" pintype="bidirectional"/>
     </net>
     <net code="13" name="COL3" class="Default">
       <node ref="SK104" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK119" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK134" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK149" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK164" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK179" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="U1" pin="12" pinfunction="GPIO9_12" pintype="bidirectional"/>
     </net>
     <net code="14" name="COL4" class="Default">
       <node ref="SK105" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK120" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK135" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK150" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK165" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK180" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="U1" pin="13" pinfunction="GPIO10_13" pintype="bidirectional"/>
     </net>
     <net code="15" name="COL5" class="Default">
       <node ref="SK106" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK121" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK136" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK151" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK166" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK181" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="U1" pin="14" pinfunction="GPIO11_14" pintype="bidirectional"/>
     </net>
     <net code="16" name="COL6" class="Default">
       <node ref="SK107" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK122" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK137" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK152" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK167" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK182" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="U1" pin="15" pinfunction="GPIO12_15" pintype="bidirectional"/>
     </net>
     <net code="17" name="COL7" class="Default">
       <node ref="SK108" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK123" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK138" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK153" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK168" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK183" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="U1" pin="16" pinfunction="GPIO13_16" pintype="bidirectional"/>
     </net>
     <net code="18" name="COL8" class="Default">
       <node ref="SK109" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK124" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK139" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK154" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK169" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK184" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="U1" pin="17" pinfunction="GPIO14_17" pintype="bidirectional"/>
     </net>
     <net code="19" name="COL9" class="Default">
       <node ref="SK110" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK125" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK140" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK155" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK170" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK185" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="U1" pin="18" pinfunction="GPIO15_18" pintype="bidirectional"/>
     </net>
     <net code="20" name="COL10" class="Default">
       <node ref="SK111" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK126" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK141" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK156" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK171" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK186" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="U1" pin="27" pinfunction="GPIO16_27" pintype="bidirectional"/>
     </net>
     <net code="21" name="COL11" class="Default">
       <node ref="SK112" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK127" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK142" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK157" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK172" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK187" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="U1" pin="28" pinfunction="GPIO17_28" pintype="bidirectional"/>
     </net>
     <net code="22" name="COL12" class="Default">
       <node ref="SK113" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK128" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK143" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK158" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK173" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="U1" pin="29" pinfunction="GPIO18_29" pintype="bidirectional"/>
     </net>
     <net code="23" name="COL13" class="Default">
       <node ref="SK114" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK129" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK144" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK159" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK174" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="U1" pin="30" pinfunction="GPIO19_30" pintype="bidirectional"/>
     </net>
     <net code="24" name="COL14" class="Default">
       <node ref="SK115" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK130" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK145" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK160" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="SK175" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="U1" pin="31" pinfunction="GPIO20_31" pintype="bidirectional"/>
     </net>
     <net code="25" name="DISP_CS" class="Default">
@@ -7682,211 +5489,55 @@
       <node ref="D148" pin="2" pinfunction="A_2" pintype="passive"/>
       <node ref="SK148" pin="2" pinfunction="2_2" pintype="passive"/>
     </net>
-    <net code="77" name="KEY_K049" class="Default">
-      <node ref="D149" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK149" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="78" name="KEY_K050" class="Default">
-      <node ref="D150" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK150" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="79" name="KEY_K051" class="Default">
-      <node ref="D151" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK151" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="80" name="KEY_K052" class="Default">
-      <node ref="D152" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK152" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="81" name="KEY_K053" class="Default">
-      <node ref="D153" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK153" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="82" name="KEY_K054" class="Default">
-      <node ref="D154" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK154" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="83" name="KEY_K055" class="Default">
-      <node ref="D155" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK155" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="84" name="KEY_K056" class="Default">
-      <node ref="D156" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK156" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="85" name="KEY_K057" class="Default">
-      <node ref="D157" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK157" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="86" name="KEY_K058" class="Default">
-      <node ref="D158" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK158" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="87" name="KEY_K059" class="Default">
-      <node ref="D159" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK159" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="88" name="KEY_K060" class="Default">
-      <node ref="D160" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK160" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="89" name="KEY_K061" class="Default">
-      <node ref="D161" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK161" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="90" name="KEY_K062" class="Default">
-      <node ref="D162" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK162" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="91" name="KEY_K063" class="Default">
-      <node ref="D163" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK163" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="92" name="KEY_K064" class="Default">
-      <node ref="D164" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK164" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="93" name="KEY_K065" class="Default">
-      <node ref="D165" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK165" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="94" name="KEY_K066" class="Default">
-      <node ref="D166" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK166" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="95" name="KEY_K067" class="Default">
-      <node ref="D167" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK167" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="96" name="KEY_K068" class="Default">
-      <node ref="D168" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK168" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="97" name="KEY_K069" class="Default">
-      <node ref="D169" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK169" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="98" name="KEY_K070" class="Default">
-      <node ref="D170" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK170" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="99" name="KEY_K071" class="Default">
-      <node ref="D171" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK171" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="100" name="KEY_K072" class="Default">
-      <node ref="D172" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK172" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="101" name="KEY_K073" class="Default">
-      <node ref="D173" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK173" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="102" name="KEY_K074" class="Default">
-      <node ref="D174" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK174" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="103" name="KEY_K075" class="Default">
-      <node ref="D175" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK175" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="104" name="KEY_K076" class="Default">
-      <node ref="D176" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK176" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="105" name="KEY_K077" class="Default">
-      <node ref="D177" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK177" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="106" name="KEY_K078" class="Default">
-      <node ref="D178" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK178" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="107" name="KEY_K079" class="Default">
-      <node ref="D179" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK179" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="108" name="KEY_K080" class="Default">
-      <node ref="D180" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK180" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="109" name="KEY_K081" class="Default">
-      <node ref="D181" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK181" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="110" name="KEY_K082" class="Default">
-      <node ref="D182" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK182" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="111" name="KEY_K083" class="Default">
-      <node ref="D183" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK183" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="112" name="KEY_K084" class="Default">
-      <node ref="D184" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK184" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="113" name="KEY_K085" class="Default">
-      <node ref="D185" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK185" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="114" name="KEY_K086" class="Default">
-      <node ref="D186" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK186" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="115" name="KEY_K087" class="Default">
-      <node ref="D187" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="SK187" pin="2" pinfunction="2_2" pintype="passive"/>
-    </net>
-    <net code="116" name="MUX_S0" class="Default">
+    <net code="77" name="MUX_S0" class="Default">
       <node ref="J6" pin="2" pinfunction="Pin_2_2" pintype="passive"/>
       <node ref="R40" pin="1" pintype="passive"/>
       <node ref="U7" pin="1" pinfunction="SEL0_1" pintype="input"/>
     </net>
-    <net code="117" name="MUX_S0_FW" class="Default">
+    <net code="78" name="MUX_S0_FW" class="Default">
       <node ref="J6" pin="1" pinfunction="Pin_1_1" pintype="passive"/>
       <node ref="R42" pin="2" pintype="passive"/>
     </net>
-    <net code="118" name="MUX_S1" class="Default">
+    <net code="79" name="MUX_S1" class="Default">
       <node ref="J7" pin="2" pinfunction="Pin_2_2" pintype="passive"/>
       <node ref="R41" pin="1" pintype="passive"/>
       <node ref="U7" pin="2" pinfunction="SEL1_2" pintype="input"/>
     </net>
-    <net code="119" name="MUX_S1_FW" class="Default">
+    <net code="80" name="MUX_S1_FW" class="Default">
       <node ref="J7" pin="1" pinfunction="Pin_1_1" pintype="passive"/>
       <node ref="R43" pin="2" pintype="passive"/>
     </net>
-    <net code="120" name="QSPI_SCLK" class="Default">
+    <net code="81" name="QSPI_SCLK" class="Default">
       <node ref="U1" pin="52" pinfunction="QSPI_SCLK_52" pintype="output"/>
       <node ref="U2" pin="6" pinfunction="CLK_6" pintype="input"/>
     </net>
-    <net code="121" name="QSPI_SD0" class="Default">
+    <net code="82" name="QSPI_SD0" class="Default">
       <node ref="U1" pin="53" pinfunction="QSPI_SD0_53" pintype="bidirectional"/>
       <node ref="U2" pin="5" pinfunction="DI/IO_{0}_5" pintype="bidirectional"/>
     </net>
-    <net code="122" name="QSPI_SD1" class="Default">
+    <net code="83" name="QSPI_SD1" class="Default">
       <node ref="U1" pin="55" pinfunction="QSPI_SD1_55" pintype="bidirectional"/>
       <node ref="U2" pin="2" pinfunction="DO/IO_{1}_2" pintype="bidirectional"/>
     </net>
-    <net code="123" name="QSPI_SD2" class="Default">
+    <net code="84" name="QSPI_SD2" class="Default">
       <node ref="U1" pin="54" pinfunction="QSPI_SD2_54" pintype="bidirectional"/>
       <node ref="U2" pin="3" pinfunction="~{WP}/IO_{2}_3" pintype="bidirectional"/>
     </net>
-    <net code="124" name="QSPI_SD3" class="Default">
+    <net code="85" name="QSPI_SD3" class="Default">
       <node ref="U1" pin="51" pinfunction="QSPI_SD3_51" pintype="bidirectional"/>
       <node ref="U2" pin="7" pinfunction="~{HOLD}/~{RESET}/IO_{3}_7" pintype="bidirectional"/>
     </net>
-    <net code="125" name="QSPI_SS" class="Default">
+    <net code="86" name="QSPI_SS" class="Default">
       <node ref="R8" pin="1" pintype="passive"/>
       <node ref="R9" pin="1" pintype="passive"/>
       <node ref="U1" pin="56" pinfunction="~{QSPI_SS}_56" pintype="output"/>
       <node ref="U2" pin="1" pinfunction="~{CS}_1" pintype="input"/>
     </net>
-    <net code="126" name="RGB_DATA" class="Default">
+    <net code="87" name="RGB_DATA" class="Default">
       <node ref="J5" pin="2" pinfunction="Pin_2_2" pintype="passive"/>
       <node ref="U1" pin="41" pinfunction="GPIO29/ADC3_41" pintype="bidirectional"/>
     </net>
-    <net code="127" name="ROW0" class="Default">
+    <net code="88" name="ROW0" class="Default">
       <node ref="D101" pin="1" pinfunction="K_1" pintype="passive"/>
       <node ref="D102" pin="1" pinfunction="K_1" pintype="passive"/>
       <node ref="D103" pin="1" pinfunction="K_1" pintype="passive"/>
@@ -7904,7 +5555,7 @@
       <node ref="D115" pin="1" pinfunction="K_1" pintype="passive"/>
       <node ref="U1" pin="2" pinfunction="GPIO0_2" pintype="bidirectional"/>
     </net>
-    <net code="128" name="ROW1" class="Default">
+    <net code="89" name="ROW1" class="Default">
       <node ref="D116" pin="1" pinfunction="K_1" pintype="passive"/>
       <node ref="D117" pin="1" pinfunction="K_1" pintype="passive"/>
       <node ref="D118" pin="1" pinfunction="K_1" pintype="passive"/>
@@ -7922,7 +5573,7 @@
       <node ref="D130" pin="1" pinfunction="K_1" pintype="passive"/>
       <node ref="U1" pin="3" pinfunction="GPIO1_3" pintype="bidirectional"/>
     </net>
-    <net code="129" name="ROW2" class="Default">
+    <net code="90" name="ROW2" class="Default">
       <node ref="D131" pin="1" pinfunction="K_1" pintype="passive"/>
       <node ref="D132" pin="1" pinfunction="K_1" pintype="passive"/>
       <node ref="D133" pin="1" pinfunction="K_1" pintype="passive"/>
@@ -7940,137 +5591,98 @@
       <node ref="D145" pin="1" pinfunction="K_1" pintype="passive"/>
       <node ref="U1" pin="4" pinfunction="GPIO2_4" pintype="bidirectional"/>
     </net>
-    <net code="130" name="ROW3" class="Default">
+    <net code="91" name="ROW3" class="Default">
       <node ref="D146" pin="1" pinfunction="K_1" pintype="passive"/>
       <node ref="D147" pin="1" pinfunction="K_1" pintype="passive"/>
       <node ref="D148" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D149" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D150" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D151" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D152" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D153" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D154" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D155" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D156" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D157" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D158" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D159" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D160" pin="1" pinfunction="K_1" pintype="passive"/>
       <node ref="U1" pin="5" pinfunction="GPIO3_5" pintype="bidirectional"/>
     </net>
-    <net code="131" name="ROW4" class="Default">
-      <node ref="D161" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D162" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D163" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D164" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D165" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D166" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D167" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D168" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D169" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D170" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D171" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D172" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D173" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D174" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D175" pin="1" pinfunction="K_1" pintype="passive"/>
+    <net code="92" name="ROW4" class="Default">
       <node ref="U1" pin="6" pinfunction="GPIO4_6" pintype="bidirectional"/>
     </net>
-    <net code="132" name="ROW5" class="Default">
-      <node ref="D176" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D177" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D178" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D179" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D180" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D181" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D182" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D183" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D184" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D185" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D186" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="D187" pin="1" pinfunction="K_1" pintype="passive"/>
+    <net code="93" name="ROW5" class="Default">
       <node ref="U1" pin="7" pinfunction="GPIO5_7" pintype="bidirectional"/>
     </net>
-    <net code="133" name="RUN" class="Default">
+    <net code="94" name="RUN" class="Default">
       <node ref="R10" pin="1" pintype="passive"/>
       <node ref="SW2" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="U1" pin="26" pinfunction="RUN_26" pintype="input"/>
     </net>
-    <net code="134" name="SWCLK" class="Default">
+    <net code="95" name="SWCLK" class="Default">
       <node ref="TP8" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="U1" pin="24" pinfunction="SWCLK_24" pintype="input"/>
     </net>
-    <net code="135" name="SWDIO" class="Default">
+    <net code="96" name="SWDIO" class="Default">
       <node ref="TP9" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="U1" pin="25" pinfunction="SWDIO_25" pintype="bidirectional"/>
     </net>
-    <net code="136" name="USB_CENTER_DM" class="Default">
+    <net code="97" name="USB_CENTER_DM" class="Default">
       <node ref="J2" pin="A7" pinfunction="D-_A7" pintype="bidirectional"/>
       <node ref="J2" pin="B7" pinfunction="D-_B7" pintype="bidirectional"/>
       <node ref="U5" pin="3" pinfunction="I/O2_3" pintype="passive"/>
       <node ref="U5" pin="4" pinfunction="I/O2_4" pintype="passive"/>
       <node ref="U7" pin="6" pinfunction="USB2-_6" pintype="passive"/>
     </net>
-    <net code="137" name="USB_CENTER_DP" class="Default">
+    <net code="98" name="USB_CENTER_DP" class="Default">
       <node ref="J2" pin="A6" pinfunction="D+_A6" pintype="bidirectional"/>
       <node ref="J2" pin="B6" pinfunction="D+_B6" pintype="bidirectional"/>
       <node ref="U5" pin="1" pinfunction="I/O1_1" pintype="passive"/>
       <node ref="U5" pin="6" pinfunction="I/O1_6" pintype="passive"/>
       <node ref="U7" pin="5" pinfunction="USB2+_5" pintype="passive"/>
     </net>
-    <net code="138" name="USB_DM" class="Default">
+    <net code="99" name="USB_DM" class="Default">
       <node ref="R4" pin="2" pintype="passive"/>
       <node ref="U1" pin="46" pinfunction="USB_DM_46" pintype="bidirectional"/>
     </net>
-    <net code="139" name="USB_DP" class="Default">
+    <net code="100" name="USB_DP" class="Default">
       <node ref="R3" pin="2" pintype="passive"/>
       <node ref="U1" pin="47" pinfunction="USB_DP_47" pintype="bidirectional"/>
     </net>
-    <net code="140" name="USB_LEFT_DM" class="Default">
+    <net code="101" name="USB_LEFT_DM" class="Default">
       <node ref="J1" pin="A7" pinfunction="D-_A7" pintype="bidirectional"/>
       <node ref="J1" pin="B7" pinfunction="D-_B7" pintype="bidirectional"/>
       <node ref="U4" pin="3" pinfunction="I/O2_3" pintype="passive"/>
       <node ref="U4" pin="4" pinfunction="I/O2_4" pintype="passive"/>
       <node ref="U7" pin="4" pinfunction="USB1-_4" pintype="passive"/>
     </net>
-    <net code="141" name="USB_LEFT_DP" class="Default">
+    <net code="102" name="USB_LEFT_DP" class="Default">
       <node ref="J1" pin="A6" pinfunction="D+_A6" pintype="bidirectional"/>
       <node ref="J1" pin="B6" pinfunction="D+_B6" pintype="bidirectional"/>
       <node ref="U4" pin="1" pinfunction="I/O1_1" pintype="passive"/>
       <node ref="U4" pin="6" pinfunction="I/O1_6" pintype="passive"/>
       <node ref="U7" pin="3" pinfunction="USB1+_3" pintype="passive"/>
     </net>
-    <net code="142" name="USB_MUX_DM" class="Default">
+    <net code="103" name="USB_MUX_DM" class="Default">
       <node ref="R4" pin="1" pintype="passive"/>
       <node ref="U7" pin="10" pinfunction="D-_10" pintype="passive"/>
     </net>
-    <net code="143" name="USB_MUX_DP" class="Default">
+    <net code="104" name="USB_MUX_DP" class="Default">
       <node ref="R3" pin="1" pintype="passive"/>
       <node ref="U7" pin="11" pinfunction="D+_11" pintype="passive"/>
     </net>
-    <net code="144" name="USB_RIGHT_DM" class="Default">
+    <net code="105" name="USB_RIGHT_DM" class="Default">
       <node ref="J3" pin="A7" pinfunction="D-_A7" pintype="bidirectional"/>
       <node ref="J3" pin="B7" pinfunction="D-_B7" pintype="bidirectional"/>
       <node ref="U6" pin="3" pinfunction="I/O2_3" pintype="passive"/>
       <node ref="U6" pin="4" pinfunction="I/O2_4" pintype="passive"/>
       <node ref="U7" pin="8" pinfunction="MHL-_8" pintype="passive"/>
     </net>
-    <net code="145" name="USB_RIGHT_DP" class="Default">
+    <net code="106" name="USB_RIGHT_DP" class="Default">
       <node ref="J3" pin="A6" pinfunction="D+_A6" pintype="bidirectional"/>
       <node ref="J3" pin="B6" pinfunction="D+_B6" pintype="bidirectional"/>
       <node ref="U6" pin="1" pinfunction="I/O1_1" pintype="passive"/>
       <node ref="U6" pin="6" pinfunction="I/O1_6" pintype="passive"/>
       <node ref="U7" pin="7" pinfunction="MHL+_7" pintype="passive"/>
     </net>
-    <net code="146" name="USB_SEL0" class="Default">
+    <net code="107" name="USB_SEL0" class="Default">
       <node ref="R42" pin="1" pintype="passive"/>
       <node ref="U1" pin="32" pinfunction="GPIO21_32" pintype="bidirectional"/>
     </net>
-    <net code="147" name="USB_SEL1" class="Default">
+    <net code="108" name="USB_SEL1" class="Default">
       <node ref="R43" pin="1" pintype="passive"/>
       <node ref="U1" pin="34" pinfunction="GPIO22_34" pintype="bidirectional"/>
     </net>
-    <net code="148" name="VBUS_CENTER" class="Default">
+    <net code="109" name="VBUS_CENTER" class="Default">
       <node ref="D2" pin="2" pinfunction="A_2" pintype="passive"/>
       <node ref="J2" pin="A4" pinfunction="VBUS_A4" pintype="passive"/>
       <node ref="J2" pin="A9" pinfunction="VBUS_A9" pintype="passive"/>
@@ -8079,12 +5691,12 @@
       <node ref="R32" pin="1" pintype="passive"/>
       <node ref="U5" pin="5" pinfunction="VBUS_5" pintype="passive"/>
     </net>
-    <net code="149" name="VBUS_CENTER_SENSE" class="Default">
+    <net code="110" name="VBUS_CENTER_SENSE" class="Default">
       <node ref="R32" pin="2" pintype="passive"/>
       <node ref="R33" pin="1" pintype="passive"/>
       <node ref="U1" pin="36" pinfunction="GPIO24_36" pintype="bidirectional"/>
     </net>
-    <net code="150" name="VBUS_LEFT" class="Default">
+    <net code="111" name="VBUS_LEFT" class="Default">
       <node ref="D1" pin="2" pinfunction="A_2" pintype="passive"/>
       <node ref="J1" pin="A4" pinfunction="VBUS_A4" pintype="passive"/>
       <node ref="J1" pin="A9" pinfunction="VBUS_A9" pintype="passive"/>
@@ -8093,12 +5705,12 @@
       <node ref="R27" pin="1" pintype="passive"/>
       <node ref="U4" pin="5" pinfunction="VBUS_5" pintype="passive"/>
     </net>
-    <net code="151" name="VBUS_LEFT_SENSE" class="Default">
+    <net code="112" name="VBUS_LEFT_SENSE" class="Default">
       <node ref="R27" pin="2" pintype="passive"/>
       <node ref="R28" pin="1" pintype="passive"/>
       <node ref="U1" pin="35" pinfunction="GPIO23_35" pintype="bidirectional"/>
     </net>
-    <net code="152" name="VBUS_RIGHT" class="Default">
+    <net code="113" name="VBUS_RIGHT" class="Default">
       <node ref="D3" pin="2" pinfunction="A_2" pintype="passive"/>
       <node ref="J3" pin="A4" pinfunction="VBUS_A4" pintype="passive"/>
       <node ref="J3" pin="A9" pinfunction="VBUS_A9" pintype="passive"/>
@@ -8107,12 +5719,12 @@
       <node ref="R37" pin="1" pintype="passive"/>
       <node ref="U6" pin="5" pinfunction="VBUS_5" pintype="passive"/>
     </net>
-    <net code="153" name="VBUS_RIGHT_SENSE" class="Default">
+    <net code="114" name="VBUS_RIGHT_SENSE" class="Default">
       <node ref="R37" pin="2" pintype="passive"/>
       <node ref="R38" pin="1" pintype="passive"/>
       <node ref="U1" pin="37" pinfunction="GPIO25_37" pintype="bidirectional"/>
     </net>
-    <net code="154" name="VSYS" class="Default">
+    <net code="115" name="VSYS" class="Default">
       <node ref="C1" pin="1" pintype="passive"/>
       <node ref="C2" pin="1" pintype="passive"/>
       <node ref="D1" pin="1" pinfunction="K_1" pintype="passive"/>
@@ -8122,39 +5734,39 @@
       <node ref="U3" pin="1" pinfunction="VIN_1" pintype="power_in"/>
       <node ref="U3" pin="3" pinfunction="EN_3" pintype="input"/>
     </net>
-    <net code="155" name="XIN" class="Default">
+    <net code="116" name="XIN" class="Default">
       <node ref="C6" pin="1" pintype="passive"/>
       <node ref="U1" pin="20" pinfunction="XIN_20" pintype="input"/>
       <node ref="Y1" pin="1" pinfunction="1_1" pintype="passive"/>
     </net>
-    <net code="156" name="XOUT" class="Default">
+    <net code="117" name="XOUT" class="Default">
       <node ref="R7" pin="2" pintype="passive"/>
       <node ref="U1" pin="21" pinfunction="XOUT_21" pintype="output"/>
     </net>
-    <net code="157" name="XTAL_OUT" class="Default">
+    <net code="118" name="XTAL_OUT" class="Default">
       <node ref="C7" pin="1" pintype="passive"/>
       <node ref="R7" pin="1" pintype="passive"/>
       <node ref="Y1" pin="3" pinfunction="3_3" pintype="passive"/>
     </net>
-    <net code="158" name="unconnected-(J1-SBU1-PadA8)" class="Default">
+    <net code="119" name="unconnected-(J1-SBU1-PadA8)" class="Default">
       <node ref="J1" pin="A8" pinfunction="SBU1_A8" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="159" name="unconnected-(J1-SBU2-PadB8)" class="Default">
+    <net code="120" name="unconnected-(J1-SBU2-PadB8)" class="Default">
       <node ref="J1" pin="B8" pinfunction="SBU2_B8" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="160" name="unconnected-(J2-SBU1-PadA8)" class="Default">
+    <net code="121" name="unconnected-(J2-SBU1-PadA8)" class="Default">
       <node ref="J2" pin="A8" pinfunction="SBU1_A8" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="161" name="unconnected-(J2-SBU2-PadB8)" class="Default">
+    <net code="122" name="unconnected-(J2-SBU2-PadB8)" class="Default">
       <node ref="J2" pin="B8" pinfunction="SBU2_B8" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="162" name="unconnected-(J3-SBU1-PadA8)" class="Default">
+    <net code="123" name="unconnected-(J3-SBU1-PadA8)" class="Default">
       <node ref="J3" pin="A8" pinfunction="SBU1_A8" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="163" name="unconnected-(J3-SBU2-PadB8)" class="Default">
+    <net code="124" name="unconnected-(J3-SBU2-PadB8)" class="Default">
       <node ref="J3" pin="B8" pinfunction="SBU2_B8" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="164" name="unconnected-(U3-NC-Pad4)" class="Default">
+    <net code="125" name="unconnected-(U3-NC-Pad4)" class="Default">
       <node ref="U3" pin="4" pinfunction="NC_4" pintype="no_connect"/>
     </net>
   </nets>

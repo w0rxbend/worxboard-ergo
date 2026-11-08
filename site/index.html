@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>worxboard ergo — a split Planck in one deck</title>
+  <meta name="description" content="Revision A0 of worxboard ergo: 48 ortholinear keys, ten degrees of splay, a Launch-style chassis, and an unrouted RP2040 board. Not a fabrication release.">
+  <meta name="theme-color" content="#0e0f12">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%230e0f12' width='32' height='32'/%3E%3Cpath fill='%23c5c9ce' d='M4 12l6 8h4l-2-8zM28 12l-6 8h-4l2-8z'/%3E%3Crect fill='%233c7e87' x='13' y='9' width='6' height='3' rx='0.6'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body id="top">
+  <a class="skip" href="#shape">Skip to the design</a>
+  <header class="nav">
+    <a class="mark" href="#top">worxboard <em>ergo</em></a>
+    <nav class="nav-links" aria-label="Page">
+      <a href="#shape">Shape</a>
+      <a href="#layers">Layers</a>
+      <a href="#plates">Plates</a>
+      <a href="#shop">Shop</a>
+      <a href="#status">Status</a>
+      <a class="rev" href="#status">Revision A0</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <p class="kicker">Open hardware · one rigid board</p>
+        <h1>A Planck,<br>opened like<br><em>a valley.</em></h1>
+        <p class="lede">Forty-eight ortholinear keys. Two detached wells, splayed ten degrees. A low rear bay for the display and the center cable, and a short palm rest that dips in the middle.</p>
+        <div class="actions">
+          <a class="btn btn-fill" href="../docs/build.md">Build guide</a>
+          <a class="btn btn-line" href="#shop">What you can make</a>
+        </div>
+        <figure class="stage">
+          <div id="hero-board" class="board">
+            <noscript><img src="../assets/layout.svg" alt="Top view of the 48-key split Planck. Palm rest toward the bottom."></noscript>
+          </div>
+          <figcaption class="caption">Palm rest toward you. Amber dots are south windows in the plate. No LED is stuffed on this board.</figcaption>
+        </figure>
+        <dl class="stats">
+          <div><dt>Keys</dt><dd>48 × 1u</dd></div>
+          <div><dt>Splay</dt><dd>10 degrees</dd></div>
+          <div><dt>Outline</dt><dd>292 × 142 mm</dd></div>
+          <div><dt>Tilt</dt><dd>about 7°</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="sheet" id="shape">
+      <div class="wrap">
+        <p class="kicker">The shape</p>
+        <h2>Two planks, still one board.</h2>
+        <p class="intro">The wells read as a split keyboard. The copper, when it exists, will be one PCB. This revision draws that board. It does not route it.</p>
+        <div class="trio">
+          <article class="panel">
+            <p class="num">01</p>
+            <h3>Detached wells</h3>
+            <p>Each half is a Planck block, four rows by six columns. Every key is 1u, including Tab, Backspace, both Shifts, Enter, and the two Space keys. The valley is wider at the wrists than at the display.</p>
+          </article>
+          <article class="panel">
+            <p class="num">02</p>
+            <h3>A low rear bay</h3>
+            <p>The bay joins the planks. It is deep enough for the memory LCD, the RP2040, and the center USB-C mouth. The side jacks sit on the rear of each plank. Three places to plug in one cable.</p>
+          </article>
+          <article class="panel">
+            <p class="num">03</p>
+            <h3>A short palm</h3>
+            <p>One rest crosses the front and dips at the center, so the valley still reads. Rear soles are 14 mm. Front soles are 3 mm. The deck stays flat. Roll tenting needs two board planes, which this revision does not have.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="studio" id="layers">
+      <div class="wrap">
+        <p class="kicker">The map</p>
+        <h2>Base, then the keys a fourth row cannot hold.</h2>
+        <p class="intro">Numbers and function keys live on Lower. Raise is a maintenance layer. The drawing uses the same coordinates as <a href="../assets/layout.svg">assets/layout.svg</a>.</p>
+        <div class="switcher" role="group" aria-label="Keymap layer">
+          <button type="button" data-layer="base" aria-pressed="true">Base</button>
+          <button type="button" data-layer="lower" aria-pressed="false">Lower</button>
+          <button type="button" data-layer="raise" aria-pressed="false">Raise</button>
+        </div>
+        <p class="layer-note" id="layer-note" aria-live="polite"></p>
+        <div class="stage">
+          <div id="layer-board" class="board"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sheet" id="plates">
+      <div class="wrap">
+        <p class="kicker">Two switch families</p>
+        <h2>Same map. Different metal.</h2>
+        <p class="intro">Pick one family and stay with it. The firmware image is shared. The plate thickness, the switch opening, and the PCB are not.</p>
+        <div class="split">
+          <article class="card">
+            <h3>Cherry MX</h3>
+            <table class="spec">
+              <tbody>
+                <tr><th>Sockets</th><td>Kailh MX hot-swap</td></tr>
+                <tr><th>Plate</th><td>1.5 mm, 14.0 mm square openings</td></tr>
+                <tr><th>Plate top</th><td>5.0 mm above the PCB</td></tr>
+                <tr><th>Wall top</th><td>11.5 mm above the floor</td></tr>
+                <tr><th>Files</th><td><a href="../cad/exports/mx/">cad/exports/mx</a></td></tr>
+              </tbody>
+            </table>
+          </article>
+          <article class="card">
+            <h3>Kailh Choc v1</h3>
+            <table class="spec">
+              <tbody>
+                <tr><th>Sockets</th><td>Kailh Choc v1 / PG1350</td></tr>
+                <tr><th>Plate</th><td>1.2 mm, 13.8 mm square openings</td></tr>
+                <tr><th>Plate top</th><td>2.2 mm above the PCB</td></tr>
+                <tr><th>Wall top</th><td>9.0 mm above the floor</td></tr>
+                <tr><th>Files</th><td><a href="../cad/exports/choc/">cad/exports/choc</a></td></tr>
+              </tbody>
+            </table>
+          </article>
+        </div>
+        <div class="mouths" aria-label="USB positions">
+          <article class="mouth">
+            <strong>Left</strong>
+            <span class="plug" aria-hidden="true"></span>
+            <p>Rear of the left plank. Its data pair stays on its own mux channel.</p>
+          </article>
+          <article class="mouth">
+            <strong>Center</strong>
+            <span class="plug" aria-hidden="true"></span>
+            <p>Preferred when more than one cable is powered at startup. Also the ROM-flash port, after the jumpers are proved on hardware.</p>
+          </article>
+          <article class="mouth">
+            <strong>Right</strong>
+            <span class="plug" aria-hidden="true"></span>
+            <p>Rear of the right plank. VBUS meets the other ports only through Schottky diodes.</p>
+          </article>
+        </div>
+        <p class="intro">Eight M2.5 pilots are shared by the chassis, the plate, and the PCB. Two further screws hold the palm rest and do not enter the board. The 2.1 mm holes are tap drills for aluminum, not heat-set inserts.</p>
+      </div>
+    </section>
+
+    <section class="sheet" id="shop">
+      <div class="wrap">
+        <p class="kicker">The shop</p>
+        <h2>Print and mill. Do not order the PCB.</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>3D print</h3>
+            <p>Watertight STL and 3MF for the chassis, plate, palm rest, and bezel, whole or split. A bed under about 250 mm uses the half files.</p>
+            <p>Print a switch opening, the center tab, and one USB mouth before a full case. The tab has never been fitted.</p>
+            <p><a href="../docs/build.md">Shop and bench guide</a></p>
+          </article>
+          <article class="card">
+            <h3>CNC</h3>
+            <p>6061-T6, from the STEP. Floor 2.4 mm. Leave stock for 14 mm rear feet. No G-code is posted.</p>
+            <p>Switch openings are sharp squares. Laser or waterjet can cut them. A round end mill needs dogbones after a coupon.</p>
+            <p><a href="../docs/cnc.md">CNC traveler</a></p>
+          </article>
+          <article class="card">
+            <h3>Firmware</h3>
+            <p>Pinned ZMK, compiled for this 48-key grid. The UF2 is 418304 bytes. Flash use is about 208664 bytes. RAM is about 40594 bytes.</p>
+            <p>That image has not been plugged into a keyboard. First programming on a new board is SWD.</p>
+            <p><a href="../docs/firmware.md">Build and flash notes</a></p>
+          </article>
+        </div>
+        <aside class="closed">
+          <h3>PCBA stays closed</h3>
+          <p>Both KiCad projects have 169 placed footprints and zero tracks. Each board has 329 unconnected items. MX DRC is 115 errors and 205 warnings. Choc DRC is 121 errors and 113 warnings. There are no Gerbers, no stackup, and no centroid file. <code>make check-fabrication</code> is required to fail until routing, review, and a physical board exist. The bill of materials is marked not for order.</p>
+        </aside>
+        <pre>uv sync --locked
+make generate
+make cad
+make native
+make test
+make pcb
+make firmware
+make manifest
+make check-fabrication</pre>
+      </div>
+    </section>
+
+    <section class="sheet" id="status">
+      <div class="wrap">
+        <p class="kicker">Evidence</p>
+        <h2>Checked files, unbuilt hardware.</h2>
+        <p class="intro">A passing file is a model or a compile. It is not a keyboard on a desk. The record is <a href="../docs/verification.md">docs/verification.md</a>. The gates are <a href="../docs/roadmap.md">docs/roadmap.md</a>.</p>
+        <div class="status-grid">
+          <div>
+            <h3>In the tree</h3>
+            <ul>
+              <li>Twenty part models, each a valid solid, with STEP volume round-trip.</li>
+              <li>Watertight STL and 3MF for MX and Choc, including the split halves.</li>
+              <li>FreeCAD 1.1.4 save and reopen, volumes matching the export.</li>
+              <li>Firmware compiled for this grid. The host verifier read the build outputs. <code>hardware_tested</code> is false.</li>
+            </ul>
+          </div>
+          <div class="open">
+            <h3>Still open</h3>
+            <ul>
+              <li>Both boards are unrouted. 329 nets are unconnected on each.</li>
+              <li>No reviewed USB geometry, no current measurement, no J6/J7 hardware check.</li>
+              <li>No printed switch, USB, tab, or LCD coupon. Screw lengths are not specified.</li>
+              <li>Per-key LEDs are plate windows. GP29 is a header, not a stuffed chain.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p>worxboard ergo · revision A0 · GPL-3.0-or-later.</p>
+      <p>Independent of System76 and Microsoft. Inspired by the Planck, the Microsoft ergonomic boards, and <a href="https://github.com/system76/launch">System76 Launch</a>. Launch’s hub, QMK firmware, and certifications do not transfer.</p>
+      <p>Fraunces and Outfit are used under the SIL Open Font License. Texts are in <a href="fonts/OFL-fraunces.txt">OFL-fraunces.txt</a> and <a href="fonts/OFL-outfit.txt">OFL-outfit.txt</a>.</p>
+    </div>
+  </footer>
+  <script src="board.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>

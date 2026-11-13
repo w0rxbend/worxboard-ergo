@@ -23,6 +23,12 @@ SOCKET='Hot-swap socket on the bottom side. The key switch is not supplied and n
 
 def is_smd(fp):return bool(fp.GetAttributes()&p.FP_SMD) or all(pad.GetDrillSizeX()==0 for pad in fp.Pads() if pad.GetNumber())
 
+def mount_type(fp):
+    """PCBWay's Type column. The USB-C receptacles are SMD parts with plated shell pegs."""
+    if not is_smd(fp):return 'thru-hole'
+    plated=any(pad.GetDrillSizeX()>0 and pad.GetAttribute()==p.PAD_ATTRIB_PTH for pad in fp.Pads())
+    return 'SMD, plated shell pegs' if plated else 'SMD'
+
 def bom_lines(parts):
     """One line per distinct part: [(part, [refs])], assembler-fitted lines first."""
     groups=defaultdict(list)
@@ -39,19 +45,26 @@ def write_bom(folder,lines,fps):
             if part.ref.startswith('SK'):notes.append(SOCKET)
             if not verified:notes.append(UNVERIFIED)
             value='hot-swap socket' if part.ref.startswith('SK') else part.value
-            writer.writerow([item,' '.join(refs),len(refs),maker,mpn,value,part.footprint.split(':',1)[1],
-                             'SMD' if is_smd(fps[part.ref]) else 'thru-hole',' '.join(notes)])
+            writer.writerow([item,','.join(refs),len(refs),maker,mpn,value,part.footprint.split(':',1)[1],
+                             mount_type(fps[part.ref]),' '.join(notes)])
+
+def _pin_one(fp):
+    """Pad 1, or the first numbered pad of a part without one."""
+    numbered=[pad for pad in fp.Pads() if pad.GetNumber()]
+    return next((pad for pad in numbered if pad.GetNumber() in ('1','A1')),numbered[0])
 
 def write_centroid(folder,fitted,fps,origin):
-    """Millimetres from the board's lower-left corner, seen from the top, Y up. Rotation as KiCad stores it."""
+    """Millimetres from the board's lower-left corner, seen from the top, Y up. Mid and Ref are the footprint
+    origin, Pad is pin 1, as in PCBWay's sample. Rotation as KiCad stores it, bottom parts seen from the top."""
     x0,y1=origin
+    def at(v):return f'{p.ToMM(v.x)-x0:.3f}mm',f'{y1-p.ToMM(v.y):.3f}mm'
     with (folder/'centroid-pcbway.csv').open('w',newline='') as handle:
         writer=csv.writer(handle,lineterminator='\n');writer.writerow(CENTROID_COLUMNS)
         for part in fitted:
             fp=fps[part.ref]
             if not is_smd(fp):continue
-            x=f'{p.ToMM(fp.GetPosition().x)-x0:.3f}mm';y=f'{y1-p.ToMM(fp.GetPosition().y):.3f}mm'
-            writer.writerow([part.ref,part.footprint.split(':',1)[1],x,y,x,y,x,y,'B' if fp.IsFlipped() else 'T',
+            (x,y),(px,py)=at(fp.GetPosition()),at(_pin_one(fp).GetPosition())
+            writer.writerow([part.ref,part.footprint.split(':',1)[1],x,y,x,y,px,py,'B' if fp.IsFlipped() else 'T',
                              f'{fp.GetOrientationDegrees()%360:.2f}',sourcing(part)[1]])
 
 def order_sheet(v,board,lines,fitted,fps):
@@ -79,7 +92,7 @@ def order_sheet(v,board,lines,fitted,fps):
      ('Assembly type','Turnkey'),('Assembly board type','Single pieces'),('Assembly side(s)',' and '.join(sorted(sides))+' (both)' if len(sides)>1 else sides.pop()),
      ('Number of unique parts',str(sum(not part.dnp for part,_ in lines))),
      ('Number of SMD parts',str(len(smd))),('Number of BGA/QFP parts','1 (RP2040, QFN-56, 0.4 mm pitch)'),
-     ('Number of through-hole parts',str(len(tht))),
+     ('Number of through-hole parts',f'{len(tht)} (the {sum(mount_type(fps[q.ref])!="SMD" for q in smd)} USB-C receptacles are SMD with plated shell pegs)'),
      ('Function test / firmware loading','No / No'),
      ('Customer-fitted, not on the order',f'48 key switches; {", ".join(" ".join(refs) for refs in customer)}'),
     ]

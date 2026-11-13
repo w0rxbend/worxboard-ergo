@@ -10,7 +10,7 @@ mkdir -p pcb/.tools pcb/.work
 if [ ! -d pcb/.tools/site313/kicad_sch_api ]; then
  uv pip install --python-version 3.13 --target pcb/.tools/site313 --require-hashes -r pcb/requirements.lock
 fi
-docker run --rm --network none -u "$(id -u):$(id -g)" -e HOME=/tmp -e PYTHONHASHSEED=0 -e STAGE="$stage" \
+docker run --rm --cpus "${PCB_CPUS:-4}" --network none -u "$(id -u):$(id -g)" -e HOME=/tmp -e PYTHONHASHSEED=0 -e STAGE="$stage" \
  -e PYTHONPATH=/w:/w/pcb/.tools/site313 -v "$PWD:/w" -w /w "$image" bash -c '
  set -euo pipefail
  bash tools/kicad_env.sh

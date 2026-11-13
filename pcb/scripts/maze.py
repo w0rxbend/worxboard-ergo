@@ -93,6 +93,8 @@ class Job:
     via_drill:float
     layers:tuple=LAYERS            # layers the track may use
     reach:float=6.0                # search this far outside the box around the terminals
+    greed:float=1.0                # weight on the estimate: above 1 trades path length for a faster search
+    budget:int|None=None           # give up after this many expanded states
 
 def search(obstacles,job,starts,goals):
     """Cheapest lattice path from any start node to any goal node, or None."""
@@ -102,13 +104,15 @@ def search(obstacles,job,starts,goals):
     def inside(n):return box[0]-margin<=n[1]<=box[1]+margin and box[2]-margin<=n[2]<=box[3]+margin
     # A sample of the goals keeps the estimate cheap. It can overestimate, so a path may be slightly long.
     anchor=sorted(goal_set)[::max(1,len(goal_set)//ESTIMATE_GOALS)]
-    def estimate(n):return min(_octile(n,g) for g in anchor)
+    def estimate(n):return job.greed*min(_octile(n,g) for g in anchor)
     best={};queue=[];order=count()          # the counter breaks ties before unlike tuples are compared
     for n in starts:
         best[(n,None)]=0.0;heapq.heappush(queue,(estimate(n),0.0,next(order),n,None,None))
-    parents={}
+    parents={};expanded=0
     while queue:
         _,cost,_,node,move,parent=heapq.heappop(queue)
+        expanded+=1
+        if job.budget is not None and expanded>job.budget:return None
         if best.get((node,move),1e9)<cost:continue
         parents.setdefault((node,move),parent)
         if node in goal_set:return _unwind(parents,(node,move))

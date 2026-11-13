@@ -148,3 +148,25 @@ def test_3mf_units_and_geometry(variant):
   assert model.attrib['unit']=='millimeter'
   assert len(model.findall('.//m:vertex',ns))>3
   assert len(model.findall('.//m:triangle',ns))>3
+
+@pytest.mark.parametrize('variant',['mx','choc'])
+def test_committed_pcb_reports_are_clean(variant):
+ """The committed ERC, DRC, connectivity and parity reports of the routed board carry no blocking finding.
+ This holds the design files to each other only; it is not hardware evidence."""
+ from tools.check_pcb_reports import findings
+ blocking,_=findings(variant)
+ assert not blocking,blocking
+ routing=json.loads((ROOT/'pcb/reports'/f'{variant}-routing.json').read_text())
+ assert routing['tracks']>0 and routing['zones']>=4
+
+def test_fabrication_gate_stays_closed_on_unproven_items():
+ """make check-fabrication must keep failing until a person reviews the board and a built one is measured."""
+ from tools.fabrication_gate import OUTSTANDING
+ text=' '.join(OUTSTANDING)
+ for item in ('USB','ground','hardware prototype evidence','J6/J7'):
+  assert item in text,item
+ assert subprocess.run(['python3','-m','tools.fabrication_gate'],cwd=ROOT,capture_output=True).returncode!=0
+
+def test_usb_pair_geometry_matches_the_stackup():
+ from pcb.scripts import rules
+ assert abs(rules.microstrip_z_diff(rules.USB_TRACK,rules.USB_GAP)-rules.USB_Z_DIFF)<rules.USB_Z_TOLERANCE

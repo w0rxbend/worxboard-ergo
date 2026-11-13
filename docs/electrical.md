@@ -1,10 +1,11 @@
 # Electronics and USB architecture
 
-A bare RP2040 scans a 6×15 matrix with one 1N4148W diode per installed key. This revision stuffs 48 of those positions. Column -> switch -> diode anode -> diode cathode -> row gives `col2row`. Rows GP0–5 are inputs with pull-down; columns GP6–20 are outputs. A W25Q128JVSIQ provides 16 MiB of QSPI flash; the final 512 KiB is reserved for settings. A 12 MHz crystal, RP2040 supply decoupling, AP2112K 3.3 V regulator, reset, BOOT and SWD test points are included in the schematic.
+A bare RP2040 scans a 4×15 matrix with one 1N4148W diode per key: 48 keys fill ROW0–2 and three places of ROW3. Column -> switch -> diode anode -> diode cathode -> row gives `col2row`. Rows GP0–3 are inputs with pull-down; columns GP6–20 are outputs. GP4 and GP5 are left unconnected on the board; the firmware still declares six rows. A W25Q128JVSIQ provides 16 MiB of QSPI flash; the final 512 KiB is reserved for settings. A 12 MHz crystal, RP2040 supply decoupling, AP2112K 3.3 V regulator, reset, BOOT and SWD test points are included in the schematic.
 
 | GPIO | Function |
 |---|---|
-| 0–5 | Matrix ROW0–5 |
+| 0–3 | Matrix ROW0–3 |
+| 4–5 | Not connected |
 | 6–20 | Matrix COL0–14 |
 | 21 / 22 | USB mux SEL0 / SEL1 |
 | 23 / 24 / 25 | Left / center / right pre-diode VBUS sense |
@@ -13,15 +14,15 @@ A bare RP2040 scans a 6×15 matrix with one 1N4148W diode per installed key. Thi
 
 Each USB-C receptacle has independent CC1/CC2 5.1 kΩ sink resistors, its own D+/D− ESD clamp, and a B5819W diode from its VBUS to VSYS. No host VBUS rails are directly tied. The diode OR permits the controller to remain powered if several inputs are connected. Diode leakage, voltage drop, attach current and transient behavior need measurement; this is not a certified multi-host product. Ground is common; there is no galvanic isolation.
 
-A TI TS3USB3031 isolates the three USB data pairs. Its datasheet truth table is `SEL1:SEL0 = 00 left, 01 center, 10 right, 11 high impedance`. The third differential path is labelled MHL+/− by TI; USB full-speed operation on that path still needs bench verification. Both selector bits have 10 kΩ pull-ups, so the default state is disconnected while RP2040 resets. Each pre-diode VBUS rail is divided by 10 kΩ/10 kΩ for GPIO detection. At a nominal 5 V input this is 2.5 V; verify input thresholds across supply/tolerance extremes.
+A TI TS3USB3031 isolates the three USB data pairs. Its datasheet truth table is `SEL1:SEL0 = 00 left, 01 center, 10 right, 11 high impedance`. The third differential path is labelled MHL+/− by TI; USB full-speed operation on that path still needs bench verification. Both selector bits have 10 kΩ pull-ups, so the default state is disconnected while RP2040 resets. Each pre-diode VBUS rail is divided by 5.1 kΩ/5.1 kΩ for GPIO detection; the 10.2 kΩ to ground also bleeds Schottky reverse leakage on an unplugged port. At a nominal 5 V input this is 2.5 V; verify input thresholds across supply/tolerance extremes.
 
 The ZMK module polls VBUS, uses the center/left/right priority only when choosing a new input, and retains a selected powered input. It enters high impedance for 25 ms before selecting another input. Masked GPIO writes change both selection bits together. This behavior is tested on the host and compiled for RP2040, but actual mux switching, host enumeration and reconnect behavior require hardware. It is cable-position selection, not a KVM feature or simultaneous multi-host keyboard.
 
-USB inputs operate at USB 2.0 full speed through the RP2040 PHY. No PD, charging, USB 3.x, or peripheral hub is included. The 27 Ω USB series resistors belong close to the RP2040. Route each D+/D− pair together over a continuous reference plane, minimize branches at the duplicated receptacle pads, and tune the differential geometry to the selected fabricator's stackup. Four copper layers are selected for the seed board, but the controlled stackup and copper planes are not yet designed.
+USB inputs operate at USB 2.0 full speed through the RP2040 PHY. No PD, charging, USB 3.x, or peripheral hub is included. The 27 Ω USB series resistors belong close to the RP2040. Each receptacle pair runs on F.Cu over the solid In1.Cu ground plane, 0.22 mm wide with a 0.15 mm gap: about 90 Ω differential on PCBWay's standard 4-layer 1.6 mm build by the IPC-2141A closed form (see `pcb/scripts/rules.py`). The second receptacle pad of each line and the ESD clamp join the pair within a few millimetres of the receptacle. This is a computed figure, not a measured one.
 
-The present `.kicad_pcb` files contain footprints and complete pad net assignments with **zero routed tracks**. They are editable placement seeds. Service-strip placement is provisional; the MCU power parts, crystal and USB components must be moved into correct local groups. The current DRC findings are committed, including unconnected nets and placement problems. No Gerbers or fabrication-ready claims are supplied.
+The `.kicad_pcb` files are routed four-layer boards generated by `make pcb`; see [pcb-seed.md](pcb-seed.md) and [verification.md](verification.md) for the checks they pass and the review they still need. `pcb/fab/` holds a PCBWay prototype order package. No board has been built; the package is not a release.
 
-The plate has a 2.6 × 1.1 mm window south of every switch for a later SK6812MINI-E. The schematic does not stuff that chain. GP0–GP29 are already assigned, so there is no pin left for a load-switch enable. Eighty-seven addressable LEDs at about 1 mA each would exceed the 2.5 mA USB suspend budget even when dark, and full-white current is far beyond USB 2.0. The RGB header still exposes VSYS, GP29 and ground for a bench experiment. A populated chain needs a level shifter, per-LED decoupling, a default-off power switch, and a measured current limit before it can be routed. Do not attach an unrestricted LED chain directly to this header.
+The plate has a 2.6 × 1.1 mm window south of every switch for a later SK6812MINI-E. The schematic does not stuff that chain. GP4 and GP5 are free on this board and could drive a load-switch enable in a later revision; none is fitted. Forty-eight addressable LEDs at about 1 mA each would exceed the 2.5 mA USB suspend budget even when dark, and full-white current is far beyond USB 2.0. The RGB header still exposes VSYS, GP29 and ground for a bench experiment. A populated chain needs a level shifter, per-LED decoupling, a default-off power switch, and a measured current limit before it can be routed. Do not attach an unrestricted LED chain directly to this header.
 
 J6 and J7 each take a single 2-pin shunt on a 3-pin header. Put both shunts on pins 1–2 for normal firmware selection. For ROM flashing, disconnect USB, move both to pins 2–3, and use only the center USB input. This fixes SEL0=1 and SEL1=0 while disconnecting the firmware control signals, so ROM USB can work without executing the selector code. Hold BOOT while pressing RESET, then copy UF2 to RPI-RP2. Disconnect USB before restoring both shunts to 1–2. Both settings and physical pin numbering must be checked during A1; SWD remains the first bring-up/recovery method. The 1 kΩ firmware-side resistors also limit accidental drive contention during jumper mistakes.
 
@@ -33,7 +34,7 @@ flowchart LR
   C[Center USB-C] --> M
   R[Right USB-C] --> M
   M --> RP[RP2040 + QSPI flash]
-  RP --> K[6 x 15 diode matrix]
+  RP --> K[4 x 15 diode matrix]
   RP --> D[Center SPI memory LCD]
   L --> VL[VBUS isolation diode]
   C --> VC[VBUS isolation diode]

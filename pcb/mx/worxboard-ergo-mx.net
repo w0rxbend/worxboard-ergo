@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/w/pcb/mx/worxboard-ergo-mx.kicad_sch</source>
-    <date>2026-11-13T15:56:04</date>
+    <date>2026-11-13T18:30:37</date>
     <tool>Eeschema 10.0.7</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -4579,13 +4579,13 @@
       <value>TS3USB3031RMGR</value>
       <footprint>Package_DFN_QFN:Texas_RMG0012A_WQFN-12_1.8x1.8mm_P0.4mm</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2652459</field>
         <field name="Footprint">Package_DFN_QFN:Texas_RMG0012A_WQFN-12_1.8x1.8mm_P0.4mm</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="TS3USB3031" description=""/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2652459"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>

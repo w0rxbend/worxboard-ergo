@@ -17,6 +17,8 @@ HEADER_PITCH = 2.54
 LCD_HEADER_INSET = 1.5            # nice!view pin row inside the module's short edge; check against a real module
 DIODE_NORTH = 8.2                 # matrix diode centre behind its switch, clear of both socket types
 BOSS_CLEAR = {"B": 4.0, "F": 2.9}   # chassis boss R3.6 below, cover boss R2.5 above, plus 0.4
+DECOUPLING_RING = 5.0             # RP2040 capacitor centres stay this far from their pin: the band between holds
+                                  # the escape vias of the 30 GPIO pins. Each pin and capacitor reach the planes by via
 
 def anchors():
     """ref -> (x, y, angle). Receptacle bodies end flush with the board edge at each case mouth."""
@@ -34,7 +36,8 @@ def anchors():
         # The resistors sit a little left of the pins, so the 3V3 pins 48-49 beside them can escape.
         "R4": (-16.2, -39.9, 270.0), "R3": (-15.0, -39.9, 270.0), "U7": (-15.2, -42.9, 0.0),
         # Flash to the rear and one side of the QSPI pins, pin 1 away from the MCU: the bus wraps both pin rows.
-        "U2": (-8.0, -43.5, 180.0),
+        # It stands far enough east that the right receptacle pair can end beside the mux inputs.
+        "U2": (-5.5, -43.5, 180.0),
         "U3": (30.0, -46.0, 0.0),
         "SW1": (-34.0, -22.0, 0.0), "SW2": (-44.0, -22.0, 0.0),
         "J5": (44.0, -36.0, 90.0), "J6": (36.0, -24.0, 90.0), "J7": (36.0, -30.0, 90.0),
@@ -50,10 +53,10 @@ KEEP_CLEAR = (("U7", (-5.0, -7.0, 6.0, 2.5), "B"),)
 # (part, host, host pad, least distance between part centre and host pad)
 SATELLITES = (
     ("Y1", "U1", "20", 4.6), ("R7", "U1", "21", 0.0), ("C6", "Y1", "1", 0.0), ("C7", "Y1", "3", 0.0),
-    ("C19", "U1", "45", 0.0), ("C18", "U1", "44", 0.0), ("C17", "U1", "50", 0.0), ("C16", "U1", "23", 0.0),
-    ("C14", "U1", "48", 0.0), ("C13", "U1", "49", 0.0), ("C15", "U1", "43", 0.0),
-    ("C8", "U1", "1", 0.0), ("C9", "U1", "10", 0.0), ("C10", "U1", "22", 0.0),
-    ("C11", "U1", "33", 0.0), ("C12", "U1", "42", 0.0),
+    ("C19", "U1", "45", DECOUPLING_RING), ("C18", "U1", "44", DECOUPLING_RING), ("C17", "U1", "50", DECOUPLING_RING),
+    ("C16", "U1", "23", DECOUPLING_RING), ("C14", "U1", "48", DECOUPLING_RING), ("C13", "U1", "49", DECOUPLING_RING),
+    ("C15", "U1", "43", DECOUPLING_RING), ("C8", "U1", "1", DECOUPLING_RING), ("C9", "U1", "10", DECOUPLING_RING),
+    ("C10", "U1", "22", DECOUPLING_RING), ("C11", "U1", "33", DECOUPLING_RING), ("C12", "U1", "42", DECOUPLING_RING),
     ("C5", "U2", "8", 0.0), ("R8", "U2", "1", 0.0), ("R9", "U2", "1", 0.0),
     ("C20", "U7", "12", 0.0), ("R40", "U7", "1", 0.0), ("R41", "U7", "2", 0.0),
     ("C1", "U3", "1", 0.0), ("C3", "U3", "5", 0.0), ("C4", "U3", "5", 0.0), ("C2", "U3", "1", 0.0),

@@ -7,16 +7,16 @@
     "footprint": "Package_DFN_QFN:QFN-56-1EP_7x7mm_P0.4mm_EP3.2x3.2mm"
   },
   "U2": {
-    "x": -8.0,
+    "x": -5.5,
     "y": -43.5,
     "angle": 180.0,
     "side": "B",
     "footprint": "Package_SO:SOIC-8_5.3x5.3mm_P1.27mm"
   },
   "C5": {
-    "x": -8.2,
-    "y": -48.2,
-    "angle": 90.0,
+    "x": -7.7,
+    "y": -47.8,
+    "angle": 0.0,
     "side": "B",
     "footprint": "Capacitor_SMD:C_0402_1005Metric"
   },
@@ -49,14 +49,14 @@
     "footprint": "Capacitor_SMD:C_0402_1005Metric"
   },
   "R8": {
-    "x": -4.4,
+    "x": -1.9,
     "y": -47.8,
     "angle": 0.0,
     "side": "B",
     "footprint": "Resistor_SMD:R_0402_1005Metric"
   },
   "R9": {
-    "x": -2.0,
+    "x": 0.5,
     "y": -45.4,
     "angle": -90.0,
     "side": "B",
@@ -84,99 +84,99 @@
     "footprint": "Button_Switch_SMD:SW_SPST_TS-1088-xR020"
   },
   "C8": {
-    "x": -6.8,
-    "y": -35.6,
+    "x": -7.6,
+    "y": -32.6,
     "angle": -90.0,
     "side": "B",
     "footprint": "Capacitor_SMD:C_0402_1005Metric"
   },
   "C9": {
-    "x": -8.6,
-    "y": -32.8,
+    "x": -7.6,
+    "y": -29.0,
     "angle": -90.0,
     "side": "B",
     "footprint": "Capacitor_SMD:C_0402_1005Metric"
   },
   "C10": {
-    "x": -8.6,
-    "y": -30.0,
+    "x": -19.2,
+    "y": -27.8,
     "angle": -90.0,
     "side": "B",
     "footprint": "Capacitor_SMD:C_0402_1005Metric"
   },
   "C11": {
-    "x": -21.2,
+    "x": -22.4,
     "y": -33.0,
     "angle": 90.0,
     "side": "B",
     "footprint": "Capacitor_SMD:C_0402_1005Metric"
   },
   "C12": {
-    "x": -21.6,
-    "y": -35.2,
-    "angle": 180.0,
+    "x": -23.0,
+    "y": -36.6,
+    "angle": 90.0,
     "side": "B",
     "footprint": "Capacitor_SMD:C_0402_1005Metric"
   },
   "C13": {
     "x": -21.2,
-    "y": -37.4,
-    "angle": -90.0,
+    "y": -39.2,
+    "angle": 180.0,
     "side": "B",
     "footprint": "Capacitor_SMD:C_0402_1005Metric"
   },
   "C14": {
-    "x": -19.4,
-    "y": -34.4,
-    "angle": -90.0,
-    "side": "B",
-    "footprint": "Capacitor_SMD:C_0402_1005Metric"
-  },
-  "C15": {
-    "x": -21.2,
-    "y": -40.2,
-    "angle": 90.0,
-    "side": "B",
-    "footprint": "Capacitor_SMD:C_0402_1005Metric"
-  },
-  "C16": {
-    "x": -19.4,
-    "y": -30.6,
-    "angle": 90.0,
-    "side": "B",
-    "footprint": "Capacitor_SMD:C_0402_1005Metric"
-  },
-  "C17": {
     "x": -8.6,
     "y": -35.6,
     "angle": -90.0,
     "side": "B",
     "footprint": "Capacitor_SMD:C_0402_1005Metric"
   },
-  "C18": {
-    "x": -19.4,
-    "y": -37.2,
-    "angle": -90.0,
+  "C15": {
+    "x": -21.2,
+    "y": -41.4,
+    "angle": 90.0,
     "side": "B",
     "footprint": "Capacitor_SMD:C_0402_1005Metric"
   },
-  "C19": {
+  "C16": {
+    "x": -19.6,
+    "y": -30.6,
+    "angle": 90.0,
+    "side": "B",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric"
+  },
+  "C17": {
     "x": -18.4,
     "y": -39.4,
     "angle": 180.0,
     "side": "B",
     "footprint": "Capacitor_SMD:C_0402_1005Metric"
   },
+  "C18": {
+    "x": -20.2,
+    "y": -34.4,
+    "angle": 180.0,
+    "side": "B",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric"
+  },
+  "C19": {
+    "x": -20.8,
+    "y": -37.4,
+    "angle": 180.0,
+    "side": "B",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric"
+  },
   "TP8": {
-    "x": -19.8,
-    "y": -27.8,
+    "x": -18.8,
+    "y": -25.0,
     "angle": 0.0,
     "side": "B",
     "footprint": "TestPoint:TestPoint_Pad_D1.0mm"
   },
   "TP9": {
-    "x": -18.8,
-    "y": -25.0,
+    "x": -22.0,
+    "y": -30.2,
     "angle": 0.0,
     "side": "B",
     "footprint": "TestPoint:TestPoint_Pad_D1.0mm"
@@ -245,42 +245,42 @@
     "footprint": "Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12"
   },
   "R30": {
-    "x": -2.0,
+    "x": 0.6,
     "y": -48.9,
     "angle": -90.0,
     "side": "B",
     "footprint": "Resistor_SMD:R_0402_1005Metric"
   },
   "R31": {
-    "x": -6.6,
-    "y": -51.9,
-    "angle": -90.0,
-    "side": "B",
-    "footprint": "Resistor_SMD:R_0402_1005Metric"
-  },
-  "R32": {
-    "x": 7.4,
-    "y": -55.6,
+    "x": -4.6,
+    "y": -49.3,
     "angle": 180.0,
     "side": "B",
     "footprint": "Resistor_SMD:R_0402_1005Metric"
   },
-  "R33": {
-    "x": 7.1,
-    "y": -57.4,
+  "R32": {
+    "x": 7.8,
+    "y": -49.3,
     "angle": 0.0,
+    "side": "B",
+    "footprint": "Resistor_SMD:R_0402_1005Metric"
+  },
+  "R33": {
+    "x": 8.3,
+    "y": -47.5,
+    "angle": 180.0,
     "side": "B",
     "footprint": "Resistor_SMD:R_0402_1005Metric"
   },
   "D2": {
     "x": 7.4,
-    "y": -51.9,
-    "angle": 90.0,
+    "y": -53.1,
+    "angle": -90.0,
     "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "U5": {
-    "x": 1.4,
+    "x": 4.0,
     "y": -48.1,
     "angle": 180.0,
     "side": "B",
@@ -393,7 +393,7 @@
   },
   "R40": {
     "x": -21.1,
-    "y": -45.7,
+    "y": -46.9,
     "angle": 90.0,
     "side": "B",
     "footprint": "Resistor_SMD:R_0402_1005Metric"
@@ -407,7 +407,7 @@
   },
   "C20": {
     "x": -21.2,
-    "y": -43.0,
+    "y": -44.2,
     "angle": 90.0,
     "side": "B",
     "footprint": "Capacitor_SMD:C_0402_1005Metric"

@@ -51,7 +51,7 @@
       (xy 1.53 3.33)
     )
 
-    (stroke (width 0.1) (type solid)) (fill solid) (layer "F.SilkS") (tstamp 2c6083e3-4cd3-45f3-b991-97a80b1974ae))
+    (stroke (width 0.1) (type solid)) (fill solid) (layer "F.Fab") (tstamp 2c6083e3-4cd3-45f3-b991-97a80b1974ae))
   (fp_line (start -9.525 -9.525) (end -9.525 9.525)
     (stroke (width 0.1) (type solid)) (layer "Dwgs.User") (tstamp cab2a59a-143c-48e0-a6e3-0f63d7a5045a))
   (fp_line (start -9.525 9.525) (end 9.525 9.525)

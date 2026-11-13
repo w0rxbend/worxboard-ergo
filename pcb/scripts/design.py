@@ -18,27 +18,29 @@ SENSE_R="5.1k"          # each half of a VBUS sense divider. 10.2 k to ground bl
                         # on an unplugged port: the sense pin stays under VIL 0.8 V up to about 157 uA
 LCSC_C={"100n":"C1525","1u":"C52923","10u":"C15525","27p":"C1557"}
 LCSC_FLASH="C97521"
-LCSC_XTAL="C49304726"
+LCSC_XTAL="C49304726"     # CL 18 pF: 27 pF load caps. Not the ABM8-272-T3 the RP2040 design guide names
+LCSC_MUX="C2652459"
 LCSC_SOCKET={"mx":"C2803348","choc":"C5333465"}
 HEADER_1X03="Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
 LCD_SOCKET="worxboard:PinSocket_1x05_P2.54mm_Vertical_H5.0mm"
 MUX_PACKAGE="Package_DFN_QFN:Texas_RMG0012A_WQFN-12_1.8x1.8mm_P0.4mm"
 # LCSC number, or footprint for a part without one -> (manufacturer, part number, verified).
 # Verified means the number was read on a maker or distributor page on 2026-11-13. Stock and price are unknown.
+# SC0914(7) and SC0914(13) are the RP2040 reel codes; LCSC sells it as RP2040.
 SOURCING={
- "C2040":("Raspberry Pi","SC0914(13)",True),"C97521":("Winbond","W25Q128JVSIQ",True),
+ "C2040":("Raspberry Pi","RP2040",True),"C97521":("Winbond","W25Q128JVSIQ",True),
  "C49304726":("YXC","XL2EL89CRI-111YLC-12M",True),"C51118":("Diodes Incorporated","AP2112K-3.3TRG1",True),
- "C7519":("STMicroelectronics","USBLC6-2SC6",True),"C8598":("JSCJ","B5819W",True),
- "C81598":("ST (Semtech), as LCSC lists it","1N4148W",False),
+ "C7519":("STMicroelectronics","USBLC6-2SC6",True),"C8598":("JSCJ","B5819W SL",True),
+ "C81598":("ST (Semtech), as LCSC lists it","1N4148W",True),
  "C165948":("Korean Hroparts Elec","TYPE-C-31-M-12",True),"C455280":("XUNPU","TS-1088R-02026",True),
  "C25905":("UNI-ROYAL","0402WGF5101TCE",True),"C2909343":("FOJAN","FRC0402F27R0TS",True),
  "C11702":("UNI-ROYAL","0402WGF1001TCE",True),"C25744":("UNI-ROYAL","0402WGF1002TCE",True),
  "C1525":("Samsung Electro-Mechanics","CL05B104KO5NNNC",True),"C52923":("Samsung Electro-Mechanics","CL05A105KA5NQNC",True),
  "C15525":("Samsung Electro-Mechanics","CL05A106MQ5NUNC",True),"C1557":("Fenghua","0402CG270J500NT",True),
  "C2803348":("Kailh","CPG151101S11",True),"C5333465":("Kailh","CPG135001S30",True),
- MUX_PACKAGE:("Texas Instruments","TS3USB3031RMGR",True),
+ LCSC_MUX:("Texas Instruments","TS3USB3031RMGR",True),
  HEADER_1X03:("Wurth Elektronik","61300311121",True),
- LCD_SOCKET:("not chosen","1x5 2.54 mm socket, 5.0 mm tall",False),
+ LCD_SOCKET:("HJ Tech","17-0004-002",False),   # real 1x5 socket, but 5.7 mm tall against the 5.0 mm footprint: not chosen
 }
 def sourcing(part):
     """(manufacturer, part number, verified) for a BOM part."""
@@ -131,7 +133,7 @@ def design(variant):
  # port are identical switches. Swapped, the common pins face RP2040 pins 46/47 on the same side of the board
  # without a crossing. Port order and the select truth table are unchanged.
  parts += [Part('U7','worxboard:TS3USB3031','TS3USB3031RMGR',
-  MUX_PACKAGE,'',
+  MUX_PACKAGE,LCSC_MUX,
   {'1':'MUX_S0','2':'MUX_S1','3':'USB_LEFT_DM','4':'USB_LEFT_DP','5':'USB_CENTER_DM','6':'USB_CENTER_DP',
    '7':'USB_RIGHT_DM','8':'USB_RIGHT_DP','9':'GND','10':'USB_MUX_DP','11':'USB_MUX_DM','12':'3V3'},'SELECTOR'),
   R('R40','10k','MUX_S0','3V3','SELECTOR'),R('R41','10k','MUX_S1','3V3','SELECTOR'),

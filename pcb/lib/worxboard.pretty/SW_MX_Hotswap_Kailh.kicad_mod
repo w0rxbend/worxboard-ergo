@@ -17,6 +17,6 @@
 	(fp_rect (start -9.525 -9.525) (end 9.525 9.525) (stroke (width 0.1) (type solid)) (fill no) (layer "F.Fab") (uuid "55511a69-5fe2-5c6e-a84f-d7ce3cb13651"))
 	(fp_rect (start -7 -7) (end 7 7) (stroke (width 0.1) (type solid)) (fill no) (layer "Dwgs.User") (uuid "0adfb1e1-d0a8-5e92-8520-9319a7d4cdc0"))
 	(fp_rect (start -7.367 -7.85) (end 8.61 -0.15) (stroke (width 0.05) (type solid)) (fill no) (layer "F.CrtYd") (uuid "ba98dbdf-bded-5c01-85cc-db290dd5b872"))
-	(fp_rect (start -5 -7.6) (end 7 -0.4) (stroke (width 0.12) (type solid)) (fill no) (layer "F.SilkS") (uuid "940dab42-e2d1-5645-860f-847a9a54a6ba"))
+	(fp_rect (start -5 -7.6) (end 7 -0.4) (stroke (width 0.12) (type solid)) (fill no) (layer "F.Fab") (uuid "940dab42-e2d1-5645-860f-847a9a54a6ba"))
 	(embedded_fonts no)
 )

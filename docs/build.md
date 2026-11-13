@@ -12,7 +12,7 @@ Read this page once, then follow the sections in order. Do the coupons before a 
 | CNC the chassis and, with the right process, the plate | `cad/exports/<variant>/*.step` | Traveler in [cnc.md](cnc.md). No posted toolpath. No first article. |
 | 3D-print the case, plate, top cover, and palm rest | Matching `.stl` and `.3mf` files | Watertight meshes. No validated slicer profile. The center tab is not a measured joint. |
 | Read the circuit and the placed parts | `pcb/<variant>/*.kicad_sch`, `*.kicad_pcb`, `docs/bom.csv` | Schematic and placement seed. **Zero copper tracks.** |
-| Order an assembled PCB | Gerbers, drills, stackup, paste, centroid | **Not in this repository. Do not invent them from the unrouted board.** |
+| Order an assembled PCB | Gerbers, drills, stackup, paste, centroid | A prototype order package in `pcb/fab/`. Not hardware tested; a person must review it first. See section 5. |
 | Flash firmware | `firmware/artifacts/worxboard-ergo.uf2` after `make firmware` | Compile check only. No keyboard has been plugged in. |
 
 `make check-fabrication` is required to fail until routing, USB review, and a physical bring-up exist. Do not weaken that gate to get a green build.
@@ -51,7 +51,7 @@ make manifest
 make check-fabrication   # this exit is failure, on purpose
 ```
 
-`make cad` checks each solid, writes STEP, STL, and 3MF, and round-trips the STEP volume. `make native` reopens the whole parts in FreeCAD. `make test` loads every mesh. `make pcb` regenerates the unrouted boards and writes ERC/DRC reports. It does not autoroute. `make firmware` builds the pinned ZMK image. The last command must print `Fabrication blocked` and exit non-zero.
+`make cad` checks each solid, writes STEP, STL, and 3MF, and round-trips the STEP volume. `make native` reopens the whole parts in FreeCAD. `make test` loads every mesh. `make pcb` regenerates the routed boards from the committed autorouter sessions and writes ERC/DRC reports; it needs neither Java nor the network. `make pcb-autoroute` reruns Freerouting after placement changes. `make firmware` builds the pinned ZMK image. The last command must print `Fabrication blocked` and exit non-zero.
 
 Current evidence is in [verification.md](verification.md). If you change `layout/model.py` or `pcb/scripts/design.py`, regenerate before you trust the exports.
 
@@ -78,26 +78,24 @@ There is no posted G-code in this repository. The STEP is the geometry input to 
 
 ## 5. PCB and PCBA
 
-Do not order boards from this revision.
+This revision has a **prototype order package**, not a release. No board of this design has been built or tested, and AGENTS.md still requires a person to review the USB pairs, the ground planes and return paths, and every Gerber layer before money is spent. `make check-fabrication` stays red until that review and a measured prototype exist.
 
 What you have:
 
-- KiCad 10.0.7 projects: `pcb/mx/worxboard-ergo-mx.kicad_pro` and `pcb/choc/worxboard-ergo-choc.kicad_pro`.
-- Schematics, XML netlists, and placed footprints. Each board has 169 footprints: 48 switches, 48 diodes, the RP2040 support circuit, three USB-C receptacles, and eight mounting holes.
-- An illustrative BOM, `docs/bom.csv`. Every line is `UNVERIFIED_A0_NOT_FOR_ORDER`. LCSC numbers are references, not a cart.
-- `placement.json` in each PCB directory. That is a development coordinate list in layout millimeters. It is not a centroid file, and it has no rotation-checked assembly drawing.
+- KiCad 10.0.7 projects: `pcb/mx/worxboard-ergo-mx.kicad_pro` and `pcb/choc/worxboard-ergo-choc.kicad_pro`. Each board is routed on four layers for PCBWay's standard 1.6 mm build and passes ERC, DRC, unconnected-item, schematic-parity and pad-net checks; [verification.md](verification.md) has the numbers and the limits of that claim.
+- `pcb/fab/<variant>/` and `pcb/fab/worxboard-ergo-<variant>-A0-pcbway.zip`: RS-274X Gerbers (four copper layers, mask, paste, silk, edge), Excellon drills with a drill map, an IPC-D-356 netlist, a PCBWay BOM and centroid file, top and bottom assembly drawings, renders, and `ORDER.md`, which lists every order-form field.
+- `docs/bom.csv`. Lines marked `MPN_READ_2026-11-13_STOCK_AND_PRICE_UNKNOWN` had their part number read on a maker or distributor page. Stock and price are unknown. `UNVERIFIED_NOT_FOR_ORDER` marks parts not chosen.
 
-What is missing, and why a fabricator cannot build it yet:
+To order a first prototype run, after the human review:
 
-- The boards have **no routed tracks**. Latest reports: 329 unconnected items on each board. MX DRC has 115 errors and 205 warnings. Choc DRC has 121 errors and 113 warnings. ERC has 2 isolated-pin-label warnings per board.
-- No reviewed four-layer stackup, no ground plane, no USB differential geometry.
-- No Gerbers, drills, paste layer, or pick-and-place package. Do not export those from the unrouted board.
-- No current measurement of the diode-OR VBUS path, and no hardware check of the J6/J7 ROM override.
-- Per-key LEDs are windows in the plate only. Do not add a SK6812 chain. GP29 is a header, and a stuffed chain would exceed USB suspend.
+1. Rebuild: `make pcb`, then `make pcb-fab`. `python3 tools/check_pcb_reports.py` must print clean reports for both variants.
+2. Upload the zip of one variant to PCBWay's PCB + assembly (turnkey) form and fill the fields from its `ORDER.md`. Upload `bom-pcbway.csv` and `centroid-pcbway.csv` for assembly.
+3. Ask PCBWay to confirm part rotations and substitutions against the assembly drawings before they build. Bottom-side rotations are KiCad's, seen from the top.
+4. The assembler fits the SMD parts, the three USB-C receptacles and the hot-swap sockets. Switches, J4, J5, J6 and J7 are yours; read [assembly.md](assembly.md) before fitting anything to J4–J7.
 
-When a later revision actually routes both boards, the acceptance bar is in [roadmap.md](roadmap.md) gate A2: zero ERC errors, zero DRC errors, zero unconnected nets, schematic parity, a reviewed stackup, and a reviewed BOM. Physical bring-up is gate A3. Only then does gate A5 allow Gerbers.
+Still not covered by the package: a current measurement of the diode-OR VBUS path, the J6/J7 ROM override, USB enumeration on each port, the LCD mounting height, and fit of the populated board in the printed case. Per-key LEDs are windows in the plate only. Do not add a SK6812 chain.
 
-Until that work, the useful electrical review is to open the schematic and read [electrical.md](electrical.md). Three USB-C jacks are alternate cable positions. Their data pairs stay separate through a TS3USB3031 mux. Their VBUS pins meet only through Schottky diodes. Never tie the host data pins or the host VBUS pins together.
+Three USB-C jacks are alternate cable positions. Their data pairs stay separate through a TS3USB3031 mux. Their VBUS pins meet only through Schottky diodes. Never tie the host data pins or the host VBUS pins together.
 
 ## 6. Assemble, after a real PCB exists
 

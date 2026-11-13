@@ -1,17 +1,20 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
-import json,sys
+"""Release gate. Design-file checks can pass; the items only a person or a built board can close cannot."""
+import sys
 from pathlib import Path
-r=Path(__file__).resolve().parents[1]
-failed=[]
-for v in ['mx','choc']:
- for kind in ['erc','drc']:
-  report=r/f'pcb/reports/{v}-{kind}.json'
-  if not report.exists():failed.append(f'{v}: missing {kind}');continue
-  data=json.loads(report.read_text())
-  problems=data.get('violations',[])+data.get('unconnected_items',[])+data.get('schematic_parity',[])
-  if kind=='erc':
-   problems=[x for sheet in data.get('sheets',[]) for x in sheet.get('violations',[])]
-  if problems:failed.append(f'{v}: {len(problems)} {kind} findings')
-# These are physical engineering gates; zero reports alone cannot approve A0.
-failed.append('A0: USB override validation, routing review and physical fit/bring-up approvals outstanding')
-print('Fabrication blocked:\n'+'\n'.join(failed));sys.exit(1)
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+from tools.check_pcb_reports import VARIANTS,findings
+# AGENTS.md: release needs manual USB/ground review and hardware prototype evidence. Nothing in the
+# repository can supply either, so this list is closed by editing it in a reviewed commit, not by a script.
+OUTSTANDING=(
+ 'manual review of the USB pairs, ground planes and return paths by a person',
+ 'manual review of every Gerber layer and the drill files by a person',
+ 'hardware prototype evidence: rails, crystal start-up, USB enumeration on all three ports, key matrix',
+ 'hardware validation of the J6/J7 centre-port ROM override',
+ 'physical fit of the assembled board in the printed case',
+)
+def main():
+ failed=[line for variant in VARIANTS for line in findings(variant)[0]]
+ failed+=[f'A0: outstanding: {item}' for item in OUTSTANDING]
+ print('Fabrication release blocked:\n'+'\n'.join(failed));sys.exit(1)
+if __name__=='__main__':main()

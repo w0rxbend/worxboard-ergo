@@ -47,7 +47,8 @@ def test_keywells_are_orthogonal():
  assert ANGLE==10.0
 
 def test_electronics_and_firmware_contract():
- assert len(GPIO_NETS)==30 and len(set(GPIO_NETS))==30
+ named=[net for net in GPIO_NETS if net]
+ assert len(GPIO_NETS)==30 and len(named)==len(set(named))==28 and GPIO_NETS[4:6]==[None,None]
  for variant in variants:
   parts=design(variant);byref={p.ref:p for p in parts}
   assert len(parts)==len(byref)
@@ -104,7 +105,7 @@ CASE_BOUNDS={
  'choc':{'chassis':(303.03,223.00,12.70),'chassis_left':(169.51,223.00,12.70),'chassis_right':(151.51,223.00,12.70),
   'top_cover':(288.87,136.40,4.70),'palm_rest':(302.74,88.33,10.20),'riser':(224.0,33.21,21.25)}}
 PLATE_VOLUME={'mx':29812.902,'choc':24170.577}
-FIT_PAIR_COUNT=21
+FIT_PAIR_COUNT=22
 
 @pytest.mark.parametrize('variant',['mx','choc'])
 def test_exported_case_envelope(variant):

@@ -10,6 +10,7 @@
 *.FCBak
 *.lck
 pcb/.tools/
+pcb/.work/
 
 /core
 /core.*

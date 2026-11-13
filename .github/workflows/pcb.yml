@@ -1,24 +1,24 @@
-name: KiCad engineering seed
+name: KiCad boards
 on:
   push:
-    paths: ["pcb/**", "layout/**", "tools/pcb.sh", ".github/workflows/pcb.yml"]
+    paths: ["pcb/**", "layout/**", "tools/pcb.sh", "tools/check_pcb_reports.py", ".github/workflows/pcb.yml"]
   pull_request:
-    paths: ["pcb/**", "layout/**", "tools/pcb.sh", ".github/workflows/pcb.yml"]
+    paths: ["pcb/**", "layout/**", "tools/pcb.sh", "tools/check_pcb_reports.py", ".github/workflows/pcb.yml"]
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
-  seed:
+  boards:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6
       - run: make pcb
-      - name: Verify source to board net assignments
+      - name: Gate ERC, DRC, connectivity and schematic parity
         run: python3 tools/check_pcb_reports.py
       - uses: actions/upload-artifact@v4
         with:
-          name: unrouted-kicad-seed-and-reports
+          name: routed-kicad-boards-and-reports
           path: |
             pcb/mx/
             pcb/choc/

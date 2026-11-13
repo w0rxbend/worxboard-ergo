@@ -6,7 +6,7 @@
       "part": "chassis",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 317879.43467,
+      "volume_mm3": 319343.65515,
       "bounds_mm": [
         303.0267,
         223.0,
@@ -19,7 +19,7 @@
       "part": "plate",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 29812.90168,
+      "volume_mm3": 29784.99805,
       "bounds_mm": [
         288.5726,
         136.102,
@@ -58,7 +58,7 @@
       "part": "chassis_left",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 159712.42782,
+      "volume_mm3": 160442.7528,
       "bounds_mm": [
         169.5133,
         223.0,
@@ -71,7 +71,7 @@
       "part": "chassis_right",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 158166.95237,
+      "volume_mm3": 158900.90978,
       "bounds_mm": [
         151.5133,
         223.0,
@@ -84,7 +84,7 @@
       "part": "plate_left",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 15013.43707,
+      "volume_mm3": 14999.50077,
       "bounds_mm": [
         162.282,
         136.1007,
@@ -97,7 +97,7 @@
       "part": "plate_right",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 14799.46461,
+      "volume_mm3": 14785.49728,
       "bounds_mm": [
         144.2906,
         136.102,
@@ -175,7 +175,7 @@
       "part": "chassis",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 290603.56228,
+      "volume_mm3": 291947.11389,
       "bounds_mm": [
         303.0267,
         223.0,
@@ -188,7 +188,7 @@
       "part": "plate",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 24170.57734,
+      "volume_mm3": 24148.25444,
       "bounds_mm": [
         288.5726,
         136.102,
@@ -201,7 +201,7 @@
       "part": "top_cover",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 30063.38853,
+      "volume_mm3": 29890.92661,
       "bounds_mm": [
         288.8749,
         136.4031,
@@ -227,7 +227,7 @@
       "part": "chassis_left",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 146075.57215,
+      "volume_mm3": 146746.23887,
       "bounds_mm": [
         169.5133,
         223.0,
@@ -240,7 +240,7 @@
       "part": "chassis_right",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 144527.95015,
+      "volume_mm3": 145200.84568,
       "bounds_mm": [
         151.5133,
         223.0,
@@ -253,7 +253,7 @@
       "part": "plate_left",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 12170.87766,
+      "volume_mm3": 12159.72862,
       "bounds_mm": [
         162.282,
         136.1007,
@@ -266,7 +266,7 @@
       "part": "plate_right",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 11999.69968,
+      "volume_mm3": 11988.52582,
       "bounds_mm": [
         144.2906,
         136.102,
@@ -279,7 +279,7 @@
       "part": "top_cover_left",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 15408.98854,
+      "volume_mm3": 15322.75983,
       "bounds_mm": [
         162.4331,
         136.402,
@@ -292,7 +292,7 @@
       "part": "top_cover_right",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 14654.39999,
+      "volume_mm3": 14568.16678,
       "bounds_mm": [
         144.4418,
         136.4031,
@@ -362,7 +362,8 @@
       "usb_receptacle_envelopes_vs_top_cover": 0,
       "usb_plug_envelopes_vs_top_cover": 0,
       "keycap_envelopes_vs_palm_rest": 0,
-      "pad_envelopes_vs_riser": 0
+      "pad_envelopes_vs_riser": 0,
+      "switch_envelopes_vs_usb_receptacle_envelopes": 0
     },
     "choc": {
       "pcb_envelope_vs_chassis": 0,
@@ -385,7 +386,8 @@
       "usb_receptacle_envelopes_vs_top_cover": 0,
       "usb_plug_envelopes_vs_top_cover": 0,
       "keycap_envelopes_vs_palm_rest": 0,
-      "pad_envelopes_vs_riser": 0
+      "pad_envelopes_vs_riser": 0,
+      "switch_envelopes_vs_usb_receptacle_envelopes": 0
     }
   },
   "not_validated": [

@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 """Electrical source of truth. Based on worxboard's RP2040 support circuit.
-A0 is an UNROUTED engineering seed, not a fabrication release.
+A0 is a prototype design with no hardware evidence, not a fabrication release.
 """
 from __future__ import annotations
 from dataclasses import dataclass,field
@@ -14,10 +14,38 @@ C0402="Capacitor_SMD:C_0402_1005Metric"
 SOD123="Diode_SMD:D_SOD-123"
 TESTPAD="TestPoint:TestPoint_Pad_D1.0mm"
 LCSC_R={"5.1k":"C25905","27":"C2909343","1k":"C11702","10k":"C25744"}
+SENSE_R="5.1k"          # each half of a VBUS sense divider. 10.2 k to ground bleeds Schottky reverse leakage
+                        # on an unplugged port: the sense pin stays under VIL 0.8 V up to about 157 uA
 LCSC_C={"100n":"C1525","1u":"C52923","10u":"C15525","27p":"C1557"}
 LCSC_FLASH="C97521"
 LCSC_XTAL="C49304726"
-GPIO_NETS=([f"ROW{i}" for i in range(6)]+[f"COL{i}" for i in range(15)]
+LCSC_SOCKET={"mx":"C2803348","choc":"C5333465"}
+HEADER_1X03="Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
+LCD_SOCKET="worxboard:PinSocket_1x05_P2.54mm_Vertical_H5.0mm"
+MUX_PACKAGE="Package_DFN_QFN:Texas_RMG0012A_WQFN-12_1.8x1.8mm_P0.4mm"
+# LCSC number, or footprint for a part without one -> (manufacturer, part number, verified).
+# Verified means the number was read on a maker or distributor page on 2026-11-13. Stock and price are unknown.
+SOURCING={
+ "C2040":("Raspberry Pi","SC0914(13)",True),"C97521":("Winbond","W25Q128JVSIQ",True),
+ "C49304726":("YXC","XL2EL89CRI-111YLC-12M",True),"C51118":("Diodes Incorporated","AP2112K-3.3TRG1",True),
+ "C7519":("STMicroelectronics","USBLC6-2SC6",True),"C8598":("JSCJ","B5819W",True),
+ "C81598":("ST (Semtech), as LCSC lists it","1N4148W",False),
+ "C165948":("Korean Hroparts Elec","TYPE-C-31-M-12",True),"C455280":("XUNPU","TS-1088R-02026",True),
+ "C25905":("UNI-ROYAL","0402WGF5101TCE",True),"C2909343":("FOJAN","FRC0402F27R0TS",True),
+ "C11702":("UNI-ROYAL","0402WGF1001TCE",True),"C25744":("UNI-ROYAL","0402WGF1002TCE",True),
+ "C1525":("Samsung Electro-Mechanics","CL05B104KO5NNNC",True),"C52923":("Samsung Electro-Mechanics","CL05A105KA5NQNC",True),
+ "C15525":("Samsung Electro-Mechanics","CL05A106MQ5NUNC",True),"C1557":("Fenghua","0402CG270J500NT",True),
+ "C2803348":("Kailh","CPG151101S11",True),"C5333465":("Kailh","CPG135001S30",True),
+ MUX_PACKAGE:("Texas Instruments","TS3USB3031RMGR",True),
+ HEADER_1X03:("Wurth Elektronik","61300311121",True),
+ LCD_SOCKET:("not chosen","1x5 2.54 mm socket, 5.0 mm tall",False),
+}
+def sourcing(part):
+    """(manufacturer, part number, verified) for a BOM part."""
+    return SOURCING[part.lcsc or part.footprint]
+MATRIX_ROWS=4           # 48 keys in divmod(index, 15) order fill ROW0-2 and three places of ROW3
+SPARE_GPIO=[None,None]  # GP4 and GP5: the firmware still declares six rows, the board leaves them unconnected
+GPIO_NETS=([f"ROW{i}" for i in range(MATRIX_ROWS)]+SPARE_GPIO+[f"COL{i}" for i in range(15)]
  +["USB_SEL0","USB_SEL1","VBUS_LEFT_SENSE","VBUS_CENTER_SENSE","VBUS_RIGHT_SENSE",
  "DISP_SCK","DISP_MOSI","DISP_CS","RGB_DATA"])
 @dataclass(frozen=True)
@@ -30,7 +58,7 @@ class Part:
     pins: dict[str, str | None]    # pin number or name -> net (None = no connect)
     group: str
     in_bom: bool = True            # False: JP1, test pads, holes (spec §7)
-    dnp: bool = False              # True: on the board but not fitted by JLC (no such part on rev A)
+    dnp: bool = False              # True: footprint on the board, part fitted by the customer, not the assembler
     key: str = ""                  # layout key id of a matrix SK/D part (also its "Key" field)
     extra: dict[str, str] = field(default_factory=dict)   # further symbol fields
 
@@ -90,7 +118,7 @@ def design(variant):
    'Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12','C165948',
    {'VBUS':v,'GND':'GND','SHIELD':'GND','CC1':f'CC{i}A','CC2':f'CC{i}B','D+':dp,'D-':dm,'SBU1':None,'SBU2':None},g),
    R(f'R{20+i*5}','5.1k',f'CC{i}A','GND',g),R(f'R{21+i*5}','5.1k',f'CC{i}B','GND',g),
-   R(f'R{22+i*5}','10k',v,f'{v}_SENSE',g),R(f'R{23+i*5}','10k',f'{v}_SENSE','GND',g),
+   R(f'R{22+i*5}',SENSE_R,v,f'{v}_SENSE',g),R(f'R{23+i*5}',SENSE_R,f'{v}_SENSE','GND',g),
    Part(f'D{i}','Device:D_Schottky','B5819W',SOD123,'C8598',{'A':v,'K':'VSYS'},g),
    Part(f'U{3+i}','Power_Protection:USBLC6-2SC6','USBLC6-2SC6','Package_TO_SOT_SMD:SOT-23-6','C7519',
         {'I/O1':dp,'I/O2':dm,'VBUS':v,'GND':'GND'},g)]
@@ -99,29 +127,33 @@ def design(variant):
      C('C1','1u','VSYS',g),C('C2','1u','VSYS',g),C('C3','10u','3V3',g),C('C4','1u','3V3',g),
      R('R3','27','USB_MUX_DP','USB_DP',g),R('R4','27','USB_MUX_DM','USB_DM',g)]
  # Explicit pin numbers from TI TS3USB3031 SCDS348D table 4-1.
+ # D+ of every port runs through the switch channel TI labels "-", and D- through "+". The two channels of a
+ # port are identical switches. Swapped, the common pins face RP2040 pins 46/47 on the same side of the board
+ # without a crossing. Port order and the select truth table are unchanged.
  parts += [Part('U7','worxboard:TS3USB3031','TS3USB3031RMGR',
-  'Package_DFN_QFN:Texas_RMG0012A_WQFN-12_1.8x1.8mm_P0.4mm','',
-  {'1':'MUX_S0','2':'MUX_S1','3':'USB_LEFT_DP','4':'USB_LEFT_DM','5':'USB_CENTER_DP','6':'USB_CENTER_DM',
-   '7':'USB_RIGHT_DP','8':'USB_RIGHT_DM','9':'GND','10':'USB_MUX_DM','11':'USB_MUX_DP','12':'3V3'},'SELECTOR'),
+  MUX_PACKAGE,'',
+  {'1':'MUX_S0','2':'MUX_S1','3':'USB_LEFT_DM','4':'USB_LEFT_DP','5':'USB_CENTER_DM','6':'USB_CENTER_DP',
+   '7':'USB_RIGHT_DM','8':'USB_RIGHT_DP','9':'GND','10':'USB_MUX_DP','11':'USB_MUX_DM','12':'3V3'},'SELECTOR'),
   R('R40','10k','MUX_S0','3V3','SELECTOR'),R('R41','10k','MUX_S1','3V3','SELECTOR'),
   C('C20','100n','3V3','SELECTOR'),
   R('R42','1k','USB_SEL0','MUX_S0_FW','SELECTOR'),R('R43','1k','USB_SEL1','MUX_S1_FW','SELECTOR'),
   Part('J6','Connector_Generic:Conn_01x03','SEL0: RUN 1-2 / ROM 2-3',
-   'Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical','',
-   {'1':'MUX_S0_FW','2':'MUX_S0','3':'3V3'},'SELECTOR'),
+   HEADER_1X03,'',
+   {'1':'MUX_S0_FW','2':'MUX_S0','3':'3V3'},'SELECTOR',dnp=True),
   Part('J7','Connector_Generic:Conn_01x03','SEL1: RUN 1-2 / ROM 2-3',
-   'Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical','',
-   {'1':'MUX_S1_FW','2':'MUX_S1','3':'GND'},'SELECTOR')]
+   HEADER_1X03,'',
+   {'1':'MUX_S1_FW','2':'MUX_S1','3':'GND'},'SELECTOR',dnp=True)]
  parts += [Part('J4','Connector_Generic:Conn_01x05','nice!view SPI LCD',
- 'worxboard:PinSocket_1x05_P2.54mm_Vertical_H5.0mm','',
- dict(zip(map(str,range(1,6)),['DISP_MOSI','DISP_SCK','3V3','GND','DISP_CS'])),'DISPLAY'),
+ LCD_SOCKET,'',
+ dict(zip(map(str,range(1,6)),['DISP_MOSI','DISP_SCK','3V3','GND','DISP_CS'])),'DISPLAY',dnp=True),
  Part('J5','Connector_Generic:Conn_01x03','RGB expansion (3V3 logic)',
- 'Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical','',
- {'1':'VSYS','2':'RGB_DATA','3':'GND'},'DISPLAY')]
+ HEADER_1X03,'',
+ {'1':'VSYS','2':'RGB_DATA','3':'GND'},'DISPLAY',dnp=True)]
  fp='worxboard:SW_MX_Hotswap_Kailh' if variant=='mx' else 'worxboard:SW_Choc_V1_Hotswap'
  for n,k in enumerate(keys(),101):
   idx=n-101;row,col=divmod(idx,15)
-  parts += [Part(f'SK{n}','worxboard:SW_Push_MX',variant.upper(),fp,'',
+  # The BOM line of an SK part is its hot-swap socket. The switch itself is fitted by the customer.
+  parts += [Part(f'SK{n}','worxboard:SW_Push_MX',variant.upper(),fp,LCSC_SOCKET[variant],
     {'1':f'COL{col}','2':f'KEY_{k.id}'},'MATRIX',key=k.id,extra={'Key':k.id}),
    Part(f'D{n}','Device:D','1N4148W',SOD123,'C81598',
     {'A':f'KEY_{k.id}','K':f'ROW{row}'},'MATRIX',key=k.id,extra={'Key':k.id})]

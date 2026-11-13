@@ -20,6 +20,12 @@ U = 19.05
 ANGLE = 10.0
 GAP = 24.0
 RIM = 9.0
+PCB_EDGE_INSET = 3.4    # board edge inside the deck outline: the chassis wall plus 0.2
+PCB_HOLE_D = 2.7        # M2.5 clearance
+HOLE_WEB_MIN = 1.0      # a hole with less board than this outside it becomes an open edge slot
+PORT_SPREAD = 64.0      # side mouths sit on the bay's straight rear edge. A plank rim leaves 5.6 mm between
+                        # the board edge and the corner key, and the receptacle with its pads needs 8.5
+USB_RECEPTACLE_L = 7.3     # HRO TYPE-C-31-M-12 shell length; its mouth sits flush with the board edge
 variants = {
  "mx": {"name": "Cherry MX / Kailh MX hot-swap", "cut": 14.0, "plate": 1.5,
         "plate_to_pcb": 5.0, "pcb_top": 8.0, "cap_height": 11.5},
@@ -153,11 +159,10 @@ def _rear_y(poly, x):
 
 @lru_cache
 def ports():
- """Three USB-C mouths on the rear edge, opening away from the typist."""
+ """Three USB-C mouths on the bay's rear edge, opening away from the typist."""
  deck = outline()
- minx, maxx = deck.bounds[0], deck.bounds[2]
  found = {}
- for name, x in (("left", minx + 22), ("center", 0.0), ("right", maxx - 22)):
+ for name, x in (("left", -PORT_SPREAD), ("center", 0.0), ("right", PORT_SPREAD)):
   y = _rear_y(deck, x) + 2.2
   found[name] = (round(x, 2), round(y, 2))
  return found
@@ -263,6 +268,32 @@ def palm_screws():
 
 # Imported name used by the PCB placer and the case. Computed once from the deck.
 PORTS = ports()
+
+@lru_cache
+def mouths():
+ """Where each receptacle mouth sits: the inset board's rear edge at the port x."""
+ board = outline().buffer(-PCB_EDGE_INSET)
+ return {name: (x, round(_rear_y(board, x), 3)) for name, (x, _) in PORTS.items()}
+
+def _edge_slot(board, hole):
+ """Capsule from a hole out through the nearest board edge."""
+ centre = Point(hole)
+ edge = board.exterior.interpolate(board.exterior.project(centre))
+ reach = PCB_HOLE_D / max(centre.distance(edge), 1e-6)
+ beyond = (edge.x + (edge.x - hole[0]) * reach, edge.y + (edge.y - hole[1]) * reach)
+ return LineString([hole, beyond]).buffer(PCB_HOLE_D / 2, quad_segs=8)
+
+@lru_cache
+def edge_slots():
+ """Mounting holes too close to the wall to be enclosed. The rim leaves no room to move them in."""
+ board = outline().buffer(-PCB_EDGE_INSET)
+ return tuple(h for h in holes() if board.exterior.distance(Point(h)) - PCB_HOLE_D / 2 < HOLE_WEB_MIN)
+
+@lru_cache
+def board_outline():
+ """PCB edge: the deck inset, with an open slot at each edge hole."""
+ board = outline().buffer(-PCB_EDGE_INSET)
+ return _largest(board.difference(unary_union([_edge_slot(board, h) for h in edge_slots()])))
 
 def serializable():
  return {"units": "mm", "angle_deg": ANGLE, "gap_mm": GAP, "matrix": {"rows": 6, "cols": 15},

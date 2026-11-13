@@ -22,7 +22,8 @@ from build123d import (Polyline, Polygon, Face, Wire, Plane, Axis, extrude, revo
 from build123d.topology.shape_core import downcast
 from OCP.ShapeCustom import ShapeCustom
 from shapely.geometry import LineString, Point, Polygon as PlanPolygon
-from layout import keys, outline, holes, variants, DISPLAY, PORTS, U
+from layout import (keys, outline, board_outline, holes, variants, DISPLAY, PORTS, U,
+                    PCB_EDGE_INSET, PCB_HOLE_D, USB_RECEPTACLE_L)
 from layout.model import RIM, _world
 
 A = (Align.CENTER, Align.CENTER, Align.MIN)
@@ -34,8 +35,6 @@ CUT_UP = 60.0       # taller than any part; a cut this high leaves the top open
 FLOOR = 2.4
 PCB_T = 1.6
 PCB_TOP = 8.0
-PCB_EDGE_INSET = 3.4   # pcb/scripts/place.py draws Edge.Cuts this far inside the deck outline
-PCB_HOLE_D = 2.7
 WALL = 3.2
 SHELF = 6.0
 PLATE_INSET = 0.7
@@ -68,7 +67,7 @@ V_INSET, V_REAR, V_WEB = 2.4, 20.0, 5.3
 V_APEX_R, V_FRONT_R, V_TOP_R, V_BOT_C = 3.5, 6.0, 1.5, 1.5
 
 # USB. The receptacle sits on the PCB top, mouth flush with the PCB rear edge, facing rearward.
-RECEPTACLE = (8.94, 7.3, 3.26)    # body: width, length, height
+RECEPTACLE = (8.94, USB_RECEPTACLE_L, 3.26)    # body: width, length, height
 PLUG_AXIS = 1.58                  # plug centre line above the PCB top
 PLUG_BODY = (12.35, 30.0, 6.5)    # overmold: width, length outside the mouth, height
 PLUG_TIP = (8.34, 6.65, 2.56)     # shell that enters the receptacle
@@ -475,7 +474,7 @@ def _envelopes(deck, stack):
     """Keep-out solids for the assembly and the fit check, by label. They are not parts."""
     body, housing, travel = stack.switch
     top = stack.plate_top
-    pcb = prism(deck.buffer(-PCB_EDGE_INSET), PCB_TOP - PCB_T, PCB_T)
+    pcb = prism(board_outline(), PCB_TOP - PCB_T, PCB_T)
     for x, y in holes():
         pcb = drill(pcb, x, y, PCB_TOP - PCB_T - OVERCUT, PCB_T + 2 * OVERCUT, PCB_HOLE_D)
     at_key = [Pos(k.x, k.y, top) * Rot(0, 0, k.angle) for k in keys()]

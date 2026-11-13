@@ -1,59 +1,67 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 """Seats for everything that is not a key or a mounting hole.
 
-The split Planck deck is much smaller than the old TKL apron. These
-coordinates keep the controller on the rear spine and the USB clamps next
-to their own receptacles. place.py is the only consumer.
+Component side follows measured height. The Choc plate underside is 1.0 mm
+above the PCB and the chassis floor is 4.0 mm below it, so every SMD part
+sits on B.Cu. Only the receptacles (the case mouths are on the top side)
+and the through-hole headers are on F.Cu. place.py is the only consumer.
+
+ANCHORS are absolute layout millimetres. SATELLITES are seated by place.py
+as close as possible to one pad of their host, in table order.
 """
-from shapely.geometry import Point, box
-from shapely.ops import unary_union
-from layout.model import outline, keys, DISPLAY, PORTS
+from layout.model import DISPLAY, USB_RECEPTACLE_L, mouths
 
-def _deck():
-    return outline().buffer(-2.8)
+TOP_SIDE = frozenset({"J1", "J2", "J3", "J4", "J5", "J6", "J7"})
+MOUTH_FACES_REAR = 180.0          # the stock footprint opens toward +y; the case mouths are at the rear
+HEADER_PITCH = 2.54
+LCD_HEADER_INSET = 1.5            # nice!view pin row inside the module's short edge; check against a real module
+DIODE_NORTH = 8.2                 # matrix diode centre behind its switch, clear of both socket types
+BOSS_CLEAR = {"B": 4.0, "F": 2.9}   # chassis boss R3.6 below, cover boss R2.5 above, plus 0.4
 
-def _blocked():
-    d = DISPLAY
-    shapes = [k.polygon().buffer(1.8) for k in keys()]
-    shapes.append(box(d["x"] - 20, d["y"] - 11, d["x"] + 20, d["y"] + 11))
-    for x, y in PORTS.values():
-        shapes.append(box(x - 7, y - 3, x + 7, y + 16))
-    return unary_union(shapes)
-
-def placements():
-    """ref -> (x, y) in layout millimeters. USB jacks included."""
-    left, center, right = (PORTS[name] for name in ("left", "center", "right"))
-    fixed = {
-        "U1": (-34.0, -48.0), "U2": (-34.0, -36.0), "Y1": (-22.0, -50.0),
-        "U3": (-22.0, -40.0), "U7": (-22.0, -30.0),
-        "SW1": (-40.0, -34.0), "SW2": (-40.0, -24.0),
-        "J6": (-40.0, -46.0), "J7": (-40.0, -56.0),
-        "J4": (28.0, -18.0), "J5": (38.0, -26.0),
-        "J1": (left[0], left[1] + 6), "J2": (center[0], center[1] + 6), "J3": (right[0], right[1] + 6),
-        "U4": (-108.0, -30.0), "D1": (-100.0, -30.0),
-        "U6": (108.0, -30.0), "D3": (100.0, -30.0),
-        "U5": (20.0, -48.0), "D2": (28.0, -48.0),
+def anchors():
+    """ref -> (x, y, angle). Receptacle bodies end flush with the board edge at each case mouth."""
+    left, center, right = (mouths()[name] for name in ("left", "center", "right"))
+    jack_y = USB_RECEPTACLE_L / 2
+    lcd_x = DISPLAY["x"] + DISPLAY["module_width"] / 2 - LCD_HEADER_INSET
+    return {
+        "J1": (left[0], left[1] + jack_y, MOUTH_FACES_REAR),
+        "J2": (center[0], center[1] + jack_y, MOUTH_FACES_REAR),
+        "J3": (right[0], right[1] + jack_y, MOUTH_FACES_REAR),
+        "J4": (lcd_x, DISPLAY["y"] - 2 * HEADER_PITCH, 0.0),
+        # Pins 43-56 (USB, QSPI, regulator) face the rear, toward the mux and the centre receptacle.
+        "U1": (-14.0, -34.0, 180.0),
+        # USB leaves pins 46/47 straight to the rear: series resistors, then the mux with its common side facing them.
+        # The resistors sit a little left of the pins, so the 3V3 pins 48-49 beside them can escape.
+        "R4": (-16.2, -39.9, 270.0), "R3": (-15.0, -39.9, 270.0), "U7": (-15.2, -42.9, 0.0),
+        # Flash to the rear and one side of the QSPI pins, pin 1 away from the MCU: the bus wraps both pin rows.
+        "U2": (-8.0, -43.5, 180.0),
+        "U3": (30.0, -46.0, 0.0),
+        "SW1": (-34.0, -22.0, 0.0), "SW2": (-44.0, -22.0, 0.0),
+        "J5": (44.0, -36.0, 90.0), "J6": (36.0, -24.0, 90.0), "J7": (36.0, -30.0, 90.0),
+        "TP10": (-24.0, -22.0, 0.0),
     }
-    deck, blocked = _deck(), _blocked()
-    taken = []
-    for ref, (x, y) in fixed.items():
-        on_deck = deck.contains(Point(x, y))
-        in_keepout = blocked.contains(Point(x, y)) and ref not in {"J1", "J2", "J3"}
-        if not on_deck or in_keepout:
-            raise RuntimeError(f"{ref} at {(x, y)} is off the deck")
-        taken.append(Point(x, y).buffer(6.5 if ref[0] in "UJSY" or ref.startswith("SW") else 3.2))
-    occupied = unary_union(taken)
-    sites = []
-    minx, miny, maxx, maxy = outline().bounds
-    x = minx
-    while x <= maxx:
-        y = miny
-        while y <= -12:
-            p = Point(x, y)
-            if deck.contains(p) and not blocked.contains(p) and not occupied.contains(p):
-                sites.append((round(x, 2), round(y, 2)))
-            y += 4.0
-        x += 4.0
-    # Prefer the spine, then the rear rim, left to right and rear to front.
-    sites.sort(key=lambda p: (0 if abs(p[0]) < 50 else 1, p[1], abs(p[0])))
-    return fixed, sites
+
+# The box around these pads of the first part and all of the second stays empty: the QSPI bus runs there.
+CORRIDORS = (("U1", ("51", "52", "53", "54", "55", "56"), "U2"),)
+# Boxes kept empty around a part, as (x0, y0, x1, y1) from its centre: the mux inputs to the rear and the right,
+# its common pair to the front. Its own passives go to the select side.
+KEEP_CLEAR = (("U7", (-5.0, -7.0, 6.0, 2.5), "B"),)
+
+# (part, host, host pad, least distance between part centre and host pad)
+SATELLITES = (
+    ("Y1", "U1", "20", 4.6), ("R7", "U1", "21", 0.0), ("C6", "Y1", "1", 0.0), ("C7", "Y1", "3", 0.0),
+    ("C19", "U1", "45", 0.0), ("C18", "U1", "44", 0.0), ("C17", "U1", "50", 0.0), ("C16", "U1", "23", 0.0),
+    ("C14", "U1", "48", 0.0), ("C13", "U1", "49", 0.0), ("C15", "U1", "43", 0.0),
+    ("C8", "U1", "1", 0.0), ("C9", "U1", "10", 0.0), ("C10", "U1", "22", 0.0),
+    ("C11", "U1", "33", 0.0), ("C12", "U1", "42", 0.0),
+    ("C5", "U2", "8", 0.0), ("R8", "U2", "1", 0.0), ("R9", "U2", "1", 0.0),
+    ("C20", "U7", "12", 0.0), ("R40", "U7", "1", 0.0), ("R41", "U7", "2", 0.0),
+    ("C1", "U3", "1", 0.0), ("C3", "U3", "5", 0.0), ("C4", "U3", "5", 0.0), ("C2", "U3", "1", 0.0),
+    ("R42", "J6", "1", 0.0), ("R43", "J7", "1", 0.0), ("R10", "SW2", "1", 0.0),
+    ("TP8", "U1", "24", 4.0), ("TP9", "U1", "25", 4.0),
+) + tuple(row for i in (1, 2, 3) for row in (
+    (f"U{3 + i}", f"J{i}", "A6", 0.0),
+    (f"R{20 + 5 * i}", f"J{i}", "A5", 0.0), (f"R{21 + 5 * i}", f"J{i}", "B5", 0.0),
+    (f"D{i}", f"J{i}", "A4", 0.0),
+    (f"R{22 + 5 * i}", f"D{i}", "2", 0.0), (f"R{23 + 5 * i}", f"R{22 + 5 * i}", "2", 0.0),
+))

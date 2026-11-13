@@ -1,1016 +1,1185 @@
 {
   "U1": {
-    "x": -34.0,
-    "y": -48.0,
-    "angle": 0,
+    "x": -14.0,
+    "y": -34.0,
+    "angle": 180.0,
+    "side": "B",
     "footprint": "Package_DFN_QFN:QFN-56-1EP_7x7mm_P0.4mm_EP3.2x3.2mm"
   },
   "U2": {
-    "x": -34.0,
-    "y": -36.0,
-    "angle": 0,
+    "x": -8.0,
+    "y": -43.5,
+    "angle": 180.0,
+    "side": "B",
     "footprint": "Package_SO:SOIC-8_5.3x5.3mm_P1.27mm"
   },
   "C5": {
-    "x": 7.01,
-    "y": -59.0,
-    "angle": 0,
+    "x": -8.2,
+    "y": -48.2,
+    "angle": 90.0,
+    "side": "B",
     "footprint": "Capacitor_SMD:C_0402_1005Metric"
   },
   "Y1": {
-    "x": -22.0,
-    "y": -50.0,
-    "angle": 0,
+    "x": -13.4,
+    "y": -26.0,
+    "angle": -90.0,
+    "side": "B",
     "footprint": "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm"
   },
   "R7": {
-    "x": -8.99,
-    "y": -59.0,
-    "angle": 0,
+    "x": -17.0,
+    "y": -28.6,
+    "angle": 0.0,
+    "side": "B",
     "footprint": "Resistor_SMD:R_0402_1005Metric"
   },
   "C6": {
-    "x": 11.01,
-    "y": -59.0,
-    "angle": 0,
+    "x": -10.2,
+    "y": -27.1,
+    "angle": -90.0,
+    "side": "B",
     "footprint": "Capacitor_SMD:C_0402_1005Metric"
   },
   "C7": {
-    "x": -12.99,
-    "y": -59.0,
-    "angle": 0,
+    "x": -16.4,
+    "y": -24.9,
+    "angle": 90.0,
+    "side": "B",
     "footprint": "Capacitor_SMD:C_0402_1005Metric"
   },
   "R8": {
-    "x": 15.01,
-    "y": -59.0,
-    "angle": 0,
+    "x": -4.4,
+    "y": -47.8,
+    "angle": 0.0,
+    "side": "B",
     "footprint": "Resistor_SMD:R_0402_1005Metric"
   },
   "R9": {
-    "x": -16.99,
-    "y": -59.0,
-    "angle": 0,
+    "x": -2.0,
+    "y": -45.4,
+    "angle": -90.0,
+    "side": "B",
     "footprint": "Resistor_SMD:R_0402_1005Metric"
   },
   "SW1": {
-    "x": -40.0,
-    "y": -34.0,
-    "angle": 0,
+    "x": -34.0,
+    "y": -22.0,
+    "angle": 0.0,
+    "side": "B",
     "footprint": "Button_Switch_SMD:SW_SPST_TS-1088-xR020"
   },
   "R10": {
-    "x": 19.01,
-    "y": -59.0,
-    "angle": 0,
+    "x": -48.4,
+    "y": -22.0,
+    "angle": 90.0,
+    "side": "B",
     "footprint": "Resistor_SMD:R_0402_1005Metric"
   },
   "SW2": {
-    "x": -40.0,
-    "y": -24.0,
-    "angle": 0,
+    "x": -44.0,
+    "y": -22.0,
+    "angle": 0.0,
+    "side": "B",
     "footprint": "Button_Switch_SMD:SW_SPST_TS-1088-xR020"
   },
   "C8": {
-    "x": -20.99,
-    "y": -59.0,
-    "angle": 0,
+    "x": -6.8,
+    "y": -35.6,
+    "angle": -90.0,
+    "side": "B",
     "footprint": "Capacitor_SMD:C_0402_1005Metric"
   },
   "C9": {
-    "x": 23.01,
-    "y": -59.0,
-    "angle": 0,
+    "x": -8.6,
+    "y": -32.8,
+    "angle": -90.0,
+    "side": "B",
     "footprint": "Capacitor_SMD:C_0402_1005Metric"
   },
   "C10": {
-    "x": -24.99,
-    "y": -59.0,
-    "angle": 0,
+    "x": -8.6,
+    "y": -30.0,
+    "angle": -90.0,
+    "side": "B",
     "footprint": "Capacitor_SMD:C_0402_1005Metric"
   },
   "C11": {
-    "x": 27.01,
-    "y": -59.0,
-    "angle": 0,
+    "x": -21.2,
+    "y": -33.0,
+    "angle": 90.0,
+    "side": "B",
     "footprint": "Capacitor_SMD:C_0402_1005Metric"
   },
   "C12": {
-    "x": -28.99,
-    "y": -59.0,
-    "angle": 0,
+    "x": -21.6,
+    "y": -35.2,
+    "angle": 180.0,
+    "side": "B",
     "footprint": "Capacitor_SMD:C_0402_1005Metric"
   },
   "C13": {
-    "x": 31.01,
-    "y": -59.0,
-    "angle": 0,
+    "x": -21.2,
+    "y": -37.4,
+    "angle": -90.0,
+    "side": "B",
     "footprint": "Capacitor_SMD:C_0402_1005Metric"
   },
   "C14": {
-    "x": -32.99,
-    "y": -59.0,
-    "angle": 0,
+    "x": -19.4,
+    "y": -34.4,
+    "angle": -90.0,
+    "side": "B",
     "footprint": "Capacitor_SMD:C_0402_1005Metric"
   },
   "C15": {
-    "x": 35.01,
-    "y": -59.0,
-    "angle": 0,
+    "x": -21.2,
+    "y": -40.2,
+    "angle": 90.0,
+    "side": "B",
     "footprint": "Capacitor_SMD:C_0402_1005Metric"
   },
   "C16": {
-    "x": 39.01,
-    "y": -59.0,
-    "angle": 0,
+    "x": -19.4,
+    "y": -30.6,
+    "angle": 90.0,
+    "side": "B",
     "footprint": "Capacitor_SMD:C_0402_1005Metric"
   },
   "C17": {
-    "x": 43.01,
-    "y": -59.0,
-    "angle": 0,
+    "x": -8.6,
+    "y": -35.6,
+    "angle": -90.0,
+    "side": "B",
     "footprint": "Capacitor_SMD:C_0402_1005Metric"
   },
   "C18": {
-    "x": 47.01,
-    "y": -59.0,
-    "angle": 0,
+    "x": -19.4,
+    "y": -37.2,
+    "angle": -90.0,
+    "side": "B",
     "footprint": "Capacitor_SMD:C_0402_1005Metric"
   },
   "C19": {
-    "x": -48.99,
-    "y": -59.0,
-    "angle": 0,
+    "x": -18.4,
+    "y": -39.4,
+    "angle": 180.0,
+    "side": "B",
     "footprint": "Capacitor_SMD:C_0402_1005Metric"
   },
   "TP8": {
-    "x": 7.01,
-    "y": -55.0,
-    "angle": 0,
+    "x": -19.8,
+    "y": -27.8,
+    "angle": 0.0,
+    "side": "B",
     "footprint": "TestPoint:TestPoint_Pad_D1.0mm"
   },
   "TP9": {
-    "x": -8.99,
-    "y": -55.0,
-    "angle": 0,
+    "x": -18.8,
+    "y": -25.0,
+    "angle": 0.0,
+    "side": "B",
     "footprint": "TestPoint:TestPoint_Pad_D1.0mm"
   },
   "TP10": {
-    "x": 11.01,
-    "y": -55.0,
-    "angle": 0,
+    "x": -24.0,
+    "y": -22.0,
+    "angle": 0.0,
+    "side": "B",
     "footprint": "TestPoint:TestPoint_Pad_D1.0mm"
   },
   "J1": {
-    "x": -122.99,
-    "y": -29.689999999999998,
-    "angle": 0,
+    "x": -64.0,
+    "y": -55.95,
+    "angle": 180.0,
+    "side": "F",
     "footprint": "Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12"
   },
   "R25": {
-    "x": -12.99,
-    "y": -55.0,
-    "angle": 0,
+    "x": -60.0,
+    "y": -49.3,
+    "angle": 0.0,
+    "side": "B",
     "footprint": "Resistor_SMD:R_0402_1005Metric"
   },
   "R26": {
-    "x": 15.01,
-    "y": -55.0,
-    "angle": 0,
+    "x": -67.6,
+    "y": -49.3,
+    "angle": 180.0,
+    "side": "B",
     "footprint": "Resistor_SMD:R_0402_1005Metric"
   },
   "R27": {
-    "x": -16.99,
-    "y": -55.0,
-    "angle": 0,
+    "x": -56.6,
+    "y": -55.6,
+    "angle": 180.0,
+    "side": "B",
     "footprint": "Resistor_SMD:R_0402_1005Metric"
   },
   "R28": {
-    "x": 19.01,
-    "y": -55.0,
-    "angle": 0,
+    "x": -56.9,
+    "y": -57.4,
+    "angle": 0.0,
+    "side": "B",
     "footprint": "Resistor_SMD:R_0402_1005Metric"
   },
   "D1": {
-    "x": -100.0,
-    "y": -30.0,
-    "angle": 0,
+    "x": -56.6,
+    "y": -51.9,
+    "angle": 90.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "U4": {
-    "x": -108.0,
-    "y": -30.0,
-    "angle": 0,
+    "x": -63.8,
+    "y": -48.1,
+    "angle": 180.0,
+    "side": "B",
     "footprint": "Package_TO_SOT_SMD:SOT-23-6"
   },
   "J2": {
     "x": 0.0,
-    "y": -54.8,
-    "angle": 0,
+    "y": -55.95,
+    "angle": 180.0,
+    "side": "F",
     "footprint": "Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12"
   },
   "R30": {
-    "x": 23.01,
-    "y": -55.0,
-    "angle": 0,
+    "x": -2.0,
+    "y": -48.9,
+    "angle": -90.0,
+    "side": "B",
     "footprint": "Resistor_SMD:R_0402_1005Metric"
   },
   "R31": {
-    "x": 27.01,
-    "y": -55.0,
-    "angle": 0,
+    "x": -6.6,
+    "y": -51.9,
+    "angle": -90.0,
+    "side": "B",
     "footprint": "Resistor_SMD:R_0402_1005Metric"
   },
   "R32": {
-    "x": -28.99,
-    "y": -55.0,
-    "angle": 0,
+    "x": 7.4,
+    "y": -55.6,
+    "angle": 180.0,
+    "side": "B",
     "footprint": "Resistor_SMD:R_0402_1005Metric"
   },
   "R33": {
-    "x": 31.01,
-    "y": -55.0,
-    "angle": 0,
+    "x": 7.1,
+    "y": -57.4,
+    "angle": 0.0,
+    "side": "B",
     "footprint": "Resistor_SMD:R_0402_1005Metric"
   },
   "D2": {
-    "x": 28.0,
-    "y": -48.0,
-    "angle": 0,
+    "x": 7.4,
+    "y": -51.9,
+    "angle": 90.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "U5": {
-    "x": 20.0,
-    "y": -48.0,
-    "angle": 0,
+    "x": 1.4,
+    "y": -48.1,
+    "angle": 180.0,
+    "side": "B",
     "footprint": "Package_TO_SOT_SMD:SOT-23-6"
   },
   "J3": {
-    "x": 123.0,
-    "y": -29.689999999999998,
-    "angle": 0,
+    "x": 64.0,
+    "y": -55.95,
+    "angle": 180.0,
+    "side": "F",
     "footprint": "Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12"
   },
   "R35": {
-    "x": -32.99,
-    "y": -55.0,
-    "angle": 0,
+    "x": 68.0,
+    "y": -49.3,
+    "angle": 0.0,
+    "side": "B",
     "footprint": "Resistor_SMD:R_0402_1005Metric"
   },
   "R36": {
-    "x": 35.01,
-    "y": -55.0,
-    "angle": 0,
+    "x": 60.4,
+    "y": -49.3,
+    "angle": 180.0,
+    "side": "B",
     "footprint": "Resistor_SMD:R_0402_1005Metric"
   },
   "R37": {
-    "x": 39.01,
-    "y": -55.0,
-    "angle": 0,
+    "x": 71.4,
+    "y": -55.6,
+    "angle": 0.0,
+    "side": "B",
     "footprint": "Resistor_SMD:R_0402_1005Metric"
   },
   "R38": {
-    "x": 43.01,
-    "y": -55.0,
-    "angle": 0,
+    "x": 71.9,
+    "y": -57.4,
+    "angle": 180.0,
+    "side": "B",
     "footprint": "Resistor_SMD:R_0402_1005Metric"
   },
   "D3": {
-    "x": 100.0,
-    "y": -30.0,
-    "angle": 0,
+    "x": 71.4,
+    "y": -51.9,
+    "angle": 90.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "U6": {
-    "x": 108.0,
-    "y": -30.0,
-    "angle": 0,
+    "x": 64.2,
+    "y": -48.1,
+    "angle": 180.0,
+    "side": "B",
     "footprint": "Package_TO_SOT_SMD:SOT-23-6"
   },
   "U3": {
-    "x": -22.0,
-    "y": -40.0,
-    "angle": 0,
+    "x": 30.0,
+    "y": -46.0,
+    "angle": 0.0,
+    "side": "B",
     "footprint": "Package_TO_SOT_SMD:SOT-23-5"
   },
   "C1": {
-    "x": 47.01,
-    "y": -55.0,
-    "angle": 0,
+    "x": 28.9,
+    "y": -43.0,
+    "angle": 0.0,
+    "side": "B",
     "footprint": "Capacitor_SMD:C_0402_1005Metric"
   },
   "C2": {
-    "x": -48.99,
-    "y": -55.0,
-    "angle": 0,
+    "x": 26.5,
+    "y": -45.0,
+    "angle": -90.0,
+    "side": "B",
     "footprint": "Capacitor_SMD:C_0402_1005Metric"
   },
   "C3": {
-    "x": 7.01,
-    "y": -51.0,
-    "angle": 0,
+    "x": 31.7,
+    "y": -43.0,
+    "angle": 0.0,
+    "side": "B",
     "footprint": "Capacitor_SMD:C_0402_1005Metric"
   },
   "C4": {
-    "x": -8.99,
-    "y": -51.0,
-    "angle": 0,
+    "x": 33.5,
+    "y": -45.2,
+    "angle": 90.0,
+    "side": "B",
     "footprint": "Capacitor_SMD:C_0402_1005Metric"
   },
   "R3": {
-    "x": 11.01,
-    "y": -51.0,
-    "angle": 0,
+    "x": -15.0,
+    "y": -39.9,
+    "angle": -90.0,
+    "side": "B",
     "footprint": "Resistor_SMD:R_0402_1005Metric"
   },
   "R4": {
-    "x": -12.99,
-    "y": -51.0,
-    "angle": 0,
+    "x": -16.2,
+    "y": -39.9,
+    "angle": -90.0,
+    "side": "B",
     "footprint": "Resistor_SMD:R_0402_1005Metric"
   },
   "U7": {
-    "x": -22.0,
-    "y": -30.0,
-    "angle": 0,
+    "x": -15.2,
+    "y": -42.9,
+    "angle": 0.0,
+    "side": "B",
     "footprint": "Package_DFN_QFN:Texas_RMG0012A_WQFN-12_1.8x1.8mm_P0.4mm"
   },
   "R40": {
-    "x": 31.01,
-    "y": -51.0,
-    "angle": 0,
+    "x": -21.1,
+    "y": -45.7,
+    "angle": 90.0,
+    "side": "B",
     "footprint": "Resistor_SMD:R_0402_1005Metric"
   },
   "R41": {
-    "x": 35.01,
-    "y": -51.0,
-    "angle": 0,
+    "x": -23.1,
+    "y": -43.1,
+    "angle": 90.0,
+    "side": "B",
     "footprint": "Resistor_SMD:R_0402_1005Metric"
   },
   "C20": {
-    "x": 39.01,
-    "y": -51.0,
-    "angle": 0,
+    "x": -21.2,
+    "y": -43.0,
+    "angle": 90.0,
+    "side": "B",
     "footprint": "Capacitor_SMD:C_0402_1005Metric"
   },
   "R42": {
-    "x": 43.01,
-    "y": -51.0,
-    "angle": 0,
+    "x": 32.8,
+    "y": -24.0,
+    "angle": 90.0,
+    "side": "B",
     "footprint": "Resistor_SMD:R_0402_1005Metric"
   },
   "R43": {
-    "x": -44.99,
-    "y": -51.0,
-    "angle": 0,
+    "x": 32.8,
+    "y": -30.0,
+    "angle": 90.0,
+    "side": "B",
     "footprint": "Resistor_SMD:R_0402_1005Metric"
   },
   "J6": {
-    "x": -40.0,
-    "y": -46.0,
-    "angle": 0,
+    "x": 36.0,
+    "y": -24.0,
+    "angle": 90.0,
+    "side": "F",
     "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
   },
   "J7": {
-    "x": -40.0,
-    "y": -56.0,
-    "angle": 0,
+    "x": 36.0,
+    "y": -30.0,
+    "angle": 90.0,
+    "side": "F",
     "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
   },
   "J4": {
-    "x": 28.0,
-    "y": -18.0,
-    "angle": 0,
+    "x": 16.5,
+    "y": -27.08,
+    "angle": 0.0,
+    "side": "F",
     "footprint": "worxboard:PinSocket_1x05_P2.54mm_Vertical_H5.0mm"
   },
   "J5": {
-    "x": 38.0,
-    "y": -26.0,
-    "angle": 0,
+    "x": 44.0,
+    "y": -36.0,
+    "angle": 90.0,
+    "side": "F",
     "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
   },
   "SK101": {
-    "x": -21.3803,
+    "x": -21.38,
     "y": -1.654,
     "angle": -10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D101": {
-    "x": -19.852196036531012,
-    "y": -10.32030822650743,
+    "x": -19.956,
+    "y": -9.729,
     "angle": -10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK102": {
-    "x": -40.1409,
+    "x": -40.141,
     "y": -4.962,
     "angle": -10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D102": {
-    "x": -38.612796036531016,
-    "y": -13.62830822650743,
+    "x": -38.717,
+    "y": -13.037,
     "angle": -10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK103": {
-    "x": -58.9015,
+    "x": -58.901,
     "y": -8.27,
     "angle": -10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D103": {
-    "x": -57.37339603653101,
-    "y": -16.93630822650743,
+    "x": -57.478,
+    "y": -16.345,
     "angle": -10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK104": {
-    "x": -77.6621,
+    "x": -77.662,
     "y": -11.578,
     "angle": -10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D104": {
-    "x": -76.133996036531,
-    "y": -20.244308226507428,
+    "x": -76.238,
+    "y": -19.653,
     "angle": -10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK105": {
-    "x": -96.4226,
+    "x": -96.423,
     "y": -14.886,
     "angle": -10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D105": {
-    "x": -94.89449603653101,
-    "y": -23.552308226507428,
+    "x": -94.999,
+    "y": -22.961,
     "angle": -10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK106": {
-    "x": -115.1832,
+    "x": -115.183,
     "y": -18.194,
     "angle": -10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D106": {
-    "x": -113.655096036531,
-    "y": -26.860308226507428,
+    "x": -113.759,
+    "y": -26.269,
     "angle": -10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK107": {
-    "x": -24.6883,
-    "y": 17.1066,
+    "x": -24.688,
+    "y": 17.107,
     "angle": -10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D107": {
-    "x": -23.160196036531016,
-    "y": 8.44029177349257,
+    "x": -23.264,
+    "y": 9.031,
     "angle": -10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK108": {
-    "x": -43.4489,
-    "y": 13.7986,
+    "x": -43.449,
+    "y": 13.799,
     "angle": -10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D108": {
-    "x": -41.920796036531016,
-    "y": 5.13229177349257,
+    "x": -42.025,
+    "y": 5.723,
     "angle": -10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK109": {
-    "x": -62.2095,
-    "y": 10.4906,
+    "x": -62.209,
+    "y": 10.491,
     "angle": -10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D109": {
-    "x": -60.68139603653101,
-    "y": 1.82429177349257,
+    "x": -60.786,
+    "y": 2.415,
     "angle": -10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK110": {
-    "x": -80.9701,
-    "y": 7.1826,
+    "x": -80.97,
+    "y": 7.183,
     "angle": -10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D110": {
-    "x": -79.44199603653101,
-    "y": -1.4837082265074306,
+    "x": -79.546,
+    "y": -0.893,
     "angle": -10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK111": {
-    "x": -99.7306,
-    "y": 3.8746,
+    "x": -99.731,
+    "y": 3.875,
     "angle": -10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D111": {
-    "x": -98.202496036531,
-    "y": -4.7917082265074304,
+    "x": -98.307,
+    "y": -4.201,
     "angle": -10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK112": {
-    "x": -118.4912,
-    "y": 0.5666,
+    "x": -118.491,
+    "y": 0.567,
     "angle": -10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D112": {
-    "x": -116.96309603653101,
-    "y": -8.099708226507431,
+    "x": -117.067,
+    "y": -7.509,
     "angle": -10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK113": {
-    "x": -27.9963,
-    "y": 35.8672,
+    "x": -27.996,
+    "y": 35.867,
     "angle": -10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D113": {
-    "x": -26.468196036531015,
-    "y": 27.200891773492565,
+    "x": -26.572,
+    "y": 27.792,
     "angle": -10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK114": {
-    "x": -46.7569,
-    "y": 32.5592,
+    "x": -46.757,
+    "y": 32.559,
     "angle": -10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D114": {
-    "x": -45.228796036531016,
-    "y": 23.892891773492565,
+    "x": -45.333,
+    "y": 24.484,
     "angle": -10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK115": {
-    "x": -65.5175,
-    "y": 29.2512,
+    "x": -65.518,
+    "y": 29.251,
     "angle": -10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D115": {
-    "x": -63.98939603653101,
-    "y": 20.584891773492572,
+    "x": -64.094,
+    "y": 21.176,
     "angle": -10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK116": {
-    "x": -84.2781,
-    "y": 25.9432,
+    "x": -84.278,
+    "y": 25.943,
     "angle": -10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D116": {
-    "x": -82.749996036531,
-    "y": 17.276891773492572,
+    "x": -82.854,
+    "y": 17.868,
     "angle": -10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK117": {
-    "x": -103.0386,
-    "y": 22.6352,
+    "x": -103.039,
+    "y": 22.635,
     "angle": -10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D117": {
-    "x": -101.51049603653101,
-    "y": 13.96889177349257,
+    "x": -101.615,
+    "y": 14.56,
     "angle": -10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK118": {
-    "x": -121.7992,
-    "y": 19.3272,
+    "x": -121.799,
+    "y": 19.327,
     "angle": -10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D118": {
-    "x": -120.271096036531,
-    "y": 10.66089177349257,
+    "x": -120.375,
+    "y": 11.252,
     "angle": -10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK119": {
-    "x": -31.3043,
-    "y": 54.6278,
+    "x": -31.304,
+    "y": 54.628,
     "angle": -10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D119": {
-    "x": -29.776196036531015,
-    "y": 45.96149177349257,
+    "x": -29.88,
+    "y": 46.552,
     "angle": -10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK120": {
-    "x": -50.0649,
-    "y": 51.3198,
+    "x": -50.065,
+    "y": 51.32,
     "angle": -10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D120": {
-    "x": -48.536796036531015,
-    "y": 42.65349177349257,
+    "x": -48.641,
+    "y": 43.244,
     "angle": -10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK121": {
-    "x": -68.8255,
-    "y": 48.0118,
+    "x": -68.826,
+    "y": 48.012,
     "angle": -10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D121": {
-    "x": -67.29739603653101,
-    "y": 39.34549177349257,
+    "x": -67.402,
+    "y": 39.936,
     "angle": -10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK122": {
-    "x": -87.5861,
-    "y": 44.7038,
+    "x": -87.586,
+    "y": 44.704,
     "angle": -10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D122": {
-    "x": -86.05799603653101,
-    "y": 36.03749177349257,
+    "x": -86.162,
+    "y": 36.628,
     "angle": -10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK123": {
-    "x": -106.3466,
-    "y": 41.3958,
+    "x": -106.347,
+    "y": 41.396,
     "angle": -10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D123": {
-    "x": -104.818496036531,
-    "y": 32.72949177349257,
+    "x": -104.923,
+    "y": 33.32,
     "angle": -10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK124": {
-    "x": -125.1072,
-    "y": 38.0878,
+    "x": -125.107,
+    "y": 38.088,
     "angle": -10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D124": {
-    "x": -123.57909603653101,
-    "y": 29.42149177349257,
+    "x": -123.683,
+    "y": 30.012,
     "angle": -10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK125": {
-    "x": 21.3803,
+    "x": 21.38,
     "y": -1.654,
     "angle": 10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D125": {
-    "x": 19.852196036531012,
-    "y": -10.32030822650743,
+    "x": 19.956,
+    "y": -9.729,
     "angle": 10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK126": {
-    "x": 40.1409,
+    "x": 40.141,
     "y": -4.962,
     "angle": 10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D126": {
-    "x": 38.612796036531016,
-    "y": -13.62830822650743,
+    "x": 38.717,
+    "y": -13.037,
     "angle": 10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK127": {
-    "x": 58.9015,
+    "x": 58.901,
     "y": -8.27,
     "angle": 10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D127": {
-    "x": 57.37339603653101,
-    "y": -16.93630822650743,
+    "x": 57.478,
+    "y": -16.345,
     "angle": 10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK128": {
-    "x": 77.6621,
+    "x": 77.662,
     "y": -11.578,
     "angle": 10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D128": {
-    "x": 76.133996036531,
-    "y": -20.244308226507428,
+    "x": 76.238,
+    "y": -19.653,
     "angle": 10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK129": {
-    "x": 96.4226,
+    "x": 96.423,
     "y": -14.886,
     "angle": 10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D129": {
-    "x": 94.89449603653101,
-    "y": -23.552308226507428,
+    "x": 94.999,
+    "y": -22.961,
     "angle": 10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK130": {
-    "x": 115.1832,
+    "x": 115.183,
     "y": -18.194,
     "angle": 10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D130": {
-    "x": 113.655096036531,
-    "y": -26.860308226507428,
+    "x": 113.759,
+    "y": -26.269,
     "angle": 10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK131": {
-    "x": 24.6883,
-    "y": 17.1066,
+    "x": 24.688,
+    "y": 17.107,
     "angle": 10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D131": {
-    "x": 23.160196036531016,
-    "y": 8.44029177349257,
+    "x": 23.264,
+    "y": 9.031,
     "angle": 10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK132": {
-    "x": 43.4489,
-    "y": 13.7986,
+    "x": 43.449,
+    "y": 13.799,
     "angle": 10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D132": {
-    "x": 41.920796036531016,
-    "y": 5.13229177349257,
+    "x": 42.025,
+    "y": 5.723,
     "angle": 10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK133": {
-    "x": 62.2095,
-    "y": 10.4906,
+    "x": 62.209,
+    "y": 10.491,
     "angle": 10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D133": {
-    "x": 60.68139603653101,
-    "y": 1.82429177349257,
+    "x": 60.786,
+    "y": 2.415,
     "angle": 10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK134": {
-    "x": 80.9701,
-    "y": 7.1826,
+    "x": 80.97,
+    "y": 7.183,
     "angle": 10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D134": {
-    "x": 79.44199603653101,
-    "y": -1.4837082265074306,
+    "x": 79.546,
+    "y": -0.893,
     "angle": 10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK135": {
-    "x": 99.7306,
-    "y": 3.8746,
+    "x": 99.731,
+    "y": 3.875,
     "angle": 10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D135": {
-    "x": 98.202496036531,
-    "y": -4.7917082265074304,
+    "x": 98.307,
+    "y": -4.201,
     "angle": 10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK136": {
-    "x": 118.4912,
-    "y": 0.5666,
+    "x": 118.491,
+    "y": 0.567,
     "angle": 10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D136": {
-    "x": 116.96309603653101,
-    "y": -8.099708226507431,
+    "x": 117.067,
+    "y": -7.509,
     "angle": 10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK137": {
-    "x": 27.9963,
-    "y": 35.8672,
+    "x": 27.996,
+    "y": 35.867,
     "angle": 10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D137": {
-    "x": 26.468196036531015,
-    "y": 27.200891773492565,
+    "x": 26.572,
+    "y": 27.792,
     "angle": 10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK138": {
-    "x": 46.7569,
-    "y": 32.5592,
+    "x": 46.757,
+    "y": 32.559,
     "angle": 10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D138": {
-    "x": 45.228796036531016,
-    "y": 23.892891773492565,
+    "x": 45.333,
+    "y": 24.484,
     "angle": 10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK139": {
-    "x": 65.5175,
-    "y": 29.2512,
+    "x": 65.517,
+    "y": 29.251,
     "angle": 10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D139": {
-    "x": 63.98939603653101,
-    "y": 20.584891773492572,
+    "x": 64.094,
+    "y": 21.176,
     "angle": 10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK140": {
-    "x": 84.2781,
-    "y": 25.9432,
+    "x": 84.278,
+    "y": 25.943,
     "angle": 10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D140": {
-    "x": 82.749996036531,
-    "y": 17.276891773492572,
+    "x": 82.854,
+    "y": 17.868,
     "angle": 10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK141": {
-    "x": 103.0386,
-    "y": 22.6352,
+    "x": 103.039,
+    "y": 22.635,
     "angle": 10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D141": {
-    "x": 101.51049603653101,
-    "y": 13.96889177349257,
+    "x": 101.615,
+    "y": 14.56,
     "angle": 10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK142": {
-    "x": 121.7992,
-    "y": 19.3272,
+    "x": 121.799,
+    "y": 19.327,
     "angle": 10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D142": {
-    "x": 120.271096036531,
-    "y": 10.66089177349257,
+    "x": 120.375,
+    "y": 11.252,
     "angle": 10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK143": {
-    "x": 31.3043,
-    "y": 54.6278,
+    "x": 31.304,
+    "y": 54.628,
     "angle": 10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D143": {
-    "x": 29.776196036531015,
-    "y": 45.96149177349257,
+    "x": 29.88,
+    "y": 46.552,
     "angle": 10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK144": {
-    "x": 50.0649,
-    "y": 51.3198,
+    "x": 50.065,
+    "y": 51.32,
     "angle": 10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D144": {
-    "x": 48.536796036531015,
-    "y": 42.65349177349257,
+    "x": 48.641,
+    "y": 43.244,
     "angle": 10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK145": {
-    "x": 68.8255,
-    "y": 48.0118,
+    "x": 68.825,
+    "y": 48.012,
     "angle": 10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D145": {
-    "x": 67.29739603653101,
-    "y": 39.34549177349257,
+    "x": 67.402,
+    "y": 39.936,
     "angle": 10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK146": {
-    "x": 87.5861,
-    "y": 44.7038,
+    "x": 87.586,
+    "y": 44.704,
     "angle": 10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D146": {
-    "x": 86.05799603653101,
-    "y": 36.03749177349257,
+    "x": 86.162,
+    "y": 36.628,
     "angle": 10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK147": {
-    "x": 106.3466,
-    "y": 41.3958,
+    "x": 106.347,
+    "y": 41.396,
     "angle": 10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D147": {
-    "x": 104.818496036531,
-    "y": 32.72949177349257,
+    "x": 104.923,
+    "y": 33.32,
     "angle": 10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "SK148": {
-    "x": 125.1072,
-    "y": 38.0878,
+    "x": 125.107,
+    "y": 38.088,
     "angle": 10.0,
+    "side": "B",
     "footprint": "worxboard:SW_Choc_V1_Hotswap"
   },
   "D148": {
-    "x": 123.57909603653101,
-    "y": 29.42149177349257,
+    "x": 123.683,
+    "y": 30.012,
     "angle": 10.0,
+    "side": "B",
     "footprint": "Diode_SMD:D_SOD-123"
   },
   "H1": {
     "x": -139.99,
     "y": 47.0,
-    "angle": 0,
+    "angle": 0.0,
+    "side": "F",
     "footprint": "MountingHole:MountingHole_2.7mm_M2.5"
   },
   "H2": {
     "x": -129.99,
     "y": -13.0,
-    "angle": 0,
+    "angle": 0.0,
+    "side": "F",
     "footprint": "MountingHole:MountingHole_2.7mm_M2.5"
   },
   "H3": {
     "x": -39.99,
     "y": 67.0,
-    "angle": 0,
+    "angle": 0.0,
+    "side": "F",
     "footprint": "MountingHole:MountingHole_2.7mm_M2.5"
   },
   "H4": {
     "x": -29.99,
     "y": -58.0,
-    "angle": 0,
+    "angle": 0.0,
+    "side": "F",
     "footprint": "MountingHole:MountingHole_2.7mm_M2.5"
   },
   "H5": {
     "x": 20.01,
     "y": -58.0,
-    "angle": 0,
+    "angle": 0.0,
+    "side": "F",
     "footprint": "MountingHole:MountingHole_2.7mm_M2.5"
   },
   "H6": {
     "x": 40.01,
     "y": 67.0,
-    "angle": 0,
+    "angle": 0.0,
+    "side": "F",
     "footprint": "MountingHole:MountingHole_2.7mm_M2.5"
   },
   "H7": {
-    "x": 105.01,
-    "y": -30.5,
-    "angle": 0,
+    "x": 120.01,
+    "y": -33.0,
+    "angle": 0.0,
+    "side": "F",
     "footprint": "MountingHole:MountingHole_2.7mm_M2.5"
   },
   "H8": {
     "x": 122.51,
     "y": 52.0,
-    "angle": 0,
+    "angle": 0.0,
+    "side": "F",
     "footprint": "MountingHole:MountingHole_2.7mm_M2.5"
   }
 }

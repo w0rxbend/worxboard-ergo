@@ -46,6 +46,7 @@ FIT_PAIRS={
  'top_cover':('pcb_envelope','lcd_envelope','keycap_envelopes','switch_envelopes','usb_receptacle_envelopes','usb_plug_envelopes'),
  'palm_rest':('keycap_envelopes',),
  'riser':('pad_envelopes',),
+ 'usb_receptacle_envelopes':('switch_envelopes',),
 }
 
 def fit_report(parts,assembly):

@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/w/pcb/mx/worxboard-ergo-mx.kicad_sch</source>
-    <date>2026-11-08T11:11:23</date>
+    <date>2026-11-13T15:56:04</date>
     <tool>Eeschema 10.0.7</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -2294,6 +2294,7 @@
       <property name="LCSC" value=""/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
+      <property name="dnp"/>
       <property name="ki_keywords" value="connector"/>
       <property name="ki_fp_filters" value="Connector*:*_1x??_*"/>
       <sheetpath names="/" tstamps="/"/>
@@ -2323,6 +2324,7 @@
       <property name="LCSC" value=""/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
+      <property name="dnp"/>
       <property name="ki_keywords" value="connector"/>
       <property name="ki_fp_filters" value="Connector*:*_1x??_*"/>
       <sheetpath names="/" tstamps="/"/>
@@ -2350,6 +2352,7 @@
       <property name="LCSC" value=""/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
+      <property name="dnp"/>
       <property name="ki_keywords" value="connector"/>
       <property name="ki_fp_filters" value="Connector*:*_1x??_*"/>
       <sheetpath names="/" tstamps="/"/>
@@ -2377,6 +2380,7 @@
       <property name="LCSC" value=""/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
+      <property name="dnp"/>
       <property name="ki_keywords" value="connector"/>
       <property name="ki_fp_filters" value="Connector*:*_1x??_*"/>
       <sheetpath names="/" tstamps="/"/>
@@ -2600,16 +2604,16 @@
       </units>
     </comp>
     <comp ref="R27">
-      <value>10k</value>
+      <value>5.1k</value>
       <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <fields>
-        <field name="LCSC">C25744</field>
+        <field name="LCSC">C25905</field>
         <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="LCSC" value="C25744"/>
+      <property name="LCSC" value="C25905"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <property name="ki_keywords" value="R res resistor"/>
@@ -2626,16 +2630,16 @@
       </units>
     </comp>
     <comp ref="R28">
-      <value>10k</value>
+      <value>5.1k</value>
       <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <fields>
-        <field name="LCSC">C25744</field>
+        <field name="LCSC">C25905</field>
         <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="LCSC" value="C25744"/>
+      <property name="LCSC" value="C25905"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <property name="ki_keywords" value="R res resistor"/>
@@ -2704,16 +2708,16 @@
       </units>
     </comp>
     <comp ref="R32">
-      <value>10k</value>
+      <value>5.1k</value>
       <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <fields>
-        <field name="LCSC">C25744</field>
+        <field name="LCSC">C25905</field>
         <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="LCSC" value="C25744"/>
+      <property name="LCSC" value="C25905"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <property name="ki_keywords" value="R res resistor"/>
@@ -2730,16 +2734,16 @@
       </units>
     </comp>
     <comp ref="R33">
-      <value>10k</value>
+      <value>5.1k</value>
       <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <fields>
-        <field name="LCSC">C25744</field>
+        <field name="LCSC">C25905</field>
         <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="LCSC" value="C25744"/>
+      <property name="LCSC" value="C25905"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <property name="ki_keywords" value="R res resistor"/>
@@ -2808,16 +2812,16 @@
       </units>
     </comp>
     <comp ref="R37">
-      <value>10k</value>
+      <value>5.1k</value>
       <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <fields>
-        <field name="LCSC">C25744</field>
+        <field name="LCSC">C25905</field>
         <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="LCSC" value="C25744"/>
+      <property name="LCSC" value="C25905"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <property name="ki_keywords" value="R res resistor"/>
@@ -2834,16 +2838,16 @@
       </units>
     </comp>
     <comp ref="R38">
-      <value>10k</value>
+      <value>5.1k</value>
       <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <fields>
-        <field name="LCSC">C25744</field>
+        <field name="LCSC">C25905</field>
         <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="LCSC" value="C25744"/>
+      <property name="LCSC" value="C25905"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <property name="ki_keywords" value="R res resistor"/>
@@ -2967,14 +2971,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K001</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K001"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -2993,14 +2997,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K002</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K002"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3019,14 +3023,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K003</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K003"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3045,14 +3049,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K004</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K004"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3071,14 +3075,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K005</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K005"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3097,14 +3101,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K006</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K006"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3123,14 +3127,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K007</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K007"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3149,14 +3153,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K008</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K008"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3175,14 +3179,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K009</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K009"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3201,14 +3205,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K010</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K010"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3227,14 +3231,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K011</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K011"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3253,14 +3257,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K012</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K012"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3279,14 +3283,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K013</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K013"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3305,14 +3309,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K014</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K014"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3331,14 +3335,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K015</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K015"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3357,14 +3361,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K016</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K016"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3383,14 +3387,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K017</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K017"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3409,14 +3413,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K018</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K018"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3435,14 +3439,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K019</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K019"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3461,14 +3465,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K020</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K020"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3487,14 +3491,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K021</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K021"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3513,14 +3517,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K022</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K022"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3539,14 +3543,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K023</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K023"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3565,14 +3569,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K024</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K024"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3591,14 +3595,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K025</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K025"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3617,14 +3621,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K026</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K026"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3643,14 +3647,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K027</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K027"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3669,14 +3673,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K028</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K028"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3695,14 +3699,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K029</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K029"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3721,14 +3725,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K030</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K030"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3747,14 +3751,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K031</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K031"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3773,14 +3777,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K032</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K032"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3799,14 +3803,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K033</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K033"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3825,14 +3829,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K034</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K034"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3851,14 +3855,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K035</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K035"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3877,14 +3881,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K036</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K036"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3903,14 +3907,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K037</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K037"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3929,14 +3933,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K038</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K038"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3955,14 +3959,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K039</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K039"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -3981,14 +3985,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K040</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K040"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -4007,14 +4011,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K041</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K041"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -4033,14 +4037,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K042</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K042"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -4059,14 +4063,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K043</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K043"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -4085,14 +4089,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K044</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K044"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -4111,14 +4115,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K045</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K045"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -4137,14 +4141,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K046</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K046"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -4163,14 +4167,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K047</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K047"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -4189,14 +4193,14 @@
       <value>MX</value>
       <footprint>worxboard:SW_MX_Hotswap_Kailh</footprint>
       <fields>
-        <field name="LCSC"/>
+        <field name="LCSC">C2803348</field>
         <field name="Key">K048</field>
         <field name="Footprint">worxboard:SW_MX_Hotswap_Kailh</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="worxboard" part="SW_Push_MX" description="MX key switch in a Kailh hot-swap socket"/>
-      <property name="LCSC" value=""/>
+      <property name="LCSC" value="C2803348"/>
       <property name="Key" value="K048"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
@@ -5597,92 +5601,86 @@
       <node ref="D148" pin="1" pinfunction="K_1" pintype="passive"/>
       <node ref="U1" pin="5" pinfunction="GPIO3_5" pintype="bidirectional"/>
     </net>
-    <net code="92" name="ROW4" class="Default">
-      <node ref="U1" pin="6" pinfunction="GPIO4_6" pintype="bidirectional"/>
-    </net>
-    <net code="93" name="ROW5" class="Default">
-      <node ref="U1" pin="7" pinfunction="GPIO5_7" pintype="bidirectional"/>
-    </net>
-    <net code="94" name="RUN" class="Default">
+    <net code="92" name="RUN" class="Default">
       <node ref="R10" pin="1" pintype="passive"/>
       <node ref="SW2" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="U1" pin="26" pinfunction="RUN_26" pintype="input"/>
     </net>
-    <net code="95" name="SWCLK" class="Default">
+    <net code="93" name="SWCLK" class="Default">
       <node ref="TP8" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="U1" pin="24" pinfunction="SWCLK_24" pintype="input"/>
     </net>
-    <net code="96" name="SWDIO" class="Default">
+    <net code="94" name="SWDIO" class="Default">
       <node ref="TP9" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="U1" pin="25" pinfunction="SWDIO_25" pintype="bidirectional"/>
     </net>
-    <net code="97" name="USB_CENTER_DM" class="Default">
+    <net code="95" name="USB_CENTER_DM" class="USB">
       <node ref="J2" pin="A7" pinfunction="D-_A7" pintype="bidirectional"/>
       <node ref="J2" pin="B7" pinfunction="D-_B7" pintype="bidirectional"/>
       <node ref="U5" pin="3" pinfunction="I/O2_3" pintype="passive"/>
       <node ref="U5" pin="4" pinfunction="I/O2_4" pintype="passive"/>
-      <node ref="U7" pin="6" pinfunction="USB2-_6" pintype="passive"/>
+      <node ref="U7" pin="5" pinfunction="USB2+_5" pintype="passive"/>
     </net>
-    <net code="98" name="USB_CENTER_DP" class="Default">
+    <net code="96" name="USB_CENTER_DP" class="USB">
       <node ref="J2" pin="A6" pinfunction="D+_A6" pintype="bidirectional"/>
       <node ref="J2" pin="B6" pinfunction="D+_B6" pintype="bidirectional"/>
       <node ref="U5" pin="1" pinfunction="I/O1_1" pintype="passive"/>
       <node ref="U5" pin="6" pinfunction="I/O1_6" pintype="passive"/>
-      <node ref="U7" pin="5" pinfunction="USB2+_5" pintype="passive"/>
+      <node ref="U7" pin="6" pinfunction="USB2-_6" pintype="passive"/>
     </net>
-    <net code="99" name="USB_DM" class="Default">
+    <net code="97" name="USB_DM" class="USB">
       <node ref="R4" pin="2" pintype="passive"/>
       <node ref="U1" pin="46" pinfunction="USB_DM_46" pintype="bidirectional"/>
     </net>
-    <net code="100" name="USB_DP" class="Default">
+    <net code="98" name="USB_DP" class="USB">
       <node ref="R3" pin="2" pintype="passive"/>
       <node ref="U1" pin="47" pinfunction="USB_DP_47" pintype="bidirectional"/>
     </net>
-    <net code="101" name="USB_LEFT_DM" class="Default">
+    <net code="99" name="USB_LEFT_DM" class="USB">
       <node ref="J1" pin="A7" pinfunction="D-_A7" pintype="bidirectional"/>
       <node ref="J1" pin="B7" pinfunction="D-_B7" pintype="bidirectional"/>
       <node ref="U4" pin="3" pinfunction="I/O2_3" pintype="passive"/>
       <node ref="U4" pin="4" pinfunction="I/O2_4" pintype="passive"/>
-      <node ref="U7" pin="4" pinfunction="USB1-_4" pintype="passive"/>
+      <node ref="U7" pin="3" pinfunction="USB1+_3" pintype="passive"/>
     </net>
-    <net code="102" name="USB_LEFT_DP" class="Default">
+    <net code="100" name="USB_LEFT_DP" class="USB">
       <node ref="J1" pin="A6" pinfunction="D+_A6" pintype="bidirectional"/>
       <node ref="J1" pin="B6" pinfunction="D+_B6" pintype="bidirectional"/>
       <node ref="U4" pin="1" pinfunction="I/O1_1" pintype="passive"/>
       <node ref="U4" pin="6" pinfunction="I/O1_6" pintype="passive"/>
-      <node ref="U7" pin="3" pinfunction="USB1+_3" pintype="passive"/>
+      <node ref="U7" pin="4" pinfunction="USB1-_4" pintype="passive"/>
     </net>
-    <net code="103" name="USB_MUX_DM" class="Default">
+    <net code="101" name="USB_MUX_DM" class="USB">
       <node ref="R4" pin="1" pintype="passive"/>
-      <node ref="U7" pin="10" pinfunction="D-_10" pintype="passive"/>
-    </net>
-    <net code="104" name="USB_MUX_DP" class="Default">
-      <node ref="R3" pin="1" pintype="passive"/>
       <node ref="U7" pin="11" pinfunction="D+_11" pintype="passive"/>
     </net>
-    <net code="105" name="USB_RIGHT_DM" class="Default">
+    <net code="102" name="USB_MUX_DP" class="USB">
+      <node ref="R3" pin="1" pintype="passive"/>
+      <node ref="U7" pin="10" pinfunction="D-_10" pintype="passive"/>
+    </net>
+    <net code="103" name="USB_RIGHT_DM" class="USB">
       <node ref="J3" pin="A7" pinfunction="D-_A7" pintype="bidirectional"/>
       <node ref="J3" pin="B7" pinfunction="D-_B7" pintype="bidirectional"/>
       <node ref="U6" pin="3" pinfunction="I/O2_3" pintype="passive"/>
       <node ref="U6" pin="4" pinfunction="I/O2_4" pintype="passive"/>
-      <node ref="U7" pin="8" pinfunction="MHL-_8" pintype="passive"/>
+      <node ref="U7" pin="7" pinfunction="MHL+_7" pintype="passive"/>
     </net>
-    <net code="106" name="USB_RIGHT_DP" class="Default">
+    <net code="104" name="USB_RIGHT_DP" class="USB">
       <node ref="J3" pin="A6" pinfunction="D+_A6" pintype="bidirectional"/>
       <node ref="J3" pin="B6" pinfunction="D+_B6" pintype="bidirectional"/>
       <node ref="U6" pin="1" pinfunction="I/O1_1" pintype="passive"/>
       <node ref="U6" pin="6" pinfunction="I/O1_6" pintype="passive"/>
-      <node ref="U7" pin="7" pinfunction="MHL+_7" pintype="passive"/>
+      <node ref="U7" pin="8" pinfunction="MHL-_8" pintype="passive"/>
     </net>
-    <net code="107" name="USB_SEL0" class="Default">
+    <net code="105" name="USB_SEL0" class="USB">
       <node ref="R42" pin="1" pintype="passive"/>
       <node ref="U1" pin="32" pinfunction="GPIO21_32" pintype="bidirectional"/>
     </net>
-    <net code="108" name="USB_SEL1" class="Default">
+    <net code="106" name="USB_SEL1" class="USB">
       <node ref="R43" pin="1" pintype="passive"/>
       <node ref="U1" pin="34" pinfunction="GPIO22_34" pintype="bidirectional"/>
     </net>
-    <net code="109" name="VBUS_CENTER" class="Default">
+    <net code="107" name="VBUS_CENTER" class="Power">
       <node ref="D2" pin="2" pinfunction="A_2" pintype="passive"/>
       <node ref="J2" pin="A4" pinfunction="VBUS_A4" pintype="passive"/>
       <node ref="J2" pin="A9" pinfunction="VBUS_A9" pintype="passive"/>
@@ -5691,12 +5689,12 @@
       <node ref="R32" pin="1" pintype="passive"/>
       <node ref="U5" pin="5" pinfunction="VBUS_5" pintype="passive"/>
     </net>
-    <net code="110" name="VBUS_CENTER_SENSE" class="Default">
+    <net code="108" name="VBUS_CENTER_SENSE" class="Power">
       <node ref="R32" pin="2" pintype="passive"/>
       <node ref="R33" pin="1" pintype="passive"/>
       <node ref="U1" pin="36" pinfunction="GPIO24_36" pintype="bidirectional"/>
     </net>
-    <net code="111" name="VBUS_LEFT" class="Default">
+    <net code="109" name="VBUS_LEFT" class="Power">
       <node ref="D1" pin="2" pinfunction="A_2" pintype="passive"/>
       <node ref="J1" pin="A4" pinfunction="VBUS_A4" pintype="passive"/>
       <node ref="J1" pin="A9" pinfunction="VBUS_A9" pintype="passive"/>
@@ -5705,12 +5703,12 @@
       <node ref="R27" pin="1" pintype="passive"/>
       <node ref="U4" pin="5" pinfunction="VBUS_5" pintype="passive"/>
     </net>
-    <net code="112" name="VBUS_LEFT_SENSE" class="Default">
+    <net code="110" name="VBUS_LEFT_SENSE" class="Power">
       <node ref="R27" pin="2" pintype="passive"/>
       <node ref="R28" pin="1" pintype="passive"/>
       <node ref="U1" pin="35" pinfunction="GPIO23_35" pintype="bidirectional"/>
     </net>
-    <net code="113" name="VBUS_RIGHT" class="Default">
+    <net code="111" name="VBUS_RIGHT" class="Power">
       <node ref="D3" pin="2" pinfunction="A_2" pintype="passive"/>
       <node ref="J3" pin="A4" pinfunction="VBUS_A4" pintype="passive"/>
       <node ref="J3" pin="A9" pinfunction="VBUS_A9" pintype="passive"/>
@@ -5719,12 +5717,12 @@
       <node ref="R37" pin="1" pintype="passive"/>
       <node ref="U6" pin="5" pinfunction="VBUS_5" pintype="passive"/>
     </net>
-    <net code="114" name="VBUS_RIGHT_SENSE" class="Default">
+    <net code="112" name="VBUS_RIGHT_SENSE" class="Power">
       <node ref="R37" pin="2" pintype="passive"/>
       <node ref="R38" pin="1" pintype="passive"/>
       <node ref="U1" pin="37" pinfunction="GPIO25_37" pintype="bidirectional"/>
     </net>
-    <net code="115" name="VSYS" class="Default">
+    <net code="113" name="VSYS" class="Power">
       <node ref="C1" pin="1" pintype="passive"/>
       <node ref="C2" pin="1" pintype="passive"/>
       <node ref="D1" pin="1" pinfunction="K_1" pintype="passive"/>
@@ -5734,37 +5732,43 @@
       <node ref="U3" pin="1" pinfunction="VIN_1" pintype="power_in"/>
       <node ref="U3" pin="3" pinfunction="EN_3" pintype="input"/>
     </net>
-    <net code="116" name="XIN" class="Default">
+    <net code="114" name="XIN" class="Default">
       <node ref="C6" pin="1" pintype="passive"/>
       <node ref="U1" pin="20" pinfunction="XIN_20" pintype="input"/>
       <node ref="Y1" pin="1" pinfunction="1_1" pintype="passive"/>
     </net>
-    <net code="117" name="XOUT" class="Default">
+    <net code="115" name="XOUT" class="Default">
       <node ref="R7" pin="2" pintype="passive"/>
       <node ref="U1" pin="21" pinfunction="XOUT_21" pintype="output"/>
     </net>
-    <net code="118" name="XTAL_OUT" class="Default">
+    <net code="116" name="XTAL_OUT" class="Default">
       <node ref="C7" pin="1" pintype="passive"/>
       <node ref="R7" pin="1" pintype="passive"/>
       <node ref="Y1" pin="3" pinfunction="3_3" pintype="passive"/>
     </net>
-    <net code="119" name="unconnected-(J1-SBU1-PadA8)" class="Default">
+    <net code="117" name="unconnected-(J1-SBU1-PadA8)" class="Default">
       <node ref="J1" pin="A8" pinfunction="SBU1_A8" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="120" name="unconnected-(J1-SBU2-PadB8)" class="Default">
+    <net code="118" name="unconnected-(J1-SBU2-PadB8)" class="Default">
       <node ref="J1" pin="B8" pinfunction="SBU2_B8" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="121" name="unconnected-(J2-SBU1-PadA8)" class="Default">
+    <net code="119" name="unconnected-(J2-SBU1-PadA8)" class="Default">
       <node ref="J2" pin="A8" pinfunction="SBU1_A8" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="122" name="unconnected-(J2-SBU2-PadB8)" class="Default">
+    <net code="120" name="unconnected-(J2-SBU2-PadB8)" class="Default">
       <node ref="J2" pin="B8" pinfunction="SBU2_B8" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="123" name="unconnected-(J3-SBU1-PadA8)" class="Default">
+    <net code="121" name="unconnected-(J3-SBU1-PadA8)" class="Default">
       <node ref="J3" pin="A8" pinfunction="SBU1_A8" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="124" name="unconnected-(J3-SBU2-PadB8)" class="Default">
+    <net code="122" name="unconnected-(J3-SBU2-PadB8)" class="Default">
       <node ref="J3" pin="B8" pinfunction="SBU2_B8" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="123" name="unconnected-(U1-GPIO4-Pad6)" class="Default">
+      <node ref="U1" pin="6" pinfunction="GPIO4_6" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="124" name="unconnected-(U1-GPIO5-Pad7)" class="Default">
+      <node ref="U1" pin="7" pinfunction="GPIO5_7" pintype="bidirectional+no_connect"/>
     </net>
     <net code="125" name="unconnected-(U3-NC-Pad4)" class="Default">
       <node ref="U3" pin="4" pinfunction="NC_4" pintype="no_connect"/>

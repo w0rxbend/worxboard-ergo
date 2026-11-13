@@ -1,0 +1,44 @@
+{
+  "scripted_net_mm": {
+    "3V3": 29.78,
+    "GND": 34.22,
+    "QSPI_SCLK": 5.09,
+    "QSPI_SD0": 3.62,
+    "QSPI_SD1": 9.24,
+    "QSPI_SD2": 13.72,
+    "QSPI_SD3": 6.56,
+    "QSPI_SS": 16.84,
+    "USB_CENTER_DM": 27.59,
+    "USB_CENTER_DP": 24.56,
+    "USB_DM": 1.61,
+    "USB_DP": 1.4,
+    "USB_LEFT_DM": 107.44,
+    "USB_LEFT_DP": 106.31,
+    "USB_MUX_DM": 1.71,
+    "USB_MUX_DP": 1.4,
+    "USB_RIGHT_DM": 182.51,
+    "USB_RIGHT_DP": 97.86,
+    "VBUS_CENTER": 18.78,
+    "VBUS_LEFT": 15.77,
+    "VBUS_RIGHT": 14.98,
+    "VSYS": 143.49,
+    "XIN": 4.11,
+    "XOUT": 3.16,
+    "XTAL_OUT": 5.33
+  },
+  "scripted_tracks": 386,
+  "usb_pair_mm": {
+    "USB_CENTER": [
+      16.8,
+      16.19
+    ],
+    "USB_LEFT": [
+      51.02,
+      50.38
+    ],
+    "USB_RIGHT": [
+      85.65,
+      85.35
+    ]
+  }
+}

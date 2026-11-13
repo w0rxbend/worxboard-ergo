@@ -32,7 +32,7 @@ Case shell, not verified:
 - The interference check uses envelopes. Keycaps are boxes without stems or wobble. Switch housings use nominal sizes.
 - The outline is tangent arcs, not curvature-continuous. Curvature steps 7.9 times at the lip-to-corner joint.
 - The 4.5 mm sweep under the wall is a plain 45° chamfer, not a convex section.
-- `assets/layout.svg` and `assets/layout.png` still show the earlier short palm rest, not the shell. The product page and `assets/product.png` use renders from `tools/render.py`. Those renders show the CAD envelopes; they are not photographs and are not evidence of fit. The `palm` and `palm_screws` keys in `assets/layout.json` describe that earlier rest. See the authority exception in [design.md](design.md).
+- `assets/layout.svg` and `assets/layout.png` still show the earlier short palm rest, not the shell. The product page and `assets/product.png` use path-traced renders from `tools/render.py`. The case parts in them come from the CAD model. The keycaps, legends, switch housings, plain PCB, display content and colours are drawn for the picture in `tools/render_parts.py` and are not design data. The renders are not photographs and are not evidence of fit. The `palm` and `palm_screws` keys in `assets/layout.json` describe that earlier rest. See the authority exception in [design.md](design.md).
 
 Known blockers the case model does not resolve. They belong to the PCB and the layout, which this case revision did not change:
 

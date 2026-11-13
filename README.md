@@ -11,7 +11,7 @@ A split Planck in one curved shell. Forty-eight 1u keys in two wells, opened ten
 **[Product page](https://w0rxbend.github.io/worxboard-ergo/)** · **[3D print guide](docs/printing.md)** · **[Releases](https://github.com/w0rxbend/worxboard-ergo/releases)**
 
 > [!WARNING]
-> **Revision A0 is an engineering preview.** You can print the case. You cannot order the PCB: it has no copper tracks. No keyboard has been built, and the firmware has never run on a board. The picture is a render of the CAD model.
+> **Revision A0 is an engineering preview.** You can print the case. You cannot order the PCB: it has no copper tracks. No keyboard has been built, and the firmware has never run on a board. The pictures are renders of the design.
 
 ## What you can do today
 
@@ -83,10 +83,12 @@ make check-fabrication   # fails on purpose at A0
 
 `make check-fabrication` stays red until both boards are routed, reviewed, and tested on hardware. Tool versions are pinned in [`toolchain.lock.json`](toolchain.lock.json) and `uv.lock`.
 
-To redraw the product renders:
+To redraw the product renders (Blender's path tracer as a Python module, about 30 minutes on 16 CPU threads) and the laser artwork for the signature:
 
 ```sh
-uv run --with pyvista==0.46.3 python -m tools.render
+uv run --no-project --python 3.13 --with bpy==5.3.0 --with build123d==0.13.0 \
+    --with shapely==2.2.0 --with pillow==13.0.0 --with imagequant==1.1.6 python -m tools.render
+make laser
 ```
 
 ## Status and next steps

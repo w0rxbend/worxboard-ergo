@@ -22,8 +22,9 @@ from pathlib import Path
 import bpy
 import bmesh   # importable only after bpy
 import imagequant
+import numpy
 from mathutils import Matrix, Vector
-from PIL import Image
+from PIL import Image, ImageFilter
 
 from cad.model import CAP_LIFT, LCD_SINK, LCD_T, PAD_PROUD, PCB_TOP, REAR_PAD_Y, RISER_TILT, cad_xy, make
 from layout import DISPLAY, keys, variants
@@ -41,7 +42,11 @@ SENSOR_MM = 36.0
 FRAME_FILL = 0.84             # share of the frame the subject may span; the rest is room for its shadow
 ALPHA_FLOOR = 6               # shadow fainter than this does not count when cropping
 ALPHA_SOLID = 250             # at or above this a pixel is the product, not its shadow
-PNG_COLOURS, PNG_MAX_WIDTH, WEBP_QUALITY = 256, 2400, 88
+SPECK_PX = 5                  # a stray denoiser pixel smaller than this does not count either
+FEATHER_PX = 48               # a shadow the frame cut fades out over this margin
+PNG_COLOURS, WEBP_QUALITY = 256, 88
+PNG_BUDGET_BYTES = 600_000
+PNG_WIDTHS = (2400, 2000, 1600, 1200)   # tried in turn until the PNG fits the budget; the WebP keeps full size
 SURFACE_GAP_MM = 0.01         # how far a legend sits off the surface under it
 
 
@@ -66,7 +71,7 @@ FINISHES = {
     'hole': Finish('#020202', 0.9),
     'steel': Finish('#c9cbce', 0.28, metallic=1.0),
     'rubber': Finish('#1a1a1b', 0.85),
-    'lcd': Finish('#aeb5aa', 0.16, metallic=0.75, coat=1.0),
+    'lcd': Finish('#b9c0b4', 0.3, metallic=0.25, coat=1.0),
     'ink': Finish('#101112', 0.5),
     'cap_light': Finish('#e7e4dc', 0.5, grain=0.3, grain_mm=0.18),
     'cap_dark': Finish('#55585e', 0.5, grain=0.3, grain_mm=0.18),
@@ -83,8 +88,8 @@ ASSEMBLY = {
     'pcb_envelope': ('pcb', 'pcb'), 'lcd_envelope': ('lcd', 'lcd'),
 }
 # Exploded view: how far each layer moves from its seat, CAD frame. The palm rest slides toward the typist.
-EXPLODE_MM = {'riser': (0, 0, -45), 'palm': (0, -70, 12), 'pcb': (0, 0, 40), 'plate': (0, 0, 85), 'lcd': (0, 0, 105),
-              'cover': (0, 0, 130), 'switches': (0, 0, 170), 'caps': (0, 0, 215)}
+EXPLODE_MM = {'riser': (0, 0, -45), 'palm': (0, -60, 0), 'pcb': (0, 0, 55), 'plate': (0, 0, 100), 'lcd': (0, 0, 120),
+              'cover': (0, 0, 145), 'switches': (0, 0, 185), 'caps': (0, 0, 230)}
 SEATED = (0, 0, 0)
 LEGEND_MM = {'glyph': 6.0, 'word': 2.8}   # font size for a one-character legend and for a word
 LEGEND_BOLD_MM = 0.1                      # the built-in font is light; fatten every outline by this much
@@ -121,7 +126,7 @@ class Shot:
 
 
 SHOTS = {
-    'top': Shot('mx', 0, 90, size=(2400, 1700), lens=200),
+    'top': Shot('mx', 0, 90, size=(2400, 1900), lens=200),
     'hero': Shot('mx', 24, 34),
     'side': Shot('mx', -90, 3, size=(2400, 800)),
     'rear': Shot('mx', 156, 17),
@@ -364,8 +369,19 @@ def trace(shot, target):
 
 
 def extent(picture, alpha_floor):
-    """Bounding box of the pixels more opaque than the floor."""
-    return picture.getchannel('A').point(lambda alpha: 255 if alpha > alpha_floor else 0).getbbox()
+    """Bounding box of the pixels more opaque than the floor, specks aside."""
+    opaque = picture.getchannel('A').point(lambda alpha: 255 if alpha > alpha_floor else 0)
+    return opaque.filter(ImageFilter.MinFilter(SPECK_PX)).getbbox()
+
+
+def feathered(picture):
+    """Fade the shadow out toward the border, so a shadow the frame cut leaves no seam. The product stays."""
+    pixels = numpy.array(picture)
+    alpha = pixels[..., 3]
+    to_edge = [numpy.minimum(numpy.arange(side), numpy.arange(side)[::-1]) for side in alpha.shape]
+    fade = numpy.clip(numpy.minimum.outer(*to_edge) / FEATHER_PX, 0, 1)
+    pixels[..., 3] = numpy.where(alpha < ALPHA_SOLID, alpha * fade, alpha)
+    return Image.fromarray(pixels)
 
 
 def cropped(path, whole_subject):
@@ -374,15 +390,19 @@ def cropped(path, whole_subject):
     left, top, right, bottom = extent(picture, ALPHA_SOLID)
     if whole_subject and (left == 0 or top == 0 or right == picture.width or bottom == picture.height):
         raise RuntimeError(f'{path.stem} is clipped by the frame')
-    return picture.crop(extent(picture, ALPHA_FLOOR))
+    return feathered(picture.crop(extent(picture, ALPHA_FLOOR)))
 
 
 def save_web(picture, target):
-    """A palette PNG, small enough for the page, and a WebP beside it."""
-    if picture.width > PNG_MAX_WIDTH:
-        picture = picture.resize((PNG_MAX_WIDTH, round(picture.height * PNG_MAX_WIDTH / picture.width)), Image.LANCZOS)
-    imagequant.quantize_pil_image(picture, max_colors=PNG_COLOURS).save(target, optimize=True)
+    """A full-size WebP, and beside it a palette PNG scaled down until it fits the byte budget."""
     picture.save(target.with_suffix('.webp'), quality=WEBP_QUALITY, method=6)
+    for width in PNG_WIDTHS:
+        scale = min(1.0, width / picture.width)
+        fitted = picture.resize((round(picture.width * scale), round(picture.height * scale)), Image.LANCZOS)
+        imagequant.quantize_pil_image(fitted, max_colors=PNG_COLOURS).save(target, optimize=True)
+        if target.stat().st_size <= PNG_BUDGET_BYTES:
+            return
+    raise RuntimeError(f'{target.name} is over {PNG_BUDGET_BYTES} bytes at every width in PNG_WIDTHS')
 
 
 def save_product(top):

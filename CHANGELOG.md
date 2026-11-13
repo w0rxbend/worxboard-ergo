@@ -5,7 +5,7 @@ All releases are engineering previews of hardware revision A0. None is a fabrica
 ## Unreleased
 
 ### Added
-- The owner's signature engraved in the chassis underside, 0.4 mm deep, as single-pass tool centre lines.
+- Laser artwork for the owner's signature on the chassis underside: vector SVG and PDF, a 4000 px PNG, and a placement drawing. It replaces the milled groove that was on `main` for a short time and never shipped in a release.
 
 ## [0.2.0-a0] - 2026-11-13
 

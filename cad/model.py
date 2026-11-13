@@ -24,7 +24,6 @@ from OCP.ShapeCustom import ShapeCustom
 from shapely.geometry import LineString, Point, Polygon as PlanPolygon
 from layout import keys, outline, holes, variants, DISPLAY, PORTS, U
 from layout.model import RIM, _world
-from cad import signature
 
 A = (Align.CENTER, Align.CENTER, Align.MIN)
 REARWARD = (Align.CENTER, Align.MAX, Align.MIN)   # runs from its anchor away from the typist
@@ -96,10 +95,6 @@ SCREW_D = 2.8
 HEAD_D, HEAD_DEPTH = 5.2, 2.2
 PILOT_D = 2.1
 PALM_PILOT_DEPTH = 6.0
-
-# Signature engraved in the underside, under the middle of the right well
-SIGN_DEPTH = 0.4
-SIGN_COL, SIGN_ROW = 2.5, 1.5
 
 # Palm rest
 PALM_GAP = 0.8      # deliberate reveal between chassis fence and palm
@@ -343,13 +338,7 @@ def _port_notch(x, mouth_y, z, height):
     """Open notch over a receptacle and its plug, from NOTCH_FWD in front of the mouth to the rear."""
     return Pos(x, mouth_y + NOTCH_FWD, z - OVERCUT) * Box(RELIEF_W, CUT_BACK, height + 2 * OVERCUT, align=REARWARD)
 
-def sign_place(x, y):
-    """A signature point in the plan. x is mirrored, so the text reads from below with the rear edge away."""
-    return _world('right', SIGN_COL - x / U, SIGN_ROW - y / U)
-
 def _cut_underside(chassis):
-    for groove in signature.grooves(sign_place):
-        chassis -= prism(groove, -EPS, SIGN_DEPTH + EPS)
     for x, y in mirrored(PALM_SCREWS):
         chassis = _screw_from_below(chassis, x, y, SHELF)
     for x, y in mirrored(MAGNETS):

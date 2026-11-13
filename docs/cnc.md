@@ -28,7 +28,7 @@ The shell plan is 303.03 × 223.00 mm. Leave 6 mm of stock outside it. The chass
 5. Flip the part. Cut the 4.5 mm bottom sweep, the rear undercut, four pad recesses, four magnet pockets, and fourteen screw counterbores.
 6. Break the outside edges about 0.3 mm. Confirm the pocket's smallest concave radius against the finishing tool before the program is posted. The model does not yet contain tool-radius relief.
 7. No hole in the chassis is tapped.
-8. Engrave the signature in the underside, 0.4 mm deep. Use a 0.8 mm cutter for the name and flourish and a 0.5 mm cutter or engraving point for the edition line. Each groove is one pass along its centre line. A printed chassis shows it as a shallow groove in the first layers.
+8. Do not mill the signature. It is laser engraved on the finished underside, after anodizing or coating. Give the laser shop `cad/exports/laser/chassis-underside.svg` or its PDF. The black fill is the engraving. The blue lines are the outline, slot, counterbores and pockets seen from below, for alignment only. The drawing is 1:1 in millimeters. No laser settings are proven.
 
 ## Plate
 

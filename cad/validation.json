@@ -6,7 +6,7 @@
       "part": "chassis",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 317772.29351,
+      "volume_mm3": 317879.43467,
       "bounds_mm": [
         303.0267,
         223.0,
@@ -71,7 +71,7 @@
       "part": "chassis_right",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 158059.78213,
+      "volume_mm3": 158166.95237,
       "bounds_mm": [
         151.5133,
         223.0,
@@ -175,7 +175,7 @@
       "part": "chassis",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 290496.4223,
+      "volume_mm3": 290603.56228,
       "bounds_mm": [
         303.0267,
         223.0,
@@ -240,7 +240,7 @@
       "part": "chassis_right",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 144420.77889,
+      "volume_mm3": 144527.95015,
       "bounds_mm": [
         151.5133,
         223.0,

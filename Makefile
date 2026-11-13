@@ -1,5 +1,5 @@
 SHELL := /bin/bash
-.PHONY: generate cad native test pcb firmware manifest check-fabrication references
+.PHONY: generate cad native laser test pcb firmware manifest check-fabrication references
 
 generate:
 	uv run python -m tools.layout
@@ -9,6 +9,8 @@ cad:
 	uv run python -m tools.cad
 native:
 	bash tools/native.sh
+laser:
+	uv run --with fonttools==4.55.0 python -m tools.signature
 test:
 	uv run pytest -q
 pcb:

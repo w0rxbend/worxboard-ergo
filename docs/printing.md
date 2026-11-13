@@ -105,6 +105,10 @@ The chassis holes are 2.8 mm with a 5.2 × 2.2 mm counterbore. The pilots are si
 
 The full stack with a board is in the [build guide](build.md#6-assemble-after-a-real-pcb-exists).
 
+## Signature
+
+The owner's signature is laser artwork for a metal chassis, in [`cad/exports/laser`](../cad/exports/laser). It is not in the printed meshes. A laser mark on PETG or ASA is untested and may only melt the surface.
+
 ## Known limits
 
 - No part has been printed. Shrinkage, warping, and fit are unmeasured.

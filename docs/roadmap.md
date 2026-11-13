@@ -26,7 +26,7 @@ Immediate engineering tasks:
 - [ ] Move the shell plan and the palm-screw, magnet and pad positions into `layout/model.py`, and replace `palm_outline()` and `palm_screws()`. Until then `cad/model.py` holds them as a recorded exception to the layout authority rule.
 - [ ] Choose the pad part. The riser stance assumes pads 2.0 mm proud of a 1.0 mm recess.
 - [x] Reconcile the CAD frame with the PCB top view. The export is right-handed and tests hold the eight holes to the PCB positions. See [verification.md](verification.md).
-- [ ] Draw the shell and the top cover in `assets/layout.svg` and the microsite. They still show the earlier short palm rest.
+- [ ] Draw the shell and the top cover in `assets/layout.svg`. It still shows the earlier short palm rest. The product page uses renders of the CAD model instead.
 - [ ] Choose RGB LEDs/driver/level shifting and enforce USB current limits, suspend behavior and LED-off default.
 - [ ] Decide whether roll-tenting is required. The chassis sits flat and the magnetic riser tips the whole flat deck 6.7 degrees. Separate keywell angles still need two PCBs or a flex.
 - [ ] Prototype and record measurements/photos before calling any hardware orderable.

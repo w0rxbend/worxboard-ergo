@@ -1,6 +1,6 @@
 # How to build this keyboard
 
-This is the shop and bench sequence for the 48-key split Planck. It uses the files in this repository. It is not a released manufacturing package. No board, case, or cable arrangement has been built or measured. The visual introduction is the [microsite](../site/index.html).
+This is the shop and bench sequence for the 48-key split Planck. It uses the files in this repository. It is not a released manufacturing package. No board, case, or cable arrangement has been built or measured. The visual introduction is the [product page](https://w0rxbend.github.io/worxboard-ergo/).
 
 Read this page once, then follow the sections in order. Do the coupons before a full case. Do not send the PCB to a fabricator from the files that are here today.
 
@@ -57,33 +57,9 @@ Current evidence is in [verification.md](verification.md). If you change `layout
 
 ## 3. 3D printing
 
-Units are millimeters. The 3MF files record `unit="millimeter"`. They contain no temperatures, infill, or supports.
+Follow the [3D print guide](printing.md). It lists the files, bed sizes, orientation, starting slicer settings, the four test pieces, and the screws.
 
-Print the variant you chose. The one-piece chassis is 303 × 223 mm and needs a 350 mm class bed. The split chassis halves are 169.5 and 151.5 × 223 mm and need a bed of about 235 mm or more in one direction. The one-piece top cover is 289 × 136 mm.
-
-| Part | One piece | Split | Face on the bed |
-|---|---|---|---|
-| Chassis | `chassis.stl` | `chassis_left.stl`, `chassis_right.stl` | The flat underside. It has no feet. |
-| Plate | `plate.stl` | `plate_left.stl`, `plate_right.stl` | Flat face down, after a coupon |
-| Palm rest | `palm_rest.stl` | `palm_rest_left.stl`, `palm_rest_right.stl` | The flat bottom |
-| Top cover | `top_cover.stl` | `top_cover_left.stl`, `top_cover_right.stl` | The top face, bosses up |
-| Riser, optional | `riser.stl` | same file; one 224 mm piece | The flat top face |
-
-Suggested first plastic, not a qualified profile: PETG or ASA, 0.2 mm layers, four perimeters, 20% infill on the chassis. Reorient in the slicer. The chassis and the palm rest have flat bottoms. The rim and the top cover are flat. The palm top will show layer steps. No slicer run backs any of this.
-
-`chassis_left` keeps an 18 mm by 18 mm tab in the rear apron. `chassis_right` has the matching recess. That tab has not been printed. Before a full pair, print only that corner and check that the halves meet without force and without a gap you can see. If the tab is tight or loose, change the model and regenerate. Do not sand the source of truth away and still call the file current.
-
-All screws enter from the underside. The chassis holes are 2.8 mm clearance with a 5.2 × 2.2 mm counterbore. Eight of them pass the PCB and meet blind 2.1 mm pilots in the top-cover bosses, 6.7 mm deep on MX and 3.9 mm on Choc v1. Six pass the shelf and meet 2.1 mm blind pilots, 6 mm deep, in the palm rest. The 2.1 mm pilots are for a thread-forming screw after a coupon. They are too small for heat-set inserts. Their coordinates are `PALM_SCREWS` in `cad/model.py` and are not a measured fit.
-
-### Print coupons, in this order
-
-1. One switch opening and its 2.6 × 1.1 mm south window, cut from the plate mesh or printed as a small excerpt. The switch must clip, travel, and release. The window is for a later LED. No LED is stuffed on this PCB.
-2. The center-tab corner, left and right.
-3. One USB tunnel: 14 mm wide, 7.8 mm tall, roofed on MX and open on Choc v1. A real USB-C plug must pass it without lifting the board. The PCB does not place the jacks at these mouths yet; see [verification.md](verification.md).
-4. One top-cover boss with its screw from below.
-5. Only then, the full chassis, plate, top cover, and palm rest.
-
-Square switch corners will be rounded by a printer nozzle. That is acceptable for a fit check. It is not the metal plate.
+Short form: print one switch opening, the center tab, one USB tunnel, and one top-cover boss. Only then print the chassis, plate, top cover, and palm rest. No slicer profile has been validated and no part has been printed.
 
 ## 4. CNC
 

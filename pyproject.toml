@@ -1,7 +1,7 @@
 [project]
 name = "worxboard-ergo"
-version = "0.1.0"
-description = "Sculpt-inspired wired RP2040 ergonomic TKL keyboard"
+version = "0.2.0"
+description = "48-key split Planck in a Sculpt-style shell: wired RP2040, MX and Choc v1"
 requires-python = "==3.12.*"
 license = "GPL-3.0-or-later"
 dependencies = ["build123d==0.13.0", "shapely==2.2.0", "ezdxf==1.4.5", "trimesh==4.12.2", "pytest==9.0.3"]

@@ -44,7 +44,7 @@
     const uid = host.id || "board";
     host.textContent = "";
     const svg = el("svg", {
-      viewBox: "-160 -78 322 176",
+      viewBox: "-160 -78 322 156",
       role: "img",
       "aria-labelledby": uid + "-title"
     }, host);
@@ -52,9 +52,6 @@
     const deck = el("linearGradient", { id: uid + "-deck", x1: "0", y1: "0", x2: "0", y2: "1" }, defs);
     el("stop", { offset: "0", "stop-color": "#f4f6f7" }, deck);
     el("stop", { offset: "1", "stop-color": "#c5c9ce" }, deck);
-    const palm = el("linearGradient", { id: uid + "-palm", x1: "0", y1: "0", x2: "0", y2: "1" }, defs);
-    el("stop", { offset: "0", "stop-color": "#9aa1a8" }, palm);
-    el("stop", { offset: "1", "stop-color": "#5e656c" }, palm);
     el("title", { id: uid + "-title" }, svg).textContent = "worxboard ergo, 48-key split Planck";
 
     const shadow = el("g", {}, svg);
@@ -64,18 +61,9 @@
       stroke: "#8d9399",
       "stroke-width": "0.6"
     }, shadow);
-    el("path", {
-      d: ring(board.palm),
-      fill: "url(#" + uid + "-palm)",
-      stroke: "#4e555c",
-      "stroke-width": "0.45"
-    }, shadow);
 
     board.holes.forEach(function (h) {
       el("circle", { cx: h[0], cy: h[1], r: "1.35", fill: "none", stroke: "#5e666d", "stroke-width": "0.4" }, shadow);
-    });
-    board.palm_screws.forEach(function (h) {
-      el("circle", { cx: h[0], cy: h[1], r: "1.15", fill: "none", stroke: "#2e3439", "stroke-width": "0.4" }, shadow);
     });
     Object.keys(board.ports).forEach(function (name) {
       const p = board.ports[name];
@@ -120,7 +108,6 @@
         "text-anchor": "middle",
         "dominant-baseline": "middle"
       }, g);
-      el("circle", { class: "led", cx: "0", cy: "6.85", r: "0.55" }, g);
     });
     return svg;
   }
@@ -145,9 +132,7 @@
     return build(host);
   }
 
-  const hero = mount("hero-board");
   const live = mount("layer-board");
-  if (hero) paint(hero, "base");
 
   const params = new URLSearchParams(window.location.search);
   const initial = NOTES[params.get("layer")] ? params.get("layer") : "base";

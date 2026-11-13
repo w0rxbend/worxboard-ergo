@@ -8,8 +8,8 @@ A0 is for engineering review. The step-by-step shop and bench sequence is [build
 4. Route and review the selected PCB. Require zero ERC errors, zero DRC errors, no unconnected nets, schematic/PCB pad-net parity and reviewed USB layout before generating Gerbers. Check the exact chosen four-layer fabricator stackup and assembly BOM.
 5. Assemble a small PCB prototype quantity. Begin with a current-limited bench supply, inspect 3.3/1.1 V rails, verify no VBUS backfeed, and use SWD for initial firmware programming. Validate the J6/J7 center-port ROM override and restore RUN jumpers after flashing.
 6. Populate switches and test every matrix position, diode orientation, USB input, LCD layer label, hot-swap socket and keycap clearance.
-7. Follow [cnc.md](cnc.md) for the chassis, plate, palm rest, and split prints. The center tab is modeled. Print a coupon of that tab before a full half. Metal plates need a process that can hold square switch corners.
-8. Use M2.5 screws after measuring the stack. The CAD uses 2.1 mm pilots for tapping aluminum, not insert pockets. Sole heights are already in the chassis: 3 mm at the front and 14 mm at the rear. Fit the display bezel and the palm rest with the two shelf screws.
+7. Follow [cnc.md](cnc.md) for the chassis, plate, top cover, palm rest, and split prints. The center tab is modeled. Print a coupon of that tab before a full half. Metal plates need a process that can hold square switch corners.
+8. Use M2.5 screws after measuring the stack. All screws enter from the underside: eight into the top-cover bosses and six into the palm rest. The pilots are 2.1 mm, not insert pockets. The chassis has no feet; it sits flat on four pads, or on the magnetic riser.
 
 Do not order directly from the illustrative BOM. Component lifecycle, price, stock, footprints and assembly orientation have not been supplier-verified for this project. No board has been fabricated or tested.
 

@@ -2,7 +2,7 @@
 
 ![Top view of the 48-key split Planck. Two splayed wells, a rear bay, and a short palm rest.](assets/layout.png)
 
-A split Planck in one deck. Two blocks of four rows by six columns, every key 1u, opened ten degrees so the valley faces the typist. A low rear bay holds the memory LCD and the center USB-C jack. A short palm rest dips in the middle.
+A split Planck in one deck. Two blocks of four rows by six columns, every key 1u, opened ten degrees so the valley faces the typist. A low rear bay holds the memory LCD and the center USB-C jack. A smooth Sculpt-style shell wraps the deck, with a flush top cover around the keys, a slot through the valley and a full-width palm rest. The drawing above still shows the earlier short palm rest; it does not show the shell yet.
 
 **Revision A0 is an engineering starter.** Case geometry and the firmware compile are checked. The boards are placed and unrouted. This is not a fabrication release, and no keyboard has been built.
 
@@ -17,7 +17,7 @@ Then open [http://127.0.0.1:8765/site/](http://127.0.0.1:8765/site/). The page i
 | Piece | Choice |
 |---|---|
 | Layout | 48 ortholinear keys. Numbers and F-keys live on Lower. |
-| Ergonomics | 10° splay, one rigid board, short palm rest, about 7° negative tilt from the feet |
+| Ergonomics | 10° splay, one rigid board, full-width palm rest, flat stance, about 6.7° negative tilt on the optional riser |
 | Full-height | Cherry MX-compatible switches, Kailh MX hot-swap, 1.5 mm plate |
 | Low-profile | Kailh Choc v1 / PG1350 hot-swap, its own plate and PCB |
 | Controller | Bare RP2040, 16 MiB QSPI flash, reset, BOOT, and SWD |
@@ -25,7 +25,7 @@ Then open [http://127.0.0.1:8765/site/](http://127.0.0.1:8765/site/). The page i
 | Selection | TS3USB3031 data mux. Center-first at startup. VBUS meets only through diodes |
 | Display | nice!view-class 160×68 Sharp memory LCD. Labels BASE, LOWER, RAISE |
 | Firmware | Pinned ZMK. The UF2 matches this grid. Compilation is not a typed keyboard |
-| Size | Deck about 290 × 138 mm. With the palm rest, about 292 × 142 mm |
+| Size | Deck about 290 × 138 mm. Shell plan 303.03 × 223.00 mm |
 | Electronics | KiCad 10 schematics and placed footprints. **Zero tracks.** |
 
 The three USB-C receptacles are alternative cable positions. They are not hub ports. Launch’s hub, QMK firmware, configurator, and certifications do not transfer. The upstream tree is a pinned [reference submodule](references/system76-launch). [Feature coverage](docs/launch-coverage.md) records the differences.
@@ -65,7 +65,7 @@ make check-fabrication   # fails on purpose at A0
 
 ## Still open
 
-Route both PCBs. Review USB power and the J6/J7 ROM override. Print a switch coupon, a USB mouth, and the center tab before a full case. Measure the LCD module against the 32 × 12 mm window. The feet tilt the whole flat deck about 7°. Sculpt-style roll tenting needs two board planes.
+Route both PCBs. Review USB power and the J6/J7 ROM override. Print a switch coupon, a USB mouth, and the center tab before a full case. Measure the LCD module against the 32 × 12 mm window. The PCB places the three USB jacks facing the wrong way and has parts under the plate that do not fit; see [verification](docs/verification.md). The shell is envelope CAD and unmeasured. The riser tilts the whole flat deck 6.7°. Sculpt-style roll tenting needs two board planes.
 
 The next gate is [A1, electrical and mechanical review](docs/roadmap.md).
 

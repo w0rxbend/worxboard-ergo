@@ -2,6 +2,7 @@
 import json,subprocess
 from pathlib import Path
 import pytest,trimesh
+from build123d import Align
 from shapely.geometry import Point,box
 from math import cos,sin,radians
 from layout import keys,outline,holes,variants,DISPLAY,PORTS,ANGLE,GAP,U
@@ -80,7 +81,7 @@ def test_usb_input_selection_behavior(tmp_path):
 @pytest.mark.parametrize('variant',['mx','choc'])
 def test_exported_manifold_meshes_and_native_reopen(variant):
  paths=list((ROOT/'cad/exports'/variant).glob('*.stl'))
- assert len(paths)==10
+ assert len(paths)==13
  for p in paths:
   m=trimesh.load_mesh(p)
   assert m.is_watertight and m.volume>0,p
@@ -92,10 +93,48 @@ def test_exported_manifold_meshes_and_native_reopen(variant):
  assert (ROOT/v['native_file']).is_file()
  # The native report must name this export. A leftover tray file must not pass.
  cad=json.loads((ROOT/'cad/validation.json').read_text())
- whole={p['part']:p['volume_mm3'] for p in cad['parts'] if p['variant']==variant and p['part'] in {'chassis','plate','display_bezel','palm_rest'}}
+ whole={p['part']:p['volume_mm3'] for p in cad['parts'] if p['variant']==variant and p['part'] in {'chassis','plate','top_cover','palm_rest'}}
  assert set(v['volumes_mm3'])==set(whole)
  for name,vol in v['volumes_mm3'].items():
   assert abs(vol-whole[name])<max(1.0,abs(whole[name])*1e-4),(variant,name,vol,whole[name])
+
+CASE_BOUNDS={
+ 'mx':{'chassis':(303.03,223.00,15.50),'chassis_left':(169.51,223.00,15.50),'chassis_right':(151.51,223.00,15.50),
+  'top_cover':(288.87,136.40,7.50),'palm_rest':(302.74,88.33,19.00),'riser':(224.0,33.21,21.25)},
+ 'choc':{'chassis':(303.03,223.00,12.70),'chassis_left':(169.51,223.00,12.70),'chassis_right':(151.51,223.00,12.70),
+  'top_cover':(288.87,136.40,4.70),'palm_rest':(302.74,88.33,10.20),'riser':(224.0,33.21,21.25)}}
+PLATE_VOLUME={'mx':29812.902,'choc':24170.577}
+FIT_PAIR_COUNT=21
+
+@pytest.mark.parametrize('variant',['mx','choc'])
+def test_exported_case_envelope(variant):
+ """The committed export is the Sculpt-style shell with its top cover, the plate has the USB notches, and nothing collides."""
+ cad=json.loads((ROOT/'cad/validation.json').read_text())
+ parts={p['part']:p for p in cad['parts'] if p['variant']==variant}
+ for name,expected in CASE_BOUNDS[variant].items():
+  assert parts[name]['bounds_mm']==pytest.approx(expected,abs=.1),(variant,name)
+ assert parts['plate']['volume_mm3']==pytest.approx(PLATE_VOLUME[variant],abs=.001)
+ fit=cad['interference_mm3'][variant]
+ assert len(fit)==FIT_PAIR_COUNT and not any(fit.values()),(variant,fit)
+
+@pytest.mark.parametrize('variant',['mx','choc'])
+def test_exported_holes_match_the_pcb_top_view(variant):
+ """KiCad draws the board from the top with y toward the typist. The exported STEP is right-handed
+ with y away from the typist, so a PCB hole at (x, y) must be open at (x, -y) in the chassis and the plate."""
+ from build123d import import_step,Pos,Cylinder
+ def shared(solid,x,y):
+  hit=solid&(Pos(x,y,-20)*Cylinder(1.0,60,align=(Align.CENTER,Align.CENTER,Align.MIN)))
+  return 0 if hit is None else hit.volume   # build123d returns None when an imported solid shares nothing
+ placed=json.loads((ROOT/'pcb'/variant/'placement.json').read_text())
+ pcb_holes=[(part['x'],part['y']) for ref,part in placed.items() if ref.startswith('H')]
+ assert len(pcb_holes)==8
+ for name in ('chassis','plate'):
+  solid=import_step(ROOT/'cad/exports'/variant/(name+'.step'))
+  for x,y in pcb_holes:
+   assert shared(solid,x,-y)<1e-6,(variant,name,'hole closed at',x,-y)
+  # Control: at the mirror image of the first hole there is material, so the probe can tell the two apart.
+  x,y=pcb_holes[0]
+  assert shared(solid,-x,-y)>1,(variant,name)
 
 @pytest.mark.parametrize('variant',['mx','choc'])
 def test_3mf_units_and_geometry(variant):

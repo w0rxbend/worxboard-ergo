@@ -16,7 +16,7 @@ The full public [System76 Launch repository](https://github.com/system76/launch)
 | Runtime remapping/settings | Studio build configuration included; device/host testing pending |
 | fwupd/LVFS updates | Not integrated; SWD then RP2040 UF2 after mux-override design |
 | Milled aluminum chassis | Split Planck chassis and plate STEP, plus a prototype machining sheet; no first article |
-| Adjustable incline | Fixed about 7° negative tilt from unequal feet; not adjustable, and the keywells are not roll-tented |
+| Adjustable incline | Flat, or about 6.7° negative tilt on the magnetic riser; two positions only, and the keywells are not roll-tented |
 | Regulatory results | Upstream reference only; no product compliance claim |
 | Low-profile version | Added Choc v1 option, not a Launch PCB transplant |
 | Center layer LCD | Added SPI Sharp memory LCD with ZMK layer widget |

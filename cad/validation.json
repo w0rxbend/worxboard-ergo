@@ -6,11 +6,11 @@
       "part": "chassis",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 127252.53712,
+      "volume_mm3": 317879.43467,
       "bounds_mm": [
-        291.528,
-        142.062,
-        25.5
+        303.0267,
+        223.0,
+        15.5
       ],
       "step_roundtrip": true
     },
@@ -19,7 +19,7 @@
       "part": "plate",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 30665.21794,
+      "volume_mm3": 29812.90168,
       "bounds_mm": [
         288.5726,
         136.102,
@@ -29,14 +29,14 @@
     },
     {
       "variant": "mx",
-      "part": "display_bezel",
+      "part": "top_cover",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 2484.16,
+      "volume_mm3": 31392.41481,
       "bounds_mm": [
-        46.0,
-        28.0,
-        3.7
+        288.8749,
+        136.4031,
+        7.5
       ],
       "step_roundtrip": true
     },
@@ -45,11 +45,11 @@
       "part": "palm_rest",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 32465.99963,
+      "volume_mm3": 329934.66717,
       "bounds_mm": [
-        291.082,
-        21.8,
-        8.0
+        302.7353,
+        88.3278,
+        18.9992
       ],
       "step_roundtrip": true
     },
@@ -58,11 +58,11 @@
       "part": "chassis_left",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 64333.22858,
+      "volume_mm3": 159712.42782,
       "bounds_mm": [
-        162.987,
-        142.062,
-        25.5
+        169.5133,
+        223.0,
+        15.5
       ],
       "step_roundtrip": true
     },
@@ -71,11 +71,11 @@
       "part": "chassis_right",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 62919.30854,
+      "volume_mm3": 158166.95237,
       "bounds_mm": [
-        146.541,
-        142.062,
-        25.5
+        151.5133,
+        223.0,
+        15.5
       ],
       "step_roundtrip": true
     },
@@ -84,7 +84,7 @@
       "part": "plate_left",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 15439.61072,
+      "volume_mm3": 15013.43707,
       "bounds_mm": [
         162.282,
         136.1007,
@@ -97,7 +97,7 @@
       "part": "plate_right",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 15225.60722,
+      "volume_mm3": 14799.46461,
       "bounds_mm": [
         144.2906,
         136.102,
@@ -107,14 +107,40 @@
     },
     {
       "variant": "mx",
+      "part": "top_cover_left",
+      "valid_solid": true,
+      "solids": 1,
+      "volume_mm3": 16073.50393,
+      "bounds_mm": [
+        162.4331,
+        136.402,
+        7.5
+      ],
+      "step_roundtrip": true
+    },
+    {
+      "variant": "mx",
+      "part": "top_cover_right",
+      "valid_solid": true,
+      "solids": 1,
+      "volume_mm3": 15318.91088,
+      "bounds_mm": [
+        144.4418,
+        136.4031,
+        7.5
+      ],
+      "step_roundtrip": true
+    },
+    {
+      "variant": "mx",
       "part": "palm_rest_left",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 16119.3684,
+      "volume_mm3": 164967.33377,
       "bounds_mm": [
-        144.541,
-        21.8,
-        8.0
+        151.3676,
+        88.3278,
+        18.9992
       ],
       "step_roundtrip": true
     },
@@ -123,11 +149,24 @@
       "part": "palm_rest_right",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 16346.63123,
+      "volume_mm3": 164967.33428,
       "bounds_mm": [
-        146.541,
-        21.8,
-        8.0
+        151.3676,
+        88.3278,
+        18.9992
+      ],
+      "step_roundtrip": true
+    },
+    {
+      "variant": "mx",
+      "part": "riser",
+      "valid_solid": true,
+      "solids": 1,
+      "volume_mm3": 78294.93862,
+      "bounds_mm": [
+        224.0,
+        33.2086,
+        21.2489
       ],
       "step_roundtrip": true
     },
@@ -136,11 +175,11 @@
       "part": "chassis",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 120451.93921,
+      "volume_mm3": 290603.56228,
       "bounds_mm": [
-        291.528,
-        142.062,
-        23.0
+        303.0267,
+        223.0,
+        12.7
       ],
       "step_roundtrip": true
     },
@@ -149,7 +188,7 @@
       "part": "plate",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 24852.43035,
+      "volume_mm3": 24170.57734,
       "bounds_mm": [
         288.5726,
         136.102,
@@ -159,14 +198,14 @@
     },
     {
       "variant": "choc",
-      "part": "display_bezel",
+      "part": "top_cover",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 2385.088,
+      "volume_mm3": 30063.38853,
       "bounds_mm": [
-        46.0,
-        28.0,
-        3.4
+        288.8749,
+        136.4031,
+        4.7
       ],
       "step_roundtrip": true
     },
@@ -175,11 +214,11 @@
       "part": "palm_rest",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 32465.99963,
+      "volume_mm3": 158516.84341,
       "bounds_mm": [
-        291.082,
-        21.8,
-        8.0
+        302.7353,
+        88.3278,
+        10.1992
       ],
       "step_roundtrip": true
     },
@@ -188,11 +227,11 @@
       "part": "chassis_left",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 60932.85236,
+      "volume_mm3": 146075.57215,
       "bounds_mm": [
-        162.987,
-        142.062,
-        23.0
+        169.5133,
+        223.0,
+        12.7
       ],
       "step_roundtrip": true
     },
@@ -201,11 +240,11 @@
       "part": "chassis_right",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 59519.08685,
+      "volume_mm3": 144527.95015,
       "bounds_mm": [
-        146.541,
-        142.062,
-        23.0
+        151.5133,
+        223.0,
+        12.7
       ],
       "step_roundtrip": true
     },
@@ -214,7 +253,7 @@
       "part": "plate_left",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 12511.81657,
+      "volume_mm3": 12170.87766,
       "bounds_mm": [
         162.282,
         136.1007,
@@ -227,7 +266,7 @@
       "part": "plate_right",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 12340.61378,
+      "volume_mm3": 11999.69968,
       "bounds_mm": [
         144.2906,
         136.102,
@@ -237,14 +276,40 @@
     },
     {
       "variant": "choc",
+      "part": "top_cover_left",
+      "valid_solid": true,
+      "solids": 1,
+      "volume_mm3": 15408.98854,
+      "bounds_mm": [
+        162.4331,
+        136.402,
+        4.7
+      ],
+      "step_roundtrip": true
+    },
+    {
+      "variant": "choc",
+      "part": "top_cover_right",
+      "valid_solid": true,
+      "solids": 1,
+      "volume_mm3": 14654.39999,
+      "bounds_mm": [
+        144.4418,
+        136.4031,
+        4.7
+      ],
+      "step_roundtrip": true
+    },
+    {
+      "variant": "choc",
       "part": "palm_rest_left",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 16119.3684,
+      "volume_mm3": 79258.42182,
       "bounds_mm": [
-        144.541,
-        21.8,
-        8.0
+        151.3676,
+        88.3278,
+        10.1992
       ],
       "step_roundtrip": true
     },
@@ -253,23 +318,90 @@
       "part": "palm_rest_right",
       "valid_solid": true,
       "solids": 1,
-      "volume_mm3": 16346.63123,
+      "volume_mm3": 79258.42216,
       "bounds_mm": [
-        146.541,
-        21.8,
-        8.0
+        151.3676,
+        88.3278,
+        10.1992
+      ],
+      "step_roundtrip": true
+    },
+    {
+      "variant": "choc",
+      "part": "riser",
+      "valid_solid": true,
+      "solids": 1,
+      "volume_mm3": 78294.93862,
+      "bounds_mm": [
+        224.0,
+        33.2086,
+        21.2489
       ],
       "step_roundtrip": true
     }
   ],
+  "interference_mm3": {
+    "mx": {
+      "pcb_envelope_vs_chassis": 0,
+      "lcd_envelope_vs_chassis": 0,
+      "keycap_envelopes_vs_chassis": 0,
+      "usb_receptacle_envelopes_vs_chassis": 0,
+      "usb_plug_envelopes_vs_chassis": 0,
+      "pad_envelopes_vs_chassis": 0,
+      "plate_vs_chassis": 0,
+      "top_cover_vs_chassis": 0,
+      "palm_rest_vs_chassis": 0,
+      "riser_vs_chassis": 0,
+      "usb_receptacle_envelopes_vs_plate": 0,
+      "usb_plug_envelopes_vs_plate": 0,
+      "top_cover_vs_plate": 0,
+      "pcb_envelope_vs_top_cover": 0,
+      "lcd_envelope_vs_top_cover": 0,
+      "keycap_envelopes_vs_top_cover": 0,
+      "switch_envelopes_vs_top_cover": 0,
+      "usb_receptacle_envelopes_vs_top_cover": 0,
+      "usb_plug_envelopes_vs_top_cover": 0,
+      "keycap_envelopes_vs_palm_rest": 0,
+      "pad_envelopes_vs_riser": 0
+    },
+    "choc": {
+      "pcb_envelope_vs_chassis": 0,
+      "lcd_envelope_vs_chassis": 0,
+      "keycap_envelopes_vs_chassis": 0,
+      "usb_receptacle_envelopes_vs_chassis": 0,
+      "usb_plug_envelopes_vs_chassis": 0,
+      "pad_envelopes_vs_chassis": 0,
+      "plate_vs_chassis": 0,
+      "top_cover_vs_chassis": 0,
+      "palm_rest_vs_chassis": 0,
+      "riser_vs_chassis": 0,
+      "usb_receptacle_envelopes_vs_plate": 0,
+      "usb_plug_envelopes_vs_plate": 0,
+      "top_cover_vs_plate": 0,
+      "pcb_envelope_vs_top_cover": 0,
+      "lcd_envelope_vs_top_cover": 0,
+      "keycap_envelopes_vs_top_cover": 0,
+      "switch_envelopes_vs_top_cover": 0,
+      "usb_receptacle_envelopes_vs_top_cover": 0,
+      "usb_plug_envelopes_vs_top_cover": 0,
+      "keycap_envelopes_vs_palm_rest": 0,
+      "pad_envelopes_vs_riser": 0
+    }
+  },
   "not_validated": [
     "switch retention",
     "stabilizer fit",
     "LED window cutter access",
     "display supplier measurements",
     "USB plug fit",
+    "USB receptacle placement on the PCB: the keep-outs assume a rear-facing jack flush with the board edge",
+    "PCB component heights under the plate and the top cover",
     "split-tab print fit",
-    "foot sole coplanarity on a desk",
+    "top-cover fit in the rim and screw engagement",
+    "pad seating on a desk",
+    "magnet fit and pull",
+    "palm-rest screw fit",
+    "riser fit and stance",
     "physical build"
   ]
 }

@@ -9,7 +9,7 @@ from build123d import export_step,export_stl,Mesher,import_step
 ROOT=Path(__file__).resolve().parents[1]
 
 def _repair_print_mesh(stl_path, mf_path):
- """The spherical palm scoops tessellate with one zero-area triangle at a pole."""
+ """Tessellation can leave a zero-area triangle. Drop those, then require a closed mesh."""
  mesh=trimesh.load_mesh(stl_path)
  keep=mesh.area_faces>1e-9
  if not keep.all():
@@ -38,15 +38,32 @@ def _strip_3mf_degenerates(path):
  blobs[model_name]=cleaned.encode()
  with zipfile.ZipFile(path,'w') as archive:
   for name,data in blobs.items(): archive.writestr(name,data)
+# Each part against everything that must not share volume with it.
+FIT_PAIRS={
+ 'chassis':('pcb_envelope','lcd_envelope','keycap_envelopes','usb_receptacle_envelopes','usb_plug_envelopes','pad_envelopes',
+  'plate','top_cover','palm_rest','riser'),
+ 'plate':('usb_receptacle_envelopes','usb_plug_envelopes','top_cover'),
+ 'top_cover':('pcb_envelope','lcd_envelope','keycap_envelopes','switch_envelopes','usb_receptacle_envelopes','usb_plug_envelopes'),
+ 'palm_rest':('keycap_envelopes',),
+ 'riser':('pad_envelopes',),
+}
+
+def fit_report(parts,assembly):
+ """Overlap volume in mm3 for each pair that must not collide. The gate is zero for all of them."""
+ solid={**parts,**{child.label:child for child in assembly.children}}
+ return {f'{other}_vs_{name}':(solid[other]&solid[name]).volume for name,others in FIT_PAIRS.items() for other in others}
+
 def main():
  p=argparse.ArgumentParser();p.add_argument('--variant',choices=['mx','choc','all'],default='all');a=p.parse_args()
- reports=[]
+ reports=[];fits={}
  for v in (['mx','choc'] if a.variant=='all' else [a.variant]):
   out=ROOT/'cad/exports'/v;out.mkdir(parents=True,exist_ok=True)
   for stale in out.glob('*'):
    if stale.suffix in {'.stl','.step','.3mf'}:
     stale.unlink()
   parts,assembly=make(v)
+  fits[v]=fit_report(parts,assembly)
+  assert not any(fits[v].values()),(v,'interference',fits[v])
   for name,part in parts.items():
    part=copy(part);part.parent=None
    assert part.is_valid and len(part.solids())==1,(v,name,'invalid topology',len(part.solids()))
@@ -64,6 +81,9 @@ def main():
     'bounds_mm':[round(x,4) for x in part.bounding_box().size], 'step_roundtrip':True})
    print(v,name,round(part.volume,1),'mm3',flush=True)
   export_step(assembly,out/'assembly.step')
- (ROOT/'cad/validation.json').write_text(json.dumps({'status':'prototype_geometry_checked','parts':reports,
-  'not_validated':['switch retention','stabilizer fit','LED window cutter access','display supplier measurements','USB plug fit','split-tab print fit','foot sole coplanarity on a desk','physical build']},indent=2)+'\n')
+ (ROOT/'cad/validation.json').write_text(json.dumps({'status':'prototype_geometry_checked','parts':reports,'interference_mm3':fits,
+  'not_validated':['switch retention','stabilizer fit','LED window cutter access','display supplier measurements','USB plug fit',
+   'USB receptacle placement on the PCB: the keep-outs assume a rear-facing jack flush with the board edge',
+   'PCB component heights under the plate and the top cover','split-tab print fit','top-cover fit in the rim and screw engagement',
+   'pad seating on a desk','magnet fit and pull','palm-rest screw fit','riser fit and stance','physical build']},indent=2)+'\n')
 if __name__=='__main__':main()

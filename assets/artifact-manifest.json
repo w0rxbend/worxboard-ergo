@@ -3,333 +3,423 @@
   "artifacts": [
     {
       "path": "cad/exports/choc/assembly.step",
-      "bytes": 4694304,
-      "sha256": "b8347bb9f5002b3e1ee695d3330b4fcb51b01951a8460205145cb83092a1bde5"
+      "bytes": 7263321,
+      "sha256": "647fe44e214fb844cccc1b4db5be68991702d29102990ee7fdfbf6cd761a7d78"
     },
     {
       "path": "cad/exports/choc/chassis.3mf",
-      "bytes": 77726,
-      "sha256": "d7ef8bb0cde0ab34520591f79cd5699e863f52405043b84bba8058f8a55235c0"
+      "bytes": 357887,
+      "sha256": "8bf04c5b7acfe22f3d377a6e95e80ad989891c0a9099a68273f1fa17a7d692e7"
     },
     {
       "path": "cad/exports/choc/chassis.step",
-      "bytes": 955276,
-      "sha256": "48a2565a1a49d41c6eec660b0929eaea015ac6d994bd81e99e069c69f26e30c5"
+      "bytes": 1650130,
+      "sha256": "5ea99693d81596c246388e5a2bdb52bc1c945b1b37ddd9289f22f8329ce6ed55"
     },
     {
       "path": "cad/exports/choc/chassis.stl",
-      "bytes": 300284,
-      "sha256": "f628eb2b956810a1b43e470d51ed675e4c7e2126145b8cf537974be77bd7c871"
+      "bytes": 1295284,
+      "sha256": "071db8a441a15f892b7abb926cd02b2b7a23e7eb377af083944706bd77b46a13"
     },
     {
       "path": "cad/exports/choc/chassis_left.3mf",
-      "bytes": 39707,
-      "sha256": "6868997286648eac02868167081db142c8fcec41bf78efb44e42f7c3d5dc407d"
+      "bytes": 186973,
+      "sha256": "c573a9c0059ab28dcaeead24269f7f352c4d73b2a9e6afe29c660bc705203110"
     },
     {
       "path": "cad/exports/choc/chassis_left.step",
-      "bytes": 507395,
-      "sha256": "f87bf584422d633b5d78cf3060f57db075f53125f532cef317ae0075214d9b5d"
+      "bytes": 877493,
+      "sha256": "34c115761c7d34932641f5205d6c8a0b02ac5067a117d40a20b8e903073e1ff6"
     },
     {
       "path": "cad/exports/choc/chassis_left.stl",
-      "bytes": 150684,
-      "sha256": "347098c55a5a8c4d6e85c39bfd41d45aaa6f536012bd0915129334cb11d22607"
+      "bytes": 654684,
+      "sha256": "ed47c8eaea37364965058dfa2f4d81fe292abf44a4c2e66a9c7a25d339d922d3"
     },
     {
       "path": "cad/exports/choc/chassis_right.3mf",
-      "bytes": 40006,
-      "sha256": "db8b4959218f523f02929332afb5584a0a2f4a9a700c4683d120b8e080abf75b"
+      "bytes": 187179,
+      "sha256": "28958d585766df39a09648bbe18354f205b2704b1386a1b30b9328bba4a7d4b2"
     },
     {
       "path": "cad/exports/choc/chassis_right.step",
-      "bytes": 510466,
-      "sha256": "e6f794a2c5606ccfd8778c68c9246c132fd6cef0fa440ea3d3a44f997b65187a"
+      "bytes": 874306,
+      "sha256": "a2ac88951e33d6f78b3ba4f4b5726d5b7f95802f4cd9d43d3efad993d3e5535e"
     },
     {
       "path": "cad/exports/choc/chassis_right.stl",
-      "bytes": 153284,
-      "sha256": "1481753aa3f1c8b67d7a7453fd21789c6706055068d9c3f4822efa8ccbebf115"
-    },
-    {
-      "path": "cad/exports/choc/display_bezel.3mf",
-      "bytes": 2090,
-      "sha256": "0e0f800ef2d9ab01de91028762efd6f8979ed38459a8f8e76c3f79c9a2d718c5"
-    },
-    {
-      "path": "cad/exports/choc/display_bezel.step",
-      "bytes": 44009,
-      "sha256": "d1585373e412422b81983f2a711a02de5f49e416ca5dbd675e55f0f2a140345b"
-    },
-    {
-      "path": "cad/exports/choc/display_bezel.stl",
-      "bytes": 2484,
-      "sha256": "3bf2535c7a3779f5bf65099a45aac37ea328156a6c37ed5f60a2e39caecd6a99"
+      "bytes": 654284,
+      "sha256": "e8b032213892810c32602d7eb850eb2fbe1b92247192b3a7d704744d4e3c2aeb"
     },
     {
       "path": "cad/exports/choc/palm_rest.3mf",
-      "bytes": 11671,
-      "sha256": "c40161f14bf5ca13b22158755270eaac64f32b4f1a1f1d31ceac967f05e14297"
+      "bytes": 51801,
+      "sha256": "07385b6313bd8301178b291959640c68f51c5a2e52325e8169bbd1bfa1f18261"
     },
     {
       "path": "cad/exports/choc/palm_rest.step",
-      "bytes": 187924,
-      "sha256": "f3d591d14501623833edc21d6bc0ce3f3f936f932c5d610dd79518e28f538d6a"
+      "bytes": 494623,
+      "sha256": "603aa1cba2e30c0b172fefb2ec219d21e93e81fc5012ae82058603718179b610"
     },
     {
       "path": "cad/exports/choc/palm_rest.stl",
-      "bytes": 43284,
-      "sha256": "87b3d7fc5ae68eb05b4d791cd10731cd9e734e8b705e211adcb56d0fcb5be8cf"
+      "bytes": 190884,
+      "sha256": "124659f82804c6b8a65e11a3670359a483074d4d1c9fbc9127cfdb74be6a2806"
     },
     {
       "path": "cad/exports/choc/palm_rest_left.3mf",
-      "bytes": 6793,
-      "sha256": "f8d9c2e631c78228b46e872b7760501ecd571f826af66e17e707d98efb0b0cb2"
+      "bytes": 30213,
+      "sha256": "92a3e420d00cb7a9d5c0de47b7c2fb668ddb45b03de7eb7caa97adc0272c6faf"
     },
     {
       "path": "cad/exports/choc/palm_rest_left.step",
-      "bytes": 103716,
-      "sha256": "afd0649122b7d3e9997fd13fb7f15b23444aea21e45967e416bcb28a9ab198d4"
+      "bytes": 350972,
+      "sha256": "3595fb42f9e7f4e965474542909b19a754722ee1b1740b9d3a29ce3eccf40b95"
     },
     {
       "path": "cad/exports/choc/palm_rest_left.stl",
-      "bytes": 22084,
-      "sha256": "870690b5bc40149f2f211b06459398ffa62db5c69feba64599a4211f870d3990"
+      "bytes": 99584,
+      "sha256": "de0caff662010528ae0f9701fc3f9f5c3783508a688528aac21baa09a35613b6"
     },
     {
       "path": "cad/exports/choc/palm_rest_right.3mf",
-      "bytes": 6735,
-      "sha256": "ebf39adc831018a0963948be519f1be60a9c00258e925b4872bc60e6883bed2d"
+      "bytes": 30335,
+      "sha256": "67c2b0bb46ab8707e2617419db18f1f1fd86650a8dc038841f20a87ce350db0e"
     },
     {
       "path": "cad/exports/choc/palm_rest_right.step",
-      "bytes": 100194,
-      "sha256": "d7af82363d7ef78972aeaee7a14d211faf4ec5fcfae4532a80d2e664fdf9490c"
+      "bytes": 352171,
+      "sha256": "35ebaccd48cbc64bbf1e6fe26abddd1cad76302e052cb2b7a0bfd367dcdd32fd"
     },
     {
       "path": "cad/exports/choc/palm_rest_right.stl",
-      "bytes": 21884,
-      "sha256": "b775dbccd253f14463481fd486af1fb9f5f3fa7b68e789e47ee75bbf65f0924c"
+      "bytes": 99584,
+      "sha256": "2b5ce02eab11d2d9e06183f12cb87bee9cc0cad5e5d1420e356cf85a9e151d3f"
     },
     {
       "path": "cad/exports/choc/plate.3mf",
-      "bytes": 65973,
-      "sha256": "02be232e93702d7ae7870c5c4687cafa67b3bcd06facc897e4e781809d9b12ac"
+      "bytes": 66400,
+      "sha256": "508da852b62067afca4ae5ef7b86889184b6348d7c2b56980730691b2a9600b1"
     },
     {
       "path": "cad/exports/choc/plate.step",
-      "bytes": 2160135,
-      "sha256": "f4860780ed58385a17a0e791695958ffbbabaebd8a4a44171e7d602185d12214"
+      "bytes": 2040525,
+      "sha256": "2654e40e7183324aff3cbbd9f7bda0a9b700e6fbd094fe3e915bf4ffc91360b1"
     },
     {
       "path": "cad/exports/choc/plate.stl",
-      "bytes": 254484,
-      "sha256": "ab1022d2d08f3ae64ce1beab951b49651f0708889da3e7a742e0226850cee443"
+      "bytes": 255684,
+      "sha256": "8b27855c812bbf5b4f3ef24f0123bc37a27d6bd494a7a6a8dc8d71a60513047c"
     },
     {
       "path": "cad/exports/choc/plate_left.3mf",
-      "bytes": 35987,
-      "sha256": "1570765140609dc35d936078ce49b8570543e45bf52cbea32690ffc788335215"
+      "bytes": 36177,
+      "sha256": "c13fb83110acbb66823763dc0ec8165fad6610201510f9f70be98ee341d08384"
     },
     {
       "path": "cad/exports/choc/plate_left.step",
-      "bytes": 1093476,
-      "sha256": "94aac58b55bbe7cbd2590cb7a6494b00fa819e2786a3b4ae7e9fea393138c234"
+      "bytes": 1032193,
+      "sha256": "50d869a0a09bdb006b543bb5594983cd65761e2845993b9478ba7ef3c63693bb"
     },
     {
       "path": "cad/exports/choc/plate_left.stl",
-      "bytes": 128284,
-      "sha256": "67981f4e08f8d6a27c956d4480502c65e4500cd86af387fde74c4a596fc00e10"
+      "bytes": 128884,
+      "sha256": "c01af035b85586ddb11d322dd70147356cbbfce1ae028b67dc6cdb5d00aaba48"
     },
     {
       "path": "cad/exports/choc/plate_right.3mf",
-      "bytes": 33904,
-      "sha256": "ccbe13f6a92dc81eec02c3a8d1f0fc2738417e2b033136e0f301309b6b9447a0"
+      "bytes": 34292,
+      "sha256": "89008d640c126dabeaad9dc5bd5d45e6c54d6cfe5fa83373e9e395e9857e6a8d"
     },
     {
       "path": "cad/exports/choc/plate_right.step",
-      "bytes": 1094458,
-      "sha256": "46ab55951d0addb71be508fbc35ea0c39b7d00d0c8d5ad5746abde63266911ee"
+      "bytes": 1032278,
+      "sha256": "dac13cf9840d7ff00ddde71a9b370ab8ed6c553e80a8eb6c1d4f7ff815511ab9"
     },
     {
       "path": "cad/exports/choc/plate_right.stl",
-      "bytes": 128284,
-      "sha256": "767268ddb6a91aaf3b2b81bc5b4b330045be1070d140c251b0de521926ae98f9"
+      "bytes": 128884,
+      "sha256": "40adceda0e4cf9e8feb1fc126378febf0711c89f313efe1176ca4be23805dbb6"
+    },
+    {
+      "path": "cad/exports/choc/riser.3mf",
+      "bytes": 41970,
+      "sha256": "c3bc3044bb81f71f2d096360c1aaadd2cd0f2076b3fd99d8bf277621505ece7c"
+    },
+    {
+      "path": "cad/exports/choc/riser.step",
+      "bytes": 78369,
+      "sha256": "a55666735ed0e34d3e8ebc12af94844716ed2e453787d2ab0edc9709db2fbc04"
+    },
+    {
+      "path": "cad/exports/choc/riser.stl",
+      "bytes": 155884,
+      "sha256": "82ac2217f9131fcb63e18216d4a61342feed2f598547162bba7309a43d9aec06"
+    },
+    {
+      "path": "cad/exports/choc/top_cover.3mf",
+      "bytes": 81878,
+      "sha256": "35ef312d64b33a2ddb90bf83c465676178b5647f52b3a7f0e5f559ed604e0d5c"
+    },
+    {
+      "path": "cad/exports/choc/top_cover.step",
+      "bytes": 583364,
+      "sha256": "2cf08f9a2e658c77adadca62dd841a5d0e1cd4551eb7dc0a82c4568cf06c6ef9"
+    },
+    {
+      "path": "cad/exports/choc/top_cover.stl",
+      "bytes": 318484,
+      "sha256": "9edf00f109f76b8d0c7b55f39d14adf0d604cd0b06d590e33d531e95c45f7461"
+    },
+    {
+      "path": "cad/exports/choc/top_cover_left.3mf",
+      "bytes": 42317,
+      "sha256": "368ea51928370343499e8deac0438cf7ace90162022792d3ff8c65123e3e1bd5"
+    },
+    {
+      "path": "cad/exports/choc/top_cover_left.step",
+      "bytes": 325892,
+      "sha256": "fa70aaaa1e9b532d07a34498938eab5096b8ba951f1111d457493198d6615bd0"
+    },
+    {
+      "path": "cad/exports/choc/top_cover_left.stl",
+      "bytes": 161084,
+      "sha256": "feeee4e6f70fe2faa86a56aaba77e9a9d56d6d13922fb7ae67cf02f9a1af5794"
+    },
+    {
+      "path": "cad/exports/choc/top_cover_right.3mf",
+      "bytes": 41879,
+      "sha256": "c202dbfa8944492ea837d32021a9b565a8c6ecd59602ee7cf2efd4460395e896"
+    },
+    {
+      "path": "cad/exports/choc/top_cover_right.step",
+      "bytes": 318457,
+      "sha256": "f544160634cda6a260adbc59ab9e93813ff84c9771bab5488c523af3c7b19490"
+    },
+    {
+      "path": "cad/exports/choc/top_cover_right.stl",
+      "bytes": 160684,
+      "sha256": "808ce03f41c58ee540cf7eb4f70f08fa10ecafbaf2ec70fb1f515d31213f746a"
     },
     {
       "path": "cad/exports/choc/worxboard-ergo-choc.FCStd",
-      "bytes": 159380,
-      "sha256": "49a057224d3e32a6b781428d4d1f826ea331e83b7ed18a81e8c8736dee607ef4"
+      "bytes": 289600,
+      "sha256": "eddd6ba35c95c511ff3e66f01dea51f332bbd8414dd964d348b10c899e3c0d20"
     },
     {
       "path": "cad/exports/mx/assembly.step",
-      "bytes": 4696092,
-      "sha256": "0627b8c2ad02fc61532def58b57e7993779ae3c93b2596ebaf399b3c05859dbd"
+      "bytes": 7312031,
+      "sha256": "49aeb792ed395c2b989ba2ecfb6aa156b9bac44fa736482cef2de50e809495f7"
     },
     {
       "path": "cad/exports/mx/chassis.3mf",
-      "bytes": 77757,
-      "sha256": "92c16954d48c511fdb8a71fb7680aae017b73eb7b49067dbaf6b893dd489719b"
+      "bytes": 354371,
+      "sha256": "eb6cf106ffcc5a3f29d1adb15649d33cc7430d8b08d391f279092147c148d354"
     },
     {
       "path": "cad/exports/mx/chassis.step",
-      "bytes": 955992,
-      "sha256": "02e6548683c841f567b20b7a23ab8f178830ffcdbec9c21000369b209b77e1db"
+      "bytes": 1704269,
+      "sha256": "808756c12f3591a87f544f36c0469762d76a28c2f444e1937e5c5f4aee652731"
     },
     {
       "path": "cad/exports/mx/chassis.stl",
-      "bytes": 300284,
-      "sha256": "970e20c13f2f8667e22fdaae62ff059db6ef5498a14335a64edfc100b75cd254"
+      "bytes": 1285984,
+      "sha256": "78a5b0bccd9e1324e85264bd72922f8a2df1a356b747c77a4513f9cd575dcaff"
     },
     {
       "path": "cad/exports/mx/chassis_left.3mf",
-      "bytes": 39720,
-      "sha256": "0147257e395de12ffac7b5834975e3503f0c8439bce9de413c527ec2a46653c7"
+      "bytes": 185810,
+      "sha256": "08e2567d71065fd2093a09554087f740caed895ae4852dff9f785470efe9291f"
     },
     {
       "path": "cad/exports/mx/chassis_left.step",
-      "bytes": 507775,
-      "sha256": "4e5697a1a74b5152ab77008d49d3d28420748803e2753220020eb0c86cd63c27"
+      "bytes": 914648,
+      "sha256": "448b4cb24049ca98063e610017b7294815627535e2e779d0911b67f6d10cb602"
     },
     {
       "path": "cad/exports/mx/chassis_left.stl",
-      "bytes": 150684,
-      "sha256": "4b71c4e34cae48e18278b7a179431f2afff299bc70063e6d6258d4aabde37f13"
+      "bytes": 651484,
+      "sha256": "dc5f4241ba247d8a5a934c60c4e45736b16b0b481d3058df6fe13d59cca70d0c"
     },
     {
       "path": "cad/exports/mx/chassis_right.3mf",
-      "bytes": 40049,
-      "sha256": "960cc787d0c8ebe37c0b759aa7388321ffbe771cdc3d3861485e7db02d92a1d5"
+      "bytes": 185740,
+      "sha256": "4c24c8fc64e2738e0495503ca5afa56385c10d97f9048b2114e53bafb84cdefb"
     },
     {
       "path": "cad/exports/mx/chassis_right.step",
-      "bytes": 510850,
-      "sha256": "a1d3f06c91d7080ed937023b40940d2c0f84d3b02e7632dc3a0948077966b408"
+      "bytes": 912305,
+      "sha256": "25123899ec56554b5099df5b0674cc6243264e7221379584af9c0ef4dcde0579"
     },
     {
       "path": "cad/exports/mx/chassis_right.stl",
-      "bytes": 153284,
-      "sha256": "0a1972c397e06d5a89f666406911eda78cccb13dc33f7823512e4205606fa87d"
-    },
-    {
-      "path": "cad/exports/mx/display_bezel.3mf",
-      "bytes": 2081,
-      "sha256": "324c74a4c321d77575d55dd3340b66b9139db1196704e184961cdb68cc3f0d62"
-    },
-    {
-      "path": "cad/exports/mx/display_bezel.step",
-      "bytes": 44036,
-      "sha256": "50db609052b8d95e7fe72aa506a99c706563e6ca907b69352e36f259cea9f96e"
-    },
-    {
-      "path": "cad/exports/mx/display_bezel.stl",
-      "bytes": 2484,
-      "sha256": "06880e7486ccda5f1cb100b7541028c4712d653f24e6f378105f086a7e1037ad"
+      "bytes": 650984,
+      "sha256": "344038fb297d0e61c6d30fc0e6b5f53aeeb1ee4a23b20b83a655d92f8ae03b35"
     },
     {
       "path": "cad/exports/mx/palm_rest.3mf",
-      "bytes": 11673,
-      "sha256": "8d3e20fdf1de37d09fef52e80b052b9cacc48658590552d75a39a47ced4d96bc"
+      "bytes": 51823,
+      "sha256": "53f6b7139aaba407be45cc097d9b39e8a3347b47ecf0b3b0af35d61944455e6d"
     },
     {
       "path": "cad/exports/mx/palm_rest.step",
-      "bytes": 187924,
-      "sha256": "4fb1b106a366c5eb88068c0d8772f9edbbd23f088ccb9559d0926a2036b77d2a"
+      "bytes": 497102,
+      "sha256": "eb096589bd2e94b1d3a76415e345d8f374d66c088944a156d31b9a4e5e9eac97"
     },
     {
       "path": "cad/exports/mx/palm_rest.stl",
-      "bytes": 43284,
-      "sha256": "87b3d7fc5ae68eb05b4d791cd10731cd9e734e8b705e211adcb56d0fcb5be8cf"
+      "bytes": 190884,
+      "sha256": "2ddbe03d550ce71b29b860b537066511416e7cf96f98777df4233be3ebedf826"
     },
     {
       "path": "cad/exports/mx/palm_rest_left.3mf",
-      "bytes": 6790,
-      "sha256": "7c3519eb15603114e5845dd54cd63d236a29f17207545a0021501a07b33ef94f"
+      "bytes": 30190,
+      "sha256": "69f7abf3c9bb23dae8dceb9e1bf82f2deeafcec2db3cf7069d9eb84fe46f28a5"
     },
     {
       "path": "cad/exports/mx/palm_rest_left.step",
-      "bytes": 103716,
-      "sha256": "d38a9a3af2fbffe78210e351af268054ca32d044f119199639b197a19e7604cb"
+      "bytes": 352625,
+      "sha256": "c42c12231aaf3053c7e15be7774a1668c06f3ea67eeafd9ad95845f32594bead"
     },
     {
       "path": "cad/exports/mx/palm_rest_left.stl",
-      "bytes": 22084,
-      "sha256": "870690b5bc40149f2f211b06459398ffa62db5c69feba64599a4211f870d3990"
+      "bytes": 99584,
+      "sha256": "75346130a69ed48ea290ea59c477d83c6a87c52fc659a6139e27a58e484f17fb"
     },
     {
       "path": "cad/exports/mx/palm_rest_right.3mf",
-      "bytes": 6739,
-      "sha256": "6552b2d99874fc2844135b12e2ddaff992f6530806331b1949e56ae875785dce"
+      "bytes": 30306,
+      "sha256": "e03ca3b2d7a51d4d4bdb4674fc6e2257500d68a7f3e407866bc1d379455b10a3"
     },
     {
       "path": "cad/exports/mx/palm_rest_right.step",
-      "bytes": 100194,
-      "sha256": "9e1d8498939b1033620aa928ca4991947f788cd52fae83a5632f5ff2442d0e2e"
+      "bytes": 353107,
+      "sha256": "8e8c9ea91fc33b8a0033611503365c03fa226e4a0679207be8b4201d1ec6944b"
     },
     {
       "path": "cad/exports/mx/palm_rest_right.stl",
-      "bytes": 21884,
-      "sha256": "b775dbccd253f14463481fd486af1fb9f5f3fa7b68e789e47ee75bbf65f0924c"
+      "bytes": 99584,
+      "sha256": "bbcee76675f3157f5a1656ba5f8abb72cab092637b2affcda3e4b60634a9713b"
     },
     {
       "path": "cad/exports/mx/plate.3mf",
-      "bytes": 66012,
-      "sha256": "26adaa71c78d3729254015d784e129df23c16b5654c67b887fc43808dc7fe210"
+      "bytes": 66562,
+      "sha256": "f5e113fc3b3edafb88e64cf0d5a775bce65964f2782162123a5bf97b3ebaa4ed"
     },
     {
       "path": "cad/exports/mx/plate.step",
-      "bytes": 2161818,
-      "sha256": "b5911767887d8a207fbbf10805a9b44afa3114f25441dc91ba9d5c136e66a4de"
+      "bytes": 2042539,
+      "sha256": "272ebd66b3fefea7e861e66bf4b39e0f36fc51fc40534af7d2835654df114821"
     },
     {
       "path": "cad/exports/mx/plate.stl",
-      "bytes": 254484,
-      "sha256": "1ee0f67014fc173cb471e6e371b3165af63099ce3262fd003e32712b11ee8a11"
+      "bytes": 255684,
+      "sha256": "40d299d2b85692af4f346742b6921d3fbfd01ccafd981da5422a217cacef0a43"
     },
     {
       "path": "cad/exports/mx/plate_left.3mf",
-      "bytes": 36107,
-      "sha256": "2161094971065801fa4b798c9cf0192644b27e6eb0a0c3a57dde205b8ea52806"
+      "bytes": 36295,
+      "sha256": "2452711466fdd599d673c0208a99bf986978b747535812a4c3aa521cfccb36ad"
     },
     {
       "path": "cad/exports/mx/plate_left.step",
-      "bytes": 1094330,
-      "sha256": "b2e725b8a165f7a9261dbdacf9581aa41b3a5fd9e7a100604b72fd6109445923"
+      "bytes": 1033238,
+      "sha256": "28ff9138b6afe7e45550a23af2e3287008fa467628292913ced0c8d973fd5351"
     },
     {
       "path": "cad/exports/mx/plate_left.stl",
-      "bytes": 128284,
-      "sha256": "4c2b6ff49007cc8982f24b1520a7e6e392dd97b02a7348f37421f191b5748dda"
+      "bytes": 128884,
+      "sha256": "1db809463476fd5877e4ff90f5fddf0bfdedf1a13fa1b6b63f532b26a9d78030"
     },
     {
       "path": "cad/exports/mx/plate_right.3mf",
-      "bytes": 33954,
-      "sha256": "cea85c7fcb4122c737e6eccca9f2674fa83792cb3798b798a46df68dd47ba6e1"
+      "bytes": 34531,
+      "sha256": "aa3eb272c85a008836f9f1173c7234d9c627197430b239f41c22da15692a35d0"
     },
     {
       "path": "cad/exports/mx/plate_right.step",
-      "bytes": 1095318,
-      "sha256": "ada947da18b9cd66bedde57faa4c9b0c4cdcdee81df89cde39632cdeefcef861"
+      "bytes": 1033301,
+      "sha256": "fa8cd003929bc16ad66124e965b2e060d5ecc44bc0b228f70cec6f65753e7cb9"
     },
     {
       "path": "cad/exports/mx/plate_right.stl",
-      "bytes": 128284,
-      "sha256": "5e958406bb47984fd2003f83dbc6ad2a743874c0af5932f163529c4275bdc83d"
+      "bytes": 128884,
+      "sha256": "ff6c5769f5fb161e4a0881de82726f3949bd162508ebbdf27af85feee91cca28"
+    },
+    {
+      "path": "cad/exports/mx/riser.3mf",
+      "bytes": 41990,
+      "sha256": "c66124bbfeab7dd5fd4b4769e7624f49dbeb9474f6d825e1091413902c38f6c6"
+    },
+    {
+      "path": "cad/exports/mx/riser.step",
+      "bytes": 78369,
+      "sha256": "1ab277cab56e0fe31de0029a74b9c671bad174819e87f1cb3350538a1acf4c59"
+    },
+    {
+      "path": "cad/exports/mx/riser.stl",
+      "bytes": 155884,
+      "sha256": "82ac2217f9131fcb63e18216d4a61342feed2f598547162bba7309a43d9aec06"
+    },
+    {
+      "path": "cad/exports/mx/top_cover.3mf",
+      "bytes": 83689,
+      "sha256": "ef2647255f88bf7406c0814a6e7fc95e21c355cf6d795d1424a00b9540b6d20c"
+    },
+    {
+      "path": "cad/exports/mx/top_cover.step",
+      "bytes": 571704,
+      "sha256": "adc680720e1e3501f734fc697ac1136651bbd724e92fc2b69a2d5707e7df455c"
+    },
+    {
+      "path": "cad/exports/mx/top_cover.stl",
+      "bytes": 326084,
+      "sha256": "14e130c084644105a9306edeb9722013c44ea155cd316904bba6fdd74f3f64e4"
+    },
+    {
+      "path": "cad/exports/mx/top_cover_left.3mf",
+      "bytes": 43262,
+      "sha256": "41d11ffc0ca4c5b9b1ed6e187d439b3eb7dbfed199477f8e1749d8276ff17547"
+    },
+    {
+      "path": "cad/exports/mx/top_cover_left.step",
+      "bytes": 320380,
+      "sha256": "5b5329fe3962902875379ec243402d249c662a1454ce8c6ae3273b1caa4891bf"
+    },
+    {
+      "path": "cad/exports/mx/top_cover_left.stl",
+      "bytes": 164884,
+      "sha256": "be7c04d5c1bccc89a1e1acbed94e85e5bbd436f85e1f6865b2d94cf7c2a9007f"
+    },
+    {
+      "path": "cad/exports/mx/top_cover_right.3mf",
+      "bytes": 42911,
+      "sha256": "e4f9d6a95bfb4936c5458ec34d6548adac0f00e2d6dc6bba124bfc90a60ecf17"
+    },
+    {
+      "path": "cad/exports/mx/top_cover_right.step",
+      "bytes": 312963,
+      "sha256": "5cf8dee0f578e9bb17bb2ee1a9ba7f13d30123f454e471dfd4c4c31db6dc6a57"
+    },
+    {
+      "path": "cad/exports/mx/top_cover_right.stl",
+      "bytes": 164484,
+      "sha256": "f1130b2fd6b8e644086c36a4a22965cf6726a848007c3733d81edb7c503427da"
     },
     {
       "path": "cad/exports/mx/worxboard-ergo-mx.FCStd",
-      "bytes": 158838,
-      "sha256": "72b35787ead194cb0738be16af43d38a82dd524477ebde7b3e5c95f72c5a60a2"
+      "bytes": 298428,
+      "sha256": "b45ea5704b8e47df9ed328c7398c1b236fd5bf4ceca4b842522a159767241e18"
     },
     {
       "path": "cad/freecad-validation.json",
-      "bytes": 709,
-      "sha256": "dc00c9e3d1747e058e31ac1456c62b719464226001d8a2153c5ff301e94558e6"
+      "bytes": 712,
+      "sha256": "bf38e82b1b11796137c4b14c65ddcdbb5256033d6e329681276d1a8abb2e341a"
     },
     {
       "path": "cad/validation.json",
-      "bytes": 5283,
-      "sha256": "02dc6d3d4178ec031995281d72697d14316c87ad6b522d3b0ad00dde48f777b8"
+      "bytes": 8848,
+      "sha256": "397dc2bd5bc90f95c7902f928cd7252d9158854e69d85638cffcc0b6806ce0c6"
     },
     {
       "path": "firmware/artifacts/build-report.json",

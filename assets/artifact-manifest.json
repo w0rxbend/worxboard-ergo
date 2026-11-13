@@ -208,33 +208,33 @@
     },
     {
       "path": "cad/exports/laser/chassis-underside.pdf",
-      "bytes": 26594,
-      "sha256": "70930bc44e7a64d6644c483ec3fce17f64b283e61eb0cbebcfb948db3481cca1"
+      "bytes": 30717,
+      "sha256": "3c009f10c532bd4cf54bac1e1b8dc52b84f3561ac5aa53b3c24ed48345dcca68"
     },
     {
       "path": "cad/exports/laser/chassis-underside.png",
-      "bytes": 297938,
-      "sha256": "8ddd32a165b709a4b54ccbb5de48f7807e58788f5d50abdc18378a57e18f4ff0"
+      "bytes": 296531,
+      "sha256": "48e1f1a70881ac342c38200a44da4d43e71cdf2b694f604594a208868ad18120"
     },
     {
       "path": "cad/exports/laser/chassis-underside.svg",
-      "bytes": 68455,
-      "sha256": "bb1c5da1b848e3bf0c07b3444ab03d2435d660adef5b4bfd03763025444461cf"
+      "bytes": 65529,
+      "sha256": "886d5378f3518bae946e45ac22a3a87deca3d8cef32f36454a244b676be1535a"
     },
     {
       "path": "cad/exports/laser/signature.pdf",
-      "bytes": 17888,
-      "sha256": "17ef13d3c5b107a20b9a3cc6e8aa7d43a2a234189f5dc69607b5fb34a401436a"
+      "bytes": 22212,
+      "sha256": "717b80aa4981f2715fa03d0c4b3dfc9b3bcccc486269c6a594dc456e64e6902f"
     },
     {
       "path": "cad/exports/laser/signature.png",
-      "bytes": 291978,
-      "sha256": "187ad01e20b47a937965f441da8b1b72251d6a41a9a54afdb532c53df894c676"
+      "bytes": 284828,
+      "sha256": "56b0118d879515196251c96dca1ce21da4001fbe39ebccaf9db31f67021d01ea"
     },
     {
       "path": "cad/exports/laser/signature.svg",
-      "bytes": 55463,
-      "sha256": "cefb598b32417d8a3d25ff34ccabdac57d54f8d33338f8278e25d1d1d2b9bf2e"
+      "bytes": 52537,
+      "sha256": "20fae85e87090f3ec325f28f5cb4669fe67fab96d98013d0c3cccbcbaf3325ad"
     },
     {
       "path": "cad/exports/mx/assembly.step",

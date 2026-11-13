@@ -12,11 +12,12 @@ import subprocess
 from math import hypot, pi, sin
 from pathlib import Path
 
+from fontTools.pens.basePen import BasePen
 from fontTools.pens.recordingPen import DecomposingRecordingPen
 from fontTools.pens.svgPathPen import SVGPathPen
 from fontTools.pens.transformPen import TransformPen
 from fontTools.ttLib import TTFont
-from shapely.geometry import LineString, Point, box
+from shapely.geometry import LineString, Point, Polygon, box
 from shapely.ops import unary_union
 
 from cad import model as case
@@ -29,6 +30,8 @@ OUT = ROOT / 'cad/exports/laser'
 NAME, NAME_FONT = 'Oleksandr', FONTS / 'MrsSaintDelafield-Regular.ttf'
 EDITION, EDITION_FONT = 'Signature Edition', FONTS / 'Michroma-Regular.ttf'
 NAME_WIDTH = 46.0       # the name alone, mm
+NAME_GROW = 0.18        # added to every side of the name outline; the font alone is too light to engrave
+CURVE_STEPS = 12        # chords per font curve when the name is flattened
 EDITION_EM = 3.6
 EDITION_SLANT = 0.22    # x shear per unit of height
 EDITION_BASE = -25.0    # edition baseline below the name baseline
@@ -39,7 +42,7 @@ FLOURISH = ((0, 0), (5, -1.9), (10, -6.3), (15, -12.5), (21.3, -16.9), (28.8, -1
             (45.6, 36.3), (42.5, 41.9), (35.6, 41.9), (31.3, 36.9), (30, 30), (26.3, 22.5), (20, 15), (12.5, 10),
             (2.5, 7.5), (-15, 6))
 SPLINE_STEPS = 40       # chords between two flourish points
-PEN_MAX = 0.75          # widest pen, mm
+PEN_MAX = 0.95          # widest pen, mm
 PEN_START = 0.3         # share of the widest pen where the stroke leaves the name
 PEN_TIP = 0.12          # width at the end of the tail, mm
 TAPER = 0.18            # share of the stroke over which the tail thins to the tip
@@ -65,6 +68,43 @@ def _draw_text(run, scale, x0, y0, slant, pen):
     for glyph in run:
         glyph.draw(TransformPen(pen, (scale, 0, slant * scale, scale, x0 + advance * scale, y0)))
         advance += glyph.width
+
+
+class _ContourPen(BasePen):
+    """Collects closed outlines as point lists, with curves cut into chords."""
+
+    def __init__(self, glyphs):
+        super().__init__(glyphs)
+        self.contours = []
+
+    def _moveTo(self, point):
+        self.contours.append([point])
+
+    def _lineTo(self, point):
+        self.contours[-1].append(point)
+
+    def _curveToOne(self, c1, c2, end):
+        start = self._getCurrentPoint()
+        for step in range(1, CURVE_STEPS + 1):
+            t = step / CURVE_STEPS
+            self.contours[-1].append(tuple(
+                (1 - t) ** 3 * a + 3 * (1 - t) ** 2 * t * b + 3 * (1 - t) * t ** 2 * c + t ** 3 * d
+                for a, b, c, d in zip(start, c1, c2, end)))
+
+    def _qCurveToOne(self, control, end):
+        start = self._getCurrentPoint()
+        for step in range(1, CURVE_STEPS + 1):
+            t = step / CURVE_STEPS
+            self.contours[-1].append(tuple(
+                (1 - t) ** 2 * a + 2 * (1 - t) * t * b + t ** 2 * c for a, b, c in zip(start, control, end)))
+
+
+def _filled(contours):
+    """Font outlines as one shape. Counters wind against the outlines; the largest contour is an outline."""
+    rings = [Polygon(contour) for contour in contours if len(contour) > 2]
+    outward = max(rings, key=lambda ring: ring.area).exterior.is_ccw
+    ink = unary_union([ring.buffer(0) for ring in rings if ring.exterior.is_ccw == outward])
+    return ink.difference(unary_union([ring.buffer(0) for ring in rings if ring.exterior.is_ccw != outward]))
 
 
 def _points(recording):
@@ -119,10 +159,10 @@ def artwork():
     """SVG path data in signature coordinates (mm, y up, name baseline at y = 0) and its bounds."""
     glyphs, run, _ = _glyph_run(NAME_FONT, NAME)
     name_scale = NAME_WIDTH / sum(glyph.width for glyph in run)
-    name_record, name_pen = DecomposingRecordingPen(glyphs), SVGPathPen(glyphs)
-    for pen in (name_record, name_pen):
-        _draw_text(run, name_scale, 0, 0, 0, pen)
-    name_points = _points(name_record)
+    name_pen = _ContourPen(glyphs)
+    _draw_text(run, name_scale, 0, 0, 0, name_pen)
+    name = _filled(name_pen.contours).buffer(NAME_GROW, quad_segs=ARC_SEGMENTS).simplify(SIMPLIFY)
+    name_points = [point for polygon in getattr(name, 'geoms', [name]) for point in polygon.exterior.coords]
     exit_x, exit_y = max(name_points)
     flourish = _brush(_catmull_rom([(exit_x + dx, exit_y + dy) for dx, dy in FLOURISH]))
 
@@ -135,7 +175,7 @@ def artwork():
     marks = [*name_points, *[(x + shift, y) for x, y in _points(edition_record)]]
     xs, ys = [x for x, _ in marks], [y for _, y in marks]
     bounds = box(min(xs), min(ys), max(xs), max(ys)).union(flourish).bounds
-    return name_pen.getCommands() + _polygon_path(flourish) + edition_pen.getCommands(), bounds
+    return _polygon_path(name) + _polygon_path(flourish) + edition_pen.getCommands(), bounds
 
 
 def _svg(width, height, body):

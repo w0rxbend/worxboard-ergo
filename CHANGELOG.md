@@ -2,6 +2,11 @@
 
 All releases are engineering previews of hardware revision A0. None is a fabrication release. No keyboard has been built.
 
+## Unreleased
+
+### Added
+- The owner's signature engraved in the chassis underside, 0.4 mm deep, as single-pass tool centre lines.
+
 ## [0.2.0-a0] - 2026-11-13
 
 ### Added

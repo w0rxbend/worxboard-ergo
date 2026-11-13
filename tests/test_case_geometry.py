@@ -8,8 +8,9 @@ from math import pi
 import pytest
 from build123d import Pos, Cylinder
 from shapely.geometry import Point
+from shapely.ops import unary_union
 from layout import keys, outline, holes, variants
-from cad import model as case
+from cad import model as case, signature
 from tools.cad import fit_report, FIT_PAIRS
 
 PROBE_R = 0.5        # thin vertical probe, mm
@@ -19,6 +20,7 @@ MIN_SKIN = 5.0       # shell outside the deck outline
 MIN_WALL = 2.5       # valley wall, front fence and slot web
 MIN_COVER = 1.0      # material left over a blind pocket
 MIN_PALM_DEPTH = 60.0
+SIGN_CLEAR = 5.0     # signature groove to the nearest hole, pad or magnet pocket
 MIRROR_MISS = 5.0    # a hole further than this from its mirror image tells the two frames apart
 SPLIT = ('chassis', 'plate', 'top_cover', 'palm_rest')
 PART_NAMES = {*SPLIT, 'riser'} | {f'{name}_{side}' for name in SPLIT for side in ('left', 'right')}
@@ -91,9 +93,15 @@ def test_exported_frame_is_right_handed(built):
 def test_floor_and_pocket_cover(built):
     variant, parts, _ = built
     chassis = parts['chassis']
+    engraved = unary_union(signature.grooves(case.sign_place)).buffer(PROBE_R)
     for k in keys():
         # Exactly the floor under every switch: no hole below it and nothing standing in the pocket.
-        assert material(chassis, k.x, k.y) == pytest.approx(case.FLOOR, abs=0.01), (variant, k.id)
+        # Where the signature groove passes under the probe, the floor is thinner by at most its depth.
+        floor = material(chassis, k.x, k.y)
+        if engraved.contains(Point(k.x, k.y)):
+            assert case.FLOOR - case.SIGN_DEPTH - 0.01 <= floor < case.FLOOR, (variant, k.id)
+        else:
+            assert floor == pytest.approx(case.FLOOR, abs=0.01), (variant, k.id)
     for x, y in case.mirrored(case.MAGNETS):
         assert material(chassis, x, y) >= MIN_COVER, (variant, 'magnet', x, y)
     pad_reach = case.PAD_D / 2 - PROBE_R
@@ -154,3 +162,17 @@ def test_riser_stance(built):
     # The riser sole stands PAD_PROUD off the desk, the height of its own pads.
     assert overlap(riser, case.to_cad_frame(case.below_desk(case.PAD_PROUD - 0.05))) < VOLUME_TOL, variant
     assert overlap(riser, case.to_cad_frame(case.below_desk(case.PAD_PROUD + 0.3))) > 1, variant
+
+def test_signature_is_a_shallow_groove_in_solid_floor(built):
+    variant, parts, _ = built
+    grooves = signature.grooves(case.sign_place)
+    plan = unary_union(grooves)
+    pockets = [*holes(), *case.mirrored(case.PADS), *case.mirrored(case.MAGNETS), *case.mirrored(case.PALM_SCREWS)]
+    assert min(plan.distance(Point(p)) for p in pockets) >= SIGN_CLEAR, variant
+    assert outline().buffer(-case.WALL).contains(plan), variant
+    # The widest groove is open to SIGN_DEPTH and the floor above it is whole.
+    widest = max(grooves, key=lambda groove: groove.area)
+    cut = case.to_cad_frame(case.prism(widest, 0, case.SIGN_DEPTH))
+    kept = case.to_cad_frame(case.prism(widest, case.SIGN_DEPTH, case.FLOOR - case.SIGN_DEPTH))
+    assert overlap(parts['chassis'], cut) < 1e-3, variant
+    assert overlap(parts['chassis'], kept) == pytest.approx(kept.volume, rel=1e-3), variant

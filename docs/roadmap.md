@@ -13,17 +13,21 @@ The workflow is started at **A0 / reviewable source and geometry**. Tasks are re
 
 Immediate engineering tasks:
 
+- [ ] Finish the RP2040 fan-out on MX. The bay is boxed in: about 25 GPIOs plus SWD and RUN must leave the QFN through one ring of escape vias, and the SPI display pins face away from J4. Options that cost nothing at PCBWay: move the display to SPI0 on GP5–7 and COL0/COL1 to GP26/27 (needs a firmware rebuild), rotate U1, add rip-up and retry to `pcb/scripts/maze.py`, or hand-route the fan-out once and commit it as a fixed input.
+- [ ] Route Choc with the same pipeline, regenerate ERC/DRC/parity reports, then build the PCBWay package with `tools/pcb_fab.sh`.
+- [ ] Pick a real LCD socket for J4 and headers for J5–J7 that fit under the plate (1.0 mm on Choc, 3.5 mm on MX), or move them. Check the SK119 and SK143 socket courtyards against the chassis bosses.
+- [ ] Choose the crystal: the fitted YXC part is CL 18 pF, not the ABM8-272-T3 the RP2040 design guide names.
+
 - [ ] Review three-port VBUS diode OR, mux analog path 3, ESD return, USB attach current and sense thresholds.
 - [ ] Review and test the J6/J7 hardware override: RUN shunts 1–2, center-port ROM shunts 2–3, disconnected firmware control pins.
-- [x] Move support components next to the MCU/regulator/crystal/connectors and route both boards. Every SMD part is on B.Cu. See [verification.md](verification.md) for the checks and the open review items.
-- [ ] Human review of the routed boards before ordering: USB pairs and their ground return, plane splits, every Gerber layer and drill file, and the PCBWay order sheet in `pcb/fab/<variant>/ORDER.md`.
+- [ ] Move support components next to the MCU/regulator/crystal/connectors, check courtyards and mechanical stack; then route both boards.
 - [ ] Verify Choc footprint pin mapping, socket side, plate opening, PCB thickness and source stable wide keycaps/stabilizers. Add matching PCB stabilizer clearance holes, and adjust the familiar layout if necessary.
 - [ ] Measure actual LCD breakout/header height and mounting, then make the module retention under the top-cover window functional.
 - [ ] Print the center-tab coupon and the palm-rest screws. The tab and the six shelf screws are modeled; fit is not measured.
 - [ ] Slice the Sculpt-style chassis, top cover and palm rest, then print coupons: one USB tunnel with a real plug, a cover boss with its screw from below, a magnet pocket, a pad recess, the plate and cover recess corner, and the palm lip. The shell is envelope CAD; none of this is measured.
-- [x] Turn J1, J2 and J3 so each mouth is flush with the PCB rear edge and faces rearward, on the bay's straight rear edge. `PORTS`, the board and the case agree.
-- [ ] Clear the space under the plate. Done: every SMD part is on B.Cu, inside the 4.0 mm under the board. Open: J4 to J7 are still top-side through-hole footprints taller than the room under the plate (fit wire links instead, see [assembly.md](assembly.md)); BOOT, RESET and the J6/J7 links have no access path through the closed case; component keep-outs are not in the fit gate.
-- [ ] Mounting holes: all eight sit closer than 1 mm to the board edge, so `layout.board_outline()` opens each into an edge slot. Moving them inward needs the rim and boss layout to change; the slots are a stopgap to review.
+- [ ] Turn J1, J2 and J3 so each mouth is at the PCB rear edge and faces rearward, and move the side jacks off the rounded plank corner. Give `place.py` a per-part angle. Move `PORTS` to match, then regenerate the PCB and the case. The case keep-outs already assume this placement.
+- [ ] Clear the space under the plate: move diodes and ICs to the bottom copper on Choc, replace or relocate the J4 to J7 headers, and give BOOT, RESET and the J6/J7 jumpers an access path through the closed case. Then add component keep-outs to the fit gate.
+- [ ] Move the two mounting holes that break the board edge, or widen the board there. Keep at least a hole radius plus 1 mm of board outside each hole.
 - [ ] Move the shell plan and the palm-screw, magnet and pad positions into `layout/model.py`, and replace `palm_outline()` and `palm_screws()`. Until then `cad/model.py` holds them as a recorded exception to the layout authority rule.
 - [ ] Choose the pad part. The riser stance assumes pads 2.0 mm proud of a 1.0 mm recess.
 - [x] Reconcile the CAD frame with the PCB top view. The export is right-handed and tests hold the eight holes to the PCB positions. See [verification.md](verification.md).

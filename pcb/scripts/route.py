@@ -46,8 +46,9 @@ ORDER_TRIES=12
 JACK_TAP_REACH=6.0       # a clamp or the second receptacle pad may tap a pair line this close to its pad
 JACK_REACH=10.0          # pads of a pair net this close to the receptacle are joined near it: pads and clamp
 MUX_REACH=8.0            # and this close to the mux, near the mux
-COMPLETE_GREED=1.5       # long matrix joins: a weighted search, a little longer paths for far fewer states
-COMPLETE_BUDGET=1_500_000  # states one join may expand before it counts as blocked
+# (states one join may expand before it counts as blocked, weight on the estimate): a weighted search finds
+# a slightly longer path in far fewer states; the second try is for the nets the first left open.
+COMPLETE_TRIES=((1_500_000,1.5),(6_000_000,2.5))
 COMPLETE_REACH=10.0     # a join after the autorouter may stray this far outside the box of its two ends
 STITCH_PITCH=10.0        # ground stitching grid
 STITCH_REACH=2.0         # a stitching via may move this far off its grid point to find room
@@ -436,7 +437,7 @@ def _via_out(copper,net,entry,inside=None):
     route.nodes=route.nodes+[('F' if layer=='B' else 'B',)+path[-1][1:]]
     copper.commit(route)
 
-def escape_vias(copper,ref,nets=None):
+def escape_vias(copper,ref,nets=None,pitch=ESCAPE_PITCH):
     """Fan the open signal pins of a fine-pitch part out to vias, nearest free spot first, so the autorouter
     starts on the open F.Cu side instead of between 0.4 mm pads and their decoupling. Returns the pins that
     found no spot; the autorouter gets those as they are."""
@@ -454,7 +455,7 @@ def escape_vias(copper,ref,nets=None):
         job=job_for({net},rules.TRACK,maze.LAYERS,reach=STUB_REACH)
         # Escape vias keep room for a track between any two of them, so the inner ones are not walled in.
         sites=[n for n in _via_sites(copper,job,layer,shape)
-               if all(hypot(maze.node_xy(n)[0]-x,maze.node_xy(n)[1]-y)>=ESCAPE_PITCH for x,y in placed)]
+               if all(hypot(maze.node_xy(n)[0]-x,maze.node_xy(n)[1]-y)>=pitch for x,y in placed)]
         path=maze.search(copper.obstacles,Job(job.nets,job.radius,job.via_radius,job.via_drill,(layer,),STUB_REACH),starts,sites) if sites else None
         if path is None:
             blocked.append(f'{ref}.{pad.GetNumber()} {net}');continue
@@ -577,13 +578,16 @@ def complete(copper):
     names=sorted(str(net) for net in copper.board.GetNetsByName().keys() if str(net))
     open_nets=[net for net in names if net not in rules.PLANE_NETS and len(islands_of(copper,net))>1]
     open_nets.sort(key=lambda net:_span(copper,net))      # short local nets first, so long ones go around them
-    failed=[]
-    for net in open_nets:
-        width=rules.POWER_TRACK if any(fnmatch(net,one) for one in rules.POWER_NETS) else rules.TRACK
-        failure=_failure(copper,net,width,maze.LAYERS,reach=COMPLETE_REACH,greed=COMPLETE_GREED,budget=COMPLETE_BUDGET)
-        print(' joined' if failure is None else ' open  ',net,flush=True)
-        if failure is not None:failed.append(str(failure))
-    return open_nets,failed
+    reasons={}
+    failed=open_nets
+    for budget,greed in COMPLETE_TRIES:          # a second, wider search for the nets the first one left open
+        retry,failed=failed,[]
+        for net in retry:
+            width=rules.POWER_TRACK if any(fnmatch(net,one) for one in rules.POWER_NETS) else rules.TRACK
+            failure=_failure(copper,net,width,maze.LAYERS,reach=COMPLETE_REACH,greed=greed,budget=budget)
+            print(' joined' if failure is None else ' open  ',net,flush=True)
+            if failure is not None:failed.append(net);reasons[net]=str(failure)
+    return open_nets,[reasons[net] for net in failed]
 
 def _span(copper,net):
     """Half the perimeter of the box around a net's pads."""

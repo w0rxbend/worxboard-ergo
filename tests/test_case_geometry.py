@@ -48,7 +48,7 @@ def test_every_part_is_one_valid_solid(built):
 def test_nothing_collides(built):
     variant, parts, assembly = built
     fit = fit_report(parts, assembly)
-    assert len(fit) == sum(len(others) for others in FIT_PAIRS.values()) == 21
+    assert len(fit) == sum(len(others) for others in FIT_PAIRS.values()) == 22
     assert not any(fit.values()), (variant, fit)
     # Control: the same boolean must see a real collision. Push the palm back through its reveal.
     shoved = Pos(*case.cad_xy(0, -(case.PALM_GAP + 1)), 0) * parts['palm_rest']

@@ -1,9 +1,9 @@
 {
   "variant": "mx",
-  "assigned_schematic_pins": 458,
-  "pcb_numbered_pads": 458,
+  "assigned_schematic_pins": 459,
+  "pcb_numbered_pads": 459,
   "mismatches": [],
   "switches": 48,
-  "tracks": 0,
+  "tracks": 2565,
   "fabrication_ready": false
 }

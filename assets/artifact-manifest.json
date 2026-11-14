@@ -503,13 +503,13 @@
     },
     {
       "path": "pcb/mx/autoroute.json",
-      "bytes": 132,
-      "sha256": "ef46d04a28be4732d29314c4aa7bfba5e277920384989af6cf07986b2a9ec17f"
+      "bytes": 133,
+      "sha256": "83efd51347d31d0e31c01cece3f0398de25bbb9af9d99a781a053d9dc7750818"
     },
     {
       "path": "pcb/mx/autoroute.ses",
-      "bytes": 147327,
-      "sha256": "c48bc2a30554b80cd58a80bc96d7b0abb5eaa4f2ad4fa6550eaf6c45db6dcd76"
+      "bytes": 230327,
+      "sha256": "36bce8d1e146e0b2105fa8f13df5d56bbcf6e8837f26da2af5b11c61a4f28cd9"
     },
     {
       "path": "pcb/mx/fp-lib-table",
@@ -533,13 +533,13 @@
     },
     {
       "path": "pcb/mx/worxboard-ergo-mx.kicad_pcb",
-      "bytes": 710102,
-      "sha256": "992e0f4d592ba0e176b98435e6d42ef2a16bbbbb0f3e822ef0f0e1db3e81c34e"
+      "bytes": 3600472,
+      "sha256": "a6f96578d36d69779aaed9eaf8a8dcd321e09a2bcfd1de252d0ac409bdd6fd0b"
     },
     {
       "path": "pcb/mx/worxboard-ergo-mx.kicad_pro",
-      "bytes": 2725,
-      "sha256": "5d115a9d059ef519e5be12fde80d24ec10ff3d68cad0a8ce8471dcbff270fcb6"
+      "bytes": 11209,
+      "sha256": "d0726189b2047a6d4c5cde6c035cf61dabd9ad8087845fe23032a972d573c746"
     },
     {
       "path": "pcb/mx/worxboard-ergo-mx.kicad_sch",
@@ -573,23 +573,23 @@
     },
     {
       "path": "pcb/reports/mx-connectivity.json",
-      "bytes": 167,
-      "sha256": "25e46bd0efc8b4d5bf8b7037dffb6274f879455378813261350f32bb3f756588"
+      "bytes": 170,
+      "sha256": "78a68232c7f27805d5b5711c7f6011cecf62b802cda7c4b76a5d1c1c3d7866b2"
     },
     {
       "path": "pcb/reports/mx-drc.json",
-      "bytes": 521824,
-      "sha256": "a58ae61f47b2269974143aefec03dfb738adfb912c93a5cb51422a6cc305afad"
+      "bytes": 69661,
+      "sha256": "586f5e2fd28d3774ed2c899a9c288918c9337812d723db19477085faf2ae5a20"
     },
     {
       "path": "pcb/reports/mx-erc.json",
-      "bytes": 2204,
-      "sha256": "fcf7bbde820af74c0aa96a37a3013f62020ae72fd20379b7ecfc1e2c564448ae"
+      "bytes": 990,
+      "sha256": "5b29f6aecb4a4fa34016ca5e16a28b26735bf7e338907db2fa92daecb7897147"
     },
     {
       "path": "pcb/reports/mx-routing.json",
-      "bytes": 1820,
-      "sha256": "53c46c764fdfda4422b0121890afcaef528ae14a685b0a7d49da219ebf9770e1"
+      "bytes": 7124,
+      "sha256": "268ea7619df85d023b623b9121e8bf2100c9e05cb826bdfb3283df59e7bae4a8"
     }
   ]
 }

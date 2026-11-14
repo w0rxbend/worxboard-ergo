@@ -1,5 +1,5 @@
 {
-  "dsn_sha256": "bb50aafd0d2134395eb26859218bb561b7847dc7392aeaa3ca5d3d156d2c790c",
+  "dsn_sha256": "cf2d24e9f9ae8ec0a97f4b3b018b174c798430edff9a1d85717e0e6b1aa64800",
   "freerouting": "2.5.0",
-  "max_passes": 3
+  "max_passes": 20
 }

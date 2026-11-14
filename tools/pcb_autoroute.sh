@@ -18,7 +18,8 @@ for v in ${AUTOROUTE_VARIANTS:-mx choc}; do
  timeout "${AUTOROUTE_TIMEOUT:-7200}" docker run --rm --cpus "$threads" --network none --add-host router:127.0.0.1 -h router \
   -u "$(id -u):$(id -g)" -e HOME=/tmp -v "$PWD:/w" -w /w "$image" java -jar "/w/$jar" \
   -de "pcb/.work/$v/board.dsn" -do "pcb/.work/$v/autoroute.ses" -mp "$passes" -mt "$threads" --gui.enabled=false \
-  --router.fanout.enabled=false --router.max_threads="$threads" --router.optimizer.max_threads="$threads"
+  --router.fanout.enabled=false --router.max_threads="$threads" --router.optimizer.max_threads="$threads" \
+  --router.copper_to_edge_clearance_um=300 --router.automatic_neckdown=false   # rules.EDGE_CLEARANCE; no tracks under rules.TRACK_MIN
  cp "pcb/.work/$v/autoroute.ses" "pcb/$v/autoroute.ses"
  python3 -c 'import hashlib,json,sys; v,passes=sys.argv[1:]; t=json.load(open("toolchain.lock.json"))["freerouting"]
 json.dump({"dsn_sha256":hashlib.sha256(open(f"pcb/.work/{v}/board.dsn","rb").read()).hexdigest(),

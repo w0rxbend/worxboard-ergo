@@ -18,8 +18,11 @@ HEADER_PITCH = 2.54
 LCD_HEADER_INSET = 1.5            # nice!view pin row inside the module's short edge; check against a real module
 DIODE_NORTH = 8.2                 # matrix diode centre behind its switch, clear of both socket types
 BOSS_CLEAR = {"B": 4.0, "F": 2.9}   # chassis boss R3.6 below, cover boss R2.5 above, plus 0.4
+SWD_PAD_GAP = 2.0                 # SWD test pads just past their pins' stubs, ahead of the crystal routes
 DECOUPLING_RING = 5.0             # RP2040 capacitor centres stay this far from their pin: the band between holds
-                                  # the escape vias of the 30 GPIO pins. Each pin and capacitor reach the planes by via
+                                  # the escape vias of the 30 GPIO pins. Each pin and capacitor reach the planes by via.
+                                  # C16 (DVDD pin 23) stands by the other 1V1 capacitors at the top: pin 23's via joins
+                                  # them across the package on F.Cu instead of running under the bottom pin row
 
 def anchors():
     """ref -> (x, y, angle). Receptacle bodies end flush with the board edge at each case mouth."""
@@ -53,16 +56,17 @@ KEEP_CLEAR = (("U7", (-5.0, -7.0, 6.0, 2.5), "B"),)
 
 # (part, host, host pad, least distance between part centre and host pad)
 SATELLITES = (
-    ("Y1", "U1", "20", 4.6), ("R7", "U1", "21", 0.0), ("C6", "Y1", "1", 0.0), ("C7", "Y1", "3", 0.0),
+    # R7 sits by the crystal: by RP2040 pin 21, its XOUT track ran under the debug pins' exits.
+    ("Y1", "U1", "20", 4.6), ("R7", "Y1", "3", 0.0), ("C6", "Y1", "1", 0.0), ("C7", "Y1", "3", 0.0),
     ("C19", "U1", "45", DECOUPLING_RING), ("C18", "U1", "44", DECOUPLING_RING), ("C17", "U1", "50", DECOUPLING_RING),
-    ("C16", "U1", "23", DECOUPLING_RING), ("C14", "U1", "48", DECOUPLING_RING), ("C13", "U1", "49", DECOUPLING_RING),
+    ("C16", "U1", "50", DECOUPLING_RING), ("C14", "U1", "48", DECOUPLING_RING), ("C13", "U1", "49", DECOUPLING_RING),
     ("C15", "U1", "43", DECOUPLING_RING), ("C8", "U1", "1", DECOUPLING_RING), ("C9", "U1", "10", DECOUPLING_RING),
     ("C10", "U1", "22", DECOUPLING_RING), ("C11", "U1", "33", DECOUPLING_RING), ("C12", "U1", "42", DECOUPLING_RING),
     ("C5", "U2", "8", 0.0), ("R8", "U2", "1", 0.0), ("R9", "U2", "1", 0.0),
     ("C20", "U7", "12", 0.0), ("R40", "U7", "1", 0.0), ("R41", "U7", "2", 0.0),
     ("C1", "U3", "1", 0.0), ("C3", "U3", "5", 0.0), ("C4", "U3", "5", 0.0), ("C2", "U3", "1", 0.0),
     ("R42", "J6", "1", 0.0), ("R43", "J7", "1", 0.0), ("R10", "SW2", "1", 0.0),
-    ("TP8", "U1", "24", 4.0), ("TP9", "U1", "25", 4.0),
+    ("TP8", "U1", "24", SWD_PAD_GAP), ("TP9", "U1", "25", SWD_PAD_GAP),
 ) + tuple(row for i in (1, 2, 3) for row in (
     (f"U{3 + i}", f"J{i}", "A6", 0.0),
     (f"R{20 + 5 * i}", f"J{i}", "A5", 0.0), (f"R{21 + 5 * i}", f"J{i}", "B5", 0.0),

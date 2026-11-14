@@ -24,6 +24,11 @@ BOTH='*'
 def vec(x,y):return p.VECTOR2I(p.FromMM(x+OFFSET[0]),p.FromMM(y+OFFSET[1]))
 def xy(v):return p.ToMM(v.x)-OFFSET[0],p.ToMM(v.y)-OFFSET[1]
 
+def _net_name(name):
+    """KiCad's own spelling of a netlist net name: an unconnected pin's net escapes the '/' of its pin name."""
+    if name.startswith('unconnected-('):return 'unconnected-('+name[len('unconnected-('):].replace('/','{slash}')
+    return name
+
 def pose(fp,x,y,angle):
  fp.SetPosition(vec(x,y));fp.SetOrientationDegrees(angle)
 
@@ -117,7 +122,7 @@ def main(v):
  board.GetDesignSettings().m_BoardThickness=p.FromMM(1.6)
  padnets={}
  for n in root.findall('nets/net'):
-  net=p.NETINFO_ITEM(board,n.attrib['name']);board.Add(net)
+  net=p.NETINFO_ITEM(board,_net_name(n.attrib['name']));board.Add(net)
   for node in n.findall('node'):padnets[node.attrib['ref'],node.attrib['pin']]=net
  comp={c.attrib['ref']:c for c in root.findall('components/comp')}
  key_map={k.id:k for k in keys()}

@@ -2,12 +2,14 @@
 import sys,json,xml.etree.ElementTree as ET
 from pathlib import Path
 import pcbnew as p
+sys.path.insert(0,str(Path(__file__).resolve().parents[2]))
+from pcb.scripts.place import _net_name
 root=Path(__file__).resolve().parents[2]
 v=sys.argv[1];stem=root/'pcb'/v/('worxboard-ergo-'+v)
 board=p.LoadBoard(str(stem.with_suffix('.kicad_pcb')))
 xml=ET.parse(stem.with_suffix('.net')).getroot();expected={}
 for net in xml.findall('nets/net'):
- for node in net.findall('node'):expected[node.attrib['ref'],node.attrib['pin']]=net.attrib['name']
+ for node in net.findall('node'):expected[node.attrib['ref'],node.attrib['pin']]=_net_name(net.attrib['name'])
 actual={};mismatches=[]
 for fp in board.GetFootprints():
  for pad in fp.Pads():

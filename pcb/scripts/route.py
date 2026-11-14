@@ -20,7 +20,7 @@ ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT))
 from layout import board_outline
 from pcb.scripts import maze,rules
 from pcb.scripts.place import OFFSET
-from pcb.scripts.support_places import KEEP_CLEAR,SATELLITES
+from pcb.scripts.support_places import KEEP_CLEAR
 from pcb.scripts.maze import Job,Route
 from pcb.scripts.design import GPIO_NETS
 
@@ -38,6 +38,7 @@ PAIR_EXIT=2.2            # a pair leaves its pads this far along their axis befo
 VIA_PAD_GAP=0.1          # a plane via keeps this much mask between itself and any pad
 STUB_REACH=8.0
 SHARE_REACH=2.0          # a supply pin with no room for its own via joins a neighbour's via this close
+ESCAPE_FIRST=('DISP_CS','DISP_SCK','DISP_MOSI','USB_SEL0','USB_SEL1')   # neighbours that fought for one spot
 ESCAPE_PITCH=rules.VIA_D+2*rules.CLEARANCE+rules.TRACK+0.1   # one track fits between two escape vias, with margin
 EP_VIA_PITCH=1.6         # thermal vias in the RP2040 exposed pad, a 2 x 2 grid
 ZONE_CLEARANCE=0.2
@@ -49,8 +50,8 @@ JACK_REACH=10.0          # pads of a pair net this close to the receptacle are j
 MUX_REACH=8.0            # and this close to the mux, near the mux
 # (states one join may expand before it counts as blocked, weight on the estimate): a weighted search finds
 # a slightly longer path in far fewer states.
-COMPLETE_SEARCH=(1_500_000,1.5)
-RIP_LIMIT=3              # a net torn up this often stays where it is
+COMPLETE_SEARCH=(3_000_000,1.5)
+RIP_LIMITS={'COL*':5,'*':3}   # a net torn up this often stays where it is; the long column nets get more tries
 CHECKPOINT_EVERY=5       # grid-stage joins between saved checkpoints
 COMPLETE_REACH=10.0     # a join after the autorouter may stray this far outside the box of its two ends
 STITCH_PITCH=10.0        # ground stitching grid
@@ -65,9 +66,7 @@ CONTROLLER_NETS=(
     ('QSPI_*',rules.TRACK,B_ONLY),('USB_D[PM]',rules.TRACK,B_ONLY),             # 0.4 mm pitch pads: these few millimetres stay at pad width
     ('USB_MUX_D[PM]',rules.TRACK,B_ONLY),
 )
-CORE_STUB_PINS=('23',)   # DVDD pin 23 sits between IOVDD and SWCLK, in front of the crystal routes
-CORE_VIA_AT_CAP=()       # 1V1 pins whose via sits beside their capacitor rather than inside the pad row
-CORE_LOCAL=1.0           # a 1V1 pin meets its capacitor within this much of the two pads
+CORE_STUB_PINS=('23',)   # DVDD pin 23: inside the pad row its via takes IOVDD pin 22's only spot
 CORE_MARGIN=5.0          # 1V1 stays this close to the RP2040 courtyard: across the package on F.Cu, not around it
 SUPPLY_NETS=(
     ('VBUS_LEFT',rules.POWER_TRACK,maze.LAYERS),('VBUS_CENTER',rules.POWER_TRACK,maze.LAYERS),
@@ -198,8 +197,8 @@ def _keep_clear_box(board,ref,reach):
     return box(x+reach[0],y+reach[1],x+reach[2],y+reach[3])
 
 def _edge_ring():
-    """Board outline as one closed line in board millimetres."""
-    return translate(board_outline().exterior,*OFFSET)
+    """Board outline, every ring of it, as lines in board millimetres."""
+    return translate(board_outline().boundary,*OFFSET)
 
 def job_for(nets,width,layers,reach=6.0,greed=1.0,budget=None):
     return Job(frozenset(nets),width/2,rules.VIA_D/2,rules.VIA_DRILL,layers,reach,greed,budget)
@@ -427,24 +426,20 @@ def _plane_via(copper,net,job,island,drilled_nodes,entry,shared_ok):
 
 def route_core(copper):
     """1V1 joins pins 23, 45 and 50 on opposite sides of the RP2040, and their capacitors, through vias joined on
-    F.Cu across the package. Each pin takes a via between the pad row and the exposed pad (a pin listed in
-    CORE_VIA_AT_CAP meets its capacitor on B.Cu instead), and each capacitor takes its own via. A 1V1 track
-    around the package would fence every other escape in."""
+    F.Cu across the package. Each pin takes a via between the pad row and the exposed pad (inward: outside, a
+    via blocks its neighbours' exits), or at the end of its stub when listed in CORE_STUB_PINS. Each capacitor
+    takes its own via. A 1V1 track around the package would fence every other escape in."""
     package=_package(copper,MCU)
-    for cap,host,number,_ in SATELLITES:
-        if host!=MCU or copper.pad(MCU,number)[0].GetNetname()!='1V1':continue
-        pin=copper.pad(MCU,number);cap_pad=next(e for e in copper.pads_on('1V1') if ref_of(e[0])==cap)
-        if number in CORE_VIA_AT_CAP:
-            window=box(*unary_union([pin[2],cap_pad[2]]).bounds).buffer(CORE_LOCAL,join_style='mitre')
-            connect_net(copper,'1V1',rules.TRACK,B_ONLY,within=window,reach=CORE_LOCAL)
-        elif number in CORE_STUB_PINS:
-            _via_out(copper,'1V1',pin,outside=package)   # at the end of its stub: inside, it takes IOVDD's spot
+    for pin in sorted(copper.pads_on('1V1'),key=lambda e:(ref_of(e[0])!=MCU,ref_of(e[0]),e[0].GetNumber())):
+        if ref_of(pin[0])!=MCU:
+            _via_out(copper,'1V1',pin)                   # a capacitor
+        elif pin[0].GetNumber() in CORE_STUB_PINS:
+            _via_out(copper,'1V1',pin,outside=package)
         else:
             try:
-                _via_out(copper,'1V1',pin,inside=package)    # inward first: outside, a via blocks neighbours' exits
+                _via_out(copper,'1V1',pin,inside=package)
             except Unroutable:
                 _via_out(copper,'1V1',pin)
-        _via_out(copper,'1V1',cap_pad)
     # The joins grow from the package centre, so each capacitor via takes the shortest way in, a spoke. Grown
     # from the first piece, the capacitor vias could join each other around the package and fence it.
     window=package.buffer(CORE_MARGIN,join_style='mitre');centre=package.centroid
@@ -475,7 +470,8 @@ def escape_vias(copper,ref,nets=None,pitch=ESCAPE_PITCH):
     starts on the open F.Cu side instead of between 0.4 mm pads and their decoupling. Returns the pins that
     found no spot; the autorouter gets those as they are."""
     blocked=[];placed=copper.escapes
-    for entry in sorted((e for es in copper.pads.values() for e in es if ref_of(e[0])==ref),key=lambda e:int(e[0].GetNumber())):
+    def order(e):return (e[0].GetNetname() not in ESCAPE_FIRST,int(e[0].GetNumber()))
+    for entry in sorted((e for es in copper.pads.values() for e in es if ref_of(e[0])==ref),key=order):
         pad,layers,shape=entry;net=pad.GetNetname()
         if len(layers)>1 or not net or net in rules.PLANE_NETS or net.startswith('unconnected-'):continue
         if nets is not None and net not in nets:continue
@@ -565,9 +561,10 @@ def critical(v):
         escape_stubs(copper,MCU,['1V1'],numbers=CORE_STUB_PINS)
         # Crystal, QSPI and the RP2040-side USB first, from straight pin stubs. Then the supply vias, inside the
         # RP2040 pad row so they block no exit, before a receptacle pair can fence a clamp's ground pad. Then 1V1.
+        exposed_pad_vias(copper)                  # first: nothing checks them against other copper
         route_core(copper)                        # 1V1 vias before the crystal routes can fence pin 23
         route_groups(copper,CONTROLLER_NETS)      # the receptacle pairs then run around the controller
-        exposed_pad_vias(copper);plane_vias(copper)
+        plane_vias(copper)
         lengths={}
         for jack,name in USB_PORTS:
             lengths[name]=route_usb_pair(copper,jack,name)
@@ -667,7 +664,7 @@ def _width(net):
 
 def _join_ripping(copper,net,ripped):
     """Join one net island by island. When an island has no way, find one through the completion routes
-    only, tear up the nets on it (each at most RIP_LIMIT times) and take it. Returns the torn-up nets."""
+    only, tear up the nets on it (each at most its RIP_LIMITS times) and take it. Returns the torn-up nets."""
     width=_width(net);victims=set()
     budget,greed=COMPLETE_SEARCH
     job=job_for({net},width,maze.LAYERS,COMPLETE_REACH,greed,budget)
@@ -682,12 +679,15 @@ def _join_ripping(copper,net,ripped):
                 why='search budget spent' if maze.last_search['budget_hit'] else 'enclosed by fixed copper'
                 raise Unroutable(f'{net}: no path from {maze.node_xy(min(island))} even through the grid routes ({why})')
             blockers=_blockers(copper,net,width,path)
-            stuck=[b for b in blockers if ripped.get(b,0)>=RIP_LIMIT]
-            if stuck:raise Unroutable(f'{net}: the way is held by {" ".join(sorted(stuck))}, torn up {RIP_LIMIT} times already')
+            stuck=[b for b in blockers if ripped.get(b,0)>=_rip_limit(b)]
+            if stuck:raise Unroutable(f'{net}: the way is held by {" ".join(sorted(stuck))}, torn up as often as allowed')
             copper.rip(blockers);victims|=blockers
         route=maze.to_route(path,net,width);route.rippable=True;copper.commit(route)
         tree|=island;tree.update(path)
     return victims
+
+def _rip_limit(net):
+    return next(limit for pattern,limit in RIP_LIMITS.items() if fnmatch(net,pattern))
 
 def _blockers(copper,net,width,path):
     """Nets whose completion routes come too close to a path."""

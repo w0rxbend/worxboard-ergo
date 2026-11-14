@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/w/pcb/mx/worxboard-ergo-mx.kicad_sch</source>
-    <date>2026-11-13T18:30:37</date>
+    <date>2026-11-14T03:39:39</date>
     <tool>Eeschema 10.0.7</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -640,7 +640,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>b1212242-bce2-5e0b-9a4e-7f0e0d11f873</tstamps>
+      <tstamps>35381f2b-94e0-5a86-959f-44a93e2801e0</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -668,7 +668,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>ea7b0900-9bcb-50df-a5ba-34a6b8a477dd</tstamps>
+      <tstamps>ba48264c-05ca-5f64-ae0a-847cc68eeaa3</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -696,7 +696,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>99c25eb1-b9c6-510a-b70a-fa6a3f47de98</tstamps>
+      <tstamps>3b548aa0-e6c0-54e0-aca0-6ebbc51eb0fa</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -724,7 +724,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>e066e102-48d1-5bec-a878-b70cb310b823</tstamps>
+      <tstamps>2351dc88-8ee4-5d93-ba02-6b98f3adb9cc</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -752,7 +752,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>4a9289c5-5773-576b-ad0a-40bb3bbcfba7</tstamps>
+      <tstamps>20ddfc97-7e33-5b45-934e-9be0b2d80edd</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -780,7 +780,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>5c8ddcee-fba3-53df-9c2f-7f2b42b859ba</tstamps>
+      <tstamps>61964a3e-d9c6-541a-9b77-ea194b97192f</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -808,7 +808,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>4f01de56-a358-58a3-a651-168fc256ea85</tstamps>
+      <tstamps>b58414c7-9c26-53ae-b5ae-d98c42569569</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -836,7 +836,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>0e9bc6a7-ee31-5692-b74c-379fe434bfe1</tstamps>
+      <tstamps>44f8b654-f46a-563a-8f14-84d4c1721ae5</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -864,7 +864,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>f2c08713-e3d5-58fd-a511-e5566226c182</tstamps>
+      <tstamps>cdf775f5-3f64-566a-a289-c0295e074fe2</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -892,7 +892,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>1336040a-ddf5-5d96-bde8-b50a0714d158</tstamps>
+      <tstamps>ffae27c0-ea3d-5901-860f-4069bfa52474</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -920,7 +920,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>dbf0df8a-393e-5a08-bb6d-cc6a43ccd0fe</tstamps>
+      <tstamps>731f8d3a-d703-514f-a20f-4bc0dc295069</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -948,7 +948,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>3a98d79e-7d30-5165-a4c9-bbec7a8aaed0</tstamps>
+      <tstamps>a2b36256-2579-548c-9ca6-15314a134e59</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -976,7 +976,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>6ecfb1bd-c047-53d6-a3b9-d61df0914694</tstamps>
+      <tstamps>b53bf17a-8210-5e17-9a9c-74bfeb465594</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1004,7 +1004,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>b77e56a2-f5b4-5525-a679-3028f6c918db</tstamps>
+      <tstamps>cdf65277-26a6-5729-aca9-9cf4ee354ef1</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1032,7 +1032,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>d9c902b8-486e-5211-a2d7-2d6bda29469b</tstamps>
+      <tstamps>4115dcfd-df36-527a-8b06-42e59a5c8836</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1060,7 +1060,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>ed26074d-de98-5dcf-8015-63a8379aa9e4</tstamps>
+      <tstamps>b1bcb0d4-bb9b-5a51-8ee9-d767d4094b7d</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1088,7 +1088,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>e94af3d9-2710-5c7b-bbcb-aa139bae1482</tstamps>
+      <tstamps>024b57c3-c406-5f73-821f-3365037db805</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1116,7 +1116,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>e557a412-52ba-5665-baf9-307eb7242859</tstamps>
+      <tstamps>e71ff408-f75b-5fd9-a329-4515cd0d5d5a</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1144,7 +1144,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>7c9a44e5-6a26-53ca-b050-e8d22aaa9a56</tstamps>
+      <tstamps>c83d9cea-de1d-5e20-b9f8-31f73bc5bca8</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1172,7 +1172,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>cb950883-473d-5fbc-a3a6-b46a4e5518a0</tstamps>
+      <tstamps>fd1f1436-bcc6-52fc-9764-9dfa45b6069d</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1200,7 +1200,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>ffa1a229-6705-5d8c-9e15-6c307ad20a5b</tstamps>
+      <tstamps>5bc6db78-fc22-5624-a614-7076547a7fdd</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1228,7 +1228,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>8cbf6bce-bae9-5a7a-a0a1-d356ecf4cebf</tstamps>
+      <tstamps>5c11a863-e1a4-5a25-9e90-f43125d67129</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1256,7 +1256,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>4bdfe4ed-cb9b-596d-be64-44fc3a8b9c6e</tstamps>
+      <tstamps>93126d04-9283-5351-a4b5-d314f13de1b0</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1284,7 +1284,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>edb1252a-06cc-5fc4-bd29-4265fcd85fbf</tstamps>
+      <tstamps>50a4889c-180b-5ae7-b075-df774b42ee1d</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1312,7 +1312,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>ee6cac92-6c73-55b3-a614-306a23c62a5a</tstamps>
+      <tstamps>8494c257-8dce-5cee-873a-6446bcf6e06f</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1340,7 +1340,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>dd6846e6-3e4e-5d78-9663-b91ae1c7c202</tstamps>
+      <tstamps>ac237ac5-beee-527d-9401-7ed119a21d8d</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1368,7 +1368,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>75295c1c-6302-5eab-af8e-0680f17c6701</tstamps>
+      <tstamps>3fce3edf-ca66-56dc-9fdf-2c24424fb3e8</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1396,7 +1396,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>fdfb8e80-0f4b-5e61-bd0c-32025018d071</tstamps>
+      <tstamps>88272054-4ff7-557b-8544-591c6d069d40</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1424,7 +1424,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>8487d56f-82b7-5ec0-89d8-cb1b2afdb5ed</tstamps>
+      <tstamps>dc6dc124-43de-55a3-8626-ca5d9b195bda</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1452,7 +1452,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>7b6bc8c4-7759-59c8-854d-100c1ef3cf06</tstamps>
+      <tstamps>c1b17bcc-f1d9-5135-a302-cfb9da566a48</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1480,7 +1480,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>e3b153fc-9871-58dc-9040-7a84456b1d3c</tstamps>
+      <tstamps>89686e07-4212-58ac-a797-2a4056118bd3</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1508,7 +1508,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>3b64f465-de65-55f3-b065-e9d2d0fb9e3a</tstamps>
+      <tstamps>2dae0600-91d7-53b5-91a8-c7a3c85fbbb9</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1536,7 +1536,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>512a57d9-1df2-55c7-80ce-759ca5f47f33</tstamps>
+      <tstamps>285bf0a2-700f-53d8-bea4-0d51ba3e1e20</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1564,7 +1564,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>b46f7623-a803-5744-8e7b-92189cc86504</tstamps>
+      <tstamps>caaa5d8b-d704-5c76-9da0-71cac1c7465b</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1592,7 +1592,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>1a8b70bd-053d-5b6a-b1be-1567cf46d722</tstamps>
+      <tstamps>91ef41be-815f-56a6-bd01-f299c956aedc</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1620,7 +1620,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>6bf08e88-58f4-550a-889c-796c01fee453</tstamps>
+      <tstamps>48895907-a181-52e6-8118-fa8bd47ef00d</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1648,7 +1648,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>62caa514-4702-571d-ab33-4f9b38706f14</tstamps>
+      <tstamps>fadf6ac5-e4a5-5774-a9d6-362f5fdd6afe</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1676,7 +1676,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>6f9c16ca-7191-5315-94c7-b93ee6d2d3fe</tstamps>
+      <tstamps>d61862cb-a8ca-5f31-b97b-1d6210953e1f</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1704,7 +1704,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>fc0e856a-c128-527e-adf4-a7e9908011aa</tstamps>
+      <tstamps>c6e6d5a9-395f-55f9-8474-7d870fbc98be</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1732,7 +1732,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>a97d7449-26b0-5909-a72d-ca0afce79753</tstamps>
+      <tstamps>6b526d4b-8a20-516e-a035-8d4331ac6530</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1760,7 +1760,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>ec534ae7-3b0d-5151-ad70-71351c64965f</tstamps>
+      <tstamps>bffd6b50-23f8-553c-98e7-f929afbefc6c</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1788,7 +1788,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>9b5cd5e2-76f4-599c-a7f5-4efd0aa8b508</tstamps>
+      <tstamps>e0c88072-2a57-525b-a388-c58ebf7e1950</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1816,7 +1816,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>dd101c2a-22f2-533b-a2bf-bfed4f12d4e0</tstamps>
+      <tstamps>47ad833a-a879-50e6-937b-4a971d184583</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1844,7 +1844,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>431bc9fd-fb7c-5493-8d23-e7a2dac162fe</tstamps>
+      <tstamps>7c45827b-2066-5a02-a30d-4853a95324ed</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1872,7 +1872,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>93595fd5-5afe-502d-897d-903342e134f8</tstamps>
+      <tstamps>4daa1588-9ed6-5af0-a04a-829416e3bb37</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1900,7 +1900,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>027e4074-12fb-54f0-a958-17d298227ca0</tstamps>
+      <tstamps>9306aca6-2486-529e-bdd5-6ee16ed4b350</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1928,7 +1928,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>b9928964-f9f3-5fb8-9292-4cbf92a7d185</tstamps>
+      <tstamps>aa25bbe8-6544-5f2c-8756-76ba3b015d97</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1956,7 +1956,7 @@
       <property name="ki_keywords" value="diode"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>58e229d2-bef4-53f5-990f-964618c7ee99</tstamps>
+      <tstamps>5f1ea4ea-9788-5eb6-8aaa-ebf7aea08a4f</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1983,7 +1983,7 @@
       <property name="ki_keywords" value="mounting hole"/>
       <property name="ki_fp_filters" value="MountingHole*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>e3c0264c-61dd-59bf-8764-003381460883</tstamps>
+      <tstamps>428ab96a-0bc9-52bd-a046-a16a06e571f3</tstamps>
       <units>
         <unit name="A">
           <pins/>
@@ -2007,7 +2007,7 @@
       <property name="ki_keywords" value="mounting hole"/>
       <property name="ki_fp_filters" value="MountingHole*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>428ab96a-0bc9-52bd-a046-a16a06e571f3</tstamps>
+      <tstamps>0a6654b8-584c-5522-b4ab-a9824bf9aad2</tstamps>
       <units>
         <unit name="A">
           <pins/>
@@ -2031,7 +2031,7 @@
       <property name="ki_keywords" value="mounting hole"/>
       <property name="ki_fp_filters" value="MountingHole*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>0a6654b8-584c-5522-b4ab-a9824bf9aad2</tstamps>
+      <tstamps>f8d6a2c8-b58c-565d-954f-b2e512253932</tstamps>
       <units>
         <unit name="A">
           <pins/>
@@ -2055,7 +2055,7 @@
       <property name="ki_keywords" value="mounting hole"/>
       <property name="ki_fp_filters" value="MountingHole*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>f8d6a2c8-b58c-565d-954f-b2e512253932</tstamps>
+      <tstamps>17ba928f-25b5-568e-883b-6233f0fc8993</tstamps>
       <units>
         <unit name="A">
           <pins/>
@@ -2079,7 +2079,7 @@
       <property name="ki_keywords" value="mounting hole"/>
       <property name="ki_fp_filters" value="MountingHole*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>17ba928f-25b5-568e-883b-6233f0fc8993</tstamps>
+      <tstamps>3154cf0b-cf8f-55e4-8a7b-a213936dfb73</tstamps>
       <units>
         <unit name="A">
           <pins/>
@@ -2103,7 +2103,7 @@
       <property name="ki_keywords" value="mounting hole"/>
       <property name="ki_fp_filters" value="MountingHole*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>3154cf0b-cf8f-55e4-8a7b-a213936dfb73</tstamps>
+      <tstamps>1ec99cc1-b978-5d79-bc77-a597ec6201e7</tstamps>
       <units>
         <unit name="A">
           <pins/>
@@ -2127,7 +2127,7 @@
       <property name="ki_keywords" value="mounting hole"/>
       <property name="ki_fp_filters" value="MountingHole*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>1ec99cc1-b978-5d79-bc77-a597ec6201e7</tstamps>
+      <tstamps>1ca9ff37-bf44-53d5-bff1-a938661c012d</tstamps>
       <units>
         <unit name="A">
           <pins/>
@@ -2151,7 +2151,7 @@
       <property name="ki_keywords" value="mounting hole"/>
       <property name="ki_fp_filters" value="MountingHole*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>1ca9ff37-bf44-53d5-bff1-a938661c012d</tstamps>
+      <tstamps>0eb7e341-5221-571a-983c-8fbfc2d3b1ad</tstamps>
       <units>
         <unit name="A">
           <pins/>
@@ -2313,20 +2313,19 @@
     </comp>
     <comp ref="J5">
       <value>RGB expansion (3V3 logic)</value>
-      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical</footprint>
+      <footprint>Connector_JST:JST_SH_SM03B-SRSS-TB_1x03-1MP_P1.00mm_Horizontal</footprint>
       <fields>
-        <field name="LCSC"/>
-        <field name="Footprint">Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical</field>
+        <field name="LCSC">C160403</field>
+        <field name="Footprint">Connector_JST:JST_SH_SM03B-SRSS-TB_1x03-1MP_P1.00mm_Horizontal</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="Connector_Generic" part="Conn_01x03" description="Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
-      <property name="LCSC" value=""/>
+      <libsource lib="Connector_Generic_MountingPin" part="Conn_01x03_MountingPin" description="Generic connectable mounting pin connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="LCSC" value="C160403"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
-      <property name="dnp"/>
       <property name="ki_keywords" value="connector"/>
-      <property name="ki_fp_filters" value="Connector*:*_1x??_*"/>
+      <property name="ki_fp_filters" value="Connector*:*_1x??-1MP*"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>5a6a97fc-1b9d-5bc5-83c6-8b63b2968240</tstamps>
       <units>
@@ -2335,33 +2334,32 @@
             <pin num="1"/>
             <pin num="2"/>
             <pin num="3"/>
+            <pin num="MP"/>
           </pins>
         </unit>
       </units>
     </comp>
     <comp ref="J6">
       <value>SEL0: RUN 1-2 / ROM 2-3</value>
-      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical</footprint>
+      <footprint>Button_Switch_SMD:SW_SPDT_PCM12</footprint>
       <fields>
-        <field name="LCSC"/>
-        <field name="Footprint">Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical</field>
+        <field name="LCSC">C221841</field>
+        <field name="Footprint">Button_Switch_SMD:SW_SPDT_PCM12</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="Connector_Generic" part="Conn_01x03" description="Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
-      <property name="LCSC" value=""/>
+      <libsource lib="Switch" part="SW_SPDT" description="Switch, single pole double throw"/>
+      <property name="LCSC" value="C221841"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
-      <property name="dnp"/>
-      <property name="ki_keywords" value="connector"/>
-      <property name="ki_fp_filters" value="Connector*:*_1x??_*"/>
+      <property name="ki_keywords" value="switch single-pole double-throw spdt ON-ON"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>148904be-64dd-5cd7-99d6-5a2e9d0720dd</tstamps>
       <units>
         <unit name="A">
           <pins>
-            <pin num="1"/>
             <pin num="2"/>
+            <pin num="1"/>
             <pin num="3"/>
           </pins>
         </unit>
@@ -2369,27 +2367,25 @@
     </comp>
     <comp ref="J7">
       <value>SEL1: RUN 1-2 / ROM 2-3</value>
-      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical</footprint>
+      <footprint>Button_Switch_SMD:SW_SPDT_PCM12</footprint>
       <fields>
-        <field name="LCSC"/>
-        <field name="Footprint">Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical</field>
+        <field name="LCSC">C221841</field>
+        <field name="Footprint">Button_Switch_SMD:SW_SPDT_PCM12</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="Connector_Generic" part="Conn_01x03" description="Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
-      <property name="LCSC" value=""/>
+      <libsource lib="Switch" part="SW_SPDT" description="Switch, single pole double throw"/>
+      <property name="LCSC" value="C221841"/>
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
-      <property name="dnp"/>
-      <property name="ki_keywords" value="connector"/>
-      <property name="ki_fp_filters" value="Connector*:*_1x??_*"/>
+      <property name="ki_keywords" value="switch single-pole double-throw spdt ON-ON"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>51f61478-2386-5651-8188-d211c1b8c037</tstamps>
       <units>
         <unit name="A">
           <pins>
-            <pin num="1"/>
             <pin num="2"/>
+            <pin num="1"/>
             <pin num="3"/>
           </pins>
         </unit>
@@ -2983,7 +2979,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>df362f0d-0e57-54fe-96d1-cd5535b1082b</tstamps>
+      <tstamps>761609e5-f234-5f22-95a6-93495bc42bce</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3009,7 +3005,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>8e50a564-5766-59b5-80ac-8ce64a2142e4</tstamps>
+      <tstamps>ccda3d39-27d3-50fe-a519-d15b10bd389c</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3035,7 +3031,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>cd834480-7209-5f49-ae4d-8816900f5cf2</tstamps>
+      <tstamps>6f7a7e76-e577-5122-a178-b067eab06dda</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3061,7 +3057,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>2422ea3e-d9f9-5f90-8c91-8876bb481b7e</tstamps>
+      <tstamps>55c2d957-22ad-5c3a-9f35-cd39ba571c96</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3087,7 +3083,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>f4d19790-ef4c-5e98-b52f-85059175649a</tstamps>
+      <tstamps>a1a4bd8e-a3a0-5217-9417-3350e9bdba34</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3113,7 +3109,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>6e1a4a99-6511-53bf-89f4-05543f926249</tstamps>
+      <tstamps>9febae71-5f66-57ad-ad66-f5f50f46a7f2</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3139,7 +3135,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>988bb074-404f-573b-aa09-061a3726e991</tstamps>
+      <tstamps>fd9973bf-07f5-5576-943f-764f86496502</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3165,7 +3161,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>084bb7ed-16e8-51d8-a7b7-3615969e1761</tstamps>
+      <tstamps>d90cea80-14c5-5e19-b17b-4bc3f1618131</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3191,7 +3187,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>474ae9ba-4bc1-5ed6-b38e-df1c7da50ecc</tstamps>
+      <tstamps>ca1c2e3e-559c-5613-a9f2-d9205c61ffa3</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3217,7 +3213,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>7b6f13a7-763b-5d69-af58-a883cb3b1618</tstamps>
+      <tstamps>b5015879-3d75-5bc7-b4aa-431ea4ebcee0</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3243,7 +3239,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>ec0b0a12-f040-5b27-88fc-fbab1376a5f4</tstamps>
+      <tstamps>af980a01-0f76-5b4c-93af-68e5ce8d1874</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3269,7 +3265,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>6156dd74-b28a-5feb-8a97-f6ad88ff0e90</tstamps>
+      <tstamps>40e43588-fdd0-5b09-88de-f29d39fbd37b</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3295,7 +3291,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>115b6210-f89f-5826-a34e-d30d622672a1</tstamps>
+      <tstamps>b1470df6-d67c-58df-b027-9be6f6517af6</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3321,7 +3317,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>89125d06-c80f-55e8-801c-f2b83537bcfe</tstamps>
+      <tstamps>24a74292-6e8b-5783-992b-99fca16acf26</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3347,7 +3343,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>230ad584-8ecf-539e-9693-89d5c1b5c1f9</tstamps>
+      <tstamps>e6925bbf-6434-56fa-b405-6c363c053fba</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3373,7 +3369,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>12bd84ab-31a6-5a1d-a941-cf143b82a7a3</tstamps>
+      <tstamps>78733d6a-e084-5cab-a2f2-3eeaf5384c3e</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3399,7 +3395,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>c8be5bc8-d3fc-5b76-8ffe-c2e4eeda39af</tstamps>
+      <tstamps>c963769c-1ed7-5ac8-bf1d-dbb9e0db067a</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3425,7 +3421,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>a6da646b-9c3a-5a18-8c1d-0531046858ee</tstamps>
+      <tstamps>87c21746-e2e7-53b9-b250-158310afd194</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3451,7 +3447,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>dfb5d3a1-d165-5629-80d2-6ff6a56c492b</tstamps>
+      <tstamps>3ab97476-fb2a-5d70-afbb-fd65f7e2e5f5</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3477,7 +3473,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>25fe2c41-7a76-58c3-b253-e9999e3ed515</tstamps>
+      <tstamps>ab5c7b16-605d-5987-beea-73c4be015065</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3503,7 +3499,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>e77fcd5f-f792-55f0-ad06-cd64d8422c5e</tstamps>
+      <tstamps>4c2f8dec-893d-5c9d-94e5-3ce7ce363e3c</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3529,7 +3525,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>06859135-fe1d-5574-acc0-32bf99226be4</tstamps>
+      <tstamps>304522db-f0eb-5655-80ec-4faf9186378c</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3555,7 +3551,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>e3f08231-50ae-509f-87c4-47ab24007ee8</tstamps>
+      <tstamps>18dc2ff0-9f81-5bed-8372-845d8c4a6b1f</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3581,7 +3577,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>3c63a372-7b99-57b4-9071-c2ad13e7826f</tstamps>
+      <tstamps>f3cc0897-755b-59be-b0ba-0c5b463aba60</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3607,7 +3603,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>8ef37711-02c2-5080-bbf1-1222eb538650</tstamps>
+      <tstamps>ce3fed8d-b756-59a0-928d-d91564d972c6</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3633,7 +3629,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>0d41059b-f977-5733-8eba-34dbfd836632</tstamps>
+      <tstamps>559fabec-a789-5cae-a606-180ec69c8351</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3659,7 +3655,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>2dc3a1b7-6f99-5feb-90ef-2339fbc03ce2</tstamps>
+      <tstamps>25afbc6f-a366-5bab-b7b0-f1cee475a266</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3685,7 +3681,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>6f52aeee-eb18-5b7d-8588-15d2af9083c2</tstamps>
+      <tstamps>9ceb0b07-a2e1-5672-9773-ad7f2871b5b7</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3711,7 +3707,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>004fef0c-eaec-545b-b359-addfc0d49182</tstamps>
+      <tstamps>d04e0256-2fa7-5246-86e3-d08696a03b6a</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3737,7 +3733,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>4b5289e1-cd38-5704-8b8f-9ff2ac132d81</tstamps>
+      <tstamps>75bd5843-4d13-5d3e-aa60-cf9e0758762d</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3763,7 +3759,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>8da646d1-8eb3-5f41-ab10-247b90c3981e</tstamps>
+      <tstamps>5b27c6f1-61c8-54ee-ab4f-1c9cca3db49d</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3789,7 +3785,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>ec41b921-9b07-56ce-914c-9899d484da59</tstamps>
+      <tstamps>73cef20c-6e5b-55a8-b117-d4d9e09104d5</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3815,7 +3811,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>f3937f0c-3068-52d2-8cf6-f783f2b743cb</tstamps>
+      <tstamps>b06d30f5-10b1-5ff6-9856-44311a72b461</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3841,7 +3837,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>1eba2f13-0613-5b85-b2c6-35bdc91d2644</tstamps>
+      <tstamps>c480b090-4441-538a-83dd-fac5cd859259</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3867,7 +3863,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>7a9f0cf1-c758-5aa9-91e3-a0f89b41dddb</tstamps>
+      <tstamps>e7a849fa-f7c7-548c-a9a0-154f2ffaa617</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3893,7 +3889,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>2e41aed2-2481-503d-abdf-ceec26fa5781</tstamps>
+      <tstamps>d0e446fe-0bf7-5aa1-a897-06410ba74542</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3919,7 +3915,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>26c35a1f-d6f4-58d6-871b-268a6499cf7d</tstamps>
+      <tstamps>7328d13d-b3e6-5de5-b6d0-311b2248777c</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3945,7 +3941,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>7860fad5-6999-5b7c-a388-48b71e245f65</tstamps>
+      <tstamps>3a258110-4973-5b0e-9add-5994ec100d3d</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3971,7 +3967,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>977d1147-8d88-5baa-a324-ccdcfb7bcaa8</tstamps>
+      <tstamps>19d01256-e3b5-5db0-b8f4-0945b06421d6</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -3997,7 +3993,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>55e9a4b2-be4e-5407-b85d-67a9985364b7</tstamps>
+      <tstamps>fbbec3ab-919c-52be-b17f-136e8e10d5e2</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -4023,7 +4019,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>9b74dd17-2d57-5728-8839-8ef26f7de94d</tstamps>
+      <tstamps>b14e4fab-7e3b-5369-9259-a040eb24a291</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -4049,7 +4045,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>c1743230-062a-5d16-b52e-58d2fc3c6592</tstamps>
+      <tstamps>5d436a28-86ee-5ed4-8d00-364df51e2361</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -4075,7 +4071,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>b2dcba2c-63ef-5b7e-abf6-d21af366a501</tstamps>
+      <tstamps>8ab40981-b524-58d2-94bd-c4c835cbc930</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -4101,7 +4097,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>7a1e424a-be69-5f48-9d19-5b46fbcee2c5</tstamps>
+      <tstamps>e973471c-a1ad-5ab7-a291-ac1df9cd2bd6</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -4127,7 +4123,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>63fb20c7-0a45-5193-8f64-cd9ec9aae904</tstamps>
+      <tstamps>119e0971-9707-5ae0-a47b-866ebeb6a5ae</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -4153,7 +4149,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>22bc2ca7-f619-562c-b2d0-3da560cf2dcb</tstamps>
+      <tstamps>fadfa921-8950-5a41-b693-b1402f96b5ab</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -4179,7 +4175,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>b7aba3e2-8c99-5865-8c49-e96e2da0031a</tstamps>
+      <tstamps>3e454921-b846-5b92-a832-ded243e1d787</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -4205,7 +4201,7 @@
       <property name="Sheetname" value="worxboard-ergo-mx"/>
       <property name="Sheetfile" value="worxboard-ergo-mx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>0d76ee34-65d0-5ae0-ac0e-5813cb02f36f</tstamps>
+      <tstamps>62c7e8b2-ad37-592b-a071-336ee00f8ca2</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -4689,24 +4685,6 @@
         <pin num="SH" name="SHIELD" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="Connector_Generic" part="Conn_01x03">
-      <description>Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
-      <footprints>
-        <fp>Connector*:*_1x??_*</fp>
-      </footprints>
-      <fields>
-        <field name="Reference">J</field>
-        <field name="Value">Conn_01x03</field>
-        <field name="Footprint"/>
-        <field name="Datasheet"/>
-        <field name="Description">Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)</field>
-      </fields>
-      <pins>
-        <pin num="1" name="Pin_1" type="passive"/>
-        <pin num="2" name="Pin_2" type="passive"/>
-        <pin num="3" name="Pin_3" type="passive"/>
-      </pins>
-    </libpart>
     <libpart lib="Connector_Generic" part="Conn_01x05">
       <description>Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
       <footprints>
@@ -4725,6 +4703,25 @@
         <pin num="3" name="Pin_3" type="passive"/>
         <pin num="4" name="Pin_4" type="passive"/>
         <pin num="5" name="Pin_5" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector_Generic_MountingPin" part="Conn_01x03_MountingPin">
+      <description>Generic connectable mounting pin connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <footprints>
+        <fp>Connector*:*_1x??-1MP*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x03_MountingPin</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Generic connectable mounting pin connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="MP" name="MountPin" type="passive"/>
       </pins>
     </libpart>
     <libpart lib="Device" part="C">
@@ -4993,6 +4990,21 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
+    <libpart lib="Switch" part="SW_SPDT">
+      <description>Switch, single pole double throw</description>
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">SW_SPDT</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Switch, single pole double throw</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A" type="passive"/>
+        <pin num="2" name="B" type="passive"/>
+        <pin num="3" name="C" type="passive"/>
+      </pins>
+    </libpart>
     <libpart lib="worxboard" part="SW_Push_MX">
       <description>MX key switch in a Kailh hot-swap socket</description>
       <fields>
@@ -5038,6 +5050,9 @@
     </library>
     <library logical="Connector_Generic">
       <uri>${KICAD10_SYMBOL_DIR}/Connector_Generic.kicad_sym</uri>
+    </library>
+    <library logical="Connector_Generic_MountingPin">
+      <uri>${KICAD10_SYMBOL_DIR}/Connector_Generic_MountingPin.kicad_sym</uri>
     </library>
     <library logical="Device">
       <uri>${KICAD10_SYMBOL_DIR}/Device.kicad_sym</uri>
@@ -5088,7 +5103,7 @@
       <node ref="C8" pin="1" pintype="passive"/>
       <node ref="C9" pin="1" pintype="passive"/>
       <node ref="J4" pin="3" pinfunction="Pin_3_3" pintype="passive"/>
-      <node ref="J6" pin="3" pinfunction="Pin_3_3" pintype="passive"/>
+      <node ref="J6" pin="3" pinfunction="C_3" pintype="passive"/>
       <node ref="R10" pin="2" pintype="passive"/>
       <node ref="R40" pin="2" pintype="passive"/>
       <node ref="R41" pin="2" pintype="passive"/>
@@ -5139,14 +5154,14 @@
       <node ref="SK116" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK131" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK146" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="U1" pin="8" pinfunction="GPIO6_8" pintype="bidirectional"/>
+      <node ref="U1" pin="38" pinfunction="GPIO26/ADC0_38" pintype="bidirectional"/>
     </net>
     <net code="11" name="COL1" class="Default">
       <node ref="SK102" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK117" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK132" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="SK147" pin="1" pinfunction="1_1" pintype="passive"/>
-      <node ref="U1" pin="9" pinfunction="GPIO7_9" pintype="bidirectional"/>
+      <node ref="U1" pin="39" pinfunction="GPIO27/ADC1_39" pintype="bidirectional"/>
     </net>
     <net code="12" name="COL2" class="Default">
       <node ref="SK103" pin="1" pinfunction="1_1" pintype="passive"/>
@@ -5229,15 +5244,15 @@
     </net>
     <net code="25" name="DISP_CS" class="Default">
       <node ref="J4" pin="5" pinfunction="Pin_5_5" pintype="passive"/>
-      <node ref="U1" pin="40" pinfunction="GPIO28/ADC2_40" pintype="bidirectional"/>
+      <node ref="U1" pin="7" pinfunction="GPIO5_7" pintype="bidirectional"/>
     </net>
     <net code="26" name="DISP_MOSI" class="Default">
       <node ref="J4" pin="1" pinfunction="Pin_1_1" pintype="passive"/>
-      <node ref="U1" pin="39" pinfunction="GPIO27/ADC1_39" pintype="bidirectional"/>
+      <node ref="U1" pin="9" pinfunction="GPIO7_9" pintype="bidirectional"/>
     </net>
     <net code="27" name="DISP_SCK" class="Default">
       <node ref="J4" pin="2" pinfunction="Pin_2_2" pintype="passive"/>
-      <node ref="U1" pin="38" pinfunction="GPIO26/ADC0_38" pintype="bidirectional"/>
+      <node ref="U1" pin="8" pinfunction="GPIO6_8" pintype="bidirectional"/>
     </net>
     <net code="28" name="GND" class="Default">
       <node ref="C1" pin="2" pintype="passive"/>
@@ -5277,7 +5292,8 @@
       <node ref="J3" pin="SH" pinfunction="SHIELD_SH" pintype="passive"/>
       <node ref="J4" pin="4" pinfunction="Pin_4_4" pintype="passive"/>
       <node ref="J5" pin="3" pinfunction="Pin_3_3" pintype="passive"/>
-      <node ref="J7" pin="3" pinfunction="Pin_3_3" pintype="passive"/>
+      <node ref="J5" pin="MP" pinfunction="MountPin_MP" pintype="passive"/>
+      <node ref="J7" pin="3" pinfunction="C_3" pintype="passive"/>
       <node ref="R25" pin="2" pintype="passive"/>
       <node ref="R26" pin="2" pintype="passive"/>
       <node ref="R28" pin="2" pintype="passive"/>
@@ -5494,21 +5510,21 @@
       <node ref="SK148" pin="2" pinfunction="2_2" pintype="passive"/>
     </net>
     <net code="77" name="MUX_S0" class="Default">
-      <node ref="J6" pin="2" pinfunction="Pin_2_2" pintype="passive"/>
+      <node ref="J6" pin="2" pinfunction="B_2" pintype="passive"/>
       <node ref="R40" pin="1" pintype="passive"/>
       <node ref="U7" pin="1" pinfunction="SEL0_1" pintype="input"/>
     </net>
     <net code="78" name="MUX_S0_FW" class="Default">
-      <node ref="J6" pin="1" pinfunction="Pin_1_1" pintype="passive"/>
+      <node ref="J6" pin="1" pinfunction="A_1" pintype="passive"/>
       <node ref="R42" pin="2" pintype="passive"/>
     </net>
     <net code="79" name="MUX_S1" class="Default">
-      <node ref="J7" pin="2" pinfunction="Pin_2_2" pintype="passive"/>
+      <node ref="J7" pin="2" pinfunction="B_2" pintype="passive"/>
       <node ref="R41" pin="1" pintype="passive"/>
       <node ref="U7" pin="2" pinfunction="SEL1_2" pintype="input"/>
     </net>
     <net code="80" name="MUX_S1_FW" class="Default">
-      <node ref="J7" pin="1" pinfunction="Pin_1_1" pintype="passive"/>
+      <node ref="J7" pin="1" pinfunction="A_1" pintype="passive"/>
       <node ref="R43" pin="2" pintype="passive"/>
     </net>
     <net code="81" name="QSPI_SCLK" class="Default">
@@ -5767,8 +5783,8 @@
     <net code="123" name="unconnected-(U1-GPIO4-Pad6)" class="Default">
       <node ref="U1" pin="6" pinfunction="GPIO4_6" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="124" name="unconnected-(U1-GPIO5-Pad7)" class="Default">
-      <node ref="U1" pin="7" pinfunction="GPIO5_7" pintype="bidirectional+no_connect"/>
+    <net code="124" name="unconnected-(U1-GPIO28/ADC2-Pad40)" class="Default">
+      <node ref="U1" pin="40" pinfunction="GPIO28/ADC2_40" pintype="bidirectional+no_connect"/>
     </net>
     <net code="125" name="unconnected-(U3-NC-Pad4)" class="Default">
       <node ref="U3" pin="4" pinfunction="NC_4" pintype="no_connect"/>

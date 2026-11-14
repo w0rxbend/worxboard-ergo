@@ -454,12 +454,12 @@
     {
       "path": "firmware/artifacts/build-report.json",
       "bytes": 375,
-      "sha256": "267647316b9df0c85823db5740ba8157dddc934151d1d4cfa94054894748f16c"
+      "sha256": "e588257198a5d93f4d235f94794502e5d9ae8ceb455c729e8a849bf3cd3922ba"
     },
     {
       "path": "firmware/artifacts/worxboard-ergo.uf2",
-      "bytes": 418304,
-      "sha256": "f27a2651ec8c12ce41b70d435c10f4e96a83a0bef5ccd3e60ec847379fea0b81"
+      "bytes": 417792,
+      "sha256": "41760a9557e961d1450effc7dde690217c9d2ac55aba34ab9cbd1d801bf8ddd5"
     },
     {
       "path": "pcb/choc/fp-lib-table",
@@ -518,8 +518,8 @@
     },
     {
       "path": "pcb/mx/placement.json",
-      "bytes": 22713,
-      "sha256": "1a4185c707952912ae5fe0b2366239e7719fa56b63a57c8ac9e9a43af863ec5c"
+      "bytes": 22663,
+      "sha256": "cf744188562bd64d64c9bdb9099d424485a4015c85e205b3c6a17006f6aa963a"
     },
     {
       "path": "pcb/mx/schematic-preview/worxboard-ergo-mx.svg",
@@ -543,13 +543,13 @@
     },
     {
       "path": "pcb/mx/worxboard-ergo-mx.kicad_sch",
-      "bytes": 479761,
-      "sha256": "026458009a1d38d78e08efe7e03e84f000643ebfe710b3f2d71d809a2f9850aa"
+      "bytes": 483849,
+      "sha256": "9b7e6293ab4bfdded968a9bcc04ab1eb6e6185dcecfbbd84e0f1a3882e00885e"
     },
     {
       "path": "pcb/mx/worxboard-ergo-mx.net",
-      "bytes": 229670,
-      "sha256": "047ff9d3e4e3bc715291563ec4f3e5e54a2769ae21eaf1f28bdd8a8f44c1cbff"
+      "bytes": 230293,
+      "sha256": "dac62f1d1c3913a4a58b0e594a2ff56c4cadd29db861f0397d993051a07b061d"
     },
     {
       "path": "pcb/reports/choc-connectivity.json",
@@ -588,8 +588,8 @@
     },
     {
       "path": "pcb/reports/mx-routing.json",
-      "bytes": 1748,
-      "sha256": "cc2e9513c47c57bf9c6924d18112aa1c0b3fee7c88b8ba66fd3bae4bcdf113ee"
+      "bytes": 1820,
+      "sha256": "53c46c764fdfda4422b0121890afcaef528ae14a685b0a7d49da219ebf9770e1"
     }
   ]
 }

@@ -7,6 +7,6 @@
   "lcd_driver": "sharp,ls0xx",
   "studio_transport": "USB CDC ACM",
   "hardware_tested": false,
-  "uf2_bytes": 418304,
-  "uf2_sha256": "f27a2651ec8c12ce41b70d435c10f4e96a83a0bef5ccd3e60ec847379fea0b81"
+  "uf2_bytes": 417792,
+  "uf2_sha256": "41760a9557e961d1450effc7dde690217c9d2ac55aba34ab9cbd1d801bf8ddd5"
 }

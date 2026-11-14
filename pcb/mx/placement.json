@@ -413,32 +413,32 @@
     "footprint": "Capacitor_SMD:C_0402_1005Metric"
   },
   "R42": {
-    "x": 32.8,
-    "y": -24.0,
-    "angle": 90.0,
+    "x": 31.8,
+    "y": -20.2,
+    "angle": 180.0,
     "side": "B",
     "footprint": "Resistor_SMD:R_0402_1005Metric"
   },
   "R43": {
-    "x": 32.8,
-    "y": -30.0,
-    "angle": 90.0,
+    "x": 28.2,
+    "y": -28.6,
+    "angle": -90.0,
     "side": "B",
     "footprint": "Resistor_SMD:R_0402_1005Metric"
   },
   "J6": {
-    "x": 36.0,
+    "x": 34.0,
     "y": -24.0,
-    "angle": 90.0,
-    "side": "F",
-    "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
+    "angle": 0.0,
+    "side": "B",
+    "footprint": "Button_Switch_SMD:SW_SPDT_PCM12"
   },
   "J7": {
-    "x": 36.0,
+    "x": 34.0,
     "y": -30.0,
-    "angle": 90.0,
-    "side": "F",
-    "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
+    "angle": 0.0,
+    "side": "B",
+    "footprint": "Button_Switch_SMD:SW_SPDT_PCM12"
   },
   "J4": {
     "x": 16.5,
@@ -451,8 +451,8 @@
     "x": 44.0,
     "y": -36.0,
     "angle": 90.0,
-    "side": "F",
-    "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
+    "side": "B",
+    "footprint": "Connector_JST:JST_SH_SM03B-SRSS-TB_1x03-1MP_P1.00mm_Horizontal"
   },
   "SK101": {
     "x": -21.38,

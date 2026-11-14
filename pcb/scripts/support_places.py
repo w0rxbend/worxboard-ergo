@@ -3,15 +3,16 @@
 
 Component side follows measured height. The Choc plate underside is 1.0 mm
 above the PCB and the chassis floor is 4.0 mm below it, so every SMD part
-sits on B.Cu. Only the receptacles (the case mouths are on the top side)
-and the through-hole headers are on F.Cu. place.py is the only consumer.
+sits on B.Cu, the J6/J7 slide switches and the J5 connector included. Only the
+receptacles (the case mouths are on the top side) and the J4 display position are
+on F.Cu. place.py is the only consumer.
 
 ANCHORS are absolute layout millimetres. SATELLITES are seated by place.py
 as close as possible to one pad of their host, in table order.
 """
 from layout.model import DISPLAY, USB_RECEPTACLE_L, mouths
 
-TOP_SIDE = frozenset({"J1", "J2", "J3", "J4", "J5", "J6", "J7"})
+TOP_SIDE = frozenset({"J1", "J2", "J3", "J4"})
 MOUTH_FACES_REAR = 180.0          # the stock footprint opens toward +y; the case mouths are at the rear
 HEADER_PITCH = 2.54
 LCD_HEADER_INSET = 1.5            # nice!view pin row inside the module's short edge; check against a real module
@@ -40,7 +41,7 @@ def anchors():
         "U2": (-5.5, -43.5, 180.0),
         "U3": (30.0, -46.0, 0.0),
         "SW1": (-34.0, -22.0, 0.0), "SW2": (-44.0, -22.0, 0.0),
-        "J5": (44.0, -36.0, 90.0), "J6": (36.0, -24.0, 90.0), "J7": (36.0, -30.0, 90.0),
+        "J5": (44.0, -36.0, 90.0), "J6": (34.0, -24.0, 0.0), "J7": (34.0, -30.0, 0.0),   # J6/J7: 6.7 mm slide switches side by side
         "TP10": (-24.0, -22.0, 0.0),
     }
 

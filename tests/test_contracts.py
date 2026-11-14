@@ -48,7 +48,8 @@ def test_keywells_are_orthogonal():
 
 def test_electronics_and_firmware_contract():
  named=[net for net in GPIO_NETS if net]
- assert len(GPIO_NETS)==30 and len(named)==len(set(named))==28 and GPIO_NETS[4:6]==[None,None]
+ assert len(GPIO_NETS)==30 and len(named)==len(set(named))==28 and GPIO_NETS[4] is None and GPIO_NETS[28] is None
+ assert GPIO_NETS[5:8]==['DISP_CS','DISP_SCK','DISP_MOSI'] and GPIO_NETS[26:28]==['COL0','COL1']
  for variant in variants:
   parts=design(variant);byref={p.ref:p for p in parts}
   assert len(parts)==len(byref)
@@ -70,8 +71,12 @@ def test_electronics_and_firmware_contract():
   assert byref['R41'].pins=={'1':'MUX_S1','2':'3V3'}
   assert byref['J6'].pins=={'1':'MUX_S0_FW','2':'MUX_S0','3':'3V3'}
   assert byref['J7'].pins=={'1':'MUX_S1_FW','2':'MUX_S1','3':'GND'}
- text=(ROOT/'firmware/boards/worxbend/worxboard_ergo/worxboard-ergo-layout.dtsi').read_text()
- assert text.count('RC(')==48
+ from tools.firmware_layout import pins_dtsi
+ board=ROOT/'firmware/boards/worxbend/worxboard_ergo'
+ assert (board/'worxboard-ergo-pins.dtsi').read_text()==pins_dtsi(), 'board pins drifted from GPIO_NETS: run make generate'
+ assert '#include "worxboard-ergo-pins.dtsi"' in (board/'worxboard_ergo_rp2040.dts').read_text()
+ text=(board/'worxboard-ergo-layout.dtsi').read_text()
+ assert text.count('RC(')==48 and 'rows = <4>' in text
  for i in range(48):assert f'RC({i//15},{i%15})' in text
 
 def test_usb_input_selection_behavior(tmp_path):

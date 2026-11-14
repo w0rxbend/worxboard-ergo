@@ -1,15 +1,17 @@
 # Electronics and USB architecture
 
-A bare RP2040 scans a 4×15 matrix with one 1N4148W diode per key: 48 keys fill ROW0–2 and three places of ROW3. Column -> switch -> diode anode -> diode cathode -> row gives `col2row`. Rows GP0–3 are inputs with pull-down; columns GP6–20 are outputs. GP4 and GP5 are left unconnected on the board; the firmware still declares six rows. A W25Q128JVSIQ provides 16 MiB of QSPI flash; the final 512 KiB is reserved for settings. A 12 MHz crystal, RP2040 supply decoupling, AP2112K 3.3 V regulator, reset, BOOT and SWD test points are included in the schematic.
+A bare RP2040 scans a 4×15 matrix with one 1N4148W diode per key: 48 keys fill ROW0–2 and three places of ROW3. Column -> switch -> diode anode -> diode cathode -> row gives `col2row`. Rows GP0–3 are inputs with pull-down; columns COL0–1 on GP26–27 and COL2–14 on GP8–20 are outputs. GP4 and GP28 are left unconnected. `tools/firmware_layout.py` writes the matrix and display pins of the ZMK board files from `GPIO_NETS` in `pcb/scripts/design.py`. A W25Q128JVSIQ provides 16 MiB of QSPI flash; the final 512 KiB is reserved for settings. A 12 MHz crystal, RP2040 supply decoupling, AP2112K 3.3 V regulator, reset, BOOT and SWD test points are included in the schematic.
 
 | GPIO | Function |
 |---|---|
 | 0–3 | Matrix ROW0–3 |
-| 4–5 | Not connected |
-| 6–20 | Matrix COL0–14 |
+| 4 | Not connected |
+| 5 / 6 / 7 | LCD CS (active high) / SPI0 SCK / SPI0 MOSI |
+| 8–20 | Matrix COL2–14 |
 | 21 / 22 | USB mux SEL0 / SEL1 |
 | 23 / 24 / 25 | Left / center / right pre-diode VBUS sense |
-| 26 / 27 / 28 | SPI1 SCK / MOSI / LCD CS (active high) |
+| 26 / 27 | Matrix COL0 / COL1 |
+| 28 | Not connected |
 | 29 | Reserved RGB output header; not enabled in firmware |
 
 Each USB-C receptacle has independent CC1/CC2 5.1 kΩ sink resistors, its own D+/D− ESD clamp, and a B5819W diode from its VBUS to VSYS. No host VBUS rails are directly tied. The diode OR permits the controller to remain powered if several inputs are connected. Diode leakage, voltage drop, attach current and transient behavior need measurement; this is not a certified multi-host product. Ground is common; there is no galvanic isolation.
@@ -22,11 +24,11 @@ USB inputs operate at USB 2.0 full speed through the RP2040 PHY. No PD, charging
 
 The committed `.kicad_pcb` files have placed parts and **zero tracks**. Routing is in progress; [verification.md](verification.md) records where it stands. There is no fabrication package. No board has been built.
 
-The plate has a 2.6 × 1.1 mm window south of every switch for a later SK6812MINI-E. The schematic does not stuff that chain. GP4 and GP5 are free on this board and could drive a load-switch enable in a later revision; none is fitted. Forty-eight addressable LEDs at about 1 mA each would exceed the 2.5 mA USB suspend budget even when dark, and full-white current is far beyond USB 2.0. The RGB header still exposes VSYS, GP29 and ground for a bench experiment. A populated chain needs a level shifter, per-LED decoupling, a default-off power switch, and a measured current limit before it can be routed. Do not attach an unrestricted LED chain directly to this header.
+The plate has a 2.6 × 1.1 mm window south of every switch for a later SK6812MINI-E. The schematic does not stuff that chain. GP4 and GP28 are free on this board and could drive a load-switch enable in a later revision; none is fitted. Forty-eight addressable LEDs at about 1 mA each would exceed the 2.5 mA USB suspend budget even when dark, and full-white current is far beyond USB 2.0. The RGB header still exposes VSYS, GP29 and ground for a bench experiment. A populated chain needs a level shifter, per-LED decoupling, a default-off power switch, and a measured current limit before it can be routed. Do not attach an unrestricted LED chain directly to this header.
 
-J6 and J7 each take a single 2-pin shunt on a 3-pin header. Put both shunts on pins 1–2 for normal firmware selection. For ROM flashing, disconnect USB, move both to pins 2–3, and use only the center USB input. This fixes SEL0=1 and SEL1=0 while disconnecting the firmware control signals, so ROM USB can work without executing the selector code. Hold BOOT while pressing RESET, then copy UF2 to RPI-RP2. Disconnect USB before restoring both shunts to 1–2. Both settings and physical pin numbering must be checked during A1; SWD remains the first bring-up/recovery method. The 1 kΩ firmware-side resistors also limit accidental drive contention during jumper mistakes.
+J6 and J7 are SPDT slide switches (C&K PCM12SMTR, 1.4 mm tall) on the bottom of the board; pin 2 of each is the common. Set both to the 1–2 side (RUN) for normal firmware selection. For ROM flashing, disconnect USB, set both to the 2–3 side (ROM), and use only the center USB input. This fixes SEL0=1 and SEL1=0 while disconnecting the firmware control signals, so ROM USB can work without executing the selector code. Hold BOOT while pressing RESET, then copy UF2 to RPI-RP2. Disconnect USB before setting both back to RUN. The switches are reachable only with the board out of the chassis. Both settings and the throw direction on the flipped footprint must be checked during A1; SWD remains the first bring-up/recovery method. The 1 kΩ firmware-side resistors also limit drive contention while a switch is between positions.
 
-The UF2 is a compiled development artifact, not a claim of working hardware. Do not move shunts while the board is powered.
+The UF2 is a compiled development artifact, not a claim of working hardware. Do not move J6 or J7 while the board is powered.
 
 ```mermaid
 flowchart LR

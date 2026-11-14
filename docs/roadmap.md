@@ -19,7 +19,7 @@ Immediate engineering tasks:
 - [ ] Choose the crystal: the fitted YXC part is CL 18 pF, not the ABM8-272-T3 the RP2040 design guide names.
 
 - [ ] Review three-port VBUS diode OR, mux analog path 3, ESD return, USB attach current and sense thresholds.
-- [ ] Review and test the J6/J7 hardware override: RUN shunts 1–2, center-port ROM shunts 2–3, disconnected firmware control pins.
+- [ ] Review and test the J6/J7 hardware override: slide switches, RUN on 1–2, center-port ROM on 2–3, disconnected firmware control pins.
 - [ ] Move support components next to the MCU/regulator/crystal/connectors, check courtyards and mechanical stack; then route both boards.
 - [ ] Verify Choc footprint pin mapping, socket side, plate opening, PCB thickness and source stable wide keycaps/stabilizers. Add matching PCB stabilizer clearance holes, and adjust the familiar layout if necessary.
 - [ ] Measure actual LCD breakout/header height and mounting, then make the module retention under the top-cover window functional.

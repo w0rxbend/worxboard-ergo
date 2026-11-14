@@ -7,7 +7,7 @@ mkdir -p build/zmk-ws/config build/firmware
 cp firmware/config/west.yml build/zmk-ws/config/west.yml
 # Set ERGO_ZMK_WORKSPACE to an already initialized, pinned west workspace to avoid re-fetching.
 ws=${ERGO_ZMK_WORKSPACE:-$repo/build/zmk-ws}
-docker run --rm -u "$(id -u):$(id -g)" -e HOME=/tmp -e ZEPHYR_SDK_INSTALL_DIR=/opt/zephyr-sdk-0.16.9 \
+docker run --rm --cpus "${FIRMWARE_CPUS:-4}" -u "$(id -u):$(id -g)" -e HOME=/tmp -e ZEPHYR_SDK_INSTALL_DIR=/opt/zephyr-sdk-0.16.9 \
  -v "$repo:/repo" -v "$ws:/ws" -w /ws "$image" bash -c '
  set -euo pipefail
  if [ ! -d .west ]; then west init -l config; fi

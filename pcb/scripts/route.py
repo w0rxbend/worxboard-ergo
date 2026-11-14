@@ -1,12 +1,13 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 """Add copper to the placed seed.
 
-    route.py <variant> critical   seed -> USB pairs, crystal, QSPI, power, plane vias, zones; writes the DSN
-    route.py <variant> finish     critical board + the committed autorouter session -> filled, final board
+    route.py <variant> critical   seed -> USB pairs, crystal, QSPI, power, planes, RP2040 fan-out
+    route.py <variant> grid       critical board -> every other net by the grid router (resumable); writes the DSN
+    route.py <variant> finish     grid board + the committed autorouter session -> stitched, filled, final board
 
-The first stage is deterministic. The autorouter only sees what is left: the key matrix and slow GPIO.
+Every stage is deterministic. The autorouter only sees what the grid router could not join.
 """
-import hashlib,json,shutil,sys
+import hashlib,json,os,shutil,sys
 from fnmatch import fnmatch
 from math import atan2,copysign,cos,hypot,radians,sin
 from pathlib import Path
@@ -47,8 +48,10 @@ JACK_TAP_REACH=6.0       # a clamp or the second receptacle pad may tap a pair l
 JACK_REACH=10.0          # pads of a pair net this close to the receptacle are joined near it: pads and clamp
 MUX_REACH=8.0            # and this close to the mux, near the mux
 # (states one join may expand before it counts as blocked, weight on the estimate): a weighted search finds
-# a slightly longer path in far fewer states; the second try is for the nets the first left open.
-COMPLETE_TRIES=((1_500_000,1.5),(6_000_000,2.5))
+# a slightly longer path in far fewer states.
+COMPLETE_SEARCH=(1_500_000,1.5)
+RIP_LIMIT=3              # a net torn up this often stays where it is
+CHECKPOINT_EVERY=5       # grid-stage joins between saved checkpoints
 COMPLETE_REACH=10.0     # a join after the autorouter may stray this far outside the box of its two ends
 STITCH_PITCH=10.0        # ground stitching grid
 STITCH_REACH=2.0         # a stitching via may move this far off its grid point to find room
@@ -62,6 +65,7 @@ CONTROLLER_NETS=(
     ('QSPI_*',rules.TRACK,B_ONLY),('USB_D[PM]',rules.TRACK,B_ONLY),             # 0.4 mm pitch pads: these few millimetres stay at pad width
     ('USB_MUX_D[PM]',rules.TRACK,B_ONLY),
 )
+CORE_STUB_PINS=('23',)   # DVDD pin 23 sits between IOVDD and SWCLK, in front of the crystal routes
 CORE_VIA_AT_CAP=()       # 1V1 pins whose via sits beside their capacitor rather than inside the pad row
 CORE_LOCAL=1.0           # a 1V1 pin meets its capacitor within this much of the two pads
 CORE_MARGIN=5.0          # 1V1 stays this close to the RP2040 courtyard: across the package on F.Cu, not around it
@@ -89,26 +93,47 @@ class Copper:
     def __init__(self,board):
         self.board=board;self.obstacles=maze.Obstacles(rules.CLEARANCE,rules.HOLE_TO_HOLE)
         self.pads={};self.pad_shapes=[];self.routes=[];self.escapes=[]
+        self.base=[]               # (layers, net, shape) or (x, y, drill): everything that is not a route
         for fp in board.GetFootprints():
             for pad in fp.Pads():self._register(fp.GetReference(),pad)
         edge=board.GetBoardEdgesBoundingBox()
         ring=_edge_ring().buffer(rules.EDGE_CLEARANCE-rules.CLEARANCE)
-        self.obstacles.add(maze.LAYERS,None,ring)
+        self._fixed(maze.LAYERS,None,ring)
         self.bounds=(*mm(edge.GetOrigin()),*mm(edge.GetEnd()))
         self.pad_tree=shapely.STRtree(self.pad_shapes)
         self.no_plane_via=unary_union([_keep_clear_box(board,ref,reach) for ref,reach,_ in KEEP_CLEAR])
-        for jack,_ in USB_PORTS:self.obstacles.add(('F',),None,_shell_body(board,jack))
+        for jack,_ in USB_PORTS:self._fixed(('F',),None,_shell_body(board,jack))
+
+    def _fixed(self,layers,net,shape):
+        self.base.append((layers,net,shape));self.obstacles.add(layers,net,shape)
+
+    def _fixed_hole(self,x,y,drill):
+        self.base.append((x,y,drill));self.obstacles.add_hole(x,y,drill)
+
+    def obstacles_for(self,routes):
+        """A fresh obstacle model: everything fixed plus these routes."""
+        model=maze.Obstacles(rules.CLEARANCE,rules.HOLE_TO_HOLE)
+        for item in self.base:
+            if len(item)==3 and isinstance(item[0],tuple):model.add(*item)
+            else:model.add_hole(*item)
+        for route in routes:model.add_route(route,rules.VIA_D,rules.VIA_DRILL)
+        return model
+
+    def rip(self,nets):
+        """Tear up the rippable routes of these nets; their pads become open islands again."""
+        self.routes=[r for r in self.routes if not (r.net in nets and r.rippable)]
+        self.obstacles=self.obstacles_for(self.routes)
 
     def _register(self,ref,pad):
-        if pad.GetDrillSizeX()>0:self.obstacles.add_hole(*mm(pad.GetPosition()),max(mm(pad.GetDrillSize())))
+        if pad.GetDrillSizeX()>0:self._fixed_hole(*mm(pad.GetPosition()),max(mm(pad.GetDrillSize())))
         if pad.GetAttribute()==p.PAD_ATTRIB_NPTH:
             keep=max(mm(pad.GetDrillSize()))/2+rules.HOLE_CLEARANCE-rules.CLEARANCE
-            self.obstacles.add(maze.LAYERS,None,Point(mm(pad.GetPosition())).buffer(keep))
+            self._fixed(maze.LAYERS,None,Point(mm(pad.GetPosition())).buffer(keep))
             return
         layers=tuple(name for name,layer in LAYER.items() if pad.IsOnLayer(layer))
         if not layers:return                      # paste-only apertures carry no copper
         shape=polygon_of(pad,LAYER[layers[0]])
-        self.obstacles.add(layers,pad.GetNetname(),shape)
+        self._fixed(layers,pad.GetNetname(),shape)
         self.pad_shapes.append(shape)
         if pad.GetNumber():self.pads.setdefault((ref,pad.GetNumber()),[]).append((pad,layers,shape))
 
@@ -140,17 +165,19 @@ class Copper:
 
     def write(self,locked=False):
         """Turn every committed route into board tracks and vias. Locked items go to the DSN as protected
-        wiring, so the autorouter cannot rip up the scripted copper."""
+        wiring, so the autorouter cannot rip up the scripted copper. locked=None locks every route the grid
+        router may not tear up, and leaves the rest unlocked so a later stage knows it may."""
         for route in self.routes:
+            lock=(not route.rippable) if locked is None else locked
             net=self.board.FindNet(route.net)
             for layer,points in route.lines:
                 for a,b in zip(points,points[1:]):
                     track=p.PCB_TRACK(self.board);track.SetStart(iu(*a));track.SetEnd(iu(*b))
                     track.SetWidth(p.FromMM(route.width));track.SetLayer(LAYER[layer]);track.SetNet(net)
-                    track.SetLocked(locked);self.board.Add(track)
+                    track.SetLocked(lock);self.board.Add(track)
             for x,y in route.vias:
                 via=p.PCB_VIA(self.board);via.SetPosition(iu(x,y));via.SetWidth(p.F_Cu,p.FromMM(rules.VIA_D))
-                via.SetDrill(p.FromMM(rules.VIA_DRILL));via.SetNet(net);via.SetLocked(locked);self.board.Add(via)
+                via.SetDrill(p.FromMM(rules.VIA_DRILL));via.SetNet(net);via.SetLocked(lock);self.board.Add(via)
 
 def _shell_body(board,ref):
     """The F.Cu side of a receptacle between its signal pad row and its mouth. Its metal shell sits on the
@@ -216,10 +243,12 @@ def connect_net(copper,net,width,layers,within=None,reach=6.0,greed=1.0,budget=N
         copper.commit(maze.to_route(path,net,width))
         tree|=island;tree.update(path)
 
-def escape_stubs(copper,ref,nets):
-    """A short straight track out of each fine-pitch pad, so a neighbour's route cannot bend across its exit."""
+def escape_stubs(copper,ref,nets,numbers=None):
+    """A short straight track out of each fine-pitch pad, so a neighbour's route cannot bend across its exit.
+    With numbers, only those pads of the part."""
     cx,cy=mm(copper.board.FindFootprintByReference(ref).GetPosition())
-    for entry in (e for net in nets for e in copper.pads_on(net) if ref_of(e[0])==ref):
+    for entry in (e for net in nets for e in copper.pads_on(net) if ref_of(e[0])==ref
+                  and (numbers is None or e[0].GetNumber() in numbers)):
         pad,layers,_=entry;x,y=mm(pad.GetPosition())
         dx,dy=(copysign(1,x-cx),0) if abs(x-cx)>abs(y-cy) else (0,copysign(1,y-cy))
         line=LineString([(x,y),(x+dx*ESCAPE,y+dy*ESCAPE)])
@@ -408,6 +437,8 @@ def route_core(copper):
         if number in CORE_VIA_AT_CAP:
             window=box(*unary_union([pin[2],cap_pad[2]]).bounds).buffer(CORE_LOCAL,join_style='mitre')
             connect_net(copper,'1V1',rules.TRACK,B_ONLY,within=window,reach=CORE_LOCAL)
+        elif number in CORE_STUB_PINS:
+            _via_out(copper,'1V1',pin,outside=package)   # at the end of its stub: inside, it takes IOVDD's spot
         else:
             try:
                 _via_out(copper,'1V1',pin,inside=package)    # inward first: outside, a via blocks neighbours' exits
@@ -426,11 +457,13 @@ def _package(copper,ref):
     yard=fp.GetCourtyard(p.B_CrtYd if fp.IsFlipped() else p.F_CrtYd).BBox()
     return box(*mm(yard.GetOrigin()),*mm(yard.GetEnd()))
 
-def _via_out(copper,net,entry,inside=None):
-    """A short stub from a pad to a new via, optionally only to a via inside a region."""
+def _via_out(copper,net,entry,inside=None,outside=None):
+    """A short stub from a pad to a new via, optionally only to a via inside, or outside, a region."""
     pad,_,shape=entry;starts=copper.terminal(entry);layer=starts[0][0]
     job=job_for({net},rules.TRACK,maze.LAYERS,reach=STUB_REACH)
-    sites=[n for n in _via_sites(copper,job,layer,shape) if inside is None or inside.covers(Point(maze.node_xy(n)))]
+    sites=[n for n in _via_sites(copper,job,layer,shape)
+           if (inside is None or inside.covers(Point(maze.node_xy(n))))
+           and (outside is None or not outside.covers(Point(maze.node_xy(n))))]
     path=maze.search(copper.obstacles,Job(job.nets,job.radius,job.via_radius,job.via_drill,(layer,),STUB_REACH),starts,sites) if sites else None
     if path is None:raise Unroutable(f'{net}: no via beside {ref_of(pad)} pad {pad.GetNumber()}')
     route=maze.to_route(path,net,rules.TRACK);route.vias.append(maze.node_xy(path[-1]))
@@ -461,6 +494,7 @@ def escape_vias(copper,ref,nets=None,pitch=ESCAPE_PITCH):
             blocked.append(f'{ref}.{pad.GetNumber()} {net}');continue
         placed.append(maze.node_xy(path[-1]))
         route=maze.to_route(path,net,rules.TRACK);route.vias.append(maze.node_xy(path[-1]))
+        route.rippable=True        # a boxed-in neighbour may take its spot; this pin then joins from its stub
         route.nodes=route.nodes+[('F' if layer=='B' else 'B',)+path[-1][1:]]
         copper.commit(route)
     return blocked
@@ -525,13 +559,15 @@ def critical(v):
     board=load_with_rules(v,'seed');copper=Copper(board)
     try:
         escape_stubs(copper,MUX,[net for _,name in USB_PORTS for net in (name+'_DP',name+'_DM')]+['USB_MUX_DP','USB_MUX_DM'])
-        # Every RP2040 GPIO pin leaves straight first, so no later route bends across a neighbour's exit.
-        escape_stubs(copper,MCU,[net for net in GPIO_NETS if net])
+        # Every RP2040 GPIO, debug, reset and DVDD pin leaves straight first, so no later route (the crystal's
+        # in particular) bends across a neighbour's exit.
+        escape_stubs(copper,MCU,[net for net in GPIO_NETS if net]+['SWCLK','SWDIO','RUN'])
+        escape_stubs(copper,MCU,['1V1'],numbers=CORE_STUB_PINS)
         # Crystal, QSPI and the RP2040-side USB first, from straight pin stubs. Then the supply vias, inside the
         # RP2040 pad row so they block no exit, before a receptacle pair can fence a clamp's ground pad. Then 1V1.
+        route_core(copper)                        # 1V1 vias before the crystal routes can fence pin 23
         route_groups(copper,CONTROLLER_NETS)      # the receptacle pairs then run around the controller
         exposed_pad_vias(copper);plane_vias(copper)
-        route_core(copper)
         lengths={}
         for jack,name in USB_PORTS:
             lengths[name]=route_usb_pair(copper,jack,name)
@@ -539,22 +575,47 @@ def critical(v):
             join_pair_locally(copper,jack,name)
         route_groups(copper,SUPPLY_NETS)
         escapes_blocked=escape_vias(copper,MCU)
-        # The 4 x 15 matrix is not laid out by physical rows: every row and column net spans both halves.
-        # Freerouting 2.5.0 oscillated on it (94 to 141 of 328 connections open in passes 1 to 8 of each trial).
-        # The grid router joins every remaining net here, short nets first, and leaves the autorouter the rest.
-        _,for_autorouter=complete(copper)
         add_planes(copper);add_shell_keepouts(copper)
     finally:
-        copper.write(locked=True)
+        copper.write(locked=None)      # escape vias stay unlocked: the grid stage may move them
         p.SaveBoard(str(work(v)/'critical.kicad_pcb'),board)     # a failed run leaves the copper so far to look at
-    if not p.ExportSpecctraDSN(board,str(work(v)/'board.dsn')):raise RuntimeError('DSN export failed')
     net_mm={}
     for route in copper.routes:net_mm[route.net]=round(net_mm.get(route.net,0)+route.length(),2)
     report={'usb_pair_mm':{name:[round(a,2),round(b,2)] for name,(a,b) in lengths.items()},
-            'scripted_tracks':len(board.GetTracks()),'scripted_net_mm':net_mm,'escape_vias_not_placed':escapes_blocked,
-            'left_for_autorouter':for_autorouter}
+            'scripted_tracks':len(board.GetTracks()),'scripted_net_mm':net_mm,'escape_vias_not_placed':escapes_blocked}
     (ROOT/f'pcb/reports/{v}-routing.json').write_text(json.dumps(report,indent=2,sort_keys=True)+'\n')
     print(v,'critical nets routed;',report['scripted_tracks'],'tracks and vias')
+
+def grid(v):
+    """Critical board -> every remaining non-plane net joined by the grid router with rip-up, then the DSN.
+
+    The 4 x 15 matrix is not laid out by physical rows: every row and column net spans both halves, and
+    Freerouting 2.5.0 oscillated on it (94 to 141 of 328 connections open in passes 1 to 8 of each trial).
+    This stage takes about an hour per board. It works in segments of CHECKPOINT_EVERY joins; each segment
+    starts from the board the last one saved, so a run that is cut off resumes where it stopped and ends
+    with the same copper as one that was not. The checkpoint is valid only for the critical board it began from."""
+    source=work(v)/'critical.kicad_pcb';done_board=work(v)/'grid.kicad_pcb';stamp=work(v)/'grid.json'
+    key=hashlib.sha256(source.read_bytes()).hexdigest()
+    saved=json.loads(stamp.read_text()) if stamp.exists() and done_board.exists() else {}
+    if saved.get('critical_sha256')!=key:saved={'critical_sha256':key,'state':{'ripped':{},'failed':{}},'done':False,'joined':[]}
+    print(v,'grid stage','resumes from its checkpoint' if saved['joined'] or saved['done'] else 'starts from the critical board',flush=True)
+    board=load_with_rules(v,'grid' if saved['joined'] or saved['done'] else 'critical')
+    if not saved['done']:
+        copper=Copper(board);adopt_board_copper(copper)
+        joined,_,saved['done']=complete(copper,saved['state'],CHECKPOINT_EVERY)
+        saved['joined']+=joined
+        for item in list(board.GetTracks()):board.Remove(item)
+        copper.write(locked=None);p.SaveBoard(str(done_board),board)
+        stamp.write_text(json.dumps(saved,indent=1,sort_keys=True)+'\n')
+        if not joined and not saved['done']:raise RuntimeError('grid stage made no progress')
+        # pcbnew cannot load a second board into the same process, so the next segment is a fresh process.
+        sys.stdout.flush();os.execv(sys.executable,[sys.executable]+sys.argv)
+    if not p.ExportSpecctraDSN(board,str(work(v)/'board.dsn')):raise RuntimeError('DSN export failed')
+    left_open=list(saved['state']['failed'].values())
+    report_path=ROOT/f'pcb/reports/{v}-routing.json';report=json.loads(report_path.read_text())
+    report.update({'grid_joined':saved['joined'],'left_for_autorouter':left_open})
+    report_path.write_text(json.dumps(report,indent=2,sort_keys=True)+'\n')
+    print(v,'grid stage done;',len(left_open),'nets left for the autorouter',flush=True)
 
 def adopt_board_copper(copper):
     """Make every track and via already on the board known to the router: as obstacles, and as nodes that
@@ -570,24 +631,77 @@ def adopt_board_copper(copper):
             line=LineString([mm(item.GetStart()),mm(item.GetEnd())])
             nodes=[maze.nearest(layer,*line.interpolate(d).coords[0]) for d in _steps(line.length)+[line.length]]
             route=Route(net,p.ToMM(item.GetWidth()),[(layer,list(line.coords))],[],nodes)
+        route.rippable=not item.IsLocked()
         copper.obstacles.add_route(route,rules.VIA_D,rules.VIA_DRILL);copper.routes.append(route)
     copper.adopted=len(copper.routes)
 
-def complete(copper):
-    """Join what the autorouter left open, net by net. Plane nets reach their planes through vias already."""
+def complete(copper,state=None,max_joins=None):
+    """Join every open net that is not a plane net, short nets first, with the grid router. A net that finds
+    no way gets one: the grid routes of the nets in its way are torn up and routed again after it.
+    state carries the tear-up counts and the given-up nets across calls; with max_joins the call stops after
+    that many joins. Returns (nets joined, reasons for the nets given up, True when nothing is left to try)."""
+    state=state if state is not None else {'ripped':{},'failed':{}}
+    ripped,failed=state['ripped'],state['failed']
     names=sorted(str(net) for net in copper.board.GetNetsByName().keys() if str(net))
-    open_nets=[net for net in names if net not in rules.PLANE_NETS and len(islands_of(copper,net))>1]
-    open_nets.sort(key=lambda net:_span(copper,net))      # short local nets first, so long ones go around them
-    reasons={}
-    failed=open_nets
-    for budget,greed in COMPLETE_TRIES:          # a second, wider search for the nets the first one left open
-        retry,failed=failed,[]
-        for net in retry:
-            width=rules.POWER_TRACK if any(fnmatch(net,one) for one in rules.POWER_NETS) else rules.TRACK
-            failure=_failure(copper,net,width,maze.LAYERS,reach=COMPLETE_REACH,greed=greed,budget=budget)
-            print(' joined' if failure is None else ' open  ',net,flush=True)
-            if failure is not None:failed.append(net);reasons[net]=str(failure)
-    return open_nets,[reasons[net] for net in failed]
+    queue=[net for net in names if net not in rules.PLANE_NETS and net not in failed and not net.startswith('unconnected-')
+           and len(islands_of(copper,net))>1]
+    queue.sort(key=lambda net:_span(copper,net))      # short local nets first, so long ones go around them
+    joined=[]
+    while queue:
+        if max_joins is not None and len(joined)>=max_joins:return joined,list(failed.values()),False
+        net=queue.pop(0)
+        if len(islands_of(copper,net))<2:continue
+        try:
+            victims=_join_ripping(copper,net,ripped)
+        except Unroutable as failure:
+            failed[net]=str(failure);print(' open  ',net,'-',failure,flush=True);continue
+        print(' joined',net,('after tearing up '+' '.join(sorted(victims))) if victims else '',flush=True)
+        joined.append(net)
+        for victim in sorted(victims):
+            ripped[victim]=ripped.get(victim,0)+1
+            if victim not in queue:queue.append(victim)
+    return joined,list(failed.values()),True
+
+def _width(net):
+    return rules.POWER_TRACK if any(fnmatch(net,one) for one in rules.POWER_NETS) else rules.TRACK
+
+def _join_ripping(copper,net,ripped):
+    """Join one net island by island. When an island has no way, find one through the completion routes
+    only, tear up the nets on it (each at most RIP_LIMIT times) and take it. Returns the torn-up nets."""
+    width=_width(net);victims=set()
+    budget,greed=COMPLETE_SEARCH
+    job=job_for({net},width,maze.LAYERS,COMPLETE_REACH,greed,budget)
+    islands=islands_of(copper,net);tree=islands.pop(0)
+    while islands:
+        island=min(islands,key=lambda nodes:_gap(nodes,tree));islands.remove(island)
+        path=maze.search(copper.obstacles,job,sorted(island),tree)
+        if path is None:
+            fixed=[r for r in copper.routes if not r.rippable or r.net==net]
+            path=maze.search(copper.obstacles_for(fixed),job,sorted(island),tree)
+            if path is None:
+                why='search budget spent' if maze.last_search['budget_hit'] else 'enclosed by fixed copper'
+                raise Unroutable(f'{net}: no path from {maze.node_xy(min(island))} even through the grid routes ({why})')
+            blockers=_blockers(copper,net,width,path)
+            stuck=[b for b in blockers if ripped.get(b,0)>=RIP_LIMIT]
+            if stuck:raise Unroutable(f'{net}: the way is held by {" ".join(sorted(stuck))}, torn up {RIP_LIMIT} times already')
+            copper.rip(blockers);victims|=blockers
+        route=maze.to_route(path,net,width);route.rippable=True;copper.commit(route)
+        tree|=island;tree.update(path)
+    return victims
+
+def _blockers(copper,net,width,path):
+    """Nets whose completion routes come too close to a path."""
+    model=maze.Obstacles(rules.CLEARANCE,rules.HOLE_TO_HOLE)
+    trial=maze.to_route(path,net,width);model.add_route(trial,rules.VIA_D,rules.VIA_DRILL)
+    found=set()
+    for route in copper.routes:
+        if route.net==net or not route.rippable:continue
+        shapes=[(layer,LineString(points).buffer(route.width/2)) for layer,points in route.lines if len(points)>1]
+        shapes+=[(layer,Point(x,y).buffer(rules.VIA_D/2)) for x,y in route.vias for layer in maze.LAYERS]
+        for layer,shape in shapes:
+            if any(other.distance(shape)<rules.CLEARANCE+maze.SLACK for other in model.shapes[layer]):
+                found.add(route.net);break
+    return found
 
 def _span(copper,net):
     """Half the perimeter of the box around a net's pads."""
@@ -632,12 +746,12 @@ def finish(v):
     record=json.loads((ROOT/'pcb'/v/'autoroute.json').read_text())
     if hashlib.sha256((work(v)/'board.dsn').read_bytes()).hexdigest()!=record['dsn_sha256']:
         raise SystemExit(f'{v}: placement or scripted copper changed since the autorouter ran. Run make pcb-autoroute.')
-    board=load_with_rules(v,'critical')
+    board=load_with_rules(v,'grid')
     if not p.ImportSpecctraSES(board,str(ROOT/'pcb'/v/'autoroute.ses')):raise RuntimeError('session import failed')
     copper=Copper(board);adopt_board_copper(copper)
     autorouted=len(list(board.GetTracks()))
     try:
-        completed,left_open=complete(copper);stitches=stitch(copper)
+        completed,left_open,_=complete(copper);stitches=stitch(copper)
     finally:
         del copper.routes[:copper.adopted]       # the board holds these already
         copper.write()
@@ -657,4 +771,4 @@ def finish(v):
     if left_open:print(v,'LEFT OPEN, the DRC report and the gate will show them:','; '.join(left_open))
 
 if __name__=='__main__':
-    {'critical':critical,'finish':finish}[sys.argv[2]](sys.argv[1])
+    {'critical':critical,'grid':grid,'finish':finish}[sys.argv[2]](sys.argv[1])

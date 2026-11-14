@@ -30,6 +30,7 @@ class Route:
     lines:list=field(default_factory=list)      # (layer, [(x, y), ...])
     vias:list=field(default_factory=list)       # (x, y)
     nodes:list=field(default_factory=list)      # lattice nodes on the copper, for later connections
+    rippable:bool=False                         # the completion stage may tear this route up and route it again
 
     def length(self):
         return sum(LineString(points).length for _,points in self.lines if len(points)>1)
@@ -96,6 +97,8 @@ class Job:
     greed:float=1.0                # weight on the estimate: above 1 trades path length for a faster search
     budget:int|None=None           # give up after this many expanded states
 
+last_search={'budget_hit':False}     # whether the latest failed search gave up on its budget, for messages
+
 def search(obstacles,job,starts,goals):
     """Cheapest lattice path from any start node to any goal node, or None."""
     goal_set=set(goals)
@@ -108,11 +111,12 @@ def search(obstacles,job,starts,goals):
     best={};queue=[];order=count()          # the counter breaks ties before unlike tuples are compared
     for n in starts:
         best[(n,None)]=0.0;heapq.heappush(queue,(estimate(n),0.0,next(order),n,None,None))
-    parents={};expanded=0
+    parents={};expanded=0;last_search['budget_hit']=False
     while queue:
         _,cost,_,node,move,parent=heapq.heappop(queue)
         expanded+=1
-        if job.budget is not None and expanded>job.budget:return None
+        if job.budget is not None and expanded>job.budget:
+            last_search['budget_hit']=True;return None
         if best.get((node,move),1e9)<cost:continue
         parents.setdefault((node,move),parent)
         if node in goal_set:return _unwind(parents,(node,move))

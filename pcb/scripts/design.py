@@ -21,7 +21,10 @@ LCSC_FLASH="C97521"
 LCSC_XTAL="C49304726"     # CL 18 pF: 27 pF load caps. Not the ABM8-272-T3 the RP2040 design guide names
 LCSC_MUX="C2652459"
 LCSC_SOCKET={"mx":"C2803348","choc":"C5333465"}
-HEADER_1X03="Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
+SPDT_SLIDE="Button_Switch_SMD:SW_SPDT_PCM12"    # C&K PCM12SMTR, 1.4 mm tall, pin 2 common: fits under the PCB
+LCSC_SPDT="C221841"
+LED_CONNECTOR="Connector_JST:JST_SH_SM03B-SRSS-TB_1x03-1MP_P1.00mm_Horizontal"   # 2.9 mm tall, under the PCB
+LCSC_LED_CONNECTOR="C160403"
 LCD_SOCKET="worxboard:PinSocket_1x05_P2.54mm_Vertical_H5.0mm"
 MUX_PACKAGE="Package_DFN_QFN:Texas_RMG0012A_WQFN-12_1.8x1.8mm_P0.4mm"
 # LCSC number, or footprint for a part without one -> (manufacturer, part number, verified).
@@ -39,17 +42,20 @@ SOURCING={
  "C15525":("Samsung Electro-Mechanics","CL05A106MQ5NUNC",True),"C1557":("Fenghua","0402CG270J500NT",True),
  "C2803348":("Kailh","CPG151101S11",True),"C5333465":("Kailh","CPG135001S30",True),
  LCSC_MUX:("Texas Instruments","TS3USB3031RMGR",True),
- HEADER_1X03:("Wurth Elektronik","61300311121",True),
+ LCSC_SPDT:("C&K","PCM12SMTR",True),LCSC_LED_CONNECTOR:("JST","SM03B-SRSS-TB(LF)(SN)",True),
  LCD_SOCKET:("HJ Tech","17-0004-002",False),   # real 1x5 socket, but 5.7 mm tall against the 5.0 mm footprint: not chosen
 }
 def sourcing(part):
     """(manufacturer, part number, verified) for a BOM part."""
     return SOURCING[part.lcsc or part.footprint]
 MATRIX_ROWS=4           # 48 keys in divmod(index, 15) order fill ROW0-2 and three places of ROW3
-SPARE_GPIO=[None,None]  # GP4 and GP5: the firmware still declares six rows, the board leaves them unconnected
-GPIO_NETS=([f"ROW{i}" for i in range(MATRIX_ROWS)]+SPARE_GPIO+[f"COL{i}" for i in range(15)]
- +["USB_SEL0","USB_SEL1","VBUS_LEFT_SENSE","VBUS_CENTER_SENSE","VBUS_RIGHT_SENSE",
- "DISP_SCK","DISP_MOSI","DISP_CS","RGB_DATA"])
+# GPIO number -> net. None: unconnected. The display sits on SPI0 (GP6 SCK, GP7 TX) with a GPIO chip select,
+# because GP5-7 face the LCD socket across the RP2040 as placed; COL0 and COL1 move to GP26/GP27, the pins
+# that face the left half. GP4 and GP28 are free.
+GPIO_NETS=([f"ROW{i}" for i in range(MATRIX_ROWS)]+[None,"DISP_CS","DISP_SCK","DISP_MOSI"]
+ +[f"COL{i}" for i in range(2,15)]
+ +["USB_SEL0","USB_SEL1","VBUS_LEFT_SENSE","VBUS_CENTER_SENSE","VBUS_RIGHT_SENSE","COL0","COL1",None,"RGB_DATA"])
+assert len(GPIO_NETS)==30
 @dataclass(frozen=True)
 class Part:
     ref: str
@@ -139,18 +145,19 @@ def design(variant):
   R('R40','10k','MUX_S0','3V3','SELECTOR'),R('R41','10k','MUX_S1','3V3','SELECTOR'),
   C('C20','100n','3V3','SELECTOR'),
   R('R42','1k','USB_SEL0','MUX_S0_FW','SELECTOR'),R('R43','1k','USB_SEL1','MUX_S1_FW','SELECTOR'),
-  Part('J6','Connector_Generic:Conn_01x03','SEL0: RUN 1-2 / ROM 2-3',
-   HEADER_1X03,'',
-   {'1':'MUX_S0_FW','2':'MUX_S0','3':'3V3'},'SELECTOR',dnp=True),
-  Part('J7','Connector_Generic:Conn_01x03','SEL1: RUN 1-2 / ROM 2-3',
-   HEADER_1X03,'',
-   {'1':'MUX_S1_FW','2':'MUX_S1','3':'GND'},'SELECTOR',dnp=True)]
+  # Slide switches, pin 2 common, in place of 3-pin jumpers: no header fits under the plate.
+  Part('J6','Switch:SW_SPDT','SEL0: RUN 1-2 / ROM 2-3',
+   SPDT_SLIDE,LCSC_SPDT,
+   {'1':'MUX_S0_FW','2':'MUX_S0','3':'3V3'},'SELECTOR'),
+  Part('J7','Switch:SW_SPDT','SEL1: RUN 1-2 / ROM 2-3',
+   SPDT_SLIDE,LCSC_SPDT,
+   {'1':'MUX_S1_FW','2':'MUX_S1','3':'GND'},'SELECTOR')]
  parts += [Part('J4','Connector_Generic:Conn_01x05','nice!view SPI LCD',
  LCD_SOCKET,'',
  dict(zip(map(str,range(1,6)),['DISP_MOSI','DISP_SCK','3V3','GND','DISP_CS'])),'DISPLAY',dnp=True),
- Part('J5','Connector_Generic:Conn_01x03','RGB expansion (3V3 logic)',
- HEADER_1X03,'',
- {'1':'VSYS','2':'RGB_DATA','3':'GND'},'DISPLAY',dnp=True)]
+ Part('J5','Connector_Generic_MountingPin:Conn_01x03_MountingPin','RGB expansion (3V3 logic)',
+ LED_CONNECTOR,LCSC_LED_CONNECTOR,
+ {'1':'VSYS','2':'RGB_DATA','3':'GND','MP':'GND'},'DISPLAY')]     # mounting pads to ground, each by its own via
  fp='worxboard:SW_MX_Hotswap_Kailh' if variant=='mx' else 'worxboard:SW_Choc_V1_Hotswap'
  for n,k in enumerate(keys(),101):
   idx=n-101;row,col=divmod(idx,15)

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Regenerate both boards from pcb/scripts/design.py and layout/model.py, then run KiCad's checks.
 #   pcb.sh            schematic, placement, scripted copper, the committed autorouter session, ERC, DRC
-#   pcb.sh critical   stop after the scripted copper and the DSN export; tools/pcb_autoroute.sh uses this
+#   pcb.sh critical   stop after the scripted and grid-routed copper and the DSN export; tools/pcb_autoroute.sh uses this
 set -euo pipefail
 cd "$(dirname "$0")/.."
 stage=${1:-all}
@@ -20,6 +20,7 @@ docker run --rm --cpus "${PCB_CPUS:-4}" --network none -u "$(id -u):$(id -g)" -e
   kicad-cli sch export netlist --format kicadxml -o "$f.net" "$f.kicad_sch"
   python3 pcb/scripts/place.py "$v"
   python3 pcb/scripts/route.py "$v" critical
+  python3 pcb/scripts/route.py "$v" grid        # about an hour per board; resumes from pcb/.work/<v>/grid.kicad_pcb
   if [ "$STAGE" = critical ]; then continue; fi
   python3 pcb/scripts/route.py "$v" finish
   python3 pcb/scripts/check.py "$v"

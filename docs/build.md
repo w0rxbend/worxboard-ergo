@@ -118,15 +118,15 @@ Split printed halves: join on the rear tab, then the palm rest bridges the front
 
 Do this on a bench supply with a current limit before you trust a USB host. Confirm 3.3 V and 1.1 V. Confirm that a powered port does not back-feed another port's VBUS. Details and the mux table are in [electrical.md](electrical.md).
 
-Normal run: both J6 and J7 shunts on pins 1–2.
+Normal run: both J6 and J7 slide switches on the 1–2 side (RUN). They sit on the bottom of the board.
 
-ROM flashing, only after the jumper wiring has been checked on the real board:
+ROM flashing, only after the switch wiring has been checked on the real board:
 
-1. Disconnect USB. Do not move a shunt while the board is powered.
-2. Move both J6 and J7 to pins 2–3.
+1. Disconnect USB. Do not move a switch while the board is powered.
+2. Set both J6 and J7 to the 2–3 side (ROM).
 3. Connect only the center USB-C port.
 4. Hold BOOT, press RESET, and copy the UF2 to the `RPI-RP2` drive.
-5. Disconnect USB. Move both shunts back to pins 1–2.
+5. Disconnect USB. Set both switches back to RUN.
 
 SWD is the recovery path if that sequence does not enumerate. The first programming method for a new board is SWD, not the ROM port.
 
